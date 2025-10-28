@@ -1,0 +1,9 @@
+<svg width="280" height="80" viewBox="0 0 280 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- S Symbol in rounded square -->
+  <rect x="4" y="4" width="72" height="72" rx="12" fill="#6EBFAA"/>
+  <path d="M40 25C35 25 30 28 30 33C30 38 35 40 40 42C45 44 50 46 50 51C50 56 45 59 40 59M40 25C45 25 50 28 50 33M40 59C35 59 30 56 30 51" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- SCHAKEL Text -->
+  <text x="95" y="42" font-family="Inter, sans-serif" font-size="28" font-weight="700" fill="#1A1A1A">SCHAKEL</text>
+  <text x="95" y="62" font-family="Inter, sans-serif" font-size="16" font-weight="400" fill="#4A4A4A" letter-spacing="0.05em">AI AGENCY</text>
+</svg>

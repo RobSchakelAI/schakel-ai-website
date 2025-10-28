@@ -1,0 +1,55 @@
+{
+  "nav": {
+    "about": "Over ons",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "AI die tijd teruggeeft",
+    "cta": "Plan een verkenning"
+  },
+  "whyHowWhat": {
+    "why": {
+      "label": "Waarom",
+      "text": "Bedrijven bewegen te traag. Wij maken ze weer relevant."
+    },
+    "how": {
+      "label": "Hoe",
+      "text": "We herontwerpen processen en bouwen pragmatische AI-oplossingen."
+    },
+    "what": {
+      "label": "Wat",
+      "text": "Workflows, automatisering en AI-agents. Meer output, minder kosten."
+    }
+  },
+  "about": {
+    "title": "Over ons",
+    "rob": {
+      "name": "Rob",
+      "role": "Co-founder",
+      "bio": "Rob combineert ondernemersinzicht met praktische implementatie. Met jaren ervaring in het stroomlijnen van bedrijfsprocessen, focust hij op concrete resultaten en meetbare impact. Zijn no-nonsense aanpak zorgt ervoor dat AI-oplossingen direct waarde toevoegen."
+    },
+    "simon": {
+      "name": "Simon",
+      "role": "Co-founder",
+      "bio": "Simon is product- en tech-gedreven, met een AI-first mindset. Hij vertaalt complexe technologie naar toegankelijke oplossingen die écht werken. Zijn pragmatische innovatie zorgt dat bedrijven de voordelen van AI kunnen benutten zonder onnodige complexiteit."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Klaar om AI te benutten? Laten we kennismaken.",
+    "form": {
+      "name": "Naam",
+      "email": "E-mailadres",
+      "company": "Bedrijf",
+      "message": "Bericht",
+      "submit": "Verstuur bericht",
+      "success": "Bedankt! We nemen zo snel mogelijk contact op.",
+      "error": "Er ging iets mis. Probeer het opnieuw."
+    }
+  },
+  "footer": {
+    "tagline": "Rust & Rendement",
+    "privacy": "Privacy",
+    "disclaimer": "Disclaimer"
+  }
+}

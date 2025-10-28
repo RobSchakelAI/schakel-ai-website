@@ -1,0 +1,55 @@
+{
+  "nav": {
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "AI that gives you time back",
+    "cta": "Schedule a consultation"
+  },
+  "whyHowWhat": {
+    "why": {
+      "label": "Why",
+      "text": "Companies move too slowly. We make them relevant again."
+    },
+    "how": {
+      "label": "How",
+      "text": "We redesign processes and build pragmatic AI solutions."
+    },
+    "what": {
+      "label": "What",
+      "text": "Workflows, automation, and AI agents. More output, lower costs."
+    }
+  },
+  "about": {
+    "title": "About us",
+    "rob": {
+      "name": "Rob",
+      "role": "Co-founder",
+      "bio": "Rob combines entrepreneurial insight with practical implementation. With years of experience streamlining business processes, he focuses on concrete results and measurable impact. His no-nonsense approach ensures AI solutions add immediate value."
+    },
+    "simon": {
+      "name": "Simon",
+      "role": "Co-founder",
+      "bio": "Simon is product and tech-driven with an AI-first mindset. He translates complex technology into accessible solutions that actually work. His pragmatic innovation ensures businesses can leverage AI benefits without unnecessary complexity."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Ready to leverage AI? Let's connect.",
+    "form": {
+      "name": "Name",
+      "email": "Email address",
+      "company": "Company",
+      "message": "Message",
+      "submit": "Send message",
+      "success": "Thank you! We'll be in touch soon.",
+      "error": "Something went wrong. Please try again."
+    }
+  },
+  "footer": {
+    "tagline": "Peace & Results",
+    "privacy": "Privacy",
+    "disclaimer": "Disclaimer"
+  }
+}
