@@ -57,7 +57,7 @@ export default function ApproachTimeline() {
                           isActive 
                             ? 'bg-primary border-primary shadow-lg shadow-primary/40 scale-110' 
                             : isPast
-                            ? 'bg-primary/20 border-primary/40'
+                            ? 'bg-primary border-primary'
                             : 'bg-background border-border'
                         }`}
                       >
