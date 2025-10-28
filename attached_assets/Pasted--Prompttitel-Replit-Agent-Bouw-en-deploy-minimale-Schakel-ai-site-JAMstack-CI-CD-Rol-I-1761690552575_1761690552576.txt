@@ -1,0 +1,317 @@
+🧩 Prompttitel
+Replit Agent – Bouw en deploy minimale Schakel.ai-site (JAMstack + CI/CD)
+
+🎭 Rol & Identiteit
+Jij bent een senior “AI-first” full-stack engineer en dev-ops implementator binnen Replit. Je werkt autonoom, documenteert alles, valideert je eigen werk met tests en checklists, en levert een productieklare, minimalistische website + API op voor het domein schakel.ai.
+
+🎯 Doel
+Ontwerp, bouw en deploy een supereenvoudige, supersnelle website voor Schakel AI B.V. met een JAMstack-architectuur. De site communiceert de kernboodschap in één heldere hero-sectie (Why/How/What) en bevat een compacte Over-ons (Rob & Simon). Lever een end-to-end werkende pipeline: code → GitHub → Vercel (frontend) / Railway (backend) → Supabase (DB/auth) → MailerSend (mail). De Replit-workspace moet dit automatisch pushen en deployen bij elke commit.
+
+⚙️ Randvoorwaarden
+
+1. Minimalistisch, strak, high-contrast, veel witruimte; geen overbodige animaties en geen stock-poespas.
+
+
+2. Performance (Lighthouse 95+ mobile/desktop), accessibility (WCAG AA), SEO basis op orde.
+
+
+3. Typesafe (TypeScript end-to-end), strikte linting/formatting, eenvoudige tests.
+
+
+4. CI/CD via GitHub Actions; zero-touch deploys naar Vercel (web) & Railway (api).
+
+
+5. Alles gedocumenteerd in een duidelijke README met “Getting Started”, env-vars en handmatige fallback-stappen.
+
+
+
+🌐 Context
+
+Domein: www.schakel.ai (Namecheap DNS wordt later door de eigenaar ingesteld; lever DNS-instructies).
+
+Huisfilosofie: Rust & Rendement — duidelijke structuur, meetbaar resultaat. 
+
+Copyrichtlijnen: extreem kort, direct, begrijpelijk NL; Engels optioneel via i18n-toggle.
+
+Inspiratie: Morningside.com (één kernboodschap, geen rommel).
+
+Why/How/What (te gebruiken als initiële hero-copy, ultrakort samengevat):
+
+Why: De wereld verandert extreem snel; bedrijven benutten AI te traag. Schakel helpt hen relevant te blijven en tijd terug te winnen.
+
+How: Analyse van processen samen met de ondernemer, kritische herontwerpvoorstellen en implementatie met AI.
+
+What: Slimme workflows, automatisering, AI-agents/employees → hogere outputkwaliteit, minder input, lagere kosten.
+
+
+Over ons (Rob & Simon): korte, persoonlijke intro’s met focus op complementariteit, no-nonsense, “AI First” werkhouding.
+
+
+🧠 Denkstappen
+
+1. Repo-opzet (monorepo) + toolchain kiezen → 2) Frontend skeleton + contentblokken → 3) Backend API + endpoints → 4) DB-schema + Drizzle migraties → 5) Integraties (MailerSend, Supabase) → 6) CI/CD pipelines → 7) Lint/tests → 8) Lighthouse/AXE checks → 9) DNS/vercel/railway instructies → 10) README en hand-off.
+Zelfverbeterlus: na elke stap een checklist afvinken; bij falen automatisch fixen en opnieuw valideren.
+
+
+
+🧱 Output-structuur
+A. Architectuur & Stack
+
+Monorepo met pnpm workspaces:
+
+/apps/web     -> React + TypeScript + Vite
+/apps/api     -> Express (Node) + TypeScript
+/packages/ui  -> (optioneel) gedeelde UI (shadcn) + theming
+/packages/config -> eslint, tsconfig, prettier gedeeld
+
+Frontend
+
+React + TypeScript, Vite.
+
+Tailwind CSS (custom theme), shadcn/ui (Radix), Framer Motion (zeer spaarzaam).
+
+Routing: wouter.
+
+Forms: React Hook Form + Zod.
+
+Data: TanStack Query.
+
+i18n: simpele context (NL/EN).
+
+Pagina’s & secties (alle minimalistisch):
+
+/ Hero (Why/How/What), CTA “Plan een verkenning” (mailto + API-route).
+
+/#over Over ons (Rob & Simon, foto-placeholders, 2× ~60 woorden).
+
+/#contact Contact (formulier → API → MailerSend + opt-in Supabase newsletter).
+
+/#legal Eenvoudige privacy/disclaimer.
+
+
+
+Backend (Railway)
+
+Express + TypeScript.
+
+Endpoints:
+
+POST /api/contact (validate Zod, mail via MailerSend, optionele DB-insert).
+
+POST /api/newsletter (Supabase insert, double-opt-in e-mail via MailerSend).
+
+GET /api/health (status).
+
+GET /api/logo (serve statische assets).
+
+
+
+Database (Supabase/Postgres)
+
+Drizzle ORM schema: leads, subscribers, audit_logs.
+
+Migrations + seed voorbeeld.
+
+
+E-mail (MailerSend)
+
+Templates: “Contactbevestiging” en “Newsletter opt-in”.
+
+Fallback: log naar console in dev, dry-run test.
+
+
+
+B. Dev-Experience & Kwaliteit
+
+ESLint (strict), Prettier, Type-checking CI, Husky + lint-staged.
+
+Vitest voor unit; minimale API-integration test met supertest.
+
+Lighthouse CI (budget.json) en AXE (accessibility) check in CI.
+
+Commit-conventies (Conventional Commits) + auto-release (optioneel).
+
+
+C. CI/CD & Deploy
+
+GitHub Actions:
+
+web.yml: build → test → deploy naar Vercel (prod bij main, preview bij PR).
+
+api.yml: build → test → deploy naar Railway (prod bij main, preview bij PR).
+
+
+Replit → GitHub push ingesteld (automatisch bij save/commit).
+
+Env-management: gebruik .env.example in monorepo root en in beide apps.
+
+Vercel config (vercel.json) met headers/caching en rewrites (/api/* naar Railway-URL in prod).
+
+Railway Procfile/Start script en healthcheck.
+
+Supabase service-role key uitsluitend in backend; nooit in frontend bundelen.
+
+
+D. Styling & Content
+
+Tailwind theme: neutraal, veel witruimte, typografie-schaal, focus states, dark-mode optioneel.
+
+Hero microcopy (NL, superkort – aanpasbaar in content/nl.json):
+
+Title: “AI die tijd teruggeeft.”
+
+Why: “Bedrijven bewegen te traag. Wij maken ze weer relevant.”
+
+How: “We herontwerpen processen en bouwen pragmatische AI-oplossingen.”
+
+What: “Workflows, automatisering en AI-agents. Meer output, minder kosten.”
+
+CTA: “Plan een verkenning” (linkt naar /#contact).
+
+
+Over ons (initiële placeholders, ~60 woorden p.p., aanpasbaar):
+
+Rob: ondernemersfocus, structuur, no-nonsense implementatie.
+
+Simon: product/tech-gedreven, AI-first, pragmatische innovatie.
+
+
+i18n: content/en.json met beknopte Engelse variant.
+
+
+E. DNS & Hosting-instructies (Namecheap/Vercel/Railway)
+
+Vercel: voeg domein schakel.ai; stel A/ALIAS of CNAME records volgens Vercel-instructie.
+
+www → Vercel CNAME, root-domain → Vercel A/ALIAS; redirect naar https://www.schakel.ai/.
+
+API draait op Railway subdomain; verwerk in frontend als VITE_API_URL.
+
+Lever docs/dns-setup.md met exacte stappen en screenshots-placeholders.
+
+
+F. Deliverables
+
+1. Monorepo in Replit met push naar nieuwe GitHub-repo.
+
+
+2. Werkende Vercel preview en Railway preview na eerste commit.
+
+
+3. README met: installatie, env-vars, scripts, deploy, DNS, troubleshooting.
+
+
+4. .env.example (frontend & backend) met duidelijke keys (VITE_API_URL, MAILERSEND_API_KEY, SUPABASE_URL, SUPABASE_ANON_KEY, SUPABASE_SERVICE_ROLE in backend only, etc.).
+
+
+5. Geautomatiseerde checks (Actions badges) + Lighthouse rapport in artifacts.
+
+
+
+G. Acceptatiecriteria (automatiseer waar kan)
+
+[ ] npm run test groen (vitest + supertest).
+
+[ ] Lint/TS strikt, geen warnings.
+
+[ ] Lighthouse mobile/desktop ≥ 95 (perf ≥ 95, a11y ≥ 95, best-practices ≥ 95, SEO ≥ 95).
+
+[ ] AXE: geen ernstige/serieuze issues.
+
+[ ] Contactformulier levert e-mail in MailerSend sandbox en schrijft lead weg (dev).
+
+[ ] Newsletter endpoint schrijft subscriber in Supabase (dev).
+
+[ ] CI/CD maakt automatisch Vercel en Railway previews bij PR en production deploy op main.
+
+[ ] README is voldoende om zonder vragen te reproduceren.
+
+
+✅ Validatie & Alignment
+
+Dimensie	Score (1–10)	Toelichting
+
+Rust	9	Heldere structuur, checklists, README, automatische quality-gates.
+Rendement	9	Snel live, minimale scope, hoge performance, lage onderhoudslast.
+Schaalbaarheid	9	Monorepo, herbruikbare packages, CI/CD, Supabase/Serverless-vriendelijk.
+ROI	9	Strakke boodschap + leadflow, lage kosten door automation.
+
+
+Confidence (0–100 %): 95
+
+
+---
+
+Uit te voeren instructies (voor Replit – stap voor stap)
+
+1. Initialiseer monorepo
+
+
+
+Installeer pnpm; maak package.json met workspaces; voeg apps/web, apps/api, packages/ui, packages/config.
+
+Voeg ESLint/Prettier/TS configs in packages/config; link via eslintConfig/tsconfig.json extends.
+
+
+2. Frontend (apps/web)
+
+
+
+Scaffold Vite React TS, Tailwind, shadcn/ui setup, wouter, TanStack Query, RHF+Zod, Framer Motion (beperkt).
+
+Bouw minimale pagina met hero (Why/How/What), Over-ons, Contact.
+
+i18n context + content/nl.json en content/en.json.
+
+Voeg meta-tags/OG, sitemap, robots, favicon.
+
+
+3. Backend (apps/api)
+
+
+
+Express TS met routes: /api/health, /api/contact, /api/newsletter, /api/logo.
+
+Zod-schemas, rate-limit basis, CORS voor Vercel domain.
+
+MailerSend SDK integratie; .env via Railway.
+
+Supabase client (service role) + Drizzle ORM; migraties leads, subscribers.
+
+
+4. Tests & Kwaliteit
+
+
+
+Vitest + supertest voor API; basis component-test web.
+
+Lighthouse CI + AXE in GitHub Actions.
+
+
+5. CI/CD
+
+
+
+GitHub Actions: build/test + deploy naar Vercel/Railway (gebruik repo-secrets).
+
+.env.example en README.md met alle variabelen en setup.
+
+
+6. DNS/Deploy docs
+
+
+
+docs/dns-setup.md met Namecheap → Vercel en root/www mapping.
+
+docs/deploy.md met stap-voor-stap screenshots-placeholders.
+
+
+7. Zelfcontrole & Verbeterlus
+
+
+
+Draai scripts: lint, typecheck, test, lighthouse-ci, axe-check.
+
+Fix issues tot alle acceptatiecheckboxes groen zijn.
+
+Genereer een kort “project status” rapport in docs/status.md met versies, build-hash en Lighthouse scores.
