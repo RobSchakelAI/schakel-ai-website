@@ -1,6 +1,5 @@
 {
   "nav": {
-    "outcomes": "Outcomes",
     "approach": "Approach",
     "about": "Team",
     "contact": "Contact"
@@ -13,25 +12,12 @@
     "ctaSecondary": "View cases",
     "trustLine": "Helped 15+ companies scale"
   },
-  "outcomes": {
-    "title": "What you get",
-    "subtitle": "Measurable impact, not abstract promises",
-    "items": [
-      {
-        "metric": "40%",
-        "label": "Time saved",
-        "description": "Average reduction in manual tasks within 3 months"
-      },
-      {
-        "metric": "3x",
-        "label": "Speed",
-        "description": "Acceleration of critical processes through smart automation"
-      },
-      {
-        "metric": "100%",
-        "label": "Pragmatic",
-        "description": "Solutions that work, not tech for tech's sake"
-      }
+  "vision": {
+    "title": "Why we do this",
+    "content": [
+      "AI is changing the world. Not in ten years—now. Companies that don't move today fall behind competitors who do. The question is no longer if you should implement AI, but how quickly you can start.",
+      "We believe 'AI First' isn't a buzzword, but a necessity. It's how companies stay relevant, move faster, and create real competitive advantage. That's why we stopped what we were doing—to help businesses make this transition.",
+      "It's not about technology for technology's sake. It's about preparing companies for the future. About empowering teams, not replacing them. About creating peace and performance by smartly automating what can be automated."
     ]
   },
   "approach": {
