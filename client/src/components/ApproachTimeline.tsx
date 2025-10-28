@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { ArrowRight } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 
 export default function ApproachTimeline() {
   const { t } = useLanguage();
@@ -26,23 +26,23 @@ export default function ApproachTimeline() {
         </div>
 
         <div className="max-w-5xl mx-auto relative">
-          <div className="space-y-8 md:space-y-16 relative">
+          <div className="space-y-0 relative">
             {t.approach.steps.map((step, index) => {
               const isActive = index === activeStep;
               const isPast = index < activeStep;
               const isLeft = index % 2 === 0;
 
               return (
-                <div key={index} className="relative">
+                <div key={index}>
                   <div
-                    className={`flex flex-col md:flex-row items-center gap-6 ${
+                    className={`flex flex-col md:flex-row items-center gap-6 md:gap-8 ${
                       isLeft ? 'md:flex-row' : 'md:flex-row-reverse'
                     }`}
                     data-testid={`step-${index}`}
                     onMouseEnter={() => setActiveStep(index)}
                   >
                     {/* Content card */}
-                    <div className={`flex-1 ${isLeft ? 'md:text-right' : 'md:text-left'}`}>
+                    <div className={`flex-1 ${isLeft ? 'md:text-right md:pr-4' : 'md:text-left md:pl-4'}`}>
                       <div
                         className={`p-6 md:p-8 rounded-lg border transition-all duration-500 ${
                           isActive
@@ -102,32 +102,49 @@ export default function ApproachTimeline() {
                     <div className="hidden md:block flex-1" />
                   </div>
 
-                  {/* Curved connecting arrow between steps */}
+                  {/* Curved connecting line between steps */}
                   {index < t.approach.steps.length - 1 && (
-                    <div className="hidden md:block relative h-24 my-4">
+                    <div className="relative h-32 md:h-40 flex items-center justify-center">
+                      {/* SVG curved line */}
                       <svg
                         className="absolute inset-0 w-full h-full"
+                        viewBox="0 0 100 100"
                         preserveAspectRatio="none"
-                        style={{ overflow: 'visible' }}
                       >
-                        {/* Curved path - alternates left to right */}
+                        <defs>
+                          <marker
+                            id={`arrow-${index}`}
+                            markerWidth="8"
+                            markerHeight="8"
+                            refX="7"
+                            refY="4"
+                            orient="auto"
+                          >
+                            <path
+                              d="M 0 0 L 8 4 L 0 8 Z"
+                              fill={isPast ? '#6EBFAA' : '#d4d4d8'}
+                            />
+                          </marker>
+                        </defs>
+                        
+                        {/* The curved path */}
                         <path
                           d={
                             isLeft
-                              ? 'M 50% 0 Q 70% 50%, 50% 100'  // Curve from center to right then back to center
-                              : 'M 50% 0 Q 30% 50%, 50% 100'  // Curve from center to left then back to center
+                              ? 'M 50 5 Q 70 50, 50 95'
+                              : 'M 50 5 Q 30 50, 50 95'
                           }
-                          stroke={isPast ? '#6EBFAA' : 'hsl(var(--border))'}
+                          stroke={isPast ? '#6EBFAA' : '#d4d4d8'}
                           strokeWidth="3"
                           fill="none"
+                          markerEnd={`url(#arrow-${index})`}
                           className="transition-all duration-500"
-                          markerEnd={isPast ? 'url(#arrowhead-active)' : 'url(#arrowhead)'}
                         />
                       </svg>
 
-                      {/* Connection dots along the curve */}
+                      {/* Decorative dots along the curve */}
                       <div
-                        className={`absolute w-2 h-2 rounded-full transition-all duration-500 ${
+                        className={`absolute w-3 h-3 rounded-full transition-all duration-500 z-10 ${
                           isPast ? 'bg-primary' : 'bg-border'
                         }`}
                         style={{
@@ -136,38 +153,21 @@ export default function ApproachTimeline() {
                           transform: 'translate(-50%, -50%)',
                         }}
                       />
+                      
+                      {/* Mobile: Simple arrow down */}
+                      <div className="md:hidden">
+                        <ArrowDown 
+                          className={`w-8 h-8 transition-colors ${
+                            isPast ? 'text-primary' : 'text-border'
+                          }`}
+                        />
+                      </div>
                     </div>
                   )}
                 </div>
               );
             })}
           </div>
-
-          {/* Arrow markers for SVG paths */}
-          <svg width="0" height="0" style={{ position: 'absolute' }}>
-            <defs>
-              <marker
-                id="arrowhead"
-                markerWidth="10"
-                markerHeight="10"
-                refX="9"
-                refY="3"
-                orient="auto"
-              >
-                <polygon points="0 0, 10 3, 0 6" fill="hsl(var(--border))" />
-              </marker>
-              <marker
-                id="arrowhead-active"
-                markerWidth="10"
-                markerHeight="10"
-                refX="9"
-                refY="3"
-                orient="auto"
-              >
-                <polygon points="0 0, 10 3, 0 6" fill="#6EBFAA" />
-              </marker>
-            </defs>
-          </svg>
         </div>
 
         {/* Circuit board decoration at bottom */}
