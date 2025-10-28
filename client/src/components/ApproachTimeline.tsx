@@ -37,7 +37,7 @@ export default function ApproachTimeline() {
                 <div key={index} className="relative">
                   {/* Node positioned horizontally with zigzag */}
                   <div
-                    className="absolute transition-all duration-500"
+                    className="absolute transition-all duration-500 z-10"
                     style={{
                       left: `${rowPosition}%`,
                       top: isUpper ? '0' : '200px',
@@ -96,7 +96,7 @@ export default function ApproachTimeline() {
                   {/* Connecting line to next node - smooth curve from circle to circle */}
                   {index < t.approach.steps.length - 1 && (
                     <svg
-                      className="absolute pointer-events-none"
+                      className="absolute pointer-events-none z-0"
                       style={{
                         left: `${rowPosition + 7}%`,
                         top: isUpper ? '50px' : '10px',
