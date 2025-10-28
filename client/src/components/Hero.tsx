@@ -54,17 +54,14 @@ export default function Hero() {
             <span className="text-sm font-medium text-foreground">{t.hero.preTitle}</span>
           </div>
 
-          {/* Tiered headline hierarchy */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-foreground mb-6 leading-[1.05] tracking-tight">
-            {t.hero.title.split('. ').map((part, i) => (
-              <span key={i} className="block" style={{ animationDelay: `${i * 100}ms` }}>
-                {part}{i < t.hero.title.split('. ').length - 1 && '.'}
-              </span>
-            ))}
+          {/* Main headline */}
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-foreground mb-8 leading-[1.05] tracking-tight">
+            {t.hero.title}
           </h1>
 
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed">
-            {t.hero.subtitle}
+          {/* Value proposition - clear and powerful */}
+          <p className="text-lg md:text-xl text-foreground/90 max-w-4xl mx-auto mb-12 leading-relaxed">
+            {t.hero.description}
           </p>
 
           {/* Dual CTAs */}
