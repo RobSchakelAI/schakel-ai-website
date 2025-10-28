@@ -140,14 +140,22 @@ export default function ApproachTimeline() {
         {/* Mobile: Classic vertical timeline (circles left, content right) */}
         <div className="md:hidden max-w-4xl mx-auto">
           <div className="relative">
-            {/* Vertical line */}
-            <div className="absolute left-8 top-12 bottom-12 w-0.5 bg-border z-0" />
+            {/* Vertical line - stops at last circle */}
+            <div 
+              className="absolute left-8 w-0.5 bg-border z-0"
+              style={{
+                top: '3.5rem',
+                height: 'calc(100% - 7rem)'
+              }}
+            />
             
             {/* Animated pulse line */}
             <div 
-              className="absolute left-8 top-12 w-0.5 bg-primary transition-all duration-1000 z-0"
+              className="absolute left-8 w-0.5 bg-primary transition-all duration-1000 z-0"
               style={{
-                height: `${(activeStep + 1) * 25}%`
+                top: '3.5rem',
+                height: `${(activeStep / (t.approach.steps.length - 1)) * 100}%`,
+                maxHeight: 'calc(100% - 7rem)'
               }}
             />
 
