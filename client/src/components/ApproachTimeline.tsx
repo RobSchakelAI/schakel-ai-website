@@ -24,117 +24,134 @@ export default function ApproachTimeline() {
           </p>
         </div>
 
-        {/* Desktop: Node flow diagram */}
-        <div className="hidden md:block max-w-5xl mx-auto relative">
-          <div className="space-y-0 relative">
+        {/* Desktop: Node flow diagram - horizontal zigzag */}
+        <div className="hidden md:block max-w-6xl mx-auto relative">
+          <div className="relative">
             {t.approach.steps.map((step, index) => {
               const isActive = index === activeStep;
               const isPast = index < activeStep;
-              const isLeft = index % 2 === 0;
+              const isUpper = index % 2 === 0;
+              const rowPosition = index * 25; // Horizontal progression
 
               return (
-                <div key={index}>
+                <div key={index} className="relative">
+                  {/* Node positioned horizontally with zigzag */}
                   <div
-                    className={`flex items-center gap-8 ${
-                      isLeft ? 'flex-row' : 'flex-row-reverse'
-                    }`}
+                    className="absolute transition-all duration-500"
+                    style={{
+                      left: `${rowPosition}%`,
+                      top: isUpper ? '0' : '200px',
+                      width: '280px'
+                    }}
                     data-testid={`step-${index}`}
                     onMouseEnter={() => setActiveStep(index)}
                   >
+                    {/* Node circle */}
+                    <div className="flex justify-center mb-4">
+                      <div className="relative">
+                        <div
+                          className={`w-20 h-20 rounded-full border-[3px] flex items-center justify-center transition-all duration-500 ${
+                            isActive
+                              ? 'bg-primary border-primary shadow-lg shadow-primary/30 scale-110'
+                              : isPast
+                              ? 'border-primary bg-primary'
+                              : 'bg-background border-border'
+                          }`}
+                        >
+                          <span
+                            className={`text-3xl font-display font-bold transition-colors ${
+                              isActive || isPast ? 'text-white' : 'text-muted-foreground'
+                            }`}
+                          >
+                            {step.number}
+                          </span>
+                        </div>
+                        {isActive && (
+                          <div className="absolute inset-0 rounded-full bg-primary opacity-20 blur-2xl animate-pulse" />
+                        )}
+                      </div>
+                    </div>
+
                     {/* Content card */}
-                    <div className={`flex-1 ${isLeft ? 'text-right pr-4' : 'text-left pl-4'}`}>
-                      <div
-                        className={`p-6 md:p-8 rounded-lg border-2 transition-all duration-500 ${
-                          isActive
-                            ? 'bg-card border-primary shadow-lg shadow-primary/10'
-                            : 'bg-card/50 border-border/50'
+                    <div
+                      className={`p-5 rounded-lg border-2 transition-all duration-500 ${
+                        isActive
+                          ? 'bg-card border-primary shadow-lg shadow-primary/10'
+                          : 'bg-card/50 border-border/50'
+                      }`}
+                    >
+                      <h3
+                        className={`text-lg font-semibold mb-2 transition-colors ${
+                          isActive ? 'text-primary' : 'text-foreground'
                         }`}
                       >
-                        <h3
-                          className={`text-xl md:text-2xl font-semibold mb-3 transition-colors ${
-                            isActive ? 'text-primary' : 'text-foreground'
-                          }`}
-                        >
-                          {step.title}
-                        </h3>
-                        <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                          {step.description}
-                        </p>
-                      </div>
+                        {step.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {step.description}
+                      </p>
                     </div>
-
-                    {/* Node circle - n8n/Zapier style */}
-                    <div className="relative flex-shrink-0 z-10">
-                      <div
-                        className={`w-24 h-24 rounded-full border-[3px] flex items-center justify-center transition-all duration-500 ${
-                          isActive
-                            ? 'bg-primary border-primary shadow-lg shadow-primary/30 scale-110'
-                            : isPast
-                            ? 'border-primary bg-primary'
-                            : 'bg-background border-border'
-                        }`}
-                      >
-                        <span
-                          className={`text-3xl md:text-4xl font-display font-bold transition-colors ${
-                            isActive || isPast ? 'text-white' : 'text-muted-foreground'
-                          }`}
-                        >
-                          {step.number}
-                        </span>
-                      </div>
-
-                      {/* Glow effect for active node */}
-                      {isActive && (
-                        <div className="absolute inset-0 rounded-full bg-primary opacity-20 blur-2xl animate-pulse" />
-                      )}
-                    </div>
-
-                    {/* Spacer */}
-                    <div className="flex-1" />
                   </div>
 
-                  {/* Straight connecting line between nodes */}
+                  {/* Connecting line to next node */}
                   {index < t.approach.steps.length - 1 && (
-                    <div className="relative h-20 flex items-center justify-center">
-                      <svg
-                        className="absolute inset-0 w-full h-full"
-                        viewBox="0 0 100 100"
-                        preserveAspectRatio="none"
-                      >
-                        {/* Straight line with dots */}
-                        <line
-                          x1="50"
-                          y1="0"
-                          x2="50"
-                          y2="100"
-                          stroke={isPast ? '#6EBFAA' : '#e4e4e7'}
-                          strokeWidth="2"
-                          strokeDasharray="4 4"
-                          className="transition-all duration-500"
-                        />
-                        
-                        {/* Connection dots */}
-                        <circle
-                          cx="50"
-                          cy="30"
-                          r="2"
-                          fill={isPast ? '#6EBFAA' : '#d4d4d8'}
-                          className="transition-all duration-500"
-                        />
-                        <circle
-                          cx="50"
-                          cy="70"
-                          r="2"
-                          fill={isPast ? '#6EBFAA' : '#d4d4d8'}
-                          className="transition-all duration-500"
-                        />
-                      </svg>
-                    </div>
+                    <svg
+                      className="absolute pointer-events-none"
+                      style={{
+                        left: `${rowPosition + 14}%`,
+                        top: isUpper ? '40px' : '240px',
+                        width: '11%',
+                        height: isUpper ? '220px' : '220px'
+                      }}
+                    >
+                      <defs>
+                        <marker
+                          id={`arrow-${index}`}
+                          markerWidth="6"
+                          markerHeight="6"
+                          refX="5"
+                          refY="3"
+                          orient="auto"
+                        >
+                          <path
+                            d="M 0 0 L 6 3 L 0 6 Z"
+                            fill={isPast ? '#6EBFAA' : '#e4e4e7'}
+                          />
+                        </marker>
+                      </defs>
+                      
+                      {/* Horizontal then diagonal line */}
+                      <path
+                        d={
+                          isUpper
+                            ? 'M 0 0 L 60 0 L 100 220'
+                            : 'M 0 180 L 60 180 L 100 0'
+                        }
+                        stroke={isPast ? '#6EBFAA' : '#e4e4e7'}
+                        strokeWidth="2"
+                        strokeDasharray="4 4"
+                        fill="none"
+                        markerEnd={`url(#arrow-${index})`}
+                        className="transition-all duration-500"
+                      />
+                      
+                      {/* Connection dot */}
+                      <circle
+                        cx={isUpper ? '60' : '60'}
+                        cy={isUpper ? '0' : '180'}
+                        r="2.5"
+                        fill={isPast ? '#6EBFAA' : '#d4d4d8'}
+                        className="transition-all duration-500"
+                      />
+                    </svg>
                   )}
                 </div>
               );
             })}
           </div>
+          
+          {/* Container height */}
+          <div style={{ height: '480px' }} />
         </div>
 
         {/* Mobile: Classic vertical timeline (circles left, content right) */}
