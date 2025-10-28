@@ -1,9 +1,18 @@
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Play } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Hero() {
   const { t } = useLanguage();
+  const [nodeAnimation, setNodeAnimation] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setNodeAnimation(prev => (prev + 1) % 3);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
 
   const scrollToContact = () => {
     const element = document.getElementById('contact');
@@ -13,63 +22,95 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-[90vh] flex items-center justify-center relative overflow-hidden">
-      {/* Subtle geometric accent */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      
-      <div className="max-w-6xl mx-auto px-6 md:px-12 py-20 md:py-32 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Logo mark above title */}
-          <div className="mb-12 flex justify-center">
-            <div className="w-20 h-20 bg-primary rounded-xl flex items-center justify-center">
-              <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                <path d="M24 12C18 12 12 16 12 22C12 28 18 30 24 32C30 34 36 36 36 42C36 48 30 52 24 52M24 12C30 12 36 16 36 22M24 52C18 52 12 48 12 42" stroke="white" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </div>
+    <section className="min-h-[95vh] flex items-center justify-center relative overflow-hidden bg-background">
+      {/* Animated connection nodes - subtle circuit board aesthetic */}
+      <div className="absolute inset-0 overflow-hidden opacity-30">
+        <svg className="absolute top-1/4 right-1/4 w-96 h-96" viewBox="0 0 400 400">
+          <circle 
+            cx="50" cy="50" r="4" 
+            fill="#6EBFAA"
+            className={`transition-all duration-1000 ${nodeAnimation === 0 ? 'opacity-100 scale-150' : 'opacity-40'}`}
+          />
+          <circle 
+            cx="200" cy="100" r="4" 
+            fill="#6EBFAA"
+            className={`transition-all duration-1000 ${nodeAnimation === 1 ? 'opacity-100 scale-150' : 'opacity-40'}`}
+          />
+          <circle 
+            cx="350" cy="150" r="4" 
+            fill="#6EBFAA"
+            className={`transition-all duration-1000 ${nodeAnimation === 2 ? 'opacity-100 scale-150' : 'opacity-40'}`}
+          />
+          <line x1="50" y1="50" x2="200" y2="100" stroke="#6EBFAA" strokeWidth="1" opacity="0.3" />
+          <line x1="200" y1="100" x2="350" y2="150" stroke="#6EBFAA" strokeWidth="1" opacity="0.3" />
+        </svg>
+      </div>
+
+      <div className="max-w-6xl mx-auto px-6 md:px-12 py-20 relative z-10">
+        <div className="max-w-5xl mx-auto text-center">
+          {/* Pre-title with mint accent */}
+          <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full border border-primary/20 bg-primary/5">
+            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+            <span className="text-sm font-medium text-foreground">{t.hero.preTitle}</span>
           </div>
 
-          <h1 className="text-hero-mobile md:text-hero font-display font-bold text-foreground mb-8">
-            {t.hero.title}
+          {/* Tiered headline hierarchy */}
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-foreground mb-6 leading-[1.05] tracking-tight">
+            {t.hero.title.split('. ').map((part, i) => (
+              <span key={i} className="block" style={{ animationDelay: `${i * 100}ms` }}>
+                {part}{i < t.hero.title.split('. ').length - 1 && '.'}
+              </span>
+            ))}
           </h1>
 
-          <div className="space-y-8 mb-12">
-            <div className="max-w-2xl mx-auto">
-              <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-3">
-                {t.whyHowWhat.why.label}
-              </h2>
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                {t.whyHowWhat.why.text}
-              </p>
-            </div>
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed">
+            {t.hero.subtitle}
+          </p>
 
-            <div className="max-w-2xl mx-auto">
-              <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-3">
-                {t.whyHowWhat.how.label}
-              </h2>
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                {t.whyHowWhat.how.text}
-              </p>
-            </div>
-
-            <div className="max-w-2xl mx-auto">
-              <h2 className="text-xl md:text-2xl font-semibold text-foreground mb-3">
-                {t.whyHowWhat.what.label}
-              </h2>
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                {t.whyHowWhat.what.text}
-              </p>
-            </div>
+          {/* Dual CTAs */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+            <Button
+              size="lg"
+              onClick={scrollToContact}
+              className="text-base px-8 min-h-12 shadow-lg shadow-primary/20"
+              data-testid="button-cta-primary"
+            >
+              {t.hero.ctaPrimary}
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              onClick={() => console.log('Cases clicked')}
+              className="text-base px-8 min-h-12 border-2"
+              data-testid="button-cta-secondary"
+            >
+              <Play className="mr-2 h-4 w-4" />
+              {t.hero.ctaSecondary}
+            </Button>
           </div>
 
-          <Button
-            size="lg"
-            onClick={scrollToContact}
-            className="text-base px-8 min-h-12"
-            data-testid="button-cta-hero"
-          >
-            {t.hero.cta}
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
+          {/* Trust line */}
+          <div className="flex items-center justify-center gap-3 text-sm text-muted-foreground">
+            <div className="flex -space-x-2">
+              {[1, 2, 3, 4].map((i) => (
+                <div 
+                  key={i}
+                  className="w-8 h-8 rounded-full bg-primary/20 border-2 border-background flex items-center justify-center text-xs font-semibold text-primary"
+                >
+                  {String.fromCharCode(64 + i)}
+                </div>
+              ))}
+            </div>
+            <span>{t.hero.trustLine}</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex items-start justify-center p-2">
+          <div className="w-1 h-2 rounded-full bg-muted-foreground/50" />
         </div>
       </div>
     </section>

@@ -1,25 +1,64 @@
 {
   "nav": {
-    "about": "About",
+    "outcomes": "Outcomes",
+    "approach": "Approach",
+    "about": "Team",
     "contact": "Contact"
   },
   "hero": {
-    "title": "AI that gives you time back",
-    "cta": "Schedule a consultation"
+    "preTitle": "Schakel AI",
+    "title": "Peace. Performance. Progress.",
+    "subtitle": "We activate AI where it truly matters: in your processes, your team, your results.",
+    "ctaPrimary": "Schedule a call",
+    "ctaSecondary": "View cases",
+    "trustLine": "Helped 15+ companies scale"
   },
-  "whyHowWhat": {
-    "why": {
-      "label": "Why",
-      "text": "Companies move too slowly. We make them relevant again."
-    },
-    "how": {
-      "label": "How",
-      "text": "We redesign processes and build pragmatic AI solutions."
-    },
-    "what": {
-      "label": "What",
-      "text": "Workflows, automation, and AI agents. More output, lower costs."
-    }
+  "outcomes": {
+    "title": "What you get",
+    "subtitle": "Measurable impact, not abstract promises",
+    "items": [
+      {
+        "metric": "40%",
+        "label": "Time saved",
+        "description": "Average reduction in manual tasks within 3 months"
+      },
+      {
+        "metric": "3x",
+        "label": "Speed",
+        "description": "Acceleration of critical processes through smart automation"
+      },
+      {
+        "metric": "100%",
+        "label": "Pragmatic",
+        "description": "Solutions that work, not tech for tech's sake"
+      }
+    ]
+  },
+  "approach": {
+    "title": "How we activate",
+    "subtitle": "From insight to impact in 4 weeks",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Discovery",
+        "description": "We analyze your processes and identify the biggest opportunities"
+      },
+      {
+        "number": "02",
+        "title": "Design",
+        "description": "Together we set priorities and design the solution"
+      },
+      {
+        "number": "03",
+        "title": "Implementation",
+        "description": "We build, test and integrate with your existing workflow"
+      },
+      {
+        "number": "04",
+        "title": "Optimization",
+        "description": "Continuous improvement based on data and feedback"
+      }
+    ]
   },
   "about": {
     "title": "About us",

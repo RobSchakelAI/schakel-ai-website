@@ -1,25 +1,64 @@
 {
   "nav": {
-    "about": "Over ons",
+    "outcomes": "Resultaten",
+    "approach": "Aanpak",
+    "about": "Team",
     "contact": "Contact"
   },
   "hero": {
-    "title": "AI die tijd teruggeeft",
-    "cta": "Plan een verkenning"
+    "preTitle": "Schakel AI",
+    "title": "Rust. Rendement. Relevantie.",
+    "subtitle": "We schakelen AI in waar het écht telt: in uw processen, uw team, uw resultaat.",
+    "ctaPrimary": "Plan een gesprek",
+    "ctaSecondary": "Bekijk cases",
+    "trustLine": "Al 15+ bedrijven verder geholpen"
   },
-  "whyHowWhat": {
-    "why": {
-      "label": "Waarom",
-      "text": "Bedrijven bewegen te traag. Wij maken ze weer relevant."
-    },
-    "how": {
-      "label": "Hoe",
-      "text": "We herontwerpen processen en bouwen pragmatische AI-oplossingen."
-    },
-    "what": {
-      "label": "Wat",
-      "text": "Workflows, automatisering en AI-agents. Meer output, minder kosten."
-    }
+  "outcomes": {
+    "title": "Wat u krijgt",
+    "subtitle": "Meetbare impact, geen abstracte beloftes",
+    "items": [
+      {
+        "metric": "40%",
+        "label": "Tijdwinst",
+        "description": "Gemiddelde reductie in handmatige taken binnen 3 maanden"
+      },
+      {
+        "metric": "3x",
+        "label": "Snelheid",
+        "description": "Versnelling van kritieke processen door slimme automatisering"
+      },
+      {
+        "metric": "100%",
+        "label": "Pragmatisch",
+        "description": "Oplossingen die werken, geen tech om de tech"
+      }
+    ]
+  },
+  "approach": {
+    "title": "Hoe we schakelen",
+    "subtitle": "Van inzicht naar impact in 4 weken",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Verkenning",
+        "description": "We analyseren uw processen en identificeren de grootste kansen"
+      },
+      {
+        "number": "02",
+        "title": "Ontwerp",
+        "description": "Samen stellen we prioriteiten en ontwerpen we de oplossing"
+      },
+      {
+        "number": "03",
+        "title": "Implementatie",
+        "description": "We bouwen, testen en integreren met uw bestaande werkwijze"
+      },
+      {
+        "number": "04",
+        "title": "Verbetering",
+        "description": "Continue optimalisatie op basis van data en feedback"
+      }
+    ]
   },
   "about": {
     "title": "Over ons",
