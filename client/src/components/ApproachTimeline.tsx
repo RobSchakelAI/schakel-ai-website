@@ -104,25 +104,26 @@ export default function ApproachTimeline() {
 
                   {/* Curved connecting line between steps */}
                   {index < t.approach.steps.length - 1 && (
-                    <div className="relative h-32 md:h-40 flex items-center justify-center">
-                      {/* SVG curved line */}
+                    <div className="relative h-16 md:h-40 flex items-center justify-center">
+                      {/* Desktop: SVG curved line */}
                       <svg
-                        className="absolute inset-0 w-full h-full"
+                        className="hidden md:block absolute inset-0 w-full h-full"
                         viewBox="0 0 100 100"
                         preserveAspectRatio="none"
                       >
                         <defs>
                           <marker
                             id={`arrow-${index}`}
-                            markerWidth="8"
-                            markerHeight="8"
-                            refX="7"
-                            refY="4"
+                            markerWidth="6"
+                            markerHeight="6"
+                            refX="5"
+                            refY="3"
                             orient="auto"
                           >
                             <path
-                              d="M 0 0 L 8 4 L 0 8 Z"
-                              fill={isPast ? '#6EBFAA' : '#d4d4d8'}
+                              d="M 0 0 L 6 3 L 0 6 Z"
+                              fill={isPast ? '#6EBFAA' : '#e4e4e7'}
+                              opacity={isPast ? "0.5" : "0.3"}
                             />
                           </marker>
                         </defs>
@@ -131,21 +132,22 @@ export default function ApproachTimeline() {
                         <path
                           d={
                             isLeft
-                              ? 'M 50 5 Q 70 50, 50 95'
-                              : 'M 50 5 Q 30 50, 50 95'
+                              ? 'M 50 5 Q 65 50, 50 95'
+                              : 'M 50 5 Q 35 50, 50 95'
                           }
-                          stroke={isPast ? '#6EBFAA' : '#d4d4d8'}
-                          strokeWidth="3"
+                          stroke={isPast ? '#6EBFAA' : '#e4e4e7'}
+                          strokeWidth="1.5"
                           fill="none"
+                          opacity={isPast ? "0.5" : "0.3"}
                           markerEnd={`url(#arrow-${index})`}
                           className="transition-all duration-500"
                         />
                       </svg>
 
-                      {/* Decorative dots along the curve */}
+                      {/* Desktop: Decorative dots along the curve */}
                       <div
-                        className={`absolute w-3 h-3 rounded-full transition-all duration-500 z-10 ${
-                          isPast ? 'bg-primary' : 'bg-border'
+                        className={`hidden md:block absolute w-2 h-2 rounded-full transition-all duration-500 z-10 ${
+                          isPast ? 'bg-primary/40' : 'bg-border/40'
                         }`}
                         style={{
                           left: isLeft ? '60%' : '40%',
@@ -155,7 +157,7 @@ export default function ApproachTimeline() {
                       />
                       
                       {/* Mobile: Simple arrow down */}
-                      <div className="md:hidden">
+                      <div className="md:hidden flex items-center justify-center">
                         <ArrowDown 
                           className={`w-8 h-8 transition-colors ${
                             isPast ? 'text-primary' : 'text-border'
