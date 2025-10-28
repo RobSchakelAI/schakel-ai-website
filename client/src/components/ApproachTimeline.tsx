@@ -28,7 +28,7 @@ export default function ApproachTimeline() {
         <div className="hidden md:block max-w-6xl mx-auto relative">
           <div className="relative" style={{ height: '500px' }}>
             {/* SVG layer for all connecting lines */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 5 }}>
+            <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 5 }} viewBox="0 0 1000 500" preserveAspectRatio="none">
               <defs>
                 <marker
                   id="arrow-active"
@@ -54,43 +54,46 @@ export default function ApproachTimeline() {
 
               {/* Connection from step 1 to step 2 */}
               <path
-                d="M 16% 20% L 21% 20% L 21% 60% L 29% 60%"
+                d="M 160 100 L 210 100 L 210 300 L 290 300"
                 stroke={activeStep >= 1 ? '#6EBFAA' : '#e4e4e7'}
                 strokeWidth="2"
                 strokeDasharray="6 4"
                 fill="none"
                 markerEnd={activeStep >= 1 ? 'url(#arrow-active)' : 'url(#arrow-inactive)'}
+                vectorEffect="non-scaling-stroke"
               />
 
               {/* Connection from step 2 to step 3 */}
               <path
-                d="M 41% 60% L 46% 60% L 46% 20% L 54% 20%"
+                d="M 410 300 L 460 300 L 460 100 L 540 100"
                 stroke={activeStep >= 2 ? '#6EBFAA' : '#e4e4e7'}
                 strokeWidth="2"
                 strokeDasharray="6 4"
                 fill="none"
                 markerEnd={activeStep >= 2 ? 'url(#arrow-active)' : 'url(#arrow-inactive)'}
+                vectorEffect="non-scaling-stroke"
               />
 
               {/* Connection from step 3 to step 4 */}
               <path
-                d="M 66% 20% L 71% 20% L 71% 60% L 79% 60%"
+                d="M 660 100 L 710 100 L 710 300 L 790 300"
                 stroke={activeStep >= 3 ? '#6EBFAA' : '#e4e4e7'}
                 strokeWidth="2"
                 strokeDasharray="6 4"
                 fill="none"
                 markerEnd={activeStep >= 3 ? 'url(#arrow-active)' : 'url(#arrow-inactive)'}
+                vectorEffect="non-scaling-stroke"
               />
 
               {/* Decorative dots at corners */}
-              <circle cx="21%" cy="20%" r="3" fill={activeStep >= 1 ? '#6EBFAA' : '#d4d4d8'} />
-              <circle cx="21%" cy="60%" r="3" fill={activeStep >= 1 ? '#6EBFAA' : '#d4d4d8'} />
+              <circle cx="210" cy="100" r="4" fill={activeStep >= 1 ? '#6EBFAA' : '#d4d4d8'} />
+              <circle cx="210" cy="300" r="4" fill={activeStep >= 1 ? '#6EBFAA' : '#d4d4d8'} />
               
-              <circle cx="46%" cy="60%" r="3" fill={activeStep >= 2 ? '#6EBFAA' : '#d4d4d8'} />
-              <circle cx="46%" cy="20%" r="3" fill={activeStep >= 2 ? '#6EBFAA' : '#d4d4d8'} />
+              <circle cx="460" cy="300" r="4" fill={activeStep >= 2 ? '#6EBFAA' : '#d4d4d8'} />
+              <circle cx="460" cy="100" r="4" fill={activeStep >= 2 ? '#6EBFAA' : '#d4d4d8'} />
               
-              <circle cx="71%" cy="20%" r="3" fill={activeStep >= 3 ? '#6EBFAA' : '#d4d4d8'} />
-              <circle cx="71%" cy="60%" r="3" fill={activeStep >= 3 ? '#6EBFAA' : '#d4d4d8'} />
+              <circle cx="710" cy="100" r="4" fill={activeStep >= 3 ? '#6EBFAA' : '#d4d4d8'} />
+              <circle cx="710" cy="300" r="4" fill={activeStep >= 3 ? '#6EBFAA' : '#d4d4d8'} />
             </svg>
 
             {/* Step nodes */}
@@ -117,17 +120,17 @@ export default function ApproachTimeline() {
                   <div className="flex justify-center mb-4">
                     <div className="relative">
                       <div
-                        className={`w-20 h-20 rounded-full border-[3px] flex items-center justify-center transition-all duration-500 bg-background ${
+                        className={`w-20 h-20 rounded-full border-[3px] flex items-center justify-center transition-all duration-500 ${
                           isActive
-                            ? 'border-primary shadow-lg shadow-primary/30 scale-110'
+                            ? 'bg-primary border-primary shadow-lg shadow-primary/30 scale-110'
                             : isPast
-                            ? 'border-primary'
-                            : 'border-border'
+                            ? 'bg-primary border-primary'
+                            : 'bg-background border-border'
                         }`}
                       >
                         <span
                           className={`text-3xl font-display font-bold transition-colors ${
-                            isActive || isPast ? 'text-primary' : 'text-muted-foreground'
+                            isActive || isPast ? 'text-white' : 'text-muted-foreground'
                           }`}
                         >
                           {step.number}
