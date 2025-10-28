@@ -93,15 +93,15 @@ export default function ApproachTimeline() {
                     </div>
                   </div>
 
-                  {/* Connecting line to next node */}
+                  {/* Connecting line to next node - smooth curve from circle to circle */}
                   {index < t.approach.steps.length - 1 && (
                     <svg
                       className="absolute pointer-events-none"
                       style={{
-                        left: `${rowPosition + 14}%`,
-                        top: isUpper ? '40px' : '240px',
-                        width: '11%',
-                        height: isUpper ? '220px' : '220px'
+                        left: `${rowPosition + 7}%`,
+                        top: isUpper ? '50px' : '10px',
+                        width: '18%',
+                        height: '200px'
                       }}
                     >
                       <defs>
@@ -120,25 +120,32 @@ export default function ApproachTimeline() {
                         </marker>
                       </defs>
                       
-                      {/* Horizontal then diagonal line */}
+                      {/* Smooth curved line from circle to circle */}
                       <path
                         d={
                           isUpper
-                            ? 'M 0 0 L 60 0 L 100 220'
-                            : 'M 0 180 L 60 180 L 100 0'
+                            ? 'M 0 0 Q 50 50, 100 200'
+                            : 'M 0 190 Q 50 140, 100 0'
                         }
                         stroke={isPast ? '#6EBFAA' : '#e4e4e7'}
                         strokeWidth="2"
-                        strokeDasharray="4 4"
+                        strokeDasharray="6 4"
                         fill="none"
                         markerEnd={`url(#arrow-${index})`}
                         className="transition-all duration-500"
                       />
                       
-                      {/* Connection dot */}
+                      {/* Connection dots along the curve */}
                       <circle
-                        cx={isUpper ? '60' : '60'}
-                        cy={isUpper ? '0' : '180'}
+                        cx="33"
+                        cy={isUpper ? '33' : '157'}
+                        r="2.5"
+                        fill={isPast ? '#6EBFAA' : '#d4d4d8'}
+                        className="transition-all duration-500"
+                      />
+                      <circle
+                        cx="66"
+                        cy={isUpper ? '133' : '57'}
                         r="2.5"
                         fill={isPast ? '#6EBFAA' : '#d4d4d8'}
                         className="transition-all duration-500"
