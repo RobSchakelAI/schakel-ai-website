@@ -28,11 +28,11 @@ export default function ApproachTimeline() {
         <div className="max-w-4xl mx-auto" ref={timelineRef}>
           <div className="relative">
             {/* Vertical circuit line - main connection */}
-            <div className="absolute left-8 md:left-12 top-16 bottom-16 w-0.5 bg-border" />
+            <div className="absolute left-8 md:left-12 top-16 bottom-16 w-0.5 bg-border z-0" />
             
             {/* Animated pulse line that follows activeStep */}
             <div 
-              className="absolute left-8 md:left-12 top-16 w-0.5 bg-gradient-to-b from-primary via-primary to-transparent transition-all duration-1000"
+              className="absolute left-8 md:left-12 top-16 w-0.5 bg-gradient-to-b from-primary via-primary to-transparent transition-all duration-1000 z-0"
               style={{
                 height: `${(activeStep + 1) * 25}%`
               }}
