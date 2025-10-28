@@ -57,13 +57,13 @@ export default function ApproachTimeline() {
                           isActive 
                             ? 'bg-primary border-primary shadow-lg shadow-primary/40 scale-110' 
                             : isPast
-                            ? 'bg-primary border-primary'
+                            ? 'bg-primary/10 border-primary/30'
                             : 'bg-background border-border'
                         }`}
                       >
                         <span 
                           className={`text-2xl md:text-3xl font-display font-bold transition-colors ${
-                            isActive || isPast ? 'text-white' : 'text-muted-foreground'
+                            isActive ? 'text-white' : 'text-muted-foreground'
                           }`}
                         >
                           {step.number}
