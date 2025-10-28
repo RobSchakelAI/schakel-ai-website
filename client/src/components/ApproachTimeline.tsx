@@ -57,9 +57,10 @@ export default function ApproachTimeline() {
                           isActive 
                             ? 'bg-primary border-primary shadow-lg shadow-primary/40 scale-110' 
                             : isPast
-                            ? 'bg-primary/10 border-primary/30'
+                            ? 'border-[#B8E5D9]'
                             : 'bg-background border-border'
                         }`}
+                        style={isPast ? { backgroundColor: '#E8F6F3' } : undefined}
                       >
                         <span 
                           className={`text-2xl md:text-3xl font-display font-bold transition-colors ${
