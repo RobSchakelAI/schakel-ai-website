@@ -24,141 +24,144 @@ export default function ApproachTimeline() {
           </p>
         </div>
 
-        {/* Desktop: Node flow diagram - horizontal zigzag */}
+        {/* Desktop: Node flow diagram - horizontal with smart routing */}
         <div className="hidden md:block max-w-6xl mx-auto relative">
-          <div className="relative">
+          <div className="relative" style={{ height: '500px' }}>
+            {/* SVG layer for all connecting lines */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 5 }}>
+              <defs>
+                <marker
+                  id="arrow-active"
+                  markerWidth="8"
+                  markerHeight="8"
+                  refX="6"
+                  refY="4"
+                  orient="auto"
+                >
+                  <path d="M 0 0 L 8 4 L 0 8 Z" fill="#6EBFAA" />
+                </marker>
+                <marker
+                  id="arrow-inactive"
+                  markerWidth="8"
+                  markerHeight="8"
+                  refX="6"
+                  refY="4"
+                  orient="auto"
+                >
+                  <path d="M 0 0 L 8 4 L 0 8 Z" fill="#e4e4e7" />
+                </marker>
+              </defs>
+
+              {/* Connection from step 1 to step 2 */}
+              <path
+                d="M 16% 20% L 21% 20% L 21% 60% L 29% 60%"
+                stroke={activeStep >= 1 ? '#6EBFAA' : '#e4e4e7'}
+                strokeWidth="2"
+                strokeDasharray="6 4"
+                fill="none"
+                markerEnd={activeStep >= 1 ? 'url(#arrow-active)' : 'url(#arrow-inactive)'}
+              />
+
+              {/* Connection from step 2 to step 3 */}
+              <path
+                d="M 41% 60% L 46% 60% L 46% 20% L 54% 20%"
+                stroke={activeStep >= 2 ? '#6EBFAA' : '#e4e4e7'}
+                strokeWidth="2"
+                strokeDasharray="6 4"
+                fill="none"
+                markerEnd={activeStep >= 2 ? 'url(#arrow-active)' : 'url(#arrow-inactive)'}
+              />
+
+              {/* Connection from step 3 to step 4 */}
+              <path
+                d="M 66% 20% L 71% 20% L 71% 60% L 79% 60%"
+                stroke={activeStep >= 3 ? '#6EBFAA' : '#e4e4e7'}
+                strokeWidth="2"
+                strokeDasharray="6 4"
+                fill="none"
+                markerEnd={activeStep >= 3 ? 'url(#arrow-active)' : 'url(#arrow-inactive)'}
+              />
+
+              {/* Decorative dots at corners */}
+              <circle cx="21%" cy="20%" r="3" fill={activeStep >= 1 ? '#6EBFAA' : '#d4d4d8'} />
+              <circle cx="21%" cy="60%" r="3" fill={activeStep >= 1 ? '#6EBFAA' : '#d4d4d8'} />
+              
+              <circle cx="46%" cy="60%" r="3" fill={activeStep >= 2 ? '#6EBFAA' : '#d4d4d8'} />
+              <circle cx="46%" cy="20%" r="3" fill={activeStep >= 2 ? '#6EBFAA' : '#d4d4d8'} />
+              
+              <circle cx="71%" cy="20%" r="3" fill={activeStep >= 3 ? '#6EBFAA' : '#d4d4d8'} />
+              <circle cx="71%" cy="60%" r="3" fill={activeStep >= 3 ? '#6EBFAA' : '#d4d4d8'} />
+            </svg>
+
+            {/* Step nodes */}
             {t.approach.steps.map((step, index) => {
               const isActive = index === activeStep;
               const isPast = index < activeStep;
               const isUpper = index % 2 === 0;
-              const rowPosition = index * 25; // Horizontal progression
+              const leftPosition = 5 + index * 25; // 5%, 30%, 55%, 80%
 
               return (
-                <div key={index} className="relative">
-                  {/* Node positioned horizontally with zigzag */}
-                  <div
-                    className="absolute transition-all duration-500 z-10"
-                    style={{
-                      left: `${rowPosition}%`,
-                      top: isUpper ? '0' : '200px',
-                      width: '280px'
-                    }}
-                    data-testid={`step-${index}`}
-                    onMouseEnter={() => setActiveStep(index)}
-                  >
-                    {/* Node circle */}
-                    <div className="flex justify-center mb-4">
-                      <div className="relative">
-                        <div
-                          className={`w-20 h-20 rounded-full border-[3px] flex items-center justify-center transition-all duration-500 ${
-                            isActive
-                              ? 'bg-primary border-primary shadow-lg shadow-primary/30 scale-110'
-                              : isPast
-                              ? 'border-primary bg-primary'
-                              : 'bg-background border-border'
-                          }`}
-                        >
-                          <span
-                            className={`text-3xl font-display font-bold transition-colors ${
-                              isActive || isPast ? 'text-white' : 'text-muted-foreground'
-                            }`}
-                          >
-                            {step.number}
-                          </span>
-                        </div>
-                        {isActive && (
-                          <div className="absolute inset-0 rounded-full bg-primary opacity-20 blur-2xl animate-pulse" />
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Content card */}
-                    <div
-                      className={`p-5 rounded-lg border-2 transition-all duration-500 ${
-                        isActive
-                          ? 'bg-card border-primary shadow-lg shadow-primary/10'
-                          : 'bg-card/50 border-border/50'
-                      }`}
-                    >
-                      <h3
-                        className={`text-lg font-semibold mb-2 transition-colors ${
-                          isActive ? 'text-primary' : 'text-foreground'
+                <div
+                  key={index}
+                  className="absolute"
+                  style={{
+                    left: `${leftPosition}%`,
+                    top: isUpper ? '60px' : '240px',
+                    width: '220px',
+                    zIndex: 10
+                  }}
+                  data-testid={`step-${index}`}
+                  onMouseEnter={() => setActiveStep(index)}
+                >
+                  {/* Node circle */}
+                  <div className="flex justify-center mb-4">
+                    <div className="relative">
+                      <div
+                        className={`w-20 h-20 rounded-full border-[3px] flex items-center justify-center transition-all duration-500 bg-background ${
+                          isActive
+                            ? 'border-primary shadow-lg shadow-primary/30 scale-110'
+                            : isPast
+                            ? 'border-primary'
+                            : 'border-border'
                         }`}
                       >
-                        {step.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {step.description}
-                      </p>
+                        <span
+                          className={`text-3xl font-display font-bold transition-colors ${
+                            isActive || isPast ? 'text-primary' : 'text-muted-foreground'
+                          }`}
+                        >
+                          {step.number}
+                        </span>
+                      </div>
+                      {isActive && (
+                        <div className="absolute inset-0 rounded-full bg-primary opacity-20 blur-2xl animate-pulse" />
+                      )}
                     </div>
                   </div>
 
-                  {/* Connecting line to next node - smooth curve from circle to circle */}
-                  {index < t.approach.steps.length - 1 && (
-                    <svg
-                      className="absolute pointer-events-none z-0"
-                      style={{
-                        left: `${rowPosition + 7}%`,
-                        top: isUpper ? '50px' : '10px',
-                        width: '18%',
-                        height: '200px'
-                      }}
+                  {/* Content card */}
+                  <div
+                    className={`p-5 rounded-lg border-2 transition-all duration-500 bg-card ${
+                      isActive
+                        ? 'border-primary shadow-lg shadow-primary/10'
+                        : 'border-border/50'
+                    }`}
+                  >
+                    <h3
+                      className={`text-lg font-semibold mb-2 transition-colors ${
+                        isActive ? 'text-primary' : 'text-foreground'
+                      }`}
                     >
-                      <defs>
-                        <marker
-                          id={`arrow-${index}`}
-                          markerWidth="6"
-                          markerHeight="6"
-                          refX="5"
-                          refY="3"
-                          orient="auto"
-                        >
-                          <path
-                            d="M 0 0 L 6 3 L 0 6 Z"
-                            fill={isPast ? '#6EBFAA' : '#e4e4e7'}
-                          />
-                        </marker>
-                      </defs>
-                      
-                      {/* Smooth curved line from circle to circle */}
-                      <path
-                        d={
-                          isUpper
-                            ? 'M 0 0 Q 50 50, 100 200'
-                            : 'M 0 190 Q 50 140, 100 0'
-                        }
-                        stroke={isPast ? '#6EBFAA' : '#e4e4e7'}
-                        strokeWidth="2"
-                        strokeDasharray="6 4"
-                        fill="none"
-                        markerEnd={`url(#arrow-${index})`}
-                        className="transition-all duration-500"
-                      />
-                      
-                      {/* Connection dots along the curve */}
-                      <circle
-                        cx="33"
-                        cy={isUpper ? '33' : '157'}
-                        r="2.5"
-                        fill={isPast ? '#6EBFAA' : '#d4d4d8'}
-                        className="transition-all duration-500"
-                      />
-                      <circle
-                        cx="66"
-                        cy={isUpper ? '133' : '57'}
-                        r="2.5"
-                        fill={isPast ? '#6EBFAA' : '#d4d4d8'}
-                        className="transition-all duration-500"
-                      />
-                    </svg>
-                  )}
+                      {step.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
                 </div>
               );
             })}
           </div>
-          
-          {/* Container height */}
-          <div style={{ height: '480px' }} />
         </div>
 
         {/* Mobile: Classic vertical timeline (circles left, content right) */}
