@@ -68,7 +68,11 @@ export default function About() {
                   <h3 className="text-2xl font-display font-bold text-foreground mb-2" data-testid={`text-name-${founder.id}`}>
                     {founder.data.name}
                   </h3>
-                  <p className="text-base font-medium text-primary mb-1" data-testid={`text-role-${founder.id}`}>
+                  <p 
+                    className="text-base font-medium mb-1 transition-colors duration-300" 
+                    style={{ color: '#4b37bd' }}
+                    data-testid={`text-role-${founder.id}`}
+                  >
                     {founder.data.role}
                   </p>
                 </div>
