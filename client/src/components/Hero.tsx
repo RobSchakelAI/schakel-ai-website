@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import workflowImage from '@assets/generated_images/Transparent_background_workflow_diagram_3958407a.png';
+import workflowImage from '@assets/generated_images/Transparent_floating_workflow_elements_c21acd98.png';
 
 export default function Hero() {
   const { t } = useLanguage();
