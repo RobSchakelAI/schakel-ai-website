@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import dashboardImage from '@assets/stock_images/modern_ai_dashboard__03f9a5ab.jpg';
+import workflowImage from '@assets/generated_images/AI_workflow_automation_visualization_a8a27a5e.png';
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -127,12 +127,12 @@ export default function Hero() {
               {/* Mint glow effect */}
               <div className="absolute inset-0 bg-primary/10 blur-3xl rounded-full" />
               
-              {/* Dashboard image with subtle border */}
+              {/* Workflow visualization with subtle border */}
               <img
-                src={dashboardImage}
-                alt="AI Agent Dashboard Interface"
+                src={workflowImage}
+                alt="AI Agents en Workflow Automation"
                 className="relative rounded-lg shadow-2xl border border-primary/20"
-                data-testid="img-dashboard-mockup"
+                data-testid="img-workflow-visualization"
               />
               
               {/* Floating accent element */}
