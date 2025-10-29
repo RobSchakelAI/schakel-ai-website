@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import evaRobot from '@assets/generated_images/Sleek_mint_EVA_robot_0dbbdf45.png';
-import purpleBot from '@assets/generated_images/Purple_sleek_assistant_bot_47727238.png';
+import robotNetwork from '@assets/generated_images/Network_of_simple_robot_icons_2bb00a93.png';
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -122,120 +121,29 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right: AI Workflow Visualization */}
+          {/* Right: AI Agent Network Visualization */}
           <div className="relative hidden md:block">
             <div className="relative w-full h-[600px]" data-testid="container-workflow-visualization">
-              <svg
-                viewBox="0 0 500 600"
-                className="w-full h-full"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                {/* Define gradients */}
-                <defs>
-                  <linearGradient id="mintGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="#6EBFAA" stopOpacity="0.8" />
-                    <stop offset="100%" stopColor="#6EBFAA" stopOpacity="0.4" />
-                  </linearGradient>
-                  <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stopColor="rgb(69, 33, 211)" stopOpacity="0.8" />
-                    <stop offset="100%" stopColor="rgb(69, 33, 211)" stopOpacity="0.4" />
-                  </linearGradient>
-                  <filter id="glow">
-                    <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
-                    <feMerge>
-                      <feMergeNode in="coloredBlur"/>
-                      <feMergeNode in="SourceGraphic"/>
-                    </feMerge>
-                  </filter>
-                </defs>
-
-                {/* Connecting lines (animated) - flowing through robots */}
-                <line x1="120" y1="120" x2="180" y2="150" stroke="#6EBFAA" strokeWidth="3" opacity="0.5" strokeDasharray="8,8">
-                  <animate attributeName="stroke-dashoffset" from="0" to="16" dur="2s" repeatCount="indefinite" />
-                </line>
-                <line x1="220" y1="190" x2="280" y2="220" stroke="#6EBFAA" strokeWidth="3" opacity="0.5" strokeDasharray="8,8">
-                  <animate attributeName="stroke-dashoffset" from="0" to="16" dur="2s" repeatCount="indefinite" />
-                </line>
-                <line x1="320" y1="260" x2="380" y2="140" stroke="rgb(69, 33, 211)" strokeWidth="3" opacity="0.5" strokeDasharray="8,8">
-                  <animate attributeName="stroke-dashoffset" from="0" to="16" dur="2.5s" repeatCount="indefinite" />
-                </line>
-                <line x1="300" y1="280" x2="300" y2="360" stroke="#6EBFAA" strokeWidth="3" opacity="0.5" strokeDasharray="8,8">
-                  <animate attributeName="stroke-dashoffset" from="0" to="16" dur="3s" repeatCount="indefinite" />
-                </line>
-                <line x1="120" y1="400" x2="260" y2="380" stroke="rgb(69, 33, 211)" strokeWidth="3" opacity="0.5" strokeDasharray="8,8">
-                  <animate attributeName="stroke-dashoffset" from="0" to="16" dur="2.2s" repeatCount="indefinite" />
-                </line>
-                <line x1="340" y1="380" x2="380" y2="400" stroke="#6EBFAA" strokeWidth="3" opacity="0.5" strokeDasharray="8,8">
-                  <animate attributeName="stroke-dashoffset" from="0" to="16" dur="2.8s" repeatCount="indefinite" />
-                </line>
-                <line x1="300" y1="410" x2="250" y2="480" stroke="rgb(69, 33, 211)" strokeWidth="3" opacity="0.5" strokeDasharray="8,8">
-                  <animate attributeName="stroke-dashoffset" from="0" to="16" dur="3.5s" repeatCount="indefinite" />
-                </line>
-
-                {/* Input node - top left */}
-                <g filter="url(#glow)">
-                  <circle cx="120" cy="120" r="35" fill="url(#mintGradient)" stroke="#6EBFAA" strokeWidth="3">
-                    <animate attributeName="r" values="35;40;35" dur="2.8s" repeatCount="indefinite" />
-                  </circle>
-                </g>
-
-                {/* Processing node - top right */}
-                <g filter="url(#glow)">
-                  <rect x="350" y="110" width="60" height="60" rx="12" fill="url(#purpleGradient)" stroke="rgb(69, 33, 211)" strokeWidth="3">
-                    <animate attributeName="opacity" values="0.6;1;0.6" dur="3.5s" repeatCount="indefinite" />
-                  </rect>
-                </g>
-
-                {/* Data node - bottom left */}
-                <g filter="url(#glow)">
-                  <circle cx="120" cy="400" r="35" fill="url(#mintGradient)" stroke="#6EBFAA" strokeWidth="3">
-                    <animate attributeName="r" values="35;40;35" dur="2.8s" repeatCount="indefinite" />
-                  </circle>
-                </g>
-
-                {/* Output node - bottom right */}
-                <g filter="url(#glow)">
-                  <circle cx="380" cy="400" r="35" fill="url(#purpleGradient)" stroke="rgb(69, 33, 211)" strokeWidth="3">
-                    <animate attributeName="r" values="35;40;35" dur="3.2s" repeatCount="indefinite" />
-                  </circle>
-                </g>
-
-                {/* Result node - bottom center */}
-                <g filter="url(#glow)">
-                  <rect x="220" y="450" width="60" height="60" rx="12" fill="url(#purpleGradient)" stroke="rgb(69, 33, 211)" strokeWidth="3">
-                    <animate attributeName="opacity" values="0.6;1;0.6" dur="3.8s" repeatCount="indefinite" />
-                  </rect>
-                </g>
-              </svg>
-
-              {/* EVA-style AI Agents - integrated as workflow nodes */}
-              
-              {/* Main mint EVA robot - center of workflow */}
-              <div className="absolute" style={{ top: '30%', left: '40%', transform: 'translate(-50%, -50%)' }}>
-                <div className="relative">
-                  {/* Glow effect behind robot */}
-                  <div className="absolute inset-0 bg-primary/30 blur-2xl rounded-full scale-150" />
-                  <img 
-                    src={evaRobot}
-                    alt="AI Agent EVA"
-                    className="relative w-32 h-32 object-contain drop-shadow-2xl"
-                    style={{ animation: 'float 3s ease-in-out infinite' }}
-                  />
-                </div>
+              {/* Background gradient orbs for depth */}
+              <div className="absolute inset-0 overflow-hidden opacity-30">
+                <div 
+                  className="absolute top-10 right-20 w-96 h-96 rounded-full blur-3xl"
+                  style={{ background: 'radial-gradient(circle, rgba(69, 33, 211, 0.4) 0%, transparent 70%)' }}
+                />
+                <div 
+                  className="absolute bottom-10 left-10 w-80 h-80 rounded-full blur-3xl"
+                  style={{ background: 'radial-gradient(circle, rgba(110, 191, 170, 0.4) 0%, transparent 70%)' }}
+                />
               </div>
 
-              {/* Purple assistant bot - integrated in workflow */}
-              <div className="absolute" style={{ top: '62%', left: '60%', transform: 'translate(-50%, -50%)' }}>
-                <div className="relative">
-                  {/* Glow effect behind robot */}
-                  <div className="absolute inset-0 bg-accent-purple/30 blur-xl rounded-full scale-150" />
-                  <img 
-                    src={purpleBot}
-                    alt="AI Assistant Bot"
-                    className="relative w-24 h-24 object-contain drop-shadow-2xl"
-                    style={{ animation: 'float 3.5s ease-in-out infinite' }}
-                  />
-                </div>
+              {/* AI Agent Network - complete illustration */}
+              <div className="relative w-full h-full flex items-center justify-center">
+                <img 
+                  src={robotNetwork}
+                  alt="AI Agent Network"
+                  className="w-full h-auto object-contain drop-shadow-2xl max-w-2xl"
+                  style={{ animation: 'float 4s ease-in-out infinite' }}
+                />
               </div>
             </div>
           </div>
