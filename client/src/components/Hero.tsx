@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import robotNetwork from '@assets/file_00000000aa24620ab88ba770cf951fa7_1761776326303.png';
+import robotNetwork from '@assets/file_000000006aa4620aaf6bcf0b4f0fe98b_1761776516517.png';
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -121,16 +121,13 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right: AI Agent Network Visualization - Seamless Integration */}
+          {/* Right: AI Agent Network Visualization */}
           <div className="relative hidden md:flex items-center justify-center" data-testid="container-workflow-visualization">
             <img 
               src={robotNetwork}
               alt="AI Agent Network"
-              className="w-full h-auto object-contain"
-              style={{ 
-                animation: 'float 4s ease-in-out infinite',
-                mixBlendMode: 'multiply'
-              }}
+              className="w-full max-w-xl h-auto object-contain rounded-xl"
+              style={{ animation: 'float 4s ease-in-out infinite' }}
             />
           </div>
         </div>
