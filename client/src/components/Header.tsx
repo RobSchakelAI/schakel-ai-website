@@ -41,6 +41,13 @@ export default function Header() {
 
         <nav className="hidden md:flex items-center gap-8">
           <button
+            onClick={() => scrollToSection('vision')}
+            className="text-sm font-medium text-foreground hover-elevate active-elevate-2 px-3 py-2 rounded-md"
+            data-testid="link-vision"
+          >
+            {t.nav.vision}
+          </button>
+          <button
             onClick={() => scrollToSection('approach')}
             className="text-sm font-medium text-foreground hover-elevate active-elevate-2 px-3 py-2 rounded-md"
             data-testid="link-approach"

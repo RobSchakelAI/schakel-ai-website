@@ -5,7 +5,7 @@ export default function Vision() {
   const { t } = useLanguage();
 
   return (
-    <section className="py-20 md:py-32 bg-gradient-to-b from-background to-muted/30">
+    <section id="vision" className="py-20 md:py-32 bg-gradient-to-b from-background to-muted/30">
       <div className="max-w-5xl mx-auto px-6 md:px-12">
         {/* Section header */}
         <div className="flex items-center justify-center gap-3 mb-12">
