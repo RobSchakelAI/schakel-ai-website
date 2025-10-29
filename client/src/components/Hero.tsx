@@ -103,7 +103,7 @@ export default function Hero() {
             <img 
               src={robotNetwork}
               alt="AI Agent Network"
-              className="w-full max-w-xl h-auto object-contain"
+              className="w-full h-auto object-contain"
             />
           </div>
         </div>
