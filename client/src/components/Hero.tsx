@@ -40,7 +40,6 @@ export default function Hero() {
             alt="AI Agent Network Background"
             className="w-full max-w-4xl h-auto object-contain opacity-20"
             style={{ 
-              animation: 'float 6s ease-in-out infinite',
               marginTop: '5vh'
             }}
           />
