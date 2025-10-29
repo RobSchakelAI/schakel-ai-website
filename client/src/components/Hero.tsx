@@ -32,8 +32,8 @@ export default function Hero() {
         }}
       />
 
-      {/* AI Agent Network Background - Centered Behind Text */}
-      <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none" data-testid="container-workflow-visualization">
+      {/* AI Agent Network Background - Below Hero Text */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none" data-testid="container-workflow-visualization">
         <img 
           src={robotNetwork}
           alt="AI Agent Network Background"
