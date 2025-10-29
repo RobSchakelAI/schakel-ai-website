@@ -37,7 +37,7 @@ export default function Hero() {
         <img 
           src={robotNetwork}
           alt="AI Agent Network Background"
-          className="max-w-3xl h-auto object-contain opacity-20"
+          className="max-w-3xl h-auto object-contain"
         />
       </div>
 
