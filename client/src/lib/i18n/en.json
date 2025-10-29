@@ -1,5 +1,6 @@
 {
   "nav": {
+    "vision": "Why",
     "approach": "Approach",
     "about": "Team",
     "contact": "Contact"
@@ -7,17 +8,17 @@
   "hero": {
     "preTitle": "Schakel AI",
     "title": "Peace & Performance through smart AI.",
-    "description": "Companies waste time on manual work while AI can take over. We implement smart automation that empowers your team, accelerates processes, and delivers measurable results. No abstract experiments—pragmatic solutions that make an impact from day one.",
+    "description": "Your time is too valuable to waste on work that AI can do. We automate what's possible, so you and your team have space for what truly matters. Pragmatic, measurable, impact from day one.",
     "ctaPrimary": "Schedule a call",
     "ctaSecondary": "View cases",
-    "trustLine": "Helped 15+ companies scale"
+    "trustLine": "Already helped 15+ companies"
   },
   "vision": {
     "title": "Why we do this",
     "content": [
-      "AI is changing the world. Not in ten years—now. Companies that don't move today fall behind competitors who do. The question is no longer if you should implement AI, but how quickly you can start.",
-      "We believe 'AI First' isn't a buzzword, but a necessity. It's how companies stay relevant, move faster, and create real competitive advantage. That's why we stopped what we were doing—to help businesses make this transition.",
-      "It's not about technology for technology's sake. It's about preparing companies for the future. About empowering teams, not replacing them. About creating peace and performance by smartly automating what can be automated."
+      "AI is changing our world. Not in five years, but now. Companies that don't move fall behind competitors who do. The question is no longer whether you'll implement AI, but how fast you start. The same goes for people: developing skills isn't a choice anymore, it's a must.",
+      "For us, 'AI First' isn't a buzzword but a must. That's why we stopped what we were doing and how we were working, and chose this new world. We learned new things, restructured processes, reconsidered everything, even our fields and skills. First make ourselves future-proof, then help others do the same.",
+      "We believe AI can make the world better. More productive, more fun, cooler. But that doesn't happen automatically. Let's tackle it together."
     ]
   },
   "approach": {
@@ -41,8 +42,8 @@
       },
       {
         "number": "04",
-        "title": "Optimization",
-        "description": "Continuous improvement based on data and feedback"
+        "title": "Improvement",
+        "description": "Continuous optimization based on data and feedback"
       }
     ]
   },
@@ -50,30 +51,30 @@
     "title": "About us",
     "rob": {
       "name": "Rob",
-      "role": "Co-founder",
-      "bio": "Rob combines entrepreneurial insight with practical implementation. With years of experience streamlining business processes, he focuses on concrete results and measurable impact. His no-nonsense approach ensures AI solutions add immediate value."
+      "role": "Co-founder & Tech",
+      "bio": "Rob switched from accounting to BI eight years ago. Started as a freelancer, later founded Easydash with Laura. He's a nerd who loves to dive deep into new technologies and figure out how things really work. The same happened with AI: he wanted to understand it completely. That technical precision and attention to detail enable him to translate complexity into workable solutions that not only work, but are also visually attractive and user-friendly. Because technology is only valuable when people actually use it."
     },
     "simon": {
       "name": "Simon",
-      "role": "Co-founder",
-      "bio": "Simon is product and tech-driven with an AI-first mindset. He translates complex technology into accessible solutions that actually work. His pragmatic innovation ensures businesses can leverage AI benefits without unnecessary complexity."
+      "role": "Co-founder & Business",
+      "bio": "Simon was the owner of ROI Financials for the past five years. He's good at optimizing processes, getting teams on board, and making change happen. When AI really broke through, he saw that half measures weren't enough anymore. He chose to fully switch and dive into AI. He combines commercial thinking with process knowledge and knows how to bring people along. No theoretical plans, but concrete steps that truly move organizations forward."
     }
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Ready to leverage AI? Let's connect.",
+    "subtitle": "Ready to switch gears? Let's talk.",
     "form": {
       "name": "Name",
       "email": "Email address",
       "company": "Company",
       "message": "Message",
       "submit": "Send message",
-      "success": "Thank you! We'll be in touch soon.",
+      "success": "Thank you! We'll get in touch as soon as possible.",
       "error": "Something went wrong. Please try again."
     }
   },
   "footer": {
-    "tagline": "Peace & Results",
+    "tagline": "Peace & Performance",
     "privacy": "Privacy",
     "disclaimer": "Disclaimer"
   }
