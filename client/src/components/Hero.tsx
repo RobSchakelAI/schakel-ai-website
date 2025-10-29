@@ -6,6 +6,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 export default function Hero() {
   const { t } = useLanguage();
   const [nodeAnimation, setNodeAnimation] = useState(0);
+  const [titleVariant, setTitleVariant] = useState(1);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -13,6 +14,16 @@ export default function Hero() {
     }, 2000);
     return () => clearInterval(interval);
   }, []);
+
+  const getTitleByVariant = () => {
+    switch(titleVariant) {
+      case 1: return t.hero.title;
+      case 2: return t.hero.titleVariant2;
+      case 3: return t.hero.titleVariant3;
+      case 4: return t.hero.titleVariant4;
+      default: return t.hero.title;
+    }
+  };
 
   const scrollToContact = () => {
     const element = document.getElementById('contact');
@@ -62,9 +73,27 @@ export default function Hero() {
             <span className="text-sm font-medium text-foreground">{t.hero.preTitle}</span>
           </div>
 
+          {/* Variant selector - TEMP for testing */}
+          <div className="mb-6 flex flex-wrap items-center justify-center gap-2">
+            {[1, 2, 3, 4].map((variant) => (
+              <button
+                key={variant}
+                onClick={() => setTitleVariant(variant)}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                  titleVariant === variant
+                    ? 'text-white'
+                    : 'bg-muted/50 text-muted-foreground hover-elevate'
+                }`}
+                style={titleVariant === variant ? { backgroundColor: '#4b37bd' } : undefined}
+              >
+                Variant {variant}
+              </button>
+            ))}
+          </div>
+
           {/* Main headline */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-foreground mb-8 leading-[1.05] tracking-tight">
-            {t.hero.title}
+            {getTitleByVariant()}
           </h1>
 
           {/* Value proposition - clear and powerful */}
