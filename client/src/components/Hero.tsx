@@ -127,11 +127,11 @@ export default function Hero() {
               {/* Mint glow effect */}
               <div className="absolute inset-0 bg-primary/10 blur-3xl rounded-full" />
               
-              {/* Workflow visualization with subtle border */}
+              {/* Workflow visualization */}
               <img
                 src={workflowImage}
                 alt="AI Agents en Workflow Automation"
-                className="relative rounded-lg shadow-2xl border border-primary/20"
+                className="relative w-full h-auto"
                 data-testid="img-workflow-visualization"
               />
               
