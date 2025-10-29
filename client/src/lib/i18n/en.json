@@ -7,11 +7,14 @@
   },
   "hero": {
     "preTitle": "Schakel AI",
-    "title": "Peace & Performance through smart AI.",
-    "description": "Your time is too valuable to waste on work that AI can do. We automate what's possible, so you and your team have space for what truly matters. Pragmatic, measurable, impact from day one.",
+    "title": "Stop wasting time on work AI can do.",
+    "titleVariant2": "The AI switch that makes your business future-proof.",
+    "titleVariant3": "Switching to AI. Ready for tomorrow.",
+    "titleVariant4": "From chaos to control. With AI.",
+    "description": "Your team has too much on its plate. Processes are sluggish. Tasks that could be automated aren't. We help SMBs reclaim time by deploying AI strategically. We show you where bottlenecks are, automate what we can, and bring clarity. So you and your team can focus on what truly adds value.",
     "ctaPrimary": "Schedule a call",
     "ctaSecondary": "View cases",
-    "trustLine": "Already helped 15+ companies"
+    "trustLine": "Already helped 15+ companies move forward"
   },
   "vision": {
     "title": "Why we do this",
