@@ -51,8 +51,14 @@ export default function About() {
                 {/* Avatar with mint rim */}
                 <div className="mb-6 flex justify-center">
                   <div className="relative">
-                    <Avatar className="w-32 h-32 border-4 border-primary/20 group-hover:border-[#4b37bd]/50 transition-all duration-500">
-                      <AvatarFallback className="bg-gradient-to-br from-primary/20 to-primary/10 text-primary text-4xl font-display font-bold group-hover:text-[#4b37bd] transition-colors duration-500">
+                    <Avatar className="w-32 h-32 border-4 border-[#4b37bd]/30 group-hover:border-[#4b37bd]/60 transition-all duration-500">
+                      <AvatarFallback 
+                        className="text-4xl font-display font-bold transition-colors duration-500"
+                        style={{
+                          background: 'linear-gradient(135deg, rgba(110, 191, 170, 0.15) 0%, rgba(75, 55, 189, 0.15) 100%)',
+                          color: '#4b37bd'
+                        }}
+                      >
                         {founder.initial}
                       </AvatarFallback>
                     </Avatar>
