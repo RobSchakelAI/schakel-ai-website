@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import workflowImage from '@assets/generated_images/Transparent_floating_workflow_elements_c21acd98.png';
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -123,20 +122,51 @@ export default function Hero() {
 
           {/* Right: Dashboard Mockup */}
           <div className="relative hidden md:block">
-            <div className="relative">
-              {/* Mint glow effect */}
-              <div className="absolute inset-0 bg-primary/10 blur-3xl rounded-full" />
-              
-              {/* Workflow visualization */}
-              <img
-                src={workflowImage}
-                alt="AI Agents en Workflow Automation"
-                className="relative w-full h-auto"
-                data-testid="img-workflow-visualization"
+            <div className="relative w-full h-[400px]" data-testid="container-workflow-visualization">
+              {/* Large mint orb - top left */}
+              <div 
+                className="absolute top-8 left-12 w-48 h-48 rounded-full blur-3xl opacity-40 animate-pulse"
+                style={{ 
+                  background: 'radial-gradient(circle, #6EBFAA 0%, transparent 70%)',
+                  animationDuration: '4s'
+                }}
               />
               
-              {/* Floating accent element */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-2xl animate-pulse" />
+              {/* Large purple orb - bottom right */}
+              <div 
+                className="absolute bottom-12 right-8 w-56 h-56 rounded-full blur-3xl opacity-30"
+                style={{ 
+                  background: 'radial-gradient(circle, rgb(69, 33, 211) 0%, transparent 70%)',
+                  animation: 'pulse 5s ease-in-out infinite'
+                }}
+              />
+              
+              {/* Medium mint orb - center */}
+              <div 
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full blur-2xl opacity-25"
+                style={{ 
+                  background: 'radial-gradient(circle, #6EBFAA 0%, transparent 70%)',
+                  animation: 'pulse 6s ease-in-out infinite'
+                }}
+              />
+              
+              {/* Small purple accent - top right */}
+              <div 
+                className="absolute top-20 right-16 w-32 h-32 rounded-full blur-2xl opacity-20 animate-pulse"
+                style={{ 
+                  background: 'radial-gradient(circle, rgb(69, 33, 211) 0%, transparent 70%)',
+                  animationDuration: '3s'
+                }}
+              />
+              
+              {/* Small mint accent - bottom left */}
+              <div 
+                className="absolute bottom-20 left-8 w-28 h-28 rounded-full blur-xl opacity-30"
+                style={{ 
+                  background: 'radial-gradient(circle, #6EBFAA 0%, transparent 70%)',
+                  animation: 'pulse 7s ease-in-out infinite'
+                }}
+              />
             </div>
           </div>
         </div>
