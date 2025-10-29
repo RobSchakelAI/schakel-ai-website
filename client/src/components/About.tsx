@@ -67,9 +67,11 @@ export default function About() {
                   </p>
                 </div>
 
-                <p className="text-base text-foreground/80 leading-relaxed mb-6 text-center" data-testid={`text-bio-${founder.id}`}>
-                  {founder.data.bio}
-                </p>
+                <div className="mb-6 pl-6 border-l-4 border-primary/40">
+                  <p className="text-base text-foreground/80 leading-relaxed text-left" data-testid={`text-bio-${founder.id}`}>
+                    {founder.data.bio}
+                  </p>
+                </div>
 
                 {/* Quote reveal on hover */}
                 <div 

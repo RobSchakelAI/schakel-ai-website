@@ -69,7 +69,7 @@ export default function Hero() {
             <Button
               size="lg"
               onClick={scrollToContact}
-              className="text-base px-8 min-h-12 shadow-lg shadow-primary/20"
+              className="text-base px-8 min-h-12 shadow-xl shadow-primary/30 hover:shadow-2xl hover:shadow-primary/40 transition-all"
               data-testid="button-cta-primary"
             >
               {t.hero.ctaPrimary}
@@ -79,7 +79,7 @@ export default function Hero() {
               size="lg"
               variant="outline"
               onClick={() => console.log('Cases clicked')}
-              className="text-base px-8 min-h-12 border-2"
+              className="text-base px-8 min-h-12 border-2 hover:bg-primary/5 transition-colors"
               data-testid="button-cta-secondary"
             >
               <Play className="mr-2 h-4 w-4" />

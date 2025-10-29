@@ -42,26 +42,35 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-32 border-t border-border">
-      <div className="max-w-6xl mx-auto px-6 md:px-12">
+    <section id="contact" className="py-20 md:py-32 bg-[#0A0A0A] relative overflow-hidden">
+      {/* Subtle grid pattern background */}
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: `radial-gradient(circle at 1px 1px, rgb(110, 191, 170) 1px, transparent 0)`,
+        backgroundSize: '40px 40px'
+      }} />
+
+      {/* Subtle glow effect */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-64 bg-primary/5 blur-[100px] pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
         <div className="max-w-md mx-auto">
-          <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-semibold text-white mb-4 text-center">
             {t.contact.title}
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 text-center">
+          <p className="text-lg text-white/70 mb-8 text-center">
             {t.contact.subtitle}
           </p>
 
           <div className="text-center mb-12 space-y-1">
-            <p className="text-sm font-medium text-foreground">Schakel AI B.V.</p>
-            <p className="text-sm text-muted-foreground">Coolsingel 65</p>
-            <p className="text-sm text-muted-foreground">3012 AA Rotterdam</p>
+            <p className="text-sm font-medium text-white">Schakel AI B.V.</p>
+            <p className="text-sm text-white/60">Coolsingel 65</p>
+            <p className="text-sm text-white/60">3012 AA Rotterdam</p>
           </div>
 
           {isSubmitted ? (
-            <div className="bg-primary/5 border border-primary/20 rounded-lg p-8 text-center" data-testid="message-success">
+            <div className="bg-primary/10 border border-primary/30 rounded-lg p-8 text-center shadow-lg shadow-primary/20" data-testid="message-success">
               <CheckCircle2 className="w-16 h-16 text-primary mx-auto mb-4" />
-              <p className="text-lg text-foreground">{t.contact.form.success}</p>
+              <p className="text-lg text-white">{t.contact.form.success}</p>
             </div>
           ) : (
             <Form {...form}>
@@ -71,13 +80,13 @@ export default function ContactForm() {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-sm font-medium text-foreground">
+                      <FormLabel className="text-sm font-medium text-white">
                         {t.contact.form.name}
                       </FormLabel>
                       <FormControl>
                         <Input
                           {...field}
-                          className="h-12 border-2 focus:border-primary"
+                          className="h-12 border-2 border-white/20 bg-white/5 text-white placeholder:text-white/40 focus:border-primary focus:bg-white/10 transition-colors"
                           data-testid="input-name"
                         />
                       </FormControl>
@@ -91,14 +100,14 @@ export default function ContactForm() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-sm font-medium text-foreground">
+                      <FormLabel className="text-sm font-medium text-white">
                         {t.contact.form.email}
                       </FormLabel>
                       <FormControl>
                         <Input
                           {...field}
                           type="email"
-                          className="h-12 border-2 focus:border-primary"
+                          className="h-12 border-2 border-white/20 bg-white/5 text-white placeholder:text-white/40 focus:border-primary focus:bg-white/10 transition-colors"
                           data-testid="input-email"
                         />
                       </FormControl>
@@ -112,13 +121,13 @@ export default function ContactForm() {
                   name="company"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-sm font-medium text-foreground">
+                      <FormLabel className="text-sm font-medium text-white">
                         {t.contact.form.company}
                       </FormLabel>
                       <FormControl>
                         <Input
                           {...field}
-                          className="h-12 border-2 focus:border-primary"
+                          className="h-12 border-2 border-white/20 bg-white/5 text-white placeholder:text-white/40 focus:border-primary focus:bg-white/10 transition-colors"
                           data-testid="input-company"
                         />
                       </FormControl>
@@ -132,13 +141,13 @@ export default function ContactForm() {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-sm font-medium text-foreground">
+                      <FormLabel className="text-sm font-medium text-white">
                         {t.contact.form.message}
                       </FormLabel>
                       <FormControl>
                         <Textarea
                           {...field}
-                          className="min-h-32 border-2 focus:border-primary resize-none"
+                          className="min-h-32 border-2 border-white/20 bg-white/5 text-white placeholder:text-white/40 focus:border-primary focus:bg-white/10 resize-none transition-colors"
                           data-testid="input-message"
                         />
                       </FormControl>
@@ -149,7 +158,7 @@ export default function ContactForm() {
 
                 <Button
                   type="submit"
-                  className="w-full h-12 text-base"
+                  className="w-full h-12 text-base shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all"
                   disabled={form.formState.isSubmitting}
                   data-testid="button-submit"
                 >
