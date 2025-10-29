@@ -4,19 +4,6 @@ import { Sparkles } from 'lucide-react';
 export default function Vision() {
   const { t } = useLanguage();
 
-  // Helper function to highlight "AI First" and other key terms in mint
-  const highlightKeywords = (text: string) => {
-    const keywords = ["'AI First'", "AI First", "skills ontwikkelen", "futureproof"];
-    let highlighted = text;
-    
-    keywords.forEach(keyword => {
-      const regex = new RegExp(`(${keyword})`, 'gi');
-      highlighted = highlighted.replace(regex, '<span class="text-primary font-semibold">$1</span>');
-    });
-    
-    return highlighted;
-  };
-
   return (
     <section id="vision" className="py-20 md:py-32 bg-[#0A0A0A] relative overflow-hidden">
       {/* Subtle grid pattern background */}
@@ -49,10 +36,9 @@ export default function Vision() {
                 animation: `fadeInUp 0.6s ease-out ${index * 0.15}s both`
               }}
             >
-              <p
-                className="text-lg md:text-xl text-white/90 leading-relaxed"
-                dangerouslySetInnerHTML={{ __html: highlightKeywords(paragraph) }}
-              />
+              <p className="text-lg md:text-xl text-white/90 leading-relaxed">
+                {paragraph}
+              </p>
             </div>
           ))}
         </div>
