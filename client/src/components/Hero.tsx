@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import robotNetwork from '@assets/generated_images/Network_of_robot_icons_mint_purple_d2962378.png';
+import robotNetwork from '@assets/file_00000000aa24620ab88ba770cf951fa7_1761776326303.png';
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -121,26 +121,17 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right: AI Agent Network Visualization - Dark Block */}
-          <div className="relative hidden md:flex items-center justify-center">
-            {/* Dark card-like container that matches text height */}
-            <div 
-              className="relative rounded-2xl overflow-hidden border border-primary/10 shadow-2xl"
-              style={{
-                background: 'linear-gradient(135deg, rgba(20, 25, 45, 0.95) 0%, rgba(30, 35, 60, 0.95) 100%)',
+          {/* Right: AI Agent Network Visualization - Seamless Integration */}
+          <div className="relative hidden md:flex items-center justify-center" data-testid="container-workflow-visualization">
+            <img 
+              src={robotNetwork}
+              alt="AI Agent Network"
+              className="w-full h-auto object-contain"
+              style={{ 
+                animation: 'float 4s ease-in-out infinite',
+                mixBlendMode: 'multiply'
               }}
-              data-testid="container-workflow-visualization"
-            >
-              {/* AI Agent Network - complete illustration */}
-              <div className="relative p-8 flex items-center justify-center">
-                <img 
-                  src={robotNetwork}
-                  alt="AI Agent Network"
-                  className="w-full h-auto object-contain"
-                  style={{ animation: 'float 4s ease-in-out infinite', maxWidth: '100%' }}
-                />
-              </div>
-            </div>
+            />
           </div>
         </div>
       </div>
