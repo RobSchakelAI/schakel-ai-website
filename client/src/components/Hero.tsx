@@ -99,11 +99,12 @@ export default function Hero() {
           </div>
 
           {/* Right: AI Agent Network Visualization */}
-          <div className="hidden md:flex items-center justify-center" data-testid="container-workflow-visualization">
+          <div className="hidden md:flex items-center justify-center overflow-hidden" data-testid="container-workflow-visualization">
             <img 
               src={robotNetwork}
               alt="AI Agent Network"
               className="w-full h-auto object-contain"
+              style={{ transform: 'scale(1.3)' }}
             />
           </div>
         </div>
