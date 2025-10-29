@@ -4,30 +4,44 @@ export default function Logo({ className = "h-10" }: { className?: string }) {
       {/* Icon background - rounded square in mint */}
       <rect x="4" y="4" width="72" height="72" rx="16" fill="#6EBFAA"/>
       
-      {/* S shape - two parallel bars forming the S */}
-      <g transform="translate(40, 40)">
-        {/* Top-left to bottom-right thick bar */}
-        <rect 
-          x="-18" 
-          y="-24" 
-          width="12" 
-          height="48" 
-          rx="2"
-          fill="white"
-          transform="rotate(-45)"
-        />
-        
-        {/* Parallel thinner bar */}
-        <rect 
-          x="-8" 
-          y="-24" 
-          width="8" 
-          height="48" 
-          rx="2"
-          fill="white"
-          transform="rotate(-45)"
-        />
-      </g>
+      {/* Two identical link/chain shapes rotated 180° from each other */}
+      {/* The white S appears in the negative space between them */}
+      
+      {/* First link shape - top right to bottom left curve */}
+      <path
+        d="M 52 16 
+           L 64 16 
+           Q 68 16, 68 20
+           L 68 32
+           Q 68 36, 64 36
+           L 40 36
+           Q 36 36, 36 40
+           L 36 52
+           Q 36 56, 32 56
+           L 20 56"
+        stroke="white"
+        strokeWidth="10"
+        strokeLinecap="round"
+        fill="none"
+      />
+      
+      {/* Second link shape - rotated 180° (bottom left to top right) */}
+      <path
+        d="M 28 64
+           L 16 64
+           Q 12 64, 12 60
+           L 12 48
+           Q 12 44, 16 44
+           L 40 44
+           Q 44 44, 44 40
+           L 44 28
+           Q 44 24, 48 24
+           L 60 24"
+        stroke="white"
+        strokeWidth="10"
+        strokeLinecap="round"
+        fill="none"
+      />
       
       {/* SCHAKEL text */}
       <text 
