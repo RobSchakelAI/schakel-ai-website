@@ -32,18 +32,13 @@ export default function Hero() {
         }}
       />
 
-      {/* AI Agent Network Background - Full Width */}
+      {/* AI Agent Network Background - Centered Behind Text */}
       <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none" data-testid="container-workflow-visualization">
-        <div className="relative w-full h-full flex items-center justify-center">
-          <img 
-            src={robotNetwork}
-            alt="AI Agent Network Background"
-            className="w-full max-w-4xl h-auto object-contain opacity-20"
-            style={{ 
-              marginTop: '5vh'
-            }}
-          />
-        </div>
+        <img 
+          src={robotNetwork}
+          alt="AI Agent Network Background"
+          className="max-w-3xl h-auto object-contain opacity-20"
+        />
       </div>
 
       <div className="max-w-4xl mx-auto px-6 md:px-12 py-20 relative z-10">
