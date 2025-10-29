@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import robotNetwork from '@assets/generated_images/Network_of_simple_robot_icons_2bb00a93.png';
+import robotNetwork from '@assets/generated_images/Network_of_robot_icons_mint_purple_d2962378.png';
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -28,7 +28,7 @@ export default function Hero() {
       <div 
         className="absolute inset-0 opacity-[0.03]"
         style={{
-          background: 'linear-gradient(135deg, rgba(75, 55, 189, 0.5) 0%, rgba(110, 191, 170, 0.5) 100%)'
+          background: 'linear-gradient(135deg, rgba(69, 33, 211, 0.5) 0%, rgba(110, 191, 170, 0.5) 100%)'
         }}
       />
 
@@ -108,8 +108,8 @@ export default function Hero() {
                       key={i}
                       className="w-8 h-8 rounded-full border-2 border-background flex items-center justify-center text-xs font-semibold transition-all duration-300 hover:scale-110"
                       style={{
-                        backgroundColor: isPurple ? 'rgba(75, 55, 189, 0.15)' : 'rgba(110, 191, 170, 0.15)',
-                        color: isPurple ? '#4b37bd' : '#6EBFAA'
+                        backgroundColor: isPurple ? 'rgba(69, 33, 211, 0.15)' : 'rgba(110, 191, 170, 0.15)',
+                        color: isPurple ? '#4521D3' : '#6EBFAA'
                       }}
                     >
                       {String.fromCharCode(64 + i)}
@@ -121,28 +121,23 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right: AI Agent Network Visualization */}
-          <div className="relative hidden md:block">
-            <div className="relative w-full h-[600px]" data-testid="container-workflow-visualization">
-              {/* Background gradient orbs for depth */}
-              <div className="absolute inset-0 overflow-hidden opacity-30">
-                <div 
-                  className="absolute top-10 right-20 w-96 h-96 rounded-full blur-3xl"
-                  style={{ background: 'radial-gradient(circle, rgba(69, 33, 211, 0.4) 0%, transparent 70%)' }}
-                />
-                <div 
-                  className="absolute bottom-10 left-10 w-80 h-80 rounded-full blur-3xl"
-                  style={{ background: 'radial-gradient(circle, rgba(110, 191, 170, 0.4) 0%, transparent 70%)' }}
-                />
-              </div>
-
+          {/* Right: AI Agent Network Visualization - Dark Block */}
+          <div className="relative hidden md:flex items-center justify-center">
+            {/* Dark card-like container that matches text height */}
+            <div 
+              className="relative rounded-2xl overflow-hidden border border-primary/10 shadow-2xl"
+              style={{
+                background: 'linear-gradient(135deg, rgba(20, 25, 45, 0.95) 0%, rgba(30, 35, 60, 0.95) 100%)',
+              }}
+              data-testid="container-workflow-visualization"
+            >
               {/* AI Agent Network - complete illustration */}
-              <div className="relative w-full h-full flex items-center justify-center">
+              <div className="relative p-8 flex items-center justify-center">
                 <img 
                   src={robotNetwork}
                   alt="AI Agent Network"
-                  className="w-full h-auto object-contain drop-shadow-2xl max-w-2xl"
-                  style={{ animation: 'float 4s ease-in-out infinite' }}
+                  className="w-full h-auto object-contain"
+                  style={{ animation: 'float 4s ease-in-out infinite', maxWidth: '100%' }}
                 />
               </div>
             </div>
