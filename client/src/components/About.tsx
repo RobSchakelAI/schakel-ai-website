@@ -10,16 +10,16 @@ export default function About() {
 
   const founders = [
     {
-      id: 'rob',
-      data: t.about.rob,
-      initial: 'R',
-      quote: '"Rust in je processen geeft ruimte voor groei."'
-    },
-    {
       id: 'simon',
       data: t.about.simon,
       initial: 'S',
       quote: '"AI is een middel, geen doel. Pragmatisme wint."'
+    },
+    {
+      id: 'rob',
+      data: t.about.rob,
+      initial: 'R',
+      quote: '"Rust in je processen geeft ruimte voor groei."'
     }
   ];
 
