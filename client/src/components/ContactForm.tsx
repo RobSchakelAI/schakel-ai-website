@@ -48,9 +48,14 @@ export default function ContactForm() {
           <h2 className="text-3xl md:text-4xl font-semibold text-foreground mb-4 text-center">
             {t.contact.title}
           </h2>
-          <p className="text-lg text-muted-foreground mb-12 text-center">
+          <p className="text-lg text-muted-foreground mb-8 text-center">
             {t.contact.subtitle}
           </p>
+
+          <div className="text-center mb-12 space-y-1">
+            <p className="text-sm text-muted-foreground">Coolsingel 65</p>
+            <p className="text-sm text-muted-foreground">3012 AA Rotterdam</p>
+          </div>
 
           {isSubmitted ? (
             <div className="bg-primary/5 border border-primary/20 rounded-lg p-8 text-center" data-testid="message-success">
