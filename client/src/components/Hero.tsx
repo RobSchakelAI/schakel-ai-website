@@ -87,17 +87,18 @@ export default function Hero() {
               size="lg"
               variant="outline"
               onClick={() => console.log('Cases clicked')}
-              className="text-base px-8 min-h-12 border-2 transition-all duration-300 group"
+              className="text-base px-8 min-h-12 border-2 transition-all duration-300"
               style={{
-                '--tw-border-opacity': '1'
-              } as React.CSSProperties}
+                borderColor: '#4b37bd',
+                color: '#4b37bd'
+              }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#4b37bd';
-                e.currentTarget.style.color = '#4b37bd';
+                e.currentTarget.style.backgroundColor = 'rgba(75, 55, 189, 0.05)';
+                e.currentTarget.style.boxShadow = '0 10px 25px -5px rgba(75, 55, 189, 0.2)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = '';
-                e.currentTarget.style.color = '';
+                e.currentTarget.style.backgroundColor = '';
+                e.currentTarget.style.boxShadow = '';
               }}
               data-testid="button-cta-secondary"
             >
@@ -106,17 +107,24 @@ export default function Hero() {
             </Button>
           </div>
 
-          {/* Trust line */}
+          {/* Trust line with alternating mint/purple circles */}
           <div className="flex items-center justify-center gap-3 text-sm text-muted-foreground">
             <div className="flex -space-x-2">
-              {[1, 2, 3, 4].map((i) => (
-                <div 
-                  key={i}
-                  className="w-8 h-8 rounded-full bg-primary/20 border-2 border-background flex items-center justify-center text-xs font-semibold text-primary"
-                >
-                  {String.fromCharCode(64 + i)}
-                </div>
-              ))}
+              {[1, 2, 3, 4].map((i) => {
+                const isPurple = i % 2 === 0; // Even numbers get purple
+                return (
+                  <div 
+                    key={i}
+                    className="w-8 h-8 rounded-full border-2 border-background flex items-center justify-center text-xs font-semibold transition-all duration-300 hover:scale-110"
+                    style={{
+                      backgroundColor: isPurple ? 'rgba(75, 55, 189, 0.15)' : 'rgba(110, 191, 170, 0.15)',
+                      color: isPurple ? '#4b37bd' : '#6EBFAA'
+                    }}
+                  >
+                    {String.fromCharCode(64 + i)}
+                  </div>
+                );
+              })}
             </div>
             <span>{t.hero.trustLine}</span>
           </div>
