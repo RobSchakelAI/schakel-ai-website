@@ -27,8 +27,8 @@ export default function ApproachTimeline() {
         {/* Desktop: Node flow diagram - horizontal with smart routing */}
         <div className="hidden md:block max-w-6xl mx-auto relative">
           <div className="relative" style={{ height: '500px' }}>
-            {/* SVG layer for all connecting lines */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 5 }} viewBox="0 0 1000 500" preserveAspectRatio="none">
+            {/* SVG layer for all connecting lines - using percentage-based viewBox */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 5 }} viewBox="0 0 100 100" preserveAspectRatio="none">
               <defs>
                 <marker
                   id="arrow-active"
@@ -37,6 +37,7 @@ export default function ApproachTimeline() {
                   refX="6"
                   refY="4"
                   orient="auto"
+                  markerUnits="strokeWidth"
                 >
                   <path d="M 0 0 L 8 4 L 0 8 Z" fill="#6EBFAA" />
                 </marker>
@@ -47,53 +48,57 @@ export default function ApproachTimeline() {
                   refX="6"
                   refY="4"
                   orient="auto"
+                  markerUnits="strokeWidth"
                 >
                   <path d="M 0 0 L 8 4 L 0 8 Z" fill="#e4e4e7" />
                 </marker>
               </defs>
 
-              {/* Connection from step 1 to step 2 */}
+              {/* Connection from step 1 (upper) to step 2 (lower) */}
+              {/* Start: right of circle 1, go right, down, right to circle 2 */}
               <path
-                d="M 160 100 L 210 100 L 210 300 L 290 300"
+                d="M 9.5 14 L 17 14 L 17 52 L 27.5 52"
                 stroke={activeStep >= 1 ? '#6EBFAA' : '#e4e4e7'}
-                strokeWidth="2"
-                strokeDasharray="6 4"
+                strokeWidth="0.4"
+                strokeDasharray="1 0.7"
                 fill="none"
                 markerEnd={activeStep >= 1 ? 'url(#arrow-active)' : 'url(#arrow-inactive)'}
                 vectorEffect="non-scaling-stroke"
               />
 
-              {/* Connection from step 2 to step 3 */}
+              {/* Connection from step 2 (lower) to step 3 (upper) */}
+              {/* Start: right of circle 2, go right, up, right to circle 3 */}
               <path
-                d="M 410 300 L 460 300 L 460 100 L 540 100"
+                d="M 34.5 52 L 42 52 L 42 14 L 52.5 14"
                 stroke={activeStep >= 2 ? '#6EBFAA' : '#e4e4e7'}
-                strokeWidth="2"
-                strokeDasharray="6 4"
+                strokeWidth="0.4"
+                strokeDasharray="1 0.7"
                 fill="none"
                 markerEnd={activeStep >= 2 ? 'url(#arrow-active)' : 'url(#arrow-inactive)'}
                 vectorEffect="non-scaling-stroke"
               />
 
-              {/* Connection from step 3 to step 4 */}
+              {/* Connection from step 3 (upper) to step 4 (lower) */}
+              {/* Start: right of circle 3, go right, down, right to circle 4 */}
               <path
-                d="M 660 100 L 710 100 L 710 300 L 790 300"
+                d="M 59.5 14 L 67 14 L 67 52 L 77.5 52"
                 stroke={activeStep >= 3 ? '#6EBFAA' : '#e4e4e7'}
-                strokeWidth="2"
-                strokeDasharray="6 4"
+                strokeWidth="0.4"
+                strokeDasharray="1 0.7"
                 fill="none"
                 markerEnd={activeStep >= 3 ? 'url(#arrow-active)' : 'url(#arrow-inactive)'}
                 vectorEffect="non-scaling-stroke"
               />
 
               {/* Decorative dots at corners */}
-              <circle cx="210" cy="100" r="4" fill={activeStep >= 1 ? '#6EBFAA' : '#d4d4d8'} />
-              <circle cx="210" cy="300" r="4" fill={activeStep >= 1 ? '#6EBFAA' : '#d4d4d8'} />
+              <circle cx="17" cy="14" r="0.5" fill={activeStep >= 1 ? '#6EBFAA' : '#d4d4d8'} />
+              <circle cx="17" cy="52" r="0.5" fill={activeStep >= 1 ? '#6EBFAA' : '#d4d4d8'} />
               
-              <circle cx="460" cy="300" r="4" fill={activeStep >= 2 ? '#6EBFAA' : '#d4d4d8'} />
-              <circle cx="460" cy="100" r="4" fill={activeStep >= 2 ? '#6EBFAA' : '#d4d4d8'} />
+              <circle cx="42" cy="52" r="0.5" fill={activeStep >= 2 ? '#6EBFAA' : '#d4d4d8'} />
+              <circle cx="42" cy="14" r="0.5" fill={activeStep >= 2 ? '#6EBFAA' : '#d4d4d8'} />
               
-              <circle cx="710" cy="100" r="4" fill={activeStep >= 3 ? '#6EBFAA' : '#d4d4d8'} />
-              <circle cx="710" cy="300" r="4" fill={activeStep >= 3 ? '#6EBFAA' : '#d4d4d8'} />
+              <circle cx="67" cy="14" r="0.5" fill={activeStep >= 3 ? '#6EBFAA' : '#d4d4d8'} />
+              <circle cx="67" cy="52" r="0.5" fill={activeStep >= 3 ? '#6EBFAA' : '#d4d4d8'} />
             </svg>
 
             {/* Step nodes */}
