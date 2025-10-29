@@ -4,42 +4,26 @@ export default function Logo({ className = "h-10" }: { className?: string }) {
       {/* Icon background - rounded square in mint */}
       <rect x="4" y="4" width="72" height="72" rx="16" fill="#6EBFAA"/>
       
-      {/* Two identical link/chain shapes rotated 180° from each other */}
+      {/* Two identical thick capsule-shaped links rotated 180° from each other */}
       {/* The white S appears in the negative space between them */}
       
-      {/* First link shape - top right to bottom left curve */}
+      {/* First link - L shape starting top-left going down then right */}
       <path
-        d="M 52 16 
-           L 64 16 
-           Q 68 16, 68 20
-           L 68 32
-           Q 68 36, 64 36
-           L 40 36
-           Q 36 36, 36 40
-           L 36 52
-           Q 36 56, 32 56
-           L 20 56"
+        d="M 18 18 L 18 36 L 48 36"
         stroke="white"
-        strokeWidth="10"
+        strokeWidth="16"
         strokeLinecap="round"
+        strokeLinejoin="round"
         fill="none"
       />
       
-      {/* Second link shape - rotated 180° (bottom left to top right) */}
+      {/* Second link - mirrored L shape starting bottom-right going up then left (180° rotated) */}
       <path
-        d="M 28 64
-           L 16 64
-           Q 12 64, 12 60
-           L 12 48
-           Q 12 44, 16 44
-           L 40 44
-           Q 44 44, 44 40
-           L 44 28
-           Q 44 24, 48 24
-           L 60 24"
+        d="M 62 62 L 62 44 L 32 44"
         stroke="white"
-        strokeWidth="10"
+        strokeWidth="16"
         strokeLinecap="round"
+        strokeLinejoin="round"
         fill="none"
       />
       
