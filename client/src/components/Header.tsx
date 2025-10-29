@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import Logo from '@/components/Logo';
 
 export default function Header() {
   const { language, setLanguage, t } = useLanguage();
@@ -35,7 +36,7 @@ export default function Header() {
           className="hover-elevate active-elevate-2 rounded-md transition-transform hover:scale-105"
           data-testid="link-home"
         >
-          <img src="/logo.svg" alt="Schakel AI" className="h-10" />
+          <Logo className="h-10" />
         </button>
 
         <nav className="hidden md:flex items-center gap-8">
