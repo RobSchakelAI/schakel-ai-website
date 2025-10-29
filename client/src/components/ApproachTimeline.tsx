@@ -55,7 +55,6 @@ export default function ApproachTimeline() {
               </defs>
 
               {/* Connection from step 1 (upper) to step 2 (lower) */}
-              {/* Start: right of circle 1, go right, down, right to circle 2 */}
               <path
                 d="M 9.5 14 L 17 14 L 17 52 L 27.5 52"
                 stroke={activeStep >= 1 ? '#6EBFAA' : '#e4e4e7'}
@@ -67,7 +66,6 @@ export default function ApproachTimeline() {
               />
 
               {/* Connection from step 2 (lower) to step 3 (upper) */}
-              {/* Start: right of circle 2, go right, up, right to circle 3 */}
               <path
                 d="M 34.5 52 L 42 52 L 42 14 L 52.5 14"
                 stroke={activeStep >= 2 ? '#6EBFAA' : '#e4e4e7'}
@@ -79,7 +77,6 @@ export default function ApproachTimeline() {
               />
 
               {/* Connection from step 3 (upper) to step 4 (lower) */}
-              {/* Start: right of circle 3, go right, down, right to circle 4 */}
               <path
                 d="M 59.5 14 L 67 14 L 67 52 L 77.5 52"
                 stroke={activeStep >= 3 ? '#6EBFAA' : '#e4e4e7'}
@@ -106,7 +103,7 @@ export default function ApproachTimeline() {
               const isActive = index === activeStep;
               const isPast = index < activeStep;
               const isUpper = index % 2 === 0;
-              const leftPosition = 5 + index * 25; // 5%, 30%, 55%, 80%
+              const leftPosition = 5 + index * 25;
 
               return (
                 <div
@@ -121,17 +118,18 @@ export default function ApproachTimeline() {
                   data-testid={`step-${index}`}
                   onMouseEnter={() => setActiveStep(index)}
                 >
-                  {/* Node circle */}
+                  {/* Node circle with CORAL for active state */}
                   <div className="flex justify-center mb-4">
                     <div className="relative">
                       <div
                         className={`w-20 h-20 rounded-full border-[3px] flex items-center justify-center transition-all duration-500 ${
                           isActive
-                            ? 'bg-primary border-primary shadow-lg shadow-primary/30 scale-110'
+                            ? 'border-[#FF7A5C] shadow-lg shadow-[#FF7A5C]/40 scale-110'
                             : isPast
                             ? 'bg-primary border-primary'
                             : 'bg-background border-border'
                         }`}
+                        style={isActive ? { backgroundColor: '#FF7A5C' } : undefined}
                       >
                         <span
                           className={`text-3xl font-display font-bold transition-colors ${
@@ -142,7 +140,7 @@ export default function ApproachTimeline() {
                         </span>
                       </div>
                       {isActive && (
-                        <div className="absolute inset-0 rounded-full bg-primary opacity-20 blur-2xl animate-pulse" />
+                        <div className="absolute inset-0 rounded-full opacity-30 blur-2xl animate-pulse" style={{ backgroundColor: '#FF7A5C' }} />
                       )}
                     </div>
                   </div>
@@ -151,14 +149,14 @@ export default function ApproachTimeline() {
                   <div
                     className={`p-5 rounded-lg border-2 transition-all duration-500 bg-card ${
                       isActive
-                        ? 'border-primary shadow-lg shadow-primary/10'
+                        ? 'shadow-lg shadow-[#FF7A5C]/10'
                         : 'border-border/50'
                     }`}
+                    style={isActive ? { borderColor: '#FF7A5C' } : undefined}
                   >
                     <h3
-                      className={`text-lg font-semibold mb-2 transition-colors ${
-                        isActive ? 'text-primary' : 'text-foreground'
-                      }`}
+                      className={`text-lg font-semibold mb-2 transition-colors`}
+                      style={isActive ? { color: '#FF7A5C' } : undefined}
                     >
                       {step.title}
                     </h3>
@@ -172,10 +170,10 @@ export default function ApproachTimeline() {
           </div>
         </div>
 
-        {/* Mobile: Classic vertical timeline (circles left, content right) */}
+        {/* Mobile: Classic vertical timeline with CORAL active states */}
         <div className="md:hidden max-w-4xl mx-auto">
           <div className="relative">
-            {/* Vertical line - stops at last circle */}
+            {/* Vertical line */}
             <div 
               className="absolute left-8 w-0.5 bg-border z-0"
               style={{
@@ -205,21 +203,27 @@ export default function ApproachTimeline() {
                     className="relative flex gap-6 items-start"
                     data-testid={`step-mobile-${index}`}
                   >
-                    {/* Circle node */}
+                    {/* Circle node with CORAL for active */}
                     <div className="relative flex-shrink-0 z-10">
                       <div 
                         className={`w-16 h-16 rounded-full border-4 flex items-center justify-center transition-all duration-500 ${
                           isActive 
-                            ? 'bg-primary border-primary shadow-lg shadow-primary/40 scale-110' 
+                            ? 'shadow-lg scale-110' 
                             : isPast
                             ? 'border-[#B8E5D9]'
                             : 'bg-background border-border'
                         }`}
-                        style={isPast ? { backgroundColor: '#E8F6F3' } : undefined}
+                        style={
+                          isActive 
+                            ? { backgroundColor: '#FF7A5C', borderColor: '#FF7A5C', boxShadow: '0 10px 15px -3px rgba(255, 122, 92, 0.4)' }
+                            : isPast 
+                            ? { backgroundColor: '#E8F6F3' } 
+                            : undefined
+                        }
                       >
                         <span 
                           className={`text-2xl font-display font-bold transition-colors ${
-                            isActive ? 'text-white' : 'text-muted-foreground'
+                            isActive || isPast ? 'text-white' : 'text-muted-foreground'
                           }`}
                         >
                           {step.number}
@@ -227,7 +231,7 @@ export default function ApproachTimeline() {
                       </div>
                       
                       {isActive && (
-                        <div className="absolute inset-0 rounded-full bg-primary opacity-30 blur-xl animate-pulse" />
+                        <div className="absolute inset-0 rounded-full opacity-30 blur-xl animate-pulse" style={{ backgroundColor: '#FF7A5C' }} />
                       )}
                     </div>
 

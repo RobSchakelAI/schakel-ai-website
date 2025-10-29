@@ -39,22 +39,28 @@ export default function About() {
               onMouseLeave={() => setHoveredFounder(null)}
               data-testid={`card-team-${founder.id}`}
             >
-              {/* Mint accent rim light effect */}
+              {/* Mint to Coral gradient rim light effect on hover */}
               <div 
-                className={`absolute inset-0 bg-gradient-to-br from-primary/0 via-primary/5 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500`} 
+                className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                style={{
+                  background: 'linear-gradient(135deg, rgba(110, 191, 170, 0.08) 0%, rgba(255, 122, 92, 0.08) 100%)'
+                }}
               />
               
               <div className="relative z-10">
                 {/* Avatar with mint rim */}
                 <div className="mb-6 flex justify-center">
                   <div className="relative">
-                    <Avatar className="w-32 h-32 border-4 border-primary/20 group-hover:border-primary/40 transition-colors">
-                      <AvatarFallback className="bg-gradient-to-br from-primary/20 to-primary/10 text-primary text-4xl font-display font-bold">
+                    <Avatar className="w-32 h-32 border-4 border-primary/20 group-hover:border-[#FF7A5C]/50 transition-all duration-500">
+                      <AvatarFallback className="bg-gradient-to-br from-primary/20 to-primary/10 text-primary text-4xl font-display font-bold group-hover:text-[#FF7A5C] transition-colors duration-500">
                         {founder.initial}
                       </AvatarFallback>
                     </Avatar>
-                    {/* Glow effect */}
-                    <div className="absolute inset-0 rounded-full bg-primary/20 blur-xl opacity-0 group-hover:opacity-50 transition-opacity duration-500 -z-10" />
+                    {/* Coral glow effect on hover */}
+                    <div 
+                      className="absolute inset-0 rounded-full blur-xl opacity-0 group-hover:opacity-40 transition-opacity duration-500 -z-10"
+                      style={{ backgroundColor: '#FF7A5C' }}
+                    />
                   </div>
                 </div>
 
@@ -73,13 +79,17 @@ export default function About() {
                   </p>
                 </div>
 
-                {/* Quote reveal on hover */}
+                {/* Quote reveal on hover with CORAL icon */}
                 <div 
-                  className={`flex items-start gap-3 p-4 rounded-lg bg-primary/5 border-l-2 border-primary transition-all duration-300 ${
+                  className={`flex items-start gap-3 p-4 rounded-lg bg-primary/5 border-l-2 transition-all duration-300 ${
                     hoveredFounder === founder.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
                   }`}
+                  style={hoveredFounder === founder.id ? { borderColor: '#FF7A5C' } : { borderColor: 'hsl(var(--primary))' }}
                 >
-                  <Quote className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <Quote 
+                    className="w-5 h-5 flex-shrink-0 mt-0.5 transition-colors duration-300" 
+                    style={hoveredFounder === founder.id ? { color: '#FF7A5C' } : { color: 'hsl(var(--primary))' }}
+                  />
                   <p className="text-sm italic text-foreground/70">{founder.quote}</p>
                 </div>
               </div>

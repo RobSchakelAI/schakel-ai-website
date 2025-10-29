@@ -23,6 +23,14 @@ export default function Hero() {
 
   return (
     <section className="min-h-[95vh] flex items-center justify-center relative overflow-hidden bg-background">
+      {/* Subtle coral to mint gradient overlay */}
+      <div 
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          background: 'linear-gradient(135deg, rgba(255, 122, 92, 0.5) 0%, rgba(110, 191, 170, 0.5) 100%)'
+        }}
+      />
+
       {/* Animated connection nodes - subtle circuit board aesthetic */}
       <div className="absolute inset-0 overflow-hidden opacity-30">
         <svg className="absolute top-1/4 right-1/4 w-96 h-96" viewBox="0 0 400 400">
@@ -79,7 +87,18 @@ export default function Hero() {
               size="lg"
               variant="outline"
               onClick={() => console.log('Cases clicked')}
-              className="text-base px-8 min-h-12 border-2 hover:bg-primary/5 transition-colors"
+              className="text-base px-8 min-h-12 border-2 transition-all duration-300 group"
+              style={{
+                '--tw-border-opacity': '1'
+              } as React.CSSProperties}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = '#FF7A5C';
+                e.currentTarget.style.color = '#FF7A5C';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = '';
+                e.currentTarget.style.color = '';
+              }}
               data-testid="button-cta-secondary"
             >
               <Play className="mr-2 h-4 w-4" />
