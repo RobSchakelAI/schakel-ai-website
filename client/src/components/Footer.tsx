@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="py-12 border-t border-border">
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         <div className="flex flex-col items-center gap-6">
-          <img src="/logo.svg" alt="Schakel AI" className="h-8 opacity-80" />
+          <img src="/logo.png" alt="Schakel AI" className="h-8 opacity-80" />
           
           <p className="text-sm text-muted-foreground">
             {t.footer.tagline}
