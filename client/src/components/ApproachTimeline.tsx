@@ -124,12 +124,12 @@ export default function ApproachTimeline() {
                       <div
                         className={`w-20 h-20 rounded-full border-[3px] flex items-center justify-center transition-all duration-500 ${
                           isActive
-                            ? 'border-[#FF7A5C] shadow-lg shadow-[#FF7A5C]/40 scale-110'
+                            ? 'border-[#4b37bd] shadow-lg shadow-[#4b37bd]/40 scale-110'
                             : isPast
                             ? 'bg-primary border-primary'
                             : 'bg-background border-border'
                         }`}
-                        style={isActive ? { backgroundColor: '#FF7A5C' } : undefined}
+                        style={isActive ? { backgroundColor: '#4b37bd' } : undefined}
                       >
                         <span
                           className={`text-3xl font-display font-bold transition-colors ${
@@ -140,7 +140,7 @@ export default function ApproachTimeline() {
                         </span>
                       </div>
                       {isActive && (
-                        <div className="absolute inset-0 rounded-full opacity-30 blur-2xl animate-pulse" style={{ backgroundColor: '#FF7A5C' }} />
+                        <div className="absolute inset-0 rounded-full opacity-30 blur-2xl animate-pulse" style={{ backgroundColor: '#4b37bd' }} />
                       )}
                     </div>
                   </div>
@@ -149,14 +149,14 @@ export default function ApproachTimeline() {
                   <div
                     className={`p-5 rounded-lg border-2 transition-all duration-500 bg-card ${
                       isActive
-                        ? 'shadow-lg shadow-[#FF7A5C]/10'
+                        ? 'shadow-lg shadow-[#4b37bd]/10'
                         : 'border-border/50'
                     }`}
-                    style={isActive ? { borderColor: '#FF7A5C' } : undefined}
+                    style={isActive ? { borderColor: '#4b37bd' } : undefined}
                   >
                     <h3
                       className={`text-lg font-semibold mb-2 transition-colors`}
-                      style={isActive ? { color: '#FF7A5C' } : undefined}
+                      style={isActive ? { color: '#4b37bd' } : undefined}
                     >
                       {step.title}
                     </h3>
@@ -215,7 +215,7 @@ export default function ApproachTimeline() {
                         }`}
                         style={
                           isActive 
-                            ? { backgroundColor: '#FF7A5C', borderColor: '#FF7A5C', boxShadow: '0 10px 15px -3px rgba(255, 122, 92, 0.4)' }
+                            ? { backgroundColor: '#4b37bd', borderColor: '#4b37bd', boxShadow: '0 10px 15px -3px rgba(75, 55, 189, 0.4)' }
                             : isPast 
                             ? { backgroundColor: '#E8F6F3' } 
                             : undefined
@@ -231,7 +231,7 @@ export default function ApproachTimeline() {
                       </div>
                       
                       {isActive && (
-                        <div className="absolute inset-0 rounded-full opacity-30 blur-xl animate-pulse" style={{ backgroundColor: '#FF7A5C' }} />
+                        <div className="absolute inset-0 rounded-full opacity-30 blur-xl animate-pulse" style={{ backgroundColor: '#4b37bd' }} />
                       )}
                     </div>
 

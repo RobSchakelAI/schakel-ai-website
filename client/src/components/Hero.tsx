@@ -23,11 +23,11 @@ export default function Hero() {
 
   return (
     <section className="min-h-[95vh] flex items-center justify-center relative overflow-hidden bg-background">
-      {/* Subtle coral to mint gradient overlay */}
+      {/* Subtle purple to mint gradient overlay */}
       <div 
         className="absolute inset-0 opacity-[0.03]"
         style={{
-          background: 'linear-gradient(135deg, rgba(255, 122, 92, 0.5) 0%, rgba(110, 191, 170, 0.5) 100%)'
+          background: 'linear-gradient(135deg, rgba(75, 55, 189, 0.5) 0%, rgba(110, 191, 170, 0.5) 100%)'
         }}
       />
 
@@ -92,8 +92,8 @@ export default function Hero() {
                 '--tw-border-opacity': '1'
               } as React.CSSProperties}
               onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#FF7A5C';
-                e.currentTarget.style.color = '#FF7A5C';
+                e.currentTarget.style.borderColor = '#4b37bd';
+                e.currentTarget.style.color = '#4b37bd';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.borderColor = '';
