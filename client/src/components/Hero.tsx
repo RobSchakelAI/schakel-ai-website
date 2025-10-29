@@ -123,50 +123,89 @@ export default function Hero() {
           {/* Right: Dashboard Mockup */}
           <div className="relative hidden md:block">
             <div className="relative w-full h-[400px]" data-testid="container-workflow-visualization">
-              {/* Large mint orb - top left */}
-              <div 
-                className="absolute top-8 left-12 w-48 h-48 rounded-full blur-3xl opacity-40 animate-pulse"
-                style={{ 
-                  background: 'radial-gradient(circle, #6EBFAA 0%, transparent 70%)',
-                  animationDuration: '4s'
-                }}
-              />
-              
-              {/* Large purple orb - bottom right */}
-              <div 
-                className="absolute bottom-12 right-8 w-56 h-56 rounded-full blur-3xl opacity-30"
-                style={{ 
-                  background: 'radial-gradient(circle, rgb(69, 33, 211) 0%, transparent 70%)',
-                  animation: 'pulse 5s ease-in-out infinite'
-                }}
-              />
-              
-              {/* Medium mint orb - center */}
-              <div 
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full blur-2xl opacity-25"
-                style={{ 
-                  background: 'radial-gradient(circle, #6EBFAA 0%, transparent 70%)',
-                  animation: 'pulse 6s ease-in-out infinite'
-                }}
-              />
-              
-              {/* Small purple accent - top right */}
-              <div 
-                className="absolute top-20 right-16 w-32 h-32 rounded-full blur-2xl opacity-20 animate-pulse"
-                style={{ 
-                  background: 'radial-gradient(circle, rgb(69, 33, 211) 0%, transparent 70%)',
-                  animationDuration: '3s'
-                }}
-              />
-              
-              {/* Small mint accent - bottom left */}
-              <div 
-                className="absolute bottom-20 left-8 w-28 h-28 rounded-full blur-xl opacity-30"
-                style={{ 
-                  background: 'radial-gradient(circle, #6EBFAA 0%, transparent 70%)',
-                  animation: 'pulse 7s ease-in-out infinite'
-                }}
-              />
+              <svg
+                viewBox="0 0 400 400"
+                className="w-full h-full"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                {/* Define gradients */}
+                <defs>
+                  <linearGradient id="mintGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#6EBFAA" stopOpacity="0.8" />
+                    <stop offset="100%" stopColor="#6EBFAA" stopOpacity="0.4" />
+                  </linearGradient>
+                  <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="rgb(69, 33, 211)" stopOpacity="0.8" />
+                    <stop offset="100%" stopColor="rgb(69, 33, 211)" stopOpacity="0.4" />
+                  </linearGradient>
+                  <filter id="glow">
+                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                    <feMerge>
+                      <feMergeNode in="coloredBlur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                </defs>
+
+                {/* Connecting lines (animated) */}
+                <line x1="120" y1="100" x2="200" y2="150" stroke="#6EBFAA" strokeWidth="2" opacity="0.6" strokeDasharray="5,5">
+                  <animate attributeName="stroke-dashoffset" from="0" to="10" dur="2s" repeatCount="indefinite" />
+                </line>
+                <line x1="200" y1="150" x2="280" y2="120" stroke="rgb(69, 33, 211)" strokeWidth="2" opacity="0.6" strokeDasharray="5,5">
+                  <animate attributeName="stroke-dashoffset" from="0" to="10" dur="2.5s" repeatCount="indefinite" />
+                </line>
+                <line x1="200" y1="150" x2="200" y2="250" stroke="#6EBFAA" strokeWidth="2" opacity="0.6" strokeDasharray="5,5">
+                  <animate attributeName="stroke-dashoffset" from="0" to="10" dur="3s" repeatCount="indefinite" />
+                </line>
+                <line x1="120" y1="280" x2="200" y2="250" stroke="rgb(69, 33, 211)" strokeWidth="2" opacity="0.6" strokeDasharray="5,5">
+                  <animate attributeName="stroke-dashoffset" from="0" to="10" dur="2.2s" repeatCount="indefinite" />
+                </line>
+                <line x1="280" y1="280" x2="200" y2="250" stroke="#6EBFAA" strokeWidth="2" opacity="0.6" strokeDasharray="5,5">
+                  <animate attributeName="stroke-dashoffset" from="0" to="10" dur="2.8s" repeatCount="indefinite" />
+                </line>
+
+                {/* Node 1: Top Left (Mint) */}
+                <g filter="url(#glow)">
+                  <rect x="100" y="80" width="40" height="40" rx="8" fill="url(#mintGradient)" stroke="#6EBFAA" strokeWidth="2">
+                    <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" />
+                  </rect>
+                </g>
+
+                {/* Node 2: Center (Purple) */}
+                <g filter="url(#glow)">
+                  <circle cx="200" cy="150" r="25" fill="url(#purpleGradient)" stroke="rgb(69, 33, 211)" strokeWidth="2">
+                    <animate attributeName="r" values="25;28;25" dur="2.5s" repeatCount="indefinite" />
+                  </circle>
+                </g>
+
+                {/* Node 3: Top Right (Purple) */}
+                <g filter="url(#glow)">
+                  <rect x="260" y="100" width="40" height="40" rx="8" fill="url(#purpleGradient)" stroke="rgb(69, 33, 211)" strokeWidth="2">
+                    <animate attributeName="opacity" values="0.7;1;0.7" dur="3.5s" repeatCount="indefinite" />
+                  </rect>
+                </g>
+
+                {/* Node 4: Bottom Center (Mint) */}
+                <g filter="url(#glow)">
+                  <circle cx="200" cy="250" r="30" fill="url(#mintGradient)" stroke="#6EBFAA" strokeWidth="2">
+                    <animate attributeName="r" values="30;33;30" dur="3s" repeatCount="indefinite" />
+                  </circle>
+                </g>
+
+                {/* Node 5: Bottom Left (Mint) */}
+                <g filter="url(#glow)">
+                  <rect x="100" y="260" width="40" height="40" rx="8" fill="url(#mintGradient)" stroke="#6EBFAA" strokeWidth="2">
+                    <animate attributeName="opacity" values="0.7;1;0.7" dur="2.8s" repeatCount="indefinite" />
+                  </rect>
+                </g>
+
+                {/* Node 6: Bottom Right (Purple) */}
+                <g filter="url(#glow)">
+                  <rect x="260" y="260" width="40" height="40" rx="8" fill="url(#purpleGradient)" stroke="rgb(69, 33, 211)" strokeWidth="2">
+                    <animate attributeName="opacity" values="0.7;1;0.7" dur="3.2s" repeatCount="indefinite" />
+                  </rect>
+                </g>
+              </svg>
             </div>
           </div>
         </div>
