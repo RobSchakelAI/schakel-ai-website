@@ -53,6 +53,7 @@ export default function ContactForm() {
           </p>
 
           <div className="text-center mb-12 space-y-1">
+            <p className="text-sm font-medium text-foreground">Schakel AI B.V.</p>
             <p className="text-sm text-muted-foreground">Coolsingel 65</p>
             <p className="text-sm text-muted-foreground">3012 AA Rotterdam</p>
           </div>
