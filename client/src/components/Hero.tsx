@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import robotAgent from '@assets/generated_images/Cute_AI_robot_agent_e0f4bb1e.png';
+import purpleAssistant from '@assets/generated_images/Small_purple_AI_assistant_8ae37291.png';
+import dataBot from '@assets/generated_images/Mint_data_processing_bot_e6069727.png';
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -120,11 +123,11 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right: Dashboard Mockup */}
+          {/* Right: AI Workflow Visualization */}
           <div className="relative hidden md:block">
-            <div className="relative w-full h-[400px]" data-testid="container-workflow-visualization">
+            <div className="relative w-full h-[600px]" data-testid="container-workflow-visualization">
               <svg
-                viewBox="0 0 400 400"
+                viewBox="0 0 500 600"
                 className="w-full h-full"
                 xmlns="http://www.w3.org/2000/svg"
               >
@@ -139,7 +142,7 @@ export default function Hero() {
                     <stop offset="100%" stopColor="rgb(69, 33, 211)" stopOpacity="0.4" />
                   </linearGradient>
                   <filter id="glow">
-                    <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                    <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
                     <feMerge>
                       <feMergeNode in="coloredBlur"/>
                       <feMergeNode in="SourceGraphic"/>
@@ -147,65 +150,103 @@ export default function Hero() {
                   </filter>
                 </defs>
 
-                {/* Connecting lines (animated) */}
-                <line x1="120" y1="100" x2="200" y2="150" stroke="#6EBFAA" strokeWidth="2" opacity="0.6" strokeDasharray="5,5">
-                  <animate attributeName="stroke-dashoffset" from="0" to="10" dur="2s" repeatCount="indefinite" />
+                {/* Connecting lines (animated) - more connections */}
+                <line x1="120" y1="120" x2="250" y2="180" stroke="#6EBFAA" strokeWidth="3" opacity="0.5" strokeDasharray="8,8">
+                  <animate attributeName="stroke-dashoffset" from="0" to="16" dur="2s" repeatCount="indefinite" />
                 </line>
-                <line x1="200" y1="150" x2="280" y2="120" stroke="rgb(69, 33, 211)" strokeWidth="2" opacity="0.6" strokeDasharray="5,5">
-                  <animate attributeName="stroke-dashoffset" from="0" to="10" dur="2.5s" repeatCount="indefinite" />
+                <line x1="250" y1="180" x2="380" y2="140" stroke="rgb(69, 33, 211)" strokeWidth="3" opacity="0.5" strokeDasharray="8,8">
+                  <animate attributeName="stroke-dashoffset" from="0" to="16" dur="2.5s" repeatCount="indefinite" />
                 </line>
-                <line x1="200" y1="150" x2="200" y2="250" stroke="#6EBFAA" strokeWidth="2" opacity="0.6" strokeDasharray="5,5">
-                  <animate attributeName="stroke-dashoffset" from="0" to="10" dur="3s" repeatCount="indefinite" />
+                <line x1="250" y1="180" x2="250" y2="300" stroke="#6EBFAA" strokeWidth="3" opacity="0.5" strokeDasharray="8,8">
+                  <animate attributeName="stroke-dashoffset" from="0" to="16" dur="3s" repeatCount="indefinite" />
                 </line>
-                <line x1="120" y1="280" x2="200" y2="250" stroke="rgb(69, 33, 211)" strokeWidth="2" opacity="0.6" strokeDasharray="5,5">
-                  <animate attributeName="stroke-dashoffset" from="0" to="10" dur="2.2s" repeatCount="indefinite" />
+                <line x1="120" y1="400" x2="250" y2="300" stroke="rgb(69, 33, 211)" strokeWidth="3" opacity="0.5" strokeDasharray="8,8">
+                  <animate attributeName="stroke-dashoffset" from="0" to="16" dur="2.2s" repeatCount="indefinite" />
                 </line>
-                <line x1="280" y1="280" x2="200" y2="250" stroke="#6EBFAA" strokeWidth="2" opacity="0.6" strokeDasharray="5,5">
-                  <animate attributeName="stroke-dashoffset" from="0" to="10" dur="2.8s" repeatCount="indefinite" />
+                <line x1="380" y1="400" x2="250" y2="300" stroke="#6EBFAA" strokeWidth="3" opacity="0.5" strokeDasharray="8,8">
+                  <animate attributeName="stroke-dashoffset" from="0" to="16" dur="2.8s" repeatCount="indefinite" />
+                </line>
+                <line x1="250" y1="300" x2="250" y2="480" stroke="rgb(69, 33, 211)" strokeWidth="3" opacity="0.5" strokeDasharray="8,8">
+                  <animate attributeName="stroke-dashoffset" from="0" to="16" dur="3.5s" repeatCount="indefinite" />
                 </line>
 
-                {/* Node 1: Top Left (Mint) */}
+                {/* Abstract data node - top left */}
                 <g filter="url(#glow)">
-                  <rect x="100" y="80" width="40" height="40" rx="8" fill="url(#mintGradient)" stroke="#6EBFAA" strokeWidth="2">
-                    <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite" />
+                  <rect x="90" y="90" width="60" height="60" rx="12" fill="url(#mintGradient)" stroke="#6EBFAA" strokeWidth="3">
+                    <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite" />
                   </rect>
                 </g>
 
-                {/* Node 2: Center (Purple) */}
+                {/* Abstract processing node - top right */}
                 <g filter="url(#glow)">
-                  <circle cx="200" cy="150" r="25" fill="url(#purpleGradient)" stroke="rgb(69, 33, 211)" strokeWidth="2">
-                    <animate attributeName="r" values="25;28;25" dur="2.5s" repeatCount="indefinite" />
+                  <rect x="350" y="110" width="60" height="60" rx="12" fill="url(#purpleGradient)" stroke="rgb(69, 33, 211)" strokeWidth="3">
+                    <animate attributeName="opacity" values="0.6;1;0.6" dur="3.5s" repeatCount="indefinite" />
+                  </rect>
+                </g>
+
+                {/* Abstract node - bottom left */}
+                <g filter="url(#glow)">
+                  <circle cx="120" cy="400" r="35" fill="url(#mintGradient)" stroke="#6EBFAA" strokeWidth="3">
+                    <animate attributeName="r" values="35;40;35" dur="2.8s" repeatCount="indefinite" />
                   </circle>
                 </g>
 
-                {/* Node 3: Top Right (Purple) */}
+                {/* Abstract node - bottom right */}
                 <g filter="url(#glow)">
-                  <rect x="260" y="100" width="40" height="40" rx="8" fill="url(#purpleGradient)" stroke="rgb(69, 33, 211)" strokeWidth="2">
-                    <animate attributeName="opacity" values="0.7;1;0.7" dur="3.5s" repeatCount="indefinite" />
-                  </rect>
-                </g>
-
-                {/* Node 4: Bottom Center (Mint) */}
-                <g filter="url(#glow)">
-                  <circle cx="200" cy="250" r="30" fill="url(#mintGradient)" stroke="#6EBFAA" strokeWidth="2">
-                    <animate attributeName="r" values="30;33;30" dur="3s" repeatCount="indefinite" />
+                  <circle cx="380" cy="400" r="35" fill="url(#purpleGradient)" stroke="rgb(69, 33, 211)" strokeWidth="3">
+                    <animate attributeName="r" values="35;40;35" dur="3.2s" repeatCount="indefinite" />
                   </circle>
                 </g>
 
-                {/* Node 5: Bottom Left (Mint) */}
+                {/* Central Hub (bigger) */}
                 <g filter="url(#glow)">
-                  <rect x="100" y="260" width="40" height="40" rx="8" fill="url(#mintGradient)" stroke="#6EBFAA" strokeWidth="2">
-                    <animate attributeName="opacity" values="0.7;1;0.7" dur="2.8s" repeatCount="indefinite" />
-                  </rect>
+                  <circle cx="250" cy="300" r="45" fill="url(#mintGradient)" stroke="#6EBFAA" strokeWidth="3">
+                    <animate attributeName="r" values="45;50;45" dur="3s" repeatCount="indefinite" />
+                  </circle>
                 </g>
 
-                {/* Node 6: Bottom Right (Purple) */}
+                {/* Output node - bottom center */}
                 <g filter="url(#glow)">
-                  <rect x="260" y="260" width="40" height="40" rx="8" fill="url(#purpleGradient)" stroke="rgb(69, 33, 211)" strokeWidth="2">
-                    <animate attributeName="opacity" values="0.7;1;0.7" dur="3.2s" repeatCount="indefinite" />
+                  <rect x="220" y="450" width="60" height="60" rx="12" fill="url(#purpleGradient)" stroke="rgb(69, 33, 211)" strokeWidth="3">
+                    <animate attributeName="opacity" values="0.6;1;0.6" dur="3.8s" repeatCount="indefinite" />
                   </rect>
                 </g>
               </svg>
+
+              {/* AI Robot Agents overlaid on nodes */}
+              <img 
+                src={robotAgent}
+                alt="AI Robot Agent"
+                className="absolute w-24 h-24 object-contain"
+                style={{ 
+                  top: '25%', 
+                  left: '45%',
+                  transform: 'translate(-50%, -50%)',
+                  animation: 'float 3s ease-in-out infinite'
+                }}
+              />
+              <img 
+                src={purpleAssistant}
+                alt="AI Assistant"
+                className="absolute w-20 h-20 object-contain"
+                style={{ 
+                  top: '15%', 
+                  left: '72%',
+                  transform: 'translate(-50%, -50%)',
+                  animation: 'float 3.5s ease-in-out infinite'
+                }}
+              />
+              <img 
+                src={dataBot}
+                alt="Data Processing Bot"
+                className="absolute w-20 h-20 object-contain"
+                style={{ 
+                  top: '78%', 
+                  left: '48%',
+                  transform: 'translate(-50%, -50%)',
+                  animation: 'float 2.8s ease-in-out infinite'
+                }}
+              />
             </div>
           </div>
         </div>
