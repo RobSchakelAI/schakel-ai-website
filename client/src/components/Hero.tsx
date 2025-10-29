@@ -32,19 +32,10 @@ export default function Hero() {
         }}
       />
 
-      {/* AI Agent Network Background - Below Hero Text */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 pointer-events-none" data-testid="container-workflow-visualization">
-        <img 
-          src={robotNetwork}
-          alt="AI Agent Network Background"
-          className="max-w-3xl h-auto object-contain"
-        />
-      </div>
-
-      <div className="max-w-4xl mx-auto px-6 md:px-12 py-20 relative z-10">
-        <div className="flex flex-col items-center">
-          {/* Content - Centered */}
-          <div className="text-center max-w-3xl">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-20 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left: Content */}
+          <div className="text-center lg:text-left">
             {/* Pre-title with mint accent */}
             <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full border border-primary/20 bg-primary/5">
               <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
@@ -62,7 +53,7 @@ export default function Hero() {
             </p>
 
             {/* Dual CTAs */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4 mb-12">
               <Button
                 size="lg"
                 onClick={scrollToContact}
@@ -85,7 +76,7 @@ export default function Hero() {
             </div>
 
             {/* Trust line with alternating mint/purple circles */}
-            <div className="flex items-center justify-center gap-3 text-sm text-muted-foreground">
+            <div className="flex items-center justify-center lg:justify-start gap-3 text-sm text-muted-foreground">
               <div className="flex -space-x-2">
                 {[1, 2, 3, 4].map((i) => {
                   const isPurple = i % 2 === 0;
@@ -105,6 +96,15 @@ export default function Hero() {
               </div>
               <span>{t.hero.trustLine}</span>
             </div>
+          </div>
+
+          {/* Right: AI Agent Network Visualization */}
+          <div className="hidden lg:flex items-center justify-center" data-testid="container-workflow-visualization">
+            <img 
+              src={robotNetwork}
+              alt="AI Agent Network"
+              className="w-full max-w-xl h-auto object-contain"
+            />
           </div>
         </div>
       </div>
