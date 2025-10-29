@@ -33,13 +33,18 @@ export default function Hero() {
       />
 
       {/* AI Agent Network Background - Full Width */}
-      <div className="absolute inset-0 flex items-center justify-center overflow-hidden" data-testid="container-workflow-visualization">
-        <img 
-          src={robotNetwork}
-          alt="AI Agent Network Background"
-          className="w-full max-w-5xl h-auto object-contain opacity-15"
-          style={{ animation: 'float 6s ease-in-out infinite' }}
-        />
+      <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none" data-testid="container-workflow-visualization">
+        <div className="relative w-full h-full flex items-center justify-center">
+          <img 
+            src={robotNetwork}
+            alt="AI Agent Network Background"
+            className="w-full max-w-4xl h-auto object-contain opacity-20"
+            style={{ 
+              animation: 'float 6s ease-in-out infinite',
+              marginTop: '5vh'
+            }}
+          />
+        </div>
       </div>
 
       <div className="max-w-4xl mx-auto px-6 md:px-12 py-20 relative z-10">
