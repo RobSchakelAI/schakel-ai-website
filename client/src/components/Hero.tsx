@@ -32,33 +32,20 @@ export default function Hero() {
         }}
       />
 
-      {/* Animated connection nodes - subtle circuit board aesthetic */}
-      <div className="absolute inset-0 overflow-hidden opacity-30">
-        <svg className="absolute top-1/4 right-1/4 w-96 h-96" viewBox="0 0 400 400">
-          <circle 
-            cx="50" cy="50" r="4" 
-            fill="#6EBFAA"
-            className={`transition-all duration-1000 ${nodeAnimation === 0 ? 'opacity-100 scale-150' : 'opacity-40'}`}
-          />
-          <circle 
-            cx="200" cy="100" r="4" 
-            fill="#6EBFAA"
-            className={`transition-all duration-1000 ${nodeAnimation === 1 ? 'opacity-100 scale-150' : 'opacity-40'}`}
-          />
-          <circle 
-            cx="350" cy="150" r="4" 
-            fill="#6EBFAA"
-            className={`transition-all duration-1000 ${nodeAnimation === 2 ? 'opacity-100 scale-150' : 'opacity-40'}`}
-          />
-          <line x1="50" y1="50" x2="200" y2="100" stroke="#6EBFAA" strokeWidth="1" opacity="0.3" />
-          <line x1="200" y1="100" x2="350" y2="150" stroke="#6EBFAA" strokeWidth="1" opacity="0.3" />
-        </svg>
+      {/* AI Agent Network Background - Full Width */}
+      <div className="absolute inset-0 flex items-center justify-center overflow-hidden" data-testid="container-workflow-visualization">
+        <img 
+          src={robotNetwork}
+          alt="AI Agent Network Background"
+          className="w-full max-w-5xl h-auto object-contain opacity-15"
+          style={{ animation: 'float 6s ease-in-out infinite' }}
+        />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-20 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left: Content */}
-          <div className="text-center md:text-left">
+      <div className="max-w-4xl mx-auto px-6 md:px-12 py-20 relative z-10">
+        <div className="flex flex-col items-center">
+          {/* Content - Centered */}
+          <div className="text-center max-w-3xl">
             {/* Pre-title with mint accent */}
             <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full border border-primary/20 bg-primary/5">
               <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
@@ -76,7 +63,7 @@ export default function Hero() {
             </p>
 
             {/* Dual CTAs */}
-            <div className="flex flex-col sm:flex-row items-center md:items-start gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
               <Button
                 size="lg"
                 onClick={scrollToContact}
@@ -99,7 +86,7 @@ export default function Hero() {
             </div>
 
             {/* Trust line with alternating mint/purple circles */}
-            <div className="flex items-center justify-center md:justify-start gap-3 text-sm text-muted-foreground">
+            <div className="flex items-center justify-center gap-3 text-sm text-muted-foreground">
               <div className="flex -space-x-2">
                 {[1, 2, 3, 4].map((i) => {
                   const isPurple = i % 2 === 0;
@@ -119,16 +106,6 @@ export default function Hero() {
               </div>
               <span>{t.hero.trustLine}</span>
             </div>
-          </div>
-
-          {/* Right: AI Agent Network Visualization */}
-          <div className="relative hidden md:flex items-center justify-center" data-testid="container-workflow-visualization">
-            <img 
-              src={robotNetwork}
-              alt="AI Agent Network"
-              className="w-full h-auto object-contain rounded-xl"
-              style={{ animation: 'float 4s ease-in-out infinite' }}
-            />
           </div>
         </div>
       </div>
