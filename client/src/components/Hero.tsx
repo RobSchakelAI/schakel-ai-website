@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import dashboardImage from '@assets/stock_images/modern_ai_dashboard__03f9a5ab.jpg';
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -54,67 +55,89 @@ export default function Hero() {
         </svg>
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 md:px-12 py-20 relative z-10">
-        <div className="max-w-5xl mx-auto text-center">
-          {/* Pre-title with mint accent */}
-          <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full border border-primary/20 bg-primary/5">
-            <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm font-medium text-foreground">{t.hero.preTitle}</span>
-          </div>
-
-          {/* Main headline */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-foreground mb-8 leading-[1.05] tracking-tight">
-            {t.hero.title}
-          </h1>
-
-          {/* Value proposition - clear and powerful */}
-          <p className="text-lg md:text-xl text-foreground/90 max-w-4xl mx-auto mb-12 leading-relaxed">
-            {t.hero.description}
-          </p>
-
-          {/* Dual CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-            <Button
-              size="lg"
-              onClick={scrollToContact}
-              className="text-base px-8 min-h-12 shadow-xl shadow-primary/30 hover:shadow-2xl hover:shadow-primary/40 transition-all"
-              data-testid="button-cta-primary"
-            >
-              {t.hero.ctaPrimary}
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              onClick={() => console.log('Cases clicked')}
-              className="text-base px-8 min-h-12 transition-all duration-300"
-              data-testid="button-cta-secondary"
-            >
-              <Play className="mr-2 h-4 w-4" />
-              {t.hero.ctaSecondary}
-            </Button>
-          </div>
-
-          {/* Trust line with alternating mint/purple circles */}
-          <div className="flex items-center justify-center gap-3 text-sm text-muted-foreground">
-            <div className="flex -space-x-2">
-              {[1, 2, 3, 4].map((i) => {
-                const isPurple = i % 2 === 0; // Even numbers get purple
-                return (
-                  <div 
-                    key={i}
-                    className="w-8 h-8 rounded-full border-2 border-background flex items-center justify-center text-xs font-semibold transition-all duration-300 hover:scale-110"
-                    style={{
-                      backgroundColor: isPurple ? 'rgba(75, 55, 189, 0.15)' : 'rgba(110, 191, 170, 0.15)',
-                      color: isPurple ? '#4b37bd' : '#6EBFAA'
-                    }}
-                  >
-                    {String.fromCharCode(64 + i)}
-                  </div>
-                );
-              })}
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-20 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left: Content */}
+          <div className="text-center lg:text-left">
+            {/* Pre-title with mint accent */}
+            <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full border border-primary/20 bg-primary/5">
+              <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+              <span className="text-sm font-medium text-foreground">{t.hero.preTitle}</span>
             </div>
-            <span>{t.hero.trustLine}</span>
+
+            {/* Main headline */}
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-foreground mb-6 leading-[1.05] tracking-tight">
+              {t.hero.title}
+            </h1>
+
+            {/* Value proposition - clear and powerful */}
+            <p className="text-base md:text-lg text-foreground/90 mb-10 leading-relaxed">
+              {t.hero.description}
+            </p>
+
+            {/* Dual CTAs */}
+            <div className="flex flex-col sm:flex-row items-center lg:items-start gap-4 mb-12">
+              <Button
+                size="lg"
+                onClick={scrollToContact}
+                className="text-base px-8 min-h-12 shadow-xl shadow-primary/30 hover:shadow-2xl hover:shadow-primary/40 transition-all"
+                data-testid="button-cta-primary"
+              >
+                {t.hero.ctaPrimary}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={() => console.log('Cases clicked')}
+                className="text-base px-8 min-h-12 transition-all duration-300"
+                data-testid="button-cta-secondary"
+              >
+                <Play className="mr-2 h-4 w-4" />
+                {t.hero.ctaSecondary}
+              </Button>
+            </div>
+
+            {/* Trust line with alternating mint/purple circles */}
+            <div className="flex items-center justify-center lg:justify-start gap-3 text-sm text-muted-foreground">
+              <div className="flex -space-x-2">
+                {[1, 2, 3, 4].map((i) => {
+                  const isPurple = i % 2 === 0;
+                  return (
+                    <div 
+                      key={i}
+                      className="w-8 h-8 rounded-full border-2 border-background flex items-center justify-center text-xs font-semibold transition-all duration-300 hover:scale-110"
+                      style={{
+                        backgroundColor: isPurple ? 'rgba(75, 55, 189, 0.15)' : 'rgba(110, 191, 170, 0.15)',
+                        color: isPurple ? '#4b37bd' : '#6EBFAA'
+                      }}
+                    >
+                      {String.fromCharCode(64 + i)}
+                    </div>
+                  );
+                })}
+              </div>
+              <span>{t.hero.trustLine}</span>
+            </div>
+          </div>
+
+          {/* Right: Dashboard Mockup */}
+          <div className="relative hidden lg:block">
+            <div className="relative">
+              {/* Mint glow effect */}
+              <div className="absolute inset-0 bg-primary/10 blur-3xl rounded-full" />
+              
+              {/* Dashboard image with subtle border */}
+              <img
+                src={dashboardImage}
+                alt="AI Agent Dashboard Interface"
+                className="relative rounded-lg shadow-2xl border border-primary/20"
+                data-testid="img-dashboard-mockup"
+              />
+              
+              {/* Floating accent element */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-2xl animate-pulse" />
+            </div>
           </div>
         </div>
       </div>
