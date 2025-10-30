@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import robotNetwork from '@assets/file_00000000a5a861fb8c141714e0fa5b3c_1761807339149.png';
+import robotNetwork from '@assets/file_000000009fc06243be0d267b81ed68c7_1761809364026.png';
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -104,7 +104,7 @@ export default function Hero() {
               src={robotNetwork}
               alt="AI Agent Network"
               className="w-full h-auto object-contain"
-              style={{ transform: 'scale(1.1)' }}
+              style={{ transform: 'scale(1.15)' }}
             />
           </div>
         </div>
