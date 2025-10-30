@@ -23,7 +23,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background py-12">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background pt-20 pb-8">
       {/* Subtle purple to mint gradient overlay */}
       <div 
         className="absolute inset-0 opacity-[0.03]"
@@ -32,7 +32,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Left: Content */}
           <div className="text-center md:text-left">
