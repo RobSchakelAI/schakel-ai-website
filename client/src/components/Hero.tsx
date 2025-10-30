@@ -23,7 +23,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-[95vh] flex items-center justify-center relative overflow-hidden bg-background">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background py-12">
       {/* Subtle purple to mint gradient overlay */}
       <div 
         className="absolute inset-0 opacity-[0.03]"
@@ -32,42 +32,42 @@ export default function Hero() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-20 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-8 relative z-10">
+        <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Left: Content */}
           <div className="text-center md:text-left">
             {/* Pre-title with mint accent */}
-            <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-full border border-primary/20 bg-primary/5">
+            <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full border border-primary/20 bg-primary/5">
               <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               <span className="text-sm font-medium text-foreground">{t.hero.preTitle}</span>
             </div>
 
             {/* Main headline */}
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-foreground mb-6 leading-[1.05] tracking-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground mb-4 leading-[1.1] tracking-tight">
               {t.hero.title}
             </h1>
 
             {/* Value proposition - clear and powerful */}
-            <p className="text-base md:text-lg text-foreground/90 mb-10 leading-relaxed">
+            <p className="text-sm md:text-base text-foreground/90 mb-6 leading-relaxed">
               {t.hero.description}
             </p>
 
             {/* Dual CTAs */}
-            <div className="flex flex-col sm:flex-row items-center md:items-start gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row items-center md:items-start gap-3 mb-6">
               <Button
-                size="lg"
+                size="default"
                 onClick={scrollToContact}
-                className="text-base px-8 min-h-12 shadow-xl shadow-primary/30 hover:shadow-2xl hover:shadow-primary/40 transition-all"
+                className="text-sm px-6 shadow-xl shadow-primary/30 hover:shadow-2xl hover:shadow-primary/40 transition-all"
                 data-testid="button-cta-primary"
               >
                 {t.hero.ctaPrimary}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button
-                size="lg"
+                size="default"
                 variant="outline"
                 onClick={() => console.log('Cases clicked')}
-                className="text-base px-8 min-h-12 transition-all duration-300"
+                className="text-sm px-6 transition-all duration-300"
                 data-testid="button-cta-secondary"
               >
                 <Play className="mr-2 h-4 w-4" />
@@ -103,7 +103,7 @@ export default function Hero() {
             <img 
               src={robotNetwork}
               alt="AI Agent Network"
-              className="w-full h-auto object-contain"
+              className="w-full max-w-md h-auto object-contain"
             />
           </div>
         </div>
