@@ -23,7 +23,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background pt-20 pb-8">
+    <section className="relative overflow-hidden bg-background pt-24 pb-12">
       {/* Subtle purple to mint gradient overlay */}
       <div 
         className="absolute inset-0 opacity-[0.03]"
