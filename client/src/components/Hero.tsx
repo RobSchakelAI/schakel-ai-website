@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import robotNetwork from '@assets/robot_network_final.png';
+import robotNetwork from '@assets/file_00000000e2c8620aa4e21a28d75d8fb9_1761809621726.png';
 
 export default function Hero() {
   const { t } = useLanguage();
