@@ -104,7 +104,7 @@ export default function Hero() {
               src={robotNetwork}
               alt="AI Agent Network"
               className="w-full h-auto object-contain"
-              style={{ transform: 'scale(1.3)' }}
+              style={{ transform: 'scale(1.1)' }}
             />
           </div>
         </div>
