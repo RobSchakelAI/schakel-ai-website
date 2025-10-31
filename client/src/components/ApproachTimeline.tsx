@@ -39,7 +39,7 @@ export default function ApproachTimeline() {
                   orient="auto"
                   markerUnits="strokeWidth"
                 >
-                  <path d="M 0 0 L 8 4 L 0 8 Z" fill="#0bb599" />
+                  <path d="M 0 0 L 8 4 L 0 8 Z" fill="#2C9880" />
                 </marker>
                 <marker
                   id="arrow-inactive"
@@ -57,7 +57,7 @@ export default function ApproachTimeline() {
               {/* Connection from step 1 to step 2 */}
               <path
                 d="M 13 30 L 29 30"
-                stroke={activeStep >= 1 ? '#0bb599' : '#e4e4e7'}
+                stroke={activeStep >= 1 ? '#2C9880' : '#e4e4e7'}
                 strokeWidth="0.5"
                 strokeDasharray="1.5 1"
                 fill="none"
@@ -68,7 +68,7 @@ export default function ApproachTimeline() {
               {/* Connection from step 2 to step 3 */}
               <path
                 d="M 38 30 L 54 30"
-                stroke={activeStep >= 2 ? '#0bb599' : '#e4e4e7'}
+                stroke={activeStep >= 2 ? '#2C9880' : '#e4e4e7'}
                 strokeWidth="0.5"
                 strokeDasharray="1.5 1"
                 fill="none"
@@ -79,7 +79,7 @@ export default function ApproachTimeline() {
               {/* Connection from step 3 to step 4 */}
               <path
                 d="M 63 30 L 79 30"
-                stroke={activeStep >= 3 ? '#0bb599' : '#e4e4e7'}
+                stroke={activeStep >= 3 ? '#2C9880' : '#e4e4e7'}
                 strokeWidth="0.5"
                 strokeDasharray="1.5 1"
                 fill="none"
@@ -115,10 +115,10 @@ export default function ApproachTimeline() {
                           isActive
                             ? 'border-[#4b37bd] shadow-lg shadow-[#4b37bd]/40 scale-110'
                             : isPast
-                            ? 'border-[#0bb599]'
+                            ? 'border-[#2C9880]'
                             : 'bg-background border-border'
                         }`}
-                        style={isActive ? { backgroundColor: '#4b37bd' } : isPast ? { backgroundColor: '#0bb599' } : undefined}
+                        style={isActive ? { backgroundColor: '#4b37bd' } : isPast ? { backgroundColor: '#6EBFAA' } : undefined}
                       >
                         <span
                           className={`text-3xl font-display font-bold transition-colors ${
@@ -178,7 +178,7 @@ export default function ApproachTimeline() {
                 top: '3.5rem',
                 height: `${(activeStep / (t.approach.steps.length - 1)) * 100}%`,
                 maxHeight: 'calc(100% - 7rem)',
-                backgroundColor: '#0bb599'
+                backgroundColor: '#2C9880'
               }}
             />
 
