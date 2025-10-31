@@ -24,10 +24,10 @@ export default function ApproachTimeline() {
           </p>
         </div>
 
-        {/* Desktop: Node flow diagram - horizontal with smart routing */}
+        {/* Desktop: Node flow diagram - horizontal linear workflow */}
         <div className="hidden md:block max-w-6xl mx-auto relative">
-          <div className="relative" style={{ height: '500px' }}>
-            {/* SVG layer for all connecting lines - using percentage-based viewBox */}
+          <div className="relative" style={{ height: '420px' }}>
+            {/* SVG layer for all connecting lines - horizontal arrows */}
             <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 5 }} viewBox="0 0 100 100" preserveAspectRatio="none">
               <defs>
                 <marker
@@ -39,7 +39,7 @@ export default function ApproachTimeline() {
                   orient="auto"
                   markerUnits="strokeWidth"
                 >
-                  <path d="M 0 0 L 8 4 L 0 8 Z" fill="#6EBFAA" />
+                  <path d="M 0 0 L 8 4 L 0 8 Z" fill="#0bb599" />
                 </marker>
                 <marker
                   id="arrow-inactive"
@@ -54,56 +54,45 @@ export default function ApproachTimeline() {
                 </marker>
               </defs>
 
-              {/* Connection from step 1 (upper) to step 2 (lower) */}
+              {/* Connection from step 1 to step 2 */}
               <path
-                d="M 9.5 14 L 17 14 L 17 52 L 27.5 52"
-                stroke={activeStep >= 1 ? '#6EBFAA' : '#e4e4e7'}
-                strokeWidth="0.4"
-                strokeDasharray="1 0.7"
+                d="M 13 30 L 29 30"
+                stroke={activeStep >= 1 ? '#0bb599' : '#e4e4e7'}
+                strokeWidth="0.5"
+                strokeDasharray="1.5 1"
                 fill="none"
                 markerEnd={activeStep >= 1 ? 'url(#arrow-active)' : 'url(#arrow-inactive)'}
                 vectorEffect="non-scaling-stroke"
               />
 
-              {/* Connection from step 2 (lower) to step 3 (upper) */}
+              {/* Connection from step 2 to step 3 */}
               <path
-                d="M 34.5 52 L 42 52 L 42 14 L 52.5 14"
-                stroke={activeStep >= 2 ? '#6EBFAA' : '#e4e4e7'}
-                strokeWidth="0.4"
-                strokeDasharray="1 0.7"
+                d="M 38 30 L 54 30"
+                stroke={activeStep >= 2 ? '#0bb599' : '#e4e4e7'}
+                strokeWidth="0.5"
+                strokeDasharray="1.5 1"
                 fill="none"
                 markerEnd={activeStep >= 2 ? 'url(#arrow-active)' : 'url(#arrow-inactive)'}
                 vectorEffect="non-scaling-stroke"
               />
 
-              {/* Connection from step 3 (upper) to step 4 (lower) */}
+              {/* Connection from step 3 to step 4 */}
               <path
-                d="M 59.5 14 L 67 14 L 67 52 L 77.5 52"
-                stroke={activeStep >= 3 ? '#6EBFAA' : '#e4e4e7'}
-                strokeWidth="0.4"
-                strokeDasharray="1 0.7"
+                d="M 63 30 L 79 30"
+                stroke={activeStep >= 3 ? '#0bb599' : '#e4e4e7'}
+                strokeWidth="0.5"
+                strokeDasharray="1.5 1"
                 fill="none"
                 markerEnd={activeStep >= 3 ? 'url(#arrow-active)' : 'url(#arrow-inactive)'}
                 vectorEffect="non-scaling-stroke"
               />
-
-              {/* Decorative dots at corners */}
-              <circle cx="17" cy="14" r="0.5" fill={activeStep >= 1 ? '#6EBFAA' : '#d4d4d8'} />
-              <circle cx="17" cy="52" r="0.5" fill={activeStep >= 1 ? '#6EBFAA' : '#d4d4d8'} />
-              
-              <circle cx="42" cy="52" r="0.5" fill={activeStep >= 2 ? '#6EBFAA' : '#d4d4d8'} />
-              <circle cx="42" cy="14" r="0.5" fill={activeStep >= 2 ? '#6EBFAA' : '#d4d4d8'} />
-              
-              <circle cx="67" cy="14" r="0.5" fill={activeStep >= 3 ? '#6EBFAA' : '#d4d4d8'} />
-              <circle cx="67" cy="52" r="0.5" fill={activeStep >= 3 ? '#6EBFAA' : '#d4d4d8'} />
             </svg>
 
-            {/* Step nodes */}
+            {/* Step nodes - all at same vertical level */}
             {t.approach.steps.map((step, index) => {
               const isActive = index === activeStep;
               const isPast = index < activeStep;
-              const isUpper = index % 2 === 0;
-              const leftPosition = 5 + index * 25;
+              const leftPosition = 2 + index * 25;
 
               return (
                 <div
@@ -111,14 +100,14 @@ export default function ApproachTimeline() {
                   className="absolute"
                   style={{
                     left: `${leftPosition}%`,
-                    top: isUpper ? '60px' : '240px',
+                    top: '80px',
                     width: '220px',
                     zIndex: 10
                   }}
                   data-testid={`step-${index}`}
                   onMouseEnter={() => setActiveStep(index)}
                 >
-                  {/* Node circle with CORAL for active state */}
+                  {/* Node circle with logo color for active state */}
                   <div className="flex justify-center mb-4">
                     <div className="relative">
                       <div
@@ -126,10 +115,10 @@ export default function ApproachTimeline() {
                           isActive
                             ? 'border-[#4b37bd] shadow-lg shadow-[#4b37bd]/40 scale-110'
                             : isPast
-                            ? 'bg-primary border-primary'
+                            ? 'border-[#0bb599]'
                             : 'bg-background border-border'
                         }`}
-                        style={isActive ? { backgroundColor: '#4b37bd' } : undefined}
+                        style={isActive ? { backgroundColor: '#4b37bd' } : isPast ? { backgroundColor: '#0bb599' } : undefined}
                       >
                         <span
                           className={`text-3xl font-display font-bold transition-colors ${
@@ -184,11 +173,12 @@ export default function ApproachTimeline() {
             
             {/* Animated pulse line */}
             <div 
-              className="absolute left-8 w-0.5 bg-primary transition-all duration-1000 z-0"
+              className="absolute left-8 w-0.5 transition-all duration-1000 z-0"
               style={{
                 top: '3.5rem',
                 height: `${(activeStep / (t.approach.steps.length - 1)) * 100}%`,
-                maxHeight: 'calc(100% - 7rem)'
+                maxHeight: 'calc(100% - 7rem)',
+                backgroundColor: '#0bb599'
               }}
             />
 
