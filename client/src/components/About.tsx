@@ -83,10 +83,12 @@ export default function About() {
                   </p>
                 </div>
 
-                <div className="mb-6 pl-6 border-l-4 border-primary/40">
-                  <p className="text-base text-foreground/80 leading-relaxed text-left" data-testid={`text-bio-${founder.id}`}>
-                    {founder.data.bio}
-                  </p>
+                <div className="mb-6 pl-6 border-l-4 border-primary/40 space-y-3">
+                  {founder.data.bio.split('\n\n').map((paragraph, index) => (
+                    <p key={index} className="text-base text-foreground/80 leading-relaxed text-left" data-testid={index === 0 ? `text-bio-${founder.id}` : `text-bio-${founder.id}-${index}`}>
+                      {paragraph}
+                    </p>
+                  ))}
                 </div>
 
                 {/* Quote reveal on hover with PURPLE icon */}
