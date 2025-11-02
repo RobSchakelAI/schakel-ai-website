@@ -24,7 +24,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-20 md:py-32 bg-muted/30">
+    <section id="about" className="py-12 md:py-20 bg-muted/30">
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mb-16 text-center">
           {t.about.title}

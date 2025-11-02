@@ -5,7 +5,7 @@ export default function Vision() {
   const { t } = useLanguage();
 
   return (
-    <section id="vision" className="py-20 md:py-32 bg-[#0A0A0A] relative overflow-hidden">
+    <section id="vision" className="py-12 md:py-20 bg-[#0A0A0A] relative overflow-hidden">
       {/* Subtle grid pattern background */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
         backgroundImage: `radial-gradient(circle at 1px 1px, rgb(110, 191, 170) 1px, transparent 0)`,
