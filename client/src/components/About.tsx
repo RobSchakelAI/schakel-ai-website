@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card } from '@/components/ui/card';
 import { Quote } from 'lucide-react';
+import simonPhoto from '@assets/simon-photo.jpg';
 
 export default function About() {
   const { t } = useLanguage();
@@ -13,12 +14,14 @@ export default function About() {
       id: 'simon',
       data: t.about.simon,
       initial: 'S',
+      image: simonPhoto,
       quote: '"AI is een middel, geen doel. Pragmatisme wint."'
     },
     {
       id: 'rob',
       data: t.about.rob,
       initial: 'R',
+      image: null,
       quote: '"Rust in je processen geeft ruimte voor groei."'
     }
   ];
@@ -52,6 +55,13 @@ export default function About() {
                 <div className="mb-6 flex justify-center">
                   <div className="relative">
                     <Avatar className="w-32 h-32 border-4 border-[#4b37bd]/30 group-hover:border-[#4b37bd]/60 transition-all duration-500">
+                      {founder.image && (
+                        <AvatarImage 
+                          src={founder.image} 
+                          alt={founder.data.name}
+                          className="object-cover"
+                        />
+                      )}
                       <AvatarFallback 
                         className="text-4xl font-display font-bold transition-colors duration-500"
                         style={{
