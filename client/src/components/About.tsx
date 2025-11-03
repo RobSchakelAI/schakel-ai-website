@@ -52,10 +52,12 @@ export default function About() {
               />
               
               <div className="relative z-10">
-                {/* Avatar with mint rim */}
+                {/* Avatar with mint/teal rim */}
                 <div className="mb-6 flex justify-center">
                   <div className="relative">
-                    <Avatar className="w-32 h-32 border-4 border-[#4b37bd]/30 group-hover:border-[#4b37bd]/60 transition-all duration-500">
+                    <Avatar className="w-32 h-32 border-4 transition-all duration-500" style={{
+                      borderColor: hoveredFounder === founder.id ? '#6EBFAA' : '#2C9880'
+                    }}>
                       {founder.image && (
                         <AvatarImage 
                           src={founder.image} 
@@ -66,17 +68,17 @@ export default function About() {
                       <AvatarFallback 
                         className="text-4xl font-display font-bold transition-colors duration-500"
                         style={{
-                          background: 'linear-gradient(135deg, rgba(110, 191, 170, 0.15) 0%, rgba(75, 55, 189, 0.15) 100%)',
-                          color: '#4b37bd'
+                          background: 'linear-gradient(135deg, rgba(110, 191, 170, 0.15) 0%, rgba(44, 152, 128, 0.15) 100%)',
+                          color: '#2C9880'
                         }}
                       >
                         {founder.initial}
                       </AvatarFallback>
                     </Avatar>
-                    {/* Purple glow effect on hover */}
+                    {/* Mint glow effect on hover */}
                     <div 
                       className="absolute inset-0 rounded-full blur-xl opacity-0 group-hover:opacity-40 transition-opacity duration-500 -z-10"
-                      style={{ backgroundColor: '#4b37bd' }}
+                      style={{ backgroundColor: '#6EBFAA' }}
                     />
                   </div>
                 </div>
@@ -87,7 +89,7 @@ export default function About() {
                   </h3>
                   <p 
                     className="text-base font-medium mb-1 transition-colors duration-300" 
-                    style={{ color: '#4b37bd' }}
+                    style={{ color: '#2C9880' }}
                     data-testid={`text-role-${founder.id}`}
                   >
                     {founder.data.role}
