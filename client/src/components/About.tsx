@@ -4,6 +4,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card } from '@/components/ui/card';
 import { Quote } from 'lucide-react';
 import simonPhoto from '@assets/simon-photo.jpg';
+import robPhoto from '@assets/rob-photo.jpg';
 
 export default function About() {
   const { t } = useLanguage();
@@ -21,7 +22,7 @@ export default function About() {
       id: 'rob',
       data: t.about.rob,
       initial: 'R',
-      image: null,
+      image: robPhoto,
       quote: '"Rust in je processen geeft ruimte voor groei."'
     }
   ];
