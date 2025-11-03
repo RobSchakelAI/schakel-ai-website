@@ -48,9 +48,13 @@ export default function Hero() {
             </h1>
 
             {/* Value proposition - clear and powerful */}
-            <p className="text-sm md:text-base text-foreground/90 mb-6 leading-relaxed">
-              {t.hero.description}
-            </p>
+            <div className="mb-6 space-y-4">
+              {t.hero.description.split('\n\n').map((paragraph, index) => (
+                <p key={index} className="text-sm md:text-base text-foreground/90 leading-relaxed">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
 
             {/* Dual CTAs */}
             <div className="flex flex-col sm:flex-row items-center md:items-start gap-3 mb-6">
