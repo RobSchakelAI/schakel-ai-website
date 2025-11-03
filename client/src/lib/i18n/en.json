@@ -32,22 +32,22 @@
       {
         "number": "01",
         "title": "Discovery",
-        "description": "We analyze your processes and identify the biggest opportunities"
+        "description": "We look at where you're losing the most time now and what can be solved directly"
       },
       {
         "number": "02",
         "title": "Design",
-        "description": "Together we set priorities and design the solution"
+        "description": "Together we choose the process to tackle first and determine what it should do"
       },
       {
         "number": "03",
         "title": "Implementation",
-        "description": "We build, test and integrate with your existing workflow"
+        "description": "We build it, test with your team and ensure it works in your daily process"
       },
       {
         "number": "04",
         "title": "Improvement",
-        "description": "Continuous optimization based on data and feedback"
+        "description": "We measure the result and improve where needed"
       }
     ]
   },

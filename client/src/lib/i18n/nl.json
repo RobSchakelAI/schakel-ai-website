@@ -32,22 +32,22 @@
       {
         "number": "01",
         "title": "Verkenning",
-        "description": "We analyseren je processen en identificeren de grootste kansen"
+        "description": "We kijken waar je nu het meeste tijd verliest en wat direct op te lossen is"
       },
       {
         "number": "02",
         "title": "Ontwerp",
-        "description": "Samen stellen we prioriteiten en ontwerpen we de oplossing"
+        "description": "We kiezen samen het proces dat we eerst aanpakken en bepalen wat het moet doen"
       },
       {
         "number": "03",
         "title": "Implementatie",
-        "description": "We bouwen, testen en integreren met je bestaande werkwijze"
+        "description": "We bouwen het, testen met je team en zorgen dat het werkt in jullie dagelijkse proces"
       },
       {
         "number": "04",
         "title": "Verbetering",
-        "description": "Continue optimalisatie op basis van data en feedback"
+        "description": "We meten het resultaat en verbeteren waar nodig"
       }
     ]
   },
