@@ -17,37 +17,37 @@
     "trustLine": "Al 15+ bedrijven verder geholpen"
   },
   "vision": {
-    "title": "Waarom we dit doen",
+    "title": "Waarom wij dit doen",
     "content": [
       "AI groeit razendsnel. Bedrijven die nu starten, pakken voorsprong. Wie blijft wachten, kijkt straks naar concurrenten die sneller bewogen.",
-      "Wij geloven dat snelheid het verschil maakt. Geen maanden praten over wat misschien kan, maar binnen 30 dagen tastbaar resultaat. We zagen het bij onze eigen bedrijven: processen die AI in weken oplost, kostten ons eerst maanden. Die ervaring zetten we nu in voor anderen.",
-      "We bouwen tools die direct werken. Processen automatiseren, teams ontlasten, fouten reduceren. Dat levert rust én rendement op. Meer output met minder hectiek. Productiever werken, meer focus op wat echt telt.",
-      "Maar dat gebeurt niet vanzelf. Het gebeurt door te starten. Laten we schakelen."
+      "Wij geloven dat snelheid het verschil maakt. Geen maanden praten over wat misschien kan, maar binnen 30 dagen tastbaar resultaat. Wij zagen het bij onze eigen bedrijven: processen die AI in weken oplost, kostten ons eerst maanden. Die ervaring zetten wij nu in voor anderen.",
+      "Wij bouwen tools die direct werken. Processen automatiseren, teams ontlasten, fouten reduceren. Dat levert rust én rendement op. Meer output met minder hectiek. Productiever werken, meer focus op wat echt telt.",
+      "Maar dat gebeurt niet vanzelf. Het gebeurt door te starten. Laten wij schakelen."
     ]
   },
   "approach": {
-    "title": "Hoe we schakelen",
+    "title": "Hoe wij schakelen",
     "subtitle": "Van inzicht naar impact in 4 weken",
     "steps": [
       {
         "number": "01",
         "title": "Verkenning",
-        "description": "We kijken waar je nu het meeste tijd verliest en wat direct op te lossen is"
+        "description": "Wij kijken waar je nu het meeste tijd verliest en wat direct op te lossen is"
       },
       {
         "number": "02",
         "title": "Ontwerp",
-        "description": "We kiezen samen het proces dat we eerst aanpakken en bepalen wat het moet doen"
+        "description": "Wij kiezen samen het proces dat we eerst aanpakken en bepalen wat het moet doen"
       },
       {
         "number": "03",
         "title": "Implementatie",
-        "description": "We bouwen het, testen met je team en zorgen dat het werkt in jullie dagelijkse proces"
+        "description": "Wij bouwen het, testen met je team en zorgen dat het werkt in jullie dagelijkse proces"
       },
       {
         "number": "04",
         "title": "Verbetering",
-        "description": "We meten het resultaat en verbeteren waar nodig"
+        "description": "Wij meten het resultaat en verbeteren waar nodig"
       }
     ]
   },
@@ -66,14 +66,14 @@
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Klaar om te schakelen? Laten we praten.",
+    "subtitle": "Klaar om te schakelen? Laten wij praten.",
     "form": {
       "name": "Naam",
       "email": "E-mailadres",
       "company": "Bedrijf",
       "message": "Bericht",
       "submit": "Verstuur bericht",
-      "success": "Bedankt! We nemen zo snel mogelijk contact op.",
+      "success": "Bedankt! Wij nemen zo snel mogelijk contact op.",
       "error": "Er ging iets mis. Probeer het opnieuw."
     }
   },
