@@ -118,6 +118,15 @@ export default function Header() {
               >
                 EN
               </Button>
+              <Button
+                variant={language === 'ai' ? 'secondary' : 'ghost'}
+                size="sm"
+                onClick={() => setLanguage('ai')}
+                className="text-xs h-8 px-3"
+                data-testid="button-lang-ai"
+              >
+                AI
+              </Button>
             </div>
           </div>
         </nav>
@@ -212,6 +221,15 @@ export default function Header() {
                     data-testid="button-lang-en-mobile"
                   >
                     English
+                  </Button>
+                  <Button
+                    variant={language === 'ai' ? 'secondary' : 'ghost'}
+                    size="sm"
+                    onClick={() => setLanguage('ai')}
+                    className="flex-1"
+                    data-testid="button-lang-ai-mobile"
+                  >
+                    AI Mode
                   </Button>
                 </div>
               </div>

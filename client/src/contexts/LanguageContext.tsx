@@ -1,8 +1,9 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import nlContent from '../lib/i18n/nl.json';
 import enContent from '../lib/i18n/en.json';
+import aiContent from '../lib/i18n/ai.json';
 
-type Language = 'nl' | 'en';
+type Language = 'nl' | 'en' | 'ai';
 type Content = typeof nlContent;
 
 interface LanguageContextType {
@@ -18,7 +19,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const saved = localStorage.getItem('language') as Language;
-    if (saved && (saved === 'nl' || saved === 'en')) {
+    if (saved && (saved === 'nl' || saved === 'en' || saved === 'ai')) {
       setLanguage(saved);
     }
   }, []);
@@ -29,7 +30,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     document.documentElement.lang = lang;
   };
 
-  const content = language === 'nl' ? nlContent : enContent;
+  const content = language === 'nl' ? nlContent : language === 'en' ? enContent : aiContent;
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t: content }}>
