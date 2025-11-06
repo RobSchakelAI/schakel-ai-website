@@ -98,8 +98,8 @@ export default function Hero() {
                 <svg className="w-0 h-0">
                   <defs>
                     <linearGradient id="partialFill">
-                      <stop offset="20%" stopColor="#FFD700" />
-                      <stop offset="20%" stopColor="#E5E7EB" />
+                      <stop offset="55%" stopColor="#FFD700" />
+                      <stop offset="55%" stopColor="#E5E7EB" />
                     </linearGradient>
                   </defs>
                 </svg>
