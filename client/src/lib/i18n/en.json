@@ -164,5 +164,31 @@
         "description": "Our team builds, tests and deploys your AI solutions with ongoing support and optimization"
       }
     ]
+  },
+  "services": {
+    "title": "Our AI solutions",
+    "subtitle": "Comprehensive AI services designed to transform your business operations",
+    "items": [
+      {
+        "icon": "Bot",
+        "title": "AI Chatbots & Virtual Assistants",
+        "description": "Intelligent conversational agents that handle customer support, lead qualification, and sales inquiries 24/7 with natural language processing"
+      },
+      {
+        "icon": "Workflow",
+        "title": "Workflow Automation",
+        "description": "Streamline repetitive processes and eliminate manual tasks with intelligent automation systems that save 20+ hours per week"
+      },
+      {
+        "icon": "Cog",
+        "title": "AI Integration Services",
+        "description": "Seamlessly integrate AI capabilities into your existing systems with custom APIs"
+      },
+      {
+        "icon": "Brain",
+        "title": "Smart Analytics & Insights",
+        "description": "AI-powered analytics that provide actionable insights and predictive intelligence for better decision making"
+      }
+    ]
   }
 }
