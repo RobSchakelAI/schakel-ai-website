@@ -12,11 +12,12 @@ export default function AutomationFlow() {
     return () => clearInterval(interval);
   }, []);
 
+  // Exponentiële curve: y = 80 - (x/85)^2.5 * 58
   const nodes = [
     { id: 0, icon: AlertCircle, label: 'Chaos', x: 15, y: 78, color: '#ef4444' },
-    { id: 1, icon: Search, label: 'Patroon', x: 30, y: 72, color: '#6EBFAA' },
-    { id: 2, icon: Zap, label: 'Automatiseer', x: 50, y: 58, color: '#4b37bd' },
-    { id: 3, icon: TrendingUp, label: 'Schaal', x: 70, y: 38, color: '#2C9880' },
+    { id: 1, icon: Search, label: 'Patroon', x: 30, y: 74, color: '#6EBFAA' },
+    { id: 2, icon: Zap, label: 'Automatiseer', x: 50, y: 63, color: '#4b37bd' },
+    { id: 3, icon: TrendingUp, label: 'Schaal', x: 70, y: 42, color: '#2C9880' },
     { id: 4, icon: CheckCircle2, label: 'Controle', x: 85, y: 22, color: '#6EBFAA' }
   ];
 
@@ -69,9 +70,9 @@ export default function AutomationFlow() {
           
           return (
             <g key={idx}>
-              {/* Basis lijn - exponentiële groeicurve */}
+              {/* Basis lijn - exponentiële groeicurve met gladde overgang */}
               <motion.path
-                d={`M ${fromNode.x} ${fromNode.y} Q ${(fromNode.x + toNode.x) / 2} ${fromNode.y} ${toNode.x} ${toNode.y}`}
+                d={`M ${fromNode.x} ${fromNode.y} C ${fromNode.x + (toNode.x - fromNode.x) * 0.5} ${fromNode.y}, ${fromNode.x + (toNode.x - fromNode.x) * 0.5} ${toNode.y}, ${toNode.x} ${toNode.y}`}
                 fill="none"
                 stroke="url(#mint-gradient)"
                 strokeWidth="0.8"
@@ -89,7 +90,7 @@ export default function AutomationFlow() {
                   <animateMotion
                     dur="1.5s"
                     repeatCount="1"
-                    path={`M ${fromNode.x} ${fromNode.y} Q ${(fromNode.x + toNode.x) / 2} ${fromNode.y} ${toNode.x} ${toNode.y}`}
+                    path={`M ${fromNode.x} ${fromNode.y} C ${fromNode.x + (toNode.x - fromNode.x) * 0.5} ${fromNode.y}, ${fromNode.x + (toNode.x - fromNode.x) * 0.5} ${toNode.y}, ${toNode.x} ${toNode.y}`}
                   />
                   <animate
                     attributeName="opacity"
