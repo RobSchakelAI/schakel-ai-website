@@ -168,6 +168,22 @@
       }
     ]
   },
+  "automation": {
+    "nodes": {
+      "now": "Nu",
+      "analyze": "Analyseren",
+      "build": "Bouwen",
+      "grow": "Groeien",
+      "impact": "Impact"
+    },
+    "status": {
+      "now": "Handmatig werk dat tijd kost",
+      "analyze": "Identificeren van kansen",
+      "build": "AI-oplossing die direct werkt",
+      "grow": "Schaalbaar en toekomstbestendig",
+      "impact": "Aantoonbaar rendement"
+    }
+  },
   "services": {
     "title": "Onze AI-oplossingen",
     "subtitle": "Een greep uit de oplossingen die we bouwen",

@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { AlertCircle, Search, Zap, TrendingUp, CheckCircle2 } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function AutomationFlow() {
+  const { t } = useLanguage();
   const [activeNode, setActiveNode] = useState(0);
 
   useEffect(() => {
@@ -14,11 +16,11 @@ export default function AutomationFlow() {
 
   // Nodes evenly distributed along arc length (calculated by arc-length parameterization)
   const nodes = [
-    { id: 0, icon: AlertCircle, label: 'Nu', x: 15, y: 78, color: '#ef4444' },
-    { id: 1, icon: Search, label: 'Analyseren', x: 37.21, y: 71.61, color: '#6EBFAA' },
-    { id: 2, icon: Zap, label: 'Bouwen', x: 56.09, y: 58.37, color: '#4b37bd' },
-    { id: 3, icon: TrendingUp, label: 'Groeien', x: 70.75, y: 39.93, color: '#2C9880' },
-    { id: 4, icon: CheckCircle2, label: 'Impact', x: 85, y: 22, color: '#6EBFAA' }
+    { id: 0, icon: AlertCircle, label: t.automation.nodes.now, x: 15, y: 78, color: '#ef4444' },
+    { id: 1, icon: Search, label: t.automation.nodes.analyze, x: 37.21, y: 71.61, color: '#6EBFAA' },
+    { id: 2, icon: Zap, label: t.automation.nodes.build, x: 56.09, y: 58.37, color: '#4b37bd' },
+    { id: 3, icon: TrendingUp, label: t.automation.nodes.grow, x: 70.75, y: 39.93, color: '#2C9880' },
+    { id: 4, icon: CheckCircle2, label: t.automation.nodes.impact, x: 85, y: 22, color: '#6EBFAA' }
   ];
 
   const connections = [
@@ -144,11 +146,11 @@ export default function AutomationFlow() {
           ))}
         </div>
         <span className="text-xs text-muted-foreground font-medium">
-          {activeNode === 0 && 'Handmatig werk dat tijd kost'}
-          {activeNode === 1 && 'Identificeren van kansen'}
-          {activeNode === 2 && 'AI-oplossing die direct werkt'}
-          {activeNode === 3 && 'Schaalbaar en toekomstbestendig'}
-          {activeNode === 4 && 'Aantoonbaar rendement'}
+          {activeNode === 0 && t.automation.status.now}
+          {activeNode === 1 && t.automation.status.analyze}
+          {activeNode === 2 && t.automation.status.build}
+          {activeNode === 3 && t.automation.status.grow}
+          {activeNode === 4 && t.automation.status.impact}
         </span>
       </div>
     </div>

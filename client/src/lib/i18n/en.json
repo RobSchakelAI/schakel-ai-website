@@ -168,6 +168,22 @@
       }
     ]
   },
+  "automation": {
+    "nodes": {
+      "now": "Now",
+      "analyze": "Analyze",
+      "build": "Build",
+      "grow": "Scale",
+      "impact": "Impact"
+    },
+    "status": {
+      "now": "Manual work that costs time",
+      "analyze": "Identifying opportunities",
+      "build": "AI solution that works immediately",
+      "grow": "Scalable and future-proof",
+      "impact": "Demonstrable ROI"
+    }
+  },
   "services": {
     "title": "Our AI Solutions",
     "subtitle": "A selection of the solutions we build",
