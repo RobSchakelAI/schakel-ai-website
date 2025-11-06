@@ -21,9 +21,13 @@ export default function ExpandingCTA() {
 
   useEffect(() => {
     if (isExpanded) {
+      // Calculate scrollbar width to prevent layout shift
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
       document.body.style.overflow = 'hidden';
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
     } else {
       document.body.style.overflow = 'unset';
+      document.body.style.paddingRight = '0px';
     }
   }, [isExpanded]);
 
@@ -99,7 +103,7 @@ export default function ExpandingCTA() {
                 background: 'linear-gradient(135deg, #6EBFAA 0%, #2C9880 100%)'
               }}
               layout
-              className="relative flex h-full w-full overflow-y-auto transform-gpu will-change-transform max-w-4xl"
+              className="relative flex h-full w-full overflow-y-auto transform-gpu will-change-transform"
             >
               {/* Subtle grid pattern background */}
               <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{
@@ -115,7 +119,7 @@ export default function ExpandingCTA() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.15, duration: 0.4 }}
-                className="relative z-10 flex flex-col w-full p-8 md:p-12 lg:p-16 gap-8"
+                className="relative z-10 flex flex-col w-full max-w-4xl mx-auto p-8 md:p-12 lg:p-16 gap-8"
               >
                 <div className="space-y-4">
                   <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-primary-foreground">
