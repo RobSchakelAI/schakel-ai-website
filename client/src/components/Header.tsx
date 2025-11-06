@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, X } from 'lucide-react';
+import { Menu, Sun, Moon } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useTheme } from '@/contexts/ThemeContext';
 import Logo from '@/components/Logo';
 
 export default function Header() {
   const { language, setLanguage, t } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -80,25 +82,43 @@ export default function Header() {
           >
             {t.nav.contact}
           </button>
-          <div className="flex items-center gap-1 ml-4">
+          <div className="flex items-center gap-3 ml-4">
+            {/* Theme toggle */}
             <Button
-              variant={language === 'nl' ? 'secondary' : 'ghost'}
-              size="sm"
-              onClick={() => setLanguage('nl')}
-              className="text-xs h-8 px-3"
-              data-testid="button-lang-nl"
+              variant="ghost"
+              size="icon"
+              onClick={toggleTheme}
+              className="h-8 w-8"
+              data-testid="button-theme-toggle"
             >
-              NL
+              {theme === 'light' ? (
+                <Moon className="h-4 w-4" />
+              ) : (
+                <Sun className="h-4 w-4" />
+              )}
             </Button>
-            <Button
-              variant={language === 'en' ? 'secondary' : 'ghost'}
-              size="sm"
-              onClick={() => setLanguage('en')}
-              className="text-xs h-8 px-3"
-              data-testid="button-lang-en"
-            >
-              EN
-            </Button>
+            
+            {/* Language toggle */}
+            <div className="flex items-center gap-1">
+              <Button
+                variant={language === 'nl' ? 'secondary' : 'ghost'}
+                size="sm"
+                onClick={() => setLanguage('nl')}
+                className="text-xs h-8 px-3"
+                data-testid="button-lang-nl"
+              >
+                NL
+              </Button>
+              <Button
+                variant={language === 'en' ? 'secondary' : 'ghost'}
+                size="sm"
+                onClick={() => setLanguage('en')}
+                className="text-xs h-8 px-3"
+                data-testid="button-lang-en"
+              >
+                EN
+              </Button>
+            </div>
           </div>
         </nav>
 
@@ -151,7 +171,29 @@ export default function Header() {
                 {t.nav.contact}
               </button>
               
-              <div className="border-t border-border pt-6 mt-2">
+              <div className="border-t border-border pt-6 mt-2 space-y-4">
+                {/* Theme toggle */}
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={toggleTheme}
+                  className="w-full justify-start gap-2"
+                  data-testid="button-theme-toggle-mobile"
+                >
+                  {theme === 'light' ? (
+                    <>
+                      <Moon className="h-4 w-4" />
+                      Dark Mode
+                    </>
+                  ) : (
+                    <>
+                      <Sun className="h-4 w-4" />
+                      Light Mode
+                    </>
+                  )}
+                </Button>
+                
+                {/* Language toggle */}
                 <div className="flex gap-2">
                   <Button
                     variant={language === 'nl' ? 'secondary' : 'ghost'}
