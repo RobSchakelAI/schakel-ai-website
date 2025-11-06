@@ -101,10 +101,23 @@ export default function ExpandingCTA() {
             <motion.div
               layoutId="cta-card"
               transition={{ duration: 0.3 }}
-              style={{ borderRadius: '24px' }}
+              style={{ 
+                borderRadius: '24px',
+                background: 'linear-gradient(135deg, #6EBFAA 0%, #2C9880 100%)'
+              }}
               layout
-              className="relative flex h-full w-full overflow-y-auto bg-gradient-to-br from-primary to-primary transform-gpu will-change-transform max-w-4xl"
+              className="relative flex h-full w-full overflow-y-auto transform-gpu will-change-transform max-w-4xl"
             >
+              {/* Subtle grid pattern background */}
+              <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{
+                backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.3) 1px, transparent 0)`,
+                backgroundSize: '40px 40px',
+                borderRadius: '24px'
+              }} />
+
+              {/* Subtle glow effect */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-64 bg-white/10 blur-[100px] pointer-events-none" />
+
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
