@@ -19,10 +19,10 @@ export default function Home() {
         <ProblemSolution />
         <Vision />
         <ServicesGrid />
-        <Stats />
         <div id="approach">
           <ApproachTimeline />
         </div>
+        <Stats />
         <Testimonials />
         <About />
         <ExpandingCTA />
