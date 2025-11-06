@@ -74,6 +74,7 @@
       "message": "Message",
       "submit": "Send message",
       "success": "Thank you! We'll get in touch as soon as possible.",
+      "successDescription": "We'll get back to you soon.",
       "error": "Something went wrong. Please try again."
     }
   },

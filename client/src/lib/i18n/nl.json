@@ -74,6 +74,7 @@
       "message": "Bericht",
       "submit": "Verstuur bericht",
       "success": "Bedankt! Wij nemen zo snel mogelijk contact op.",
+      "successDescription": "We nemen zo snel mogelijk contact met je op.",
       "error": "Er ging iets mis. Probeer het opnieuw."
     }
   },

@@ -40,7 +40,7 @@ export default function ExpandingCTA() {
     
     toast({
       title: t.contact.form.success,
-      description: "We'll get back to you soon.",
+      description: t.contact.form.successDescription,
     });
     
     setFormData({ name: '', email: '', company: '', message: '' });
