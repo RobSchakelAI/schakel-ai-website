@@ -12,13 +12,12 @@ export default function AutomationFlow() {
     return () => clearInterval(interval);
   }, []);
 
-  // Nodes evenly distributed along arc length (not just X-axis)
-  // Account for curve steepness: start slower, accelerate faster
+  // Nodes evenly distributed along arc length (calculated by arc-length parameterization)
   const nodes = [
     { id: 0, icon: AlertCircle, label: 'Chaos', x: 15, y: 78, color: '#ef4444' },
-    { id: 1, icon: Search, label: 'Patroon', x: 30, y: 75, color: '#6EBFAA' },
-    { id: 2, icon: Zap, label: 'Automatiseer', x: 47, y: 66, color: '#4b37bd' },
-    { id: 3, icon: TrendingUp, label: 'Schaal', x: 66, y: 50, color: '#2C9880' },
+    { id: 1, icon: Search, label: 'Patroon', x: 37.21, y: 71.61, color: '#6EBFAA' },
+    { id: 2, icon: Zap, label: 'Automatiseer', x: 56.09, y: 58.37, color: '#4b37bd' },
+    { id: 3, icon: TrendingUp, label: 'Schaal', x: 70.75, y: 39.93, color: '#2C9880' },
     { id: 4, icon: CheckCircle2, label: 'Controle', x: 85, y: 22, color: '#6EBFAA' }
   ];
 
@@ -72,7 +71,7 @@ export default function AutomationFlow() {
           strokeOpacity="0.4"
         />
         
-        {/* Geanimeerde data pulse die over de hele curve beweegt */}
+        {/* Geanimeerde data pulse synchronized with node activations */}
         {activeNode > 0 && (
           <circle
             r="2"
@@ -81,14 +80,14 @@ export default function AutomationFlow() {
             opacity="0"
           >
             <animateMotion
-              dur="8s"
+              dur="10s"
               repeatCount="indefinite"
               path="M 15 78 C 25 77, 40 72, 50 64 C 60 56, 72 38, 85 22"
             />
             <animate
               attributeName="opacity"
-              values="0;1;1;1;1;0"
-              dur="8s"
+              values="0;1;1;1;1;1;0"
+              dur="10s"
               repeatCount="indefinite"
             />
           </circle>
