@@ -1,19 +1,10 @@
-import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import robotNetwork from '@assets/hero-robot-network.png';
+import AutomationFlow from '@/components/AutomationFlow';
 
 export default function Hero() {
   const { t } = useLanguage();
-  const [nodeAnimation, setNodeAnimation] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setNodeAnimation(prev => (prev + 1) % 3);
-    }, 2000);
-    return () => clearInterval(interval);
-  }, []);
 
   const scrollToContact = () => {
     const element = document.getElementById('contact');
@@ -102,13 +93,9 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right: AI Agent Network Visualization */}
-          <div className="hidden md:flex items-center justify-center" data-testid="container-workflow-visualization">
-            <img 
-              src={robotNetwork}
-              alt="AI Agent Network"
-              className="w-full max-w-md h-auto object-contain"
-            />
+          {/* Right: Geanimeerde Automation Flow */}
+          <div className="hidden md:flex items-center justify-center h-96" data-testid="container-workflow-visualization">
+            <AutomationFlow />
           </div>
         </div>
       </div>
