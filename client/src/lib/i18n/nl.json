@@ -171,22 +171,22 @@
     "subtitle": "Uitgebreide AI-services ontworpen om je bedrijfsprocessen te transformeren",
     "items": [
       {
-        "icon": "Bot",
+        "icon": "Network",
         "title": "AI Chatbots & Virtuele Assistenten",
         "description": "Intelligente conversatie-agents die 24/7 klantenservice, leadkwalificatie en verkoopvragen afhandelen met natuurlijke taalverwerking"
       },
       {
-        "icon": "Workflow",
+        "icon": "Zap",
         "title": "Workflow Automatisering",
         "description": "Stroomlijn repetitieve processen en elimineer handmatig werk met intelligente automatiseringssystemen die 20+ uur per week besparen"
       },
       {
-        "icon": "Cog",
+        "icon": "GitBranch",
         "title": "AI Integratie Services",
         "description": "Naadloze integratie van AI-mogelijkheden in je bestaande systemen met custom APIs"
       },
       {
-        "icon": "Brain",
+        "icon": "TrendingUp",
         "title": "Slimme Analytics & Inzichten",
         "description": "AI-gedreven analytics die actiegerichte inzichten en voorspellende intelligentie leveren voor betere besluitvorming"
       }

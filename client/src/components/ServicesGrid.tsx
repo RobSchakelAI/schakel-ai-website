@@ -1,12 +1,12 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
-import { Bot, Workflow, Cog, Brain } from 'lucide-react';
+import { Zap, GitBranch, Network, TrendingUp } from 'lucide-react';
 
 const iconMap = {
-  Bot,
-  Workflow,
-  Cog,
-  Brain,
+  Zap,
+  GitBranch,
+  Network,
+  TrendingUp,
 };
 
 export default function ServicesGrid() {
