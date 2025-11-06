@@ -3,13 +3,20 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { LanguageProvider } from "@/contexts/LanguageContext";
+import { LanguageProvider, useLanguage } from "@/contexts/LanguageContext";
 import { CTAProvider } from "@/contexts/CTAContext";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import Home from "@/pages/Home";
 import NotFound from "@/pages/not-found";
+import AIView from "@/components/AIView";
 
 function Router() {
+  const { language } = useLanguage();
+  
+  if (language === 'ai') {
+    return <AIView />;
+  }
+  
   return (
     <Switch>
       <Route path="/" component={Home} />
