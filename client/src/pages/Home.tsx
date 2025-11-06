@@ -1,9 +1,14 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import ProblemSolution from '@/components/ProblemSolution';
+import Stats from '@/components/Stats';
 import Vision from '@/components/Vision';
+import ServicesGrid from '@/components/ServicesGrid';
+import ProcessSteps from '@/components/ProcessSteps';
 import ApproachTimeline from '@/components/ApproachTimeline';
+import Testimonials from '@/components/Testimonials';
 import About from '@/components/About';
-import ContactForm from '@/components/ContactForm';
+import ExpandingCTA from '@/components/ExpandingCTA';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -12,12 +17,17 @@ export default function Home() {
       <Header />
       <main className="pt-20">
         <Hero />
+        <ProblemSolution />
+        <Stats />
         <Vision />
+        <ServicesGrid />
+        <ProcessSteps />
         <div id="approach">
           <ApproachTimeline />
         </div>
+        <Testimonials />
         <About />
-        <ContactForm />
+        <ExpandingCTA />
       </main>
       <Footer />
     </div>
