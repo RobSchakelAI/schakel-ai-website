@@ -102,7 +102,6 @@ export default function AutomationFlow() {
                   scale: isActive ? 1.3 : 1,
                 }}
                 transition={{ duration: 0.3 }}
-                filter={isActive ? "url(#glow)" : undefined}
               />
               
               {/* Label */}
