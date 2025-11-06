@@ -13,10 +13,10 @@ export default function AutomationFlow() {
   }, []);
 
   const nodes = [
-    { id: 0, icon: AlertCircle, label: 'Chaos', x: 15, y: 70, color: '#ef4444' },
-    { id: 1, icon: Search, label: 'Patroon', x: 30, y: 55, color: '#6EBFAA' },
-    { id: 2, icon: Zap, label: 'Automatiseer', x: 50, y: 45, color: '#4b37bd' },
-    { id: 3, icon: TrendingUp, label: 'Schaal', x: 70, y: 35, color: '#2C9880' },
+    { id: 0, icon: AlertCircle, label: 'Chaos', x: 15, y: 75, color: '#ef4444' },
+    { id: 1, icon: Search, label: 'Patroon', x: 32, y: 58, color: '#6EBFAA' },
+    { id: 2, icon: Zap, label: 'Automatiseer', x: 50, y: 40, color: '#4b37bd' },
+    { id: 3, icon: TrendingUp, label: 'Schaal', x: 68, y: 30, color: '#2C9880' },
     { id: 4, icon: CheckCircle2, label: 'Controle', x: 85, y: 25, color: '#6EBFAA' }
   ];
 
@@ -69,14 +69,13 @@ export default function AutomationFlow() {
           
           return (
             <g key={idx}>
-              {/* Basis lijn - vloeiende S-curve */}
+              {/* Basis lijn - groeiende boog */}
               <motion.path
-                d={`M ${fromNode.x} ${fromNode.y} C ${fromNode.x + 8} ${fromNode.y}, ${toNode.x - 8} ${toNode.y}, ${toNode.x} ${toNode.y}`}
+                d={`M ${fromNode.x} ${fromNode.y} C ${fromNode.x + 10} ${fromNode.y - 5}, ${toNode.x - 10} ${toNode.y + 5}, ${toNode.x} ${toNode.y}`}
                 fill="none"
                 stroke="url(#mint-gradient)"
                 strokeWidth="0.8"
                 strokeOpacity="0.4"
-                markerEnd="url(#arrowhead)"
               />
               
               {/* Geanimeerde data pulse */}
@@ -90,7 +89,7 @@ export default function AutomationFlow() {
                   <animateMotion
                     dur="1.5s"
                     repeatCount="1"
-                    path={`M ${fromNode.x} ${fromNode.y} C ${fromNode.x + 8} ${fromNode.y}, ${toNode.x - 8} ${toNode.y}, ${toNode.x} ${toNode.y}`}
+                    path={`M ${fromNode.x} ${fromNode.y} C ${fromNode.x + 10} ${fromNode.y - 5}, ${toNode.x - 10} ${toNode.y + 5}, ${toNode.x} ${toNode.y}`}
                   />
                   <animate
                     attributeName="opacity"
