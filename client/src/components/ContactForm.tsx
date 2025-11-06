@@ -88,7 +88,7 @@ export default function ContactForm() {
                       <FormControl>
                         <Input
                           {...field}
-                          className="h-12 border-2 border-white/20 bg-white/5 text-white placeholder:text-white/40 focus:border-primary focus:bg-white/10 transition-colors"
+                          className="h-12 border-2 border-white/20 bg-white text-[#1A1A1A] placeholder:text-[#1A1A1A]/40 focus:border-primary transition-colors"
                           data-testid="input-name"
                         />
                       </FormControl>
@@ -109,7 +109,7 @@ export default function ContactForm() {
                         <Input
                           {...field}
                           type="email"
-                          className="h-12 border-2 border-white/20 bg-white/5 text-white placeholder:text-white/40 focus:border-primary focus:bg-white/10 transition-colors"
+                          className="h-12 border-2 border-white/20 bg-white text-[#1A1A1A] placeholder:text-[#1A1A1A]/40 focus:border-primary transition-colors"
                           data-testid="input-email"
                         />
                       </FormControl>
@@ -129,7 +129,7 @@ export default function ContactForm() {
                       <FormControl>
                         <Input
                           {...field}
-                          className="h-12 border-2 border-white/20 bg-white/5 text-white placeholder:text-white/40 focus:border-primary focus:bg-white/10 transition-colors"
+                          className="h-12 border-2 border-white/20 bg-white text-[#1A1A1A] placeholder:text-[#1A1A1A]/40 focus:border-primary transition-colors"
                           data-testid="input-company"
                         />
                       </FormControl>
@@ -149,7 +149,7 @@ export default function ContactForm() {
                       <FormControl>
                         <Textarea
                           {...field}
-                          className="min-h-32 border-2 border-white/20 bg-white/5 text-white placeholder:text-white/40 focus:border-primary focus:bg-white/10 resize-none transition-colors"
+                          className="min-h-32 border-2 border-white/20 bg-white text-[#1A1A1A] placeholder:text-[#1A1A1A]/40 focus:border-primary resize-none transition-colors"
                           data-testid="input-message"
                         />
                       </FormControl>
