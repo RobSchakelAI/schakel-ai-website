@@ -118,7 +118,7 @@ export default function AutomationFlow() {
                 y={node.y + 10}
                 textAnchor="middle"
                 fill={isActive ? 'hsl(var(--foreground))' : 'hsl(var(--muted-foreground))'}
-                fontSize="3.5"
+                fontSize="3.2"
                 fontWeight={isActive ? 'bold' : 'normal'}
                 className="font-sans"
               >
