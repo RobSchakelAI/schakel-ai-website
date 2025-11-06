@@ -12,12 +12,12 @@ export default function AutomationFlow() {
     return () => clearInterval(interval);
   }, []);
 
-  // Exponentiële curve: y = 80 - (x/85)^2.5 * 58
+  // Nodes exact op de curve: M 15 78 Q 30 76, 50 63 T 85 22
   const nodes = [
     { id: 0, icon: AlertCircle, label: 'Chaos', x: 15, y: 78, color: '#ef4444' },
-    { id: 1, icon: Search, label: 'Patroon', x: 30, y: 74, color: '#6EBFAA' },
+    { id: 1, icon: Search, label: 'Patroon', x: 32, y: 73, color: '#6EBFAA' },
     { id: 2, icon: Zap, label: 'Automatiseer', x: 50, y: 63, color: '#4b37bd' },
-    { id: 3, icon: TrendingUp, label: 'Schaal', x: 70, y: 42, color: '#2C9880' },
+    { id: 3, icon: TrendingUp, label: 'Schaal', x: 68, y: 42, color: '#2C9880' },
     { id: 4, icon: CheckCircle2, label: 'Controle', x: 85, y: 22, color: '#6EBFAA' }
   ];
 
@@ -62,47 +62,36 @@ export default function AutomationFlow() {
           </marker>
         </defs>
 
-        {/* Verbindingslijnen met animatie */}
-        {connections.map((conn, idx) => {
-          const fromNode = nodes[conn.from];
-          const toNode = nodes[conn.to];
-          const isActive = activeNode === conn.to;
-          
-          return (
-            <g key={idx}>
-              {/* Basis lijn - exponentiële groeicurve met gladde overgang */}
-              <motion.path
-                d={`M ${fromNode.x} ${fromNode.y} C ${fromNode.x + (toNode.x - fromNode.x) * 0.5} ${fromNode.y}, ${fromNode.x + (toNode.x - fromNode.x) * 0.5} ${toNode.y}, ${toNode.x} ${toNode.y}`}
-                fill="none"
-                stroke="url(#mint-gradient)"
-                strokeWidth="0.8"
-                strokeOpacity="0.4"
-              />
-              
-              {/* Geanimeerde data pulse */}
-              {isActive && (
-                <circle
-                  r="2"
-                  fill="#6EBFAA"
-                  filter="url(#glow)"
-                  opacity="0"
-                >
-                  <animateMotion
-                    dur="1.5s"
-                    repeatCount="1"
-                    path={`M ${fromNode.x} ${fromNode.y} C ${fromNode.x + (toNode.x - fromNode.x) * 0.5} ${fromNode.y}, ${fromNode.x + (toNode.x - fromNode.x) * 0.5} ${toNode.y}, ${toNode.x} ${toNode.y}`}
-                  />
-                  <animate
-                    attributeName="opacity"
-                    values="0;1;1;0"
-                    dur="1.5s"
-                    repeatCount="1"
-                  />
-                </circle>
-              )}
-            </g>
-          );
-        })}
+        {/* Eén doorlopende exponentiële groeicurve */}
+        <motion.path
+          d="M 15 78 Q 30 76, 50 63 T 85 22"
+          fill="none"
+          stroke="url(#mint-gradient)"
+          strokeWidth="0.8"
+          strokeOpacity="0.4"
+        />
+        
+        {/* Geanimeerde data pulse die over de hele curve beweegt */}
+        {activeNode > 0 && (
+          <circle
+            r="2"
+            fill="#6EBFAA"
+            filter="url(#glow)"
+            opacity="0"
+          >
+            <animateMotion
+              dur="8s"
+              repeatCount="indefinite"
+              path="M 15 78 Q 30 76, 50 63 T 85 22"
+            />
+            <animate
+              attributeName="opacity"
+              values="0;1;1;1;1;0"
+              dur="8s"
+              repeatCount="indefinite"
+            />
+          </circle>
+        )}
 
         {/* Nodes */}
         {nodes.map((node) => {
