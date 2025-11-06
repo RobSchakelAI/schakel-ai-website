@@ -94,7 +94,7 @@ export default function Hero() {
           </div>
 
           {/* Right: Geanimeerde Automation Flow */}
-          <div className="hidden md:flex items-center justify-center h-96" data-testid="container-workflow-visualization">
+          <div className="hidden md:flex items-center justify-center h-[450px]" data-testid="container-workflow-visualization">
             <AutomationFlow />
           </div>
         </div>

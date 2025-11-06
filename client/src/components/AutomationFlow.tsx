@@ -13,11 +13,11 @@ export default function AutomationFlow() {
   }, []);
 
   const nodes = [
-    { id: 0, icon: AlertCircle, label: 'Chaos', x: 10, y: 50, color: '#ef4444' },
-    { id: 1, icon: Search, label: 'Patroon', x: 30, y: 30, color: '#6EBFAA' },
-    { id: 2, icon: Zap, label: 'Automatiseer', x: 50, y: 50, color: '#4b37bd' },
-    { id: 3, icon: TrendingUp, label: 'Schaal', x: 70, y: 30, color: '#2C9880' },
-    { id: 4, icon: CheckCircle2, label: 'Controle', x: 90, y: 50, color: '#6EBFAA' }
+    { id: 0, icon: AlertCircle, label: 'Chaos', x: 15, y: 70, color: '#ef4444' },
+    { id: 1, icon: Search, label: 'Patroon', x: 30, y: 55, color: '#6EBFAA' },
+    { id: 2, icon: Zap, label: 'Automatiseer', x: 50, y: 45, color: '#4b37bd' },
+    { id: 3, icon: TrendingUp, label: 'Schaal', x: 70, y: 35, color: '#2C9880' },
+    { id: 4, icon: CheckCircle2, label: 'Controle', x: 85, y: 25, color: '#6EBFAA' }
   ];
 
   const connections = [
@@ -32,7 +32,7 @@ export default function AutomationFlow() {
       <svg 
         viewBox="0 0 100 100" 
         className="w-full h-full"
-        style={{ maxWidth: '500px', maxHeight: '400px' }}
+        style={{ maxWidth: '650px', maxHeight: '500px' }}
       >
         <defs>
           <linearGradient id="mint-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -69,20 +69,20 @@ export default function AutomationFlow() {
           
           return (
             <g key={idx}>
-              {/* Basis lijn */}
+              {/* Basis lijn - vloeiende S-curve */}
               <motion.path
-                d={`M ${fromNode.x} ${fromNode.y} Q ${(fromNode.x + toNode.x) / 2} ${Math.min(fromNode.y, toNode.y) - 10} ${toNode.x} ${toNode.y}`}
+                d={`M ${fromNode.x} ${fromNode.y} C ${fromNode.x + 8} ${fromNode.y}, ${toNode.x - 8} ${toNode.y}, ${toNode.x} ${toNode.y}`}
                 fill="none"
                 stroke="url(#mint-gradient)"
-                strokeWidth="0.5"
-                strokeOpacity="0.3"
+                strokeWidth="0.8"
+                strokeOpacity="0.4"
                 markerEnd="url(#arrowhead)"
               />
               
               {/* Geanimeerde data pulse */}
               {isActive && (
                 <circle
-                  r="1.5"
+                  r="2"
                   fill="#6EBFAA"
                   filter="url(#glow)"
                   opacity="0"
@@ -90,7 +90,7 @@ export default function AutomationFlow() {
                   <animateMotion
                     dur="1.5s"
                     repeatCount="1"
-                    path={`M ${fromNode.x} ${fromNode.y} Q ${(fromNode.x + toNode.x) / 2} ${Math.min(fromNode.y, toNode.y) - 10} ${toNode.x} ${toNode.y}`}
+                    path={`M ${fromNode.x} ${fromNode.y} C ${fromNode.x + 8} ${fromNode.y}, ${toNode.x - 8} ${toNode.y}, ${toNode.x} ${toNode.y}`}
                   />
                   <animate
                     attributeName="opacity"
@@ -116,7 +116,7 @@ export default function AutomationFlow() {
                 <motion.circle
                   cx={node.x}
                   cy={node.y}
-                  r="6"
+                  r="8"
                   fill={node.color}
                   opacity="0.3"
                   initial={{ scale: 1 }}
@@ -133,13 +133,13 @@ export default function AutomationFlow() {
               <motion.circle
                 cx={node.x}
                 cy={node.y}
-                r="4"
+                r="5"
                 fill={isActive ? node.color : isPast ? node.color : 'hsl(var(--muted))'}
                 stroke={isActive ? node.color : 'hsl(var(--border))'}
-                strokeWidth="0.5"
+                strokeWidth="0.8"
                 initial={{ scale: 0.8 }}
                 animate={{ 
-                  scale: isActive ? 1.2 : 1,
+                  scale: isActive ? 1.3 : 1,
                 }}
                 transition={{ duration: 0.3 }}
                 filter={isActive ? "url(#glow)" : undefined}
@@ -148,10 +148,10 @@ export default function AutomationFlow() {
               {/* Label */}
               <text
                 x={node.x}
-                y={node.y + 8}
+                y={node.y + 10}
                 textAnchor="middle"
                 fill={isActive ? 'hsl(var(--foreground))' : 'hsl(var(--muted-foreground))'}
-                fontSize="3"
+                fontSize="3.5"
                 fontWeight={isActive ? 'bold' : 'normal'}
                 className="font-sans"
               >
