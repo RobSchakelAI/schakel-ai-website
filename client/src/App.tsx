@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { CTAProvider } from "@/contexts/CTAContext";
+import { CTAOverlay } from "@/components/ExpandingCTA";
 import Home from "@/pages/Home";
 import NotFound from "@/pages/not-found";
 
@@ -30,6 +31,7 @@ function App() {
           <CTAProvider>
             <Toaster />
             <Router />
+            <CTAOverlay />
           </CTAProvider>
         </LanguageProvider>
       </TooltipProvider>

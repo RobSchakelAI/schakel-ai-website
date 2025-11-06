@@ -3,15 +3,14 @@ import { X, ArrowRight, Send } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useCTA } from '@/contexts/CTAContext';
-import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 
-export default function ExpandingCTA() {
+export function CTAOverlay() {
   const { t } = useLanguage();
   const { toast } = useToast();
-  const { isExpanded, openCTA, closeCTA } = useCTA();
+  const { isExpanded, closeCTA } = useCTA();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -52,47 +51,7 @@ export default function ExpandingCTA() {
   };
 
   return (
-    <>
-      <section id="contact" className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-br from-primary/10 via-background to-background">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
-        
-        <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 text-center space-y-8">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground">
-            {t.contact.title}
-          </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            {t.contact.subtitle}
-          </p>
-
-          <AnimatePresence initial={false}>
-            {!isExpanded && origin !== 'hero' && (
-              <motion.div className="inline-block relative">
-                <motion.div
-                  style={{ borderRadius: '100px' }}
-                  layout
-                  layoutId="cta-card"
-                  className="absolute inset-0 bg-primary items-center justify-center transform-gpu will-change-transform"
-                />
-                <motion.button
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.2 }}
-                  exit={{ opacity: 0, scale: 0.8 }}
-                  layout={false}
-                  onClick={() => openCTA('contact')}
-                  className="px-8 py-4 text-lg font-medium text-primary-foreground relative flex items-center gap-2"
-                  data-testid="button-expand-cta"
-                >
-                  {t.hero.ctaPrimary}
-                  <ArrowRight className="h-5 w-5" />
-                </motion.button>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </div>
-      </section>
-
-      <AnimatePresence initial={false}>
+    <AnimatePresence initial={false}>
         {isExpanded && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4">
             <motion.div
@@ -229,6 +188,51 @@ export default function ExpandingCTA() {
           </div>
         )}
       </AnimatePresence>
-    </>
+  );
+}
+
+export default function ExpandingCTA() {
+  const { t } = useLanguage();
+  const { isExpanded, origin, openCTA } = useCTA();
+
+  return (
+    <section id="contact" className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-br from-primary/10 via-background to-background">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
+      
+      <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 text-center space-y-8">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground">
+          {t.contact.title}
+        </h2>
+        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+          {t.contact.subtitle}
+        </p>
+
+        <AnimatePresence initial={false}>
+          {!isExpanded && origin !== 'hero' && (
+            <motion.div className="inline-block relative">
+              <motion.div
+                style={{ borderRadius: '100px' }}
+                layout
+                layoutId="cta-card"
+                className="absolute inset-0 bg-primary items-center justify-center transform-gpu will-change-transform"
+              />
+              <motion.button
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.2 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                layout={false}
+                onClick={() => openCTA('contact')}
+                className="px-8 py-4 text-lg font-medium text-primary-foreground relative flex items-center gap-2"
+                data-testid="button-expand-cta"
+              >
+                {t.hero.ctaPrimary}
+                <ArrowRight className="h-5 w-5" />
+              </motion.button>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </section>
   );
 }
