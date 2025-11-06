@@ -78,6 +78,17 @@ export default function AutomationFlow() {
           
           return (
             <g key={node.id}>
+              {/* Glow effect voor actieve node */}
+              {isActive && (
+                <circle
+                  cx={node.x}
+                  cy={node.y}
+                  r="8"
+                  fill={node.color}
+                  opacity="0.3"
+                />
+              )}
+              
               {/* Node cirkel */}
               <motion.circle
                 cx={node.x}
