@@ -92,7 +92,7 @@ export default function Hero() {
             </div>
 
             {/* Trust badge with star rating */}
-            <div className="flex items-center justify-center md:justify-start gap-3 text-sm">
+            <div className="flex items-center justify-center md:justify-start gap-3 text-sm text-muted-foreground">
               {/* Stars */}
               <div className="flex gap-0.5">
                 {[1, 2, 3, 4, 5].map((i) => (
@@ -106,10 +106,8 @@ export default function Hero() {
                   </svg>
                 ))}
               </div>
-              {/* Rating */}
-              <span className="text-base font-bold text-foreground">{t.hero.rating}</span>
-              <span className="text-muted-foreground">•</span>
-              <span className="text-muted-foreground">{t.hero.trustLine}</span>
+              {/* Rating text */}
+              <span>{t.hero.trustLine} <span className="font-bold text-foreground">{t.hero.rating}</span></span>
             </div>
           </div>
 
