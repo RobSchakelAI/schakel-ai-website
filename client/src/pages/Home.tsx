@@ -7,7 +7,7 @@ import ServicesGrid from '@/components/ServicesGrid';
 import ApproachTimeline from '@/components/ApproachTimeline';
 import Testimonials from '@/components/Testimonials';
 import About from '@/components/About';
-import ExpandingCTA from '@/components/ExpandingCTA';
+import ExpandingCTA, { CTAOverlay } from '@/components/ExpandingCTA';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -26,6 +26,7 @@ export default function Home() {
         <ExpandingCTA />
       </main>
       <Footer />
+      <CTAOverlay />
     </div>
   );
 }
