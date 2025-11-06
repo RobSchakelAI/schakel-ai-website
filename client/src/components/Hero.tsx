@@ -2,15 +2,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { useCTA } from '@/contexts/CTAContext';
 import AutomationFlow from '@/components/AutomationFlow';
+import { CTAOverlay } from '@/components/ExpandingCTA';
+import { useCTA } from '@/contexts/CTAContext';
 
 export default function Hero() {
   const { t } = useLanguage();
   const { isExpanded, openCTA } = useCTA();
 
   return (
-    <section className="relative overflow-hidden bg-background pt-24 pb-16 md:pt-32 md:pb-24">
+    <>
+      <section className="relative overflow-hidden bg-background pt-24 pb-16 md:pt-32 md:pb-24">
       {/* Subtle purple to mint gradient overlay */}
       <div 
         className="absolute inset-0 opacity-[0.03]"
@@ -119,5 +121,7 @@ export default function Hero() {
         </div>
       </div>
     </section>
+    <CTAOverlay />
+    </>
   );
 }
