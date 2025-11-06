@@ -12,12 +12,13 @@ export default function AutomationFlow() {
     return () => clearInterval(interval);
   }, []);
 
-  // Nodes evenredig verdeeld op exponentiële curve
+  // Nodes evenly distributed along arc length (not just X-axis)
+  // Account for curve steepness: start slower, accelerate faster
   const nodes = [
     { id: 0, icon: AlertCircle, label: 'Chaos', x: 15, y: 78, color: '#ef4444' },
-    { id: 1, icon: Search, label: 'Patroon', x: 32.5, y: 74, color: '#6EBFAA' },
-    { id: 2, icon: Zap, label: 'Automatiseer', x: 50, y: 64, color: '#4b37bd' },
-    { id: 3, icon: TrendingUp, label: 'Schaal', x: 67.5, y: 46, color: '#2C9880' },
+    { id: 1, icon: Search, label: 'Patroon', x: 30, y: 75, color: '#6EBFAA' },
+    { id: 2, icon: Zap, label: 'Automatiseer', x: 47, y: 66, color: '#4b37bd' },
+    { id: 3, icon: TrendingUp, label: 'Schaal', x: 66, y: 50, color: '#2C9880' },
     { id: 4, icon: CheckCircle2, label: 'Controle', x: 85, y: 22, color: '#6EBFAA' }
   ];
 
