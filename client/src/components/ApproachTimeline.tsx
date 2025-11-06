@@ -240,15 +240,6 @@ export default function ApproachTimeline() {
             </div>
           </div>
         </div>
-
-        {/* Circuit board decoration at bottom */}
-        <div className="mt-16 flex items-center justify-center gap-3">
-          <div className="w-2 h-2 rounded-full bg-primary/40" />
-          <div className="w-16 h-0.5 bg-gradient-to-r from-primary/40 via-primary/20 to-transparent" />
-          <div className="w-1.5 h-1.5 rounded-full bg-primary/60" />
-          <div className="w-16 h-0.5 bg-gradient-to-l from-primary/40 via-primary/20 to-transparent" />
-          <div className="w-2 h-2 rounded-full bg-primary/40" />
-        </div>
       </div>
     </section>
   );
