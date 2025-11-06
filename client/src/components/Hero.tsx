@@ -1,3 +1,4 @@
+import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -6,7 +7,7 @@ import AutomationFlow from '@/components/AutomationFlow';
 
 export default function Hero() {
   const { t } = useLanguage();
-  const { openCTA } = useCTA();
+  const { isExpanded, openCTA } = useCTA();
 
   return (
     <section className="relative overflow-hidden bg-background pt-24 pb-16 md:pt-32 md:pb-24">
@@ -44,15 +45,25 @@ export default function Hero() {
 
             {/* Dual CTAs */}
             <div className="flex flex-col sm:flex-row items-center md:items-start gap-3 mb-6">
-              <Button
-                size="default"
-                onClick={openCTA}
-                className="text-sm px-6 shadow-xl shadow-primary/30 hover:shadow-2xl hover:shadow-primary/40 transition-all"
-                data-testid="button-cta-primary"
-              >
-                {t.hero.ctaPrimary}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              <AnimatePresence initial={false}>
+                {!isExpanded && (
+                  <motion.div
+                    layoutId="cta-card-hero"
+                    style={{ borderRadius: '100px' }}
+                    className="bg-primary"
+                  >
+                    <Button
+                      size="default"
+                      onClick={() => openCTA('hero')}
+                      className="text-sm px-6 shadow-xl shadow-primary/30 hover:shadow-2xl hover:shadow-primary/40 transition-all bg-transparent hover:bg-transparent"
+                      data-testid="button-cta-primary"
+                    >
+                      {t.hero.ctaPrimary}
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
               <Button
                 size="default"
                 variant="outline"

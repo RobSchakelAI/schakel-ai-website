@@ -1,3 +1,4 @@
+import { LayoutGroup } from 'framer-motion';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import ProblemSolution from '@/components/ProblemSolution';
@@ -14,17 +15,19 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-20">
-        <Hero />
-        <ProblemSolution />
-        <Vision />
-        <ServicesGrid />
-        <div id="approach">
-          <ApproachTimeline />
-        </div>
-        <About />
-        <ExpandingCTA />
-      </main>
+      <LayoutGroup id="cta">
+        <main className="pt-20">
+          <Hero />
+          <ProblemSolution />
+          <Vision />
+          <ServicesGrid />
+          <div id="approach">
+            <ApproachTimeline />
+          </div>
+          <About />
+          <ExpandingCTA />
+        </main>
+      </LayoutGroup>
       <Footer />
     </div>
   );

@@ -62,21 +62,18 @@ export default function ExpandingCTA() {
 
           <AnimatePresence initial={false}>
             {!isExpanded && (
-              <motion.div className="inline-block relative">
-                <motion.div
-                  style={{ borderRadius: '100px' }}
-                  layout
-                  layoutId="cta-card"
-                  className="absolute inset-0 bg-primary items-center justify-center transform-gpu will-change-transform"
-                />
+              <motion.div
+                layoutId="cta-card-contact"
+                style={{ borderRadius: '100px' }}
+                className="inline-block bg-primary"
+              >
                 <motion.button
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.2 }}
                   exit={{ opacity: 0, scale: 0.8 }}
-                  layout={false}
-                  onClick={openCTA}
-                  className="px-8 py-4 text-lg font-medium text-primary-foreground relative flex items-center gap-2"
+                  onClick={() => openCTA('contact')}
+                  className="px-8 py-4 text-lg font-medium text-primary-foreground flex items-center gap-2"
                   data-testid="button-expand-cta"
                 >
                   {t.hero.ctaPrimary}
@@ -89,16 +86,15 @@ export default function ExpandingCTA() {
       </section>
 
       <AnimatePresence initial={false}>
-        {isExpanded && (
+        {isExpanded && origin && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4">
             <motion.div
-              layoutId="cta-card"
+              layoutId={`cta-card-${origin}`}
               transition={{ duration: 0.3 }}
               style={{ 
                 borderRadius: '24px',
                 background: 'linear-gradient(135deg, #6EBFAA 0%, #2C9880 100%)'
               }}
-              layout
               className="relative flex h-full w-full overflow-y-auto transform-gpu will-change-transform max-w-4xl"
             >
               {/* Subtle grid pattern background */}
