@@ -23,8 +23,8 @@ export default function Footer() {
               {t.footer.tagline}
             </p>
             <p className="text-xs text-muted-foreground">
-              KvK: 12345678<br />
-              BTW: NL123456789B01
+              KvK: 98312529<br />
+              BTW: NL868441119B01
             </p>
           </div>
 
@@ -72,7 +72,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <span>Amsterdam, Nederland</span>
+                <span>Coolsingel 65<br />3012 AC Rotterdam</span>
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="h-4 w-4 mt-0.5 flex-shrink-0 text-muted-foreground" />
