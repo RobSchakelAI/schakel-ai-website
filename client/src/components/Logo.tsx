@@ -6,14 +6,16 @@ export default function Logo({ className = "h-10" }: { className?: string }) {
   const { theme } = useTheme();
   
   return (
-    <img 
-      src={theme === 'light' ? logoLight : logoDark} 
-      alt="Schakel AI" 
-      className={className}
-      style={{
-        objectFit: 'contain',
-        objectPosition: 'center'
-      }}
-    />
+    <div className={`${className} overflow-hidden relative`}>
+      <img 
+        src={theme === 'light' ? logoLight : logoDark} 
+        alt="Schakel AI" 
+        className="w-full"
+        style={{
+          transform: theme === 'light' ? 'scale(1.4) translateY(-1px)' : 'none',
+          objectFit: 'contain'
+        }}
+      />
+    </div>
   );
 }
