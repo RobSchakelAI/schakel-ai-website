@@ -63,7 +63,7 @@ export function CTAOverlay() {
                 background: 'linear-gradient(135deg, #6EBFAA 0%, #2C9880 100%)'
               }}
               layout
-              className="relative flex h-full w-full max-w-2xl overflow-y-auto transform-gpu will-change-transform"
+              className="relative flex h-full w-full max-w-3xl overflow-y-auto transform-gpu will-change-transform"
             >
               {/* Subtle grid pattern background */}
               <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{
