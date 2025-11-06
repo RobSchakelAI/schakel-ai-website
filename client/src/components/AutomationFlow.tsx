@@ -14,11 +14,11 @@ export default function AutomationFlow() {
 
   // Nodes evenly distributed along arc length (calculated by arc-length parameterization)
   const nodes = [
-    { id: 0, icon: AlertCircle, label: 'Chaos', x: 15, y: 78, color: '#ef4444' },
-    { id: 1, icon: Search, label: 'Patroon', x: 37.21, y: 71.61, color: '#6EBFAA' },
-    { id: 2, icon: Zap, label: 'Automatiseer', x: 56.09, y: 58.37, color: '#4b37bd' },
-    { id: 3, icon: TrendingUp, label: 'Schaal', x: 70.75, y: 39.93, color: '#2C9880' },
-    { id: 4, icon: CheckCircle2, label: 'Controle', x: 85, y: 22, color: '#6EBFAA' }
+    { id: 0, icon: AlertCircle, label: 'Nu', x: 15, y: 78, color: '#ef4444' },
+    { id: 1, icon: Search, label: 'Analyseren', x: 37.21, y: 71.61, color: '#6EBFAA' },
+    { id: 2, icon: Zap, label: 'Bouwen', x: 56.09, y: 58.37, color: '#4b37bd' },
+    { id: 3, icon: TrendingUp, label: 'Groeien', x: 70.75, y: 39.93, color: '#2C9880' },
+    { id: 4, icon: CheckCircle2, label: 'Impact', x: 85, y: 22, color: '#6EBFAA' }
   ];
 
   const connections = [
@@ -209,11 +209,11 @@ export default function AutomationFlow() {
           ))}
         </div>
         <span className="text-xs text-muted-foreground font-medium">
-          {activeNode === 0 && 'Handmatig proces'}
-          {activeNode === 1 && 'AI leert structuur'}
-          {activeNode === 2 && 'AI neemt over'}
-          {activeNode === 3 && 'Schaalbaar systeem'}
-          {activeNode === 4 && 'Rust & Rendement ✓'}
+          {activeNode === 0 && 'Handmatig werk dat tijd kost'}
+          {activeNode === 1 && 'Identificeren van kansen'}
+          {activeNode === 2 && 'AI-oplossing die direct werkt'}
+          {activeNode === 3 && 'Schaalbaar en toekomstbestendig'}
+          {activeNode === 4 && 'Aantoonbaar rendement'}
         </span>
       </div>
     </div>
