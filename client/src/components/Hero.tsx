@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
-import WorkEvolution from '@/components/WorkEvolution';
+import AutomationFlow from '@/components/AutomationFlow';
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -93,9 +93,9 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right: Work Evolution Visual */}
+          {/* Right: Geanimeerde Automation Flow */}
           <div className="hidden md:flex items-center justify-center h-[450px]" data-testid="container-workflow-visualization">
-            <WorkEvolution />
+            <AutomationFlow />
           </div>
         </div>
       </div>
