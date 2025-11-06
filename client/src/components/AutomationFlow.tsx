@@ -12,12 +12,12 @@ export default function AutomationFlow() {
     return () => clearInterval(interval);
   }, []);
 
-  // Nodes exact op de curve: M 15 78 Q 30 76, 50 63 T 85 22
+  // Nodes evenredig verdeeld op exponentiële curve
   const nodes = [
     { id: 0, icon: AlertCircle, label: 'Chaos', x: 15, y: 78, color: '#ef4444' },
-    { id: 1, icon: Search, label: 'Patroon', x: 32, y: 73, color: '#6EBFAA' },
-    { id: 2, icon: Zap, label: 'Automatiseer', x: 50, y: 63, color: '#4b37bd' },
-    { id: 3, icon: TrendingUp, label: 'Schaal', x: 68, y: 42, color: '#2C9880' },
+    { id: 1, icon: Search, label: 'Patroon', x: 32.5, y: 74, color: '#6EBFAA' },
+    { id: 2, icon: Zap, label: 'Automatiseer', x: 50, y: 64, color: '#4b37bd' },
+    { id: 3, icon: TrendingUp, label: 'Schaal', x: 67.5, y: 46, color: '#2C9880' },
     { id: 4, icon: CheckCircle2, label: 'Controle', x: 85, y: 22, color: '#6EBFAA' }
   ];
 
@@ -62,9 +62,9 @@ export default function AutomationFlow() {
           </marker>
         </defs>
 
-        {/* Eén doorlopende exponentiële groeicurve */}
+        {/* Perfect vloeiende exponentiële groeicurve met cubic Bezier */}
         <motion.path
-          d="M 15 78 Q 30 76, 50 63 T 85 22"
+          d="M 15 78 C 25 77, 40 72, 50 64 C 60 56, 72 38, 85 22"
           fill="none"
           stroke="url(#mint-gradient)"
           strokeWidth="0.8"
@@ -82,7 +82,7 @@ export default function AutomationFlow() {
             <animateMotion
               dur="8s"
               repeatCount="indefinite"
-              path="M 15 78 Q 30 76, 50 63 T 85 22"
+              path="M 15 78 C 25 77, 40 72, 50 64 C 60 56, 72 38, 85 22"
             />
             <animate
               attributeName="opacity"
