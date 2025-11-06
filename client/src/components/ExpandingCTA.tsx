@@ -103,7 +103,7 @@ export default function ExpandingCTA() {
               transition={{ duration: 0.3 }}
               style={{ borderRadius: '24px' }}
               layout
-              className="relative flex h-full w-full overflow-y-auto bg-gradient-to-br from-primary to-[hsl(var(--primary)_/_0.8)] transform-gpu will-change-transform max-w-4xl"
+              className="relative flex h-full w-full overflow-y-auto bg-gradient-to-br from-primary to-primary transform-gpu will-change-transform max-w-4xl"
             >
               <motion.div
                 initial={{ opacity: 0 }}
