@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Bot, Zap, Database, MessageSquare, CheckCircle2 } from 'lucide-react';
+import { AlertCircle, Search, Zap, TrendingUp, CheckCircle2 } from 'lucide-react';
 
 export default function AutomationFlow() {
   const [activeNode, setActiveNode] = useState(0);
@@ -13,11 +13,11 @@ export default function AutomationFlow() {
   }, []);
 
   const nodes = [
-    { id: 0, icon: MessageSquare, label: 'Input', x: 10, y: 50, color: '#6EBFAA' },
-    { id: 1, icon: Database, label: 'Verwerk', x: 30, y: 30, color: '#2C9880' },
-    { id: 2, icon: Bot, label: 'AI', x: 50, y: 50, color: '#4b37bd' },
-    { id: 3, icon: Zap, label: 'Automatiseer', x: 70, y: 30, color: '#6EBFAA' },
-    { id: 4, icon: CheckCircle2, label: 'Output', x: 90, y: 50, color: '#2C9880' }
+    { id: 0, icon: AlertCircle, label: 'Chaos', x: 10, y: 50, color: '#ef4444' },
+    { id: 1, icon: Search, label: 'Patroon', x: 30, y: 30, color: '#6EBFAA' },
+    { id: 2, icon: Zap, label: 'Automatiseer', x: 50, y: 50, color: '#4b37bd' },
+    { id: 3, icon: TrendingUp, label: 'Schaal', x: 70, y: 30, color: '#2C9880' },
+    { id: 4, icon: CheckCircle2, label: 'Controle', x: 90, y: 50, color: '#6EBFAA' }
   ];
 
   const connections = [
@@ -218,11 +218,11 @@ export default function AutomationFlow() {
           ))}
         </div>
         <span className="text-xs text-muted-foreground font-medium">
-          {activeNode === 0 && 'Handmatig'}
-          {activeNode === 1 && 'Verwerken...'}
-          {activeNode === 2 && 'AI aan het werk'}
-          {activeNode === 3 && 'Automatiseren'}
-          {activeNode === 4 && 'Geautomatiseerd ✓'}
+          {activeNode === 0 && 'Handmatig proces'}
+          {activeNode === 1 && 'AI leert structuur'}
+          {activeNode === 2 && 'AI neemt over'}
+          {activeNode === 3 && 'Schaalbaar systeem'}
+          {activeNode === 4 && 'Rust & Rendement ✓'}
         </span>
       </div>
     </div>
