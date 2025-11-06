@@ -25,9 +25,21 @@ export function CTAOverlay() {
       const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
       document.body.style.overflow = 'hidden';
       document.body.style.paddingRight = `${scrollbarWidth}px`;
+      
+      // Also compensate header (fixed element)
+      const header = document.querySelector('header');
+      if (header instanceof HTMLElement) {
+        header.style.paddingRight = `${scrollbarWidth}px`;
+      }
     } else {
       document.body.style.overflow = 'unset';
       document.body.style.paddingRight = '0px';
+      
+      // Reset header padding
+      const header = document.querySelector('header');
+      if (header instanceof HTMLElement) {
+        header.style.paddingRight = '0px';
+      }
     }
   }, [isExpanded]);
 
