@@ -1,5 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext';
-import logoImg from '@assets/schakel-logo.png';
+import Logo from '@/components/Logo';
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="py-12 border-t border-border">
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         <div className="flex flex-col items-center gap-6">
-          <img src={logoImg} alt="Schakel AI" className="h-8 opacity-80" />
+          <Logo className="h-12 opacity-90" />
           
           <p className="text-sm text-muted-foreground">
             {t.footer.tagline}
