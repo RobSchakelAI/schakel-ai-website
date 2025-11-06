@@ -40,8 +40,8 @@ export default function WorkEvolution() {
 
   // Phase subtitles
   const phases = [
-    { title: "Handmatig & gefragmenteerd", time: [0, 0.35] },      // 0-6s
-    { title: "AI wordt geïntroduceerd", time: [0.35, 0.53] },      // 6-9s
+    { title: "Processen verlopen handmatig", time: [0, 0.35] },    // 0-6s
+    { title: "Introductie AI", time: [0.35, 0.53] },               // 6-9s
     { title: "Processen komen in balans", time: [0.53, 0.76] },    // 9-13s
     { title: "Intelligente rust", time: [0.76, 1] }                // 13-17s
   ];
@@ -149,12 +149,19 @@ export default function WorkEvolution() {
           </radialGradient>
         </defs>
 
-        {/* Phase 2: AI introduction - brief central pulse */}
-        <circle cx="400" cy="228" r="0" fill="url(#aiIntro)">
+        {/* Phase 2: AI introduction - LARGE BOLD central pulse */}
+        <circle cx="400" cy="228" r="0" fill="url(#aiIntro)" filter="url(#softGlow)">
           <animate
             attributeName="r"
-            values="0;0;80;120;0;0"
-            keyTimes="0;0.35;0.37;0.39;0.41;1"
+            values="0;0;20;180;220;20;0"
+            keyTimes="0;0.35;0.365;0.39;0.415;0.44;1"
+            dur="17s"
+            repeatCount="indefinite"
+          />
+          <animate
+            attributeName="opacity"
+            values="0;0;0.4;0.8;0.9;0.3;0"
+            keyTimes="0;0.35;0.365;0.39;0.415;0.44;1"
             dur="17s"
             repeatCount="indefinite"
           />
@@ -178,18 +185,18 @@ export default function WorkEvolution() {
                 strokeWidth="0"
                 filter="url(#softGlow)"
               >
-                {/* Lines appear AFTER icons stop in phase 2 */}
+                {/* Lines appear AFTER icons stop AND after AI pulse */}
                 <animate
                   attributeName="strokeWidth"
-                  values="0;0;0;2.5;2.5;2.5"
-                  keyTimes="0;0.35;0.41;0.44;0.88;1"
+                  values="0;0;0;0;0;2.5;2.5;2.5"
+                  keyTimes="0;0.35;0.41;0.44;0.47;0.50;0.88;1"
                   dur="17s"
                   repeatCount="indefinite"
                 />
                 <animate
                   attributeName="opacity"
-                  values="0;0;0;0.75;0.8;0.8"
-                  keyTimes="0;0.35;0.41;0.44;0.88;1"
+                  values="0;0;0;0;0;0.75;0.8;0.8"
+                  keyTimes="0;0.35;0.41;0.44;0.47;0.50;0.88;1"
                   dur="17s"
                   repeatCount="indefinite"
                 />
