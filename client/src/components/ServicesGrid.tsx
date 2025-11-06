@@ -1,10 +1,10 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
-import { Bot, Zap, Plug, TrendingUp } from 'lucide-react';
+import { Bot, Share2, Plug, TrendingUp } from 'lucide-react';
 
 const iconMap = {
   Bot,
-  Zap,
+  Share2,
   Plug,
   TrendingUp,
 };
