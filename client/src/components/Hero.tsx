@@ -53,7 +53,7 @@ export default function Hero() {
                     <motion.div
                       style={{ borderRadius: '100px' }}
                       layout
-                      layoutId="cta-card"
+                      layoutId="cta-card-hero"
                       className="absolute inset-0 bg-primary items-center justify-center transform-gpu will-change-transform"
                     />
                     <motion.button

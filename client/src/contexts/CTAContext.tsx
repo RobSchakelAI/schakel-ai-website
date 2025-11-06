@@ -7,6 +7,7 @@ interface CTAContextType {
   origin: CTAOrigin;
   openCTA: (origin: CTAOrigin) => void;
   closeCTA: () => void;
+  getLayoutId: () => string;
 }
 
 const CTAContext = createContext<CTAContextType | undefined>(undefined);
@@ -25,8 +26,12 @@ export function CTAProvider({ children }: { children: ReactNode }) {
     setTimeout(() => setOrigin(null), 300);
   };
 
+  const getLayoutId = () => {
+    return origin === 'hero' ? 'cta-card-hero' : 'cta-card-contact';
+  };
+
   return (
-    <CTAContext.Provider value={{ isExpanded, origin, openCTA, closeCTA }}>
+    <CTAContext.Provider value={{ isExpanded, origin, openCTA, closeCTA, getLayoutId }}>
       {children}
     </CTAContext.Provider>
   );

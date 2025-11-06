@@ -11,7 +11,7 @@ import { useToast } from '@/hooks/use-toast';
 export function CTAOverlay() {
   const { t } = useLanguage();
   const { toast } = useToast();
-  const { isExpanded, closeCTA } = useCTA();
+  const { isExpanded, closeCTA, getLayoutId } = useCTA();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -56,7 +56,7 @@ export function CTAOverlay() {
         {isExpanded && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4">
             <motion.div
-              layoutId="cta-card"
+              layoutId={getLayoutId()}
               transition={{ duration: 0.3 }}
               style={{ 
                 borderRadius: '24px',
@@ -214,7 +214,7 @@ export default function ExpandingCTA() {
               <motion.div
                 style={{ borderRadius: '100px' }}
                 layout
-                layoutId="cta-card"
+                layoutId="cta-card-contact"
                 className="absolute inset-0 bg-primary items-center justify-center transform-gpu will-change-transform"
               />
               <motion.button
