@@ -1,4 +1,4 @@
-import logoImg from '@assets/Logo INVERTED NB PNG GESNEDEN_1762431235487.png';
+import logoImg from '@assets/Schakel logo inverted nieuw_1762440951065.png';
 
 export default function Logo({ className = "h-10" }: { className?: string }) {
   return (
