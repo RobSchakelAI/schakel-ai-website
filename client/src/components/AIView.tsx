@@ -204,32 +204,6 @@ export default function AIView() {
         </ul>
       </section>
 
-      {/* Stats Section */}
-      <section style={sectionStyle}>
-        <h2 style={h2Style}>{t.stats.title}</h2>
-        <p style={pStyle}>{t.stats.subtitle}</p>
-        <ul style={listStyle}>
-          {t.stats.items.map((stat, index) => (
-            <li key={index} style={{ marginBottom: '10px' }}>
-              <strong>{stat.value}</strong> - {stat.label}
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      {/* Testimonials Section */}
-      <section style={sectionStyle}>
-        <h2 style={h2Style}>{t.testimonials.title}</h2>
-        {t.testimonials.items.map((testimonial, index) => (
-          <div key={index} style={{ marginBottom: '25px' }}>
-            <p style={pStyle}>{testimonial.quote}</p>
-            <p style={pStyle}>
-              — {testimonial.author}, {testimonial.role}
-            </p>
-          </div>
-        ))}
-      </section>
-
       {/* Contact Section */}
       <section style={sectionStyle}>
         <h2 style={h2Style}>{t.contact.title}</h2>
