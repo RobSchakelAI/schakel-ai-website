@@ -37,6 +37,9 @@ export default function WorkEvolution() {
     };
   };
 
+  // Total duration: 17s (chaos is now 0-6s, rest adjusted)
+  const TOTAL_DURATION = 17;
+
   return (
     <div className="w-full h-[400px] relative overflow-hidden rounded-lg bg-[#0a0a0a]" data-testid="visual-evolution">
       {/* Headline - stays visible and stable throughout */}
@@ -55,9 +58,9 @@ export default function WorkEvolution() {
             ],
           }}
           transition={{
-            duration: 15,
+            duration: TOTAL_DURATION,
             repeat: Infinity,
-            times: [0, 0.27, 0.47, 0.67, 0.8, 1],
+            times: [0, 0.35, 0.53, 0.71, 0.82, 1],
             ease: "easeInOut",
           }}
         >
@@ -82,14 +85,14 @@ export default function WorkEvolution() {
               <animate
                 attributeName="stopColor"
                 values="#ff9966;#ff9966;#ff9966;#6EBFAA;#6EBFAA;#6EBFAA"
-                dur="15s"
+                dur="17s"
                 repeatCount="indefinite"
               />
               <animate
                 attributeName="stopOpacity"
                 values="0;0;0.8;0.9;0.9;0.9"
-                keyTimes="0;0.27;0.35;0.47;0.87;1"
-                dur="15s"
+                keyTimes="0;0.35;0.41;0.53;0.88;1"
+                dur="17s"
                 repeatCount="indefinite"
               />
             </stop>
@@ -97,14 +100,14 @@ export default function WorkEvolution() {
               <animate
                 attributeName="stopColor"
                 values="#ff9966;#ff9966;#6EBFAA;#6EBFAA;#6EBFAA;#ff9966"
-                dur="15s"
+                dur="17s"
                 repeatCount="indefinite"
               />
               <animate
                 attributeName="stopOpacity"
                 values="0;0;0.8;0.9;0.9;0.9"
-                keyTimes="0;0.27;0.35;0.47;0.87;1"
-                dur="15s"
+                keyTimes="0;0.35;0.41;0.53;0.88;1"
+                dur="17s"
                 repeatCount="indefinite"
               />
             </stop>
@@ -151,15 +154,15 @@ export default function WorkEvolution() {
                 <animate
                   attributeName="strokeWidth"
                   values="0;0;0;2.5;2.5;2.5"
-                  keyTimes="0;0.27;0.3;0.35;0.87;1"
-                  dur="15s"
+                  keyTimes="0;0.35;0.38;0.41;0.88;1"
+                  dur="17s"
                   repeatCount="indefinite"
                 />
                 <animate
                   attributeName="opacity"
                   values="0;0;0;0.7;0.8;0.8"
-                  keyTimes="0;0.27;0.3;0.35;0.87;1"
-                  dur="15s"
+                  keyTimes="0;0.35;0.38;0.41;0.88;1"
+                  dur="17s"
                   repeatCount="indefinite"
                 />
               </line>
@@ -184,15 +187,15 @@ export default function WorkEvolution() {
               <animate
                 attributeName="r"
                 values="0;0;0;0;8;10;10"
-                keyTimes="0;0.35;0.4;0.47;0.53;0.73;1"
-                dur="15s"
+                keyTimes="0;0.41;0.47;0.53;0.59;0.76;1"
+                dur="17s"
                 repeatCount="indefinite"
               />
               <animate
                 attributeName="opacity"
                 values="0;0;0;0;0.5;0.6;0.6"
-                keyTimes="0;0.35;0.4;0.47;0.53;0.73;1"
-                dur="15s"
+                keyTimes="0;0.41;0.47;0.53;0.59;0.76;1"
+                dur="17s"
                 repeatCount="indefinite"
               />
             </circle>
@@ -225,8 +228,8 @@ export default function WorkEvolution() {
               <animate
                 attributeName="opacity"
                 values="0;0;0;0;0.8;0.8;0.8"
-                keyTimes="0;0.4;0.45;0.47;0.53;0.87;1"
-                dur="15s"
+                keyTimes="0;0.47;0.5;0.53;0.59;0.88;1"
+                dur="17s"
                 begin={`${i * 1.2}s`}
                 repeatCount="indefinite"
               />
@@ -248,15 +251,15 @@ export default function WorkEvolution() {
           <animate
             attributeName="strokeWidth"
             values="0;0;0;0;0;0;15;15"
-            keyTimes="0;0.6;0.7;0.72;0.73;0.75;0.87;1"
-            dur="15s"
+            keyTimes="0;0.65;0.73;0.75;0.77;0.79;0.88;1"
+            dur="17s"
             repeatCount="indefinite"
           />
           <animate
             attributeName="opacity"
             values="0;0;0;0;0;0;0.15;0.25;0.15;0.15"
-            keyTimes="0;0.6;0.7;0.72;0.73;0.75;0.8;0.85;0.9;1"
-            dur="15s"
+            keyTimes="0;0.65;0.73;0.75;0.77;0.79;0.83;0.87;0.92;1"
+            dur="17s"
             repeatCount="indefinite"
           />
         </ellipse>
@@ -268,11 +271,13 @@ export default function WorkEvolution() {
           const { Icon } = item;
           const circlePos = getCirclePosition(idx, total);
 
-          // Generate unique chaotic movement for phase 1
+          // Generate EXTREME chaotic movements for phase 1 - crossing entire screen
           const chaos = [
-            { x: (Math.random() - 0.5) * 50, y: (Math.random() - 0.5) * 40, rotate: Math.random() * 180 - 90 },
-            { x: (Math.random() - 0.5) * 45, y: (Math.random() - 0.5) * 35, rotate: Math.random() * 180 - 90 },
-            { x: (Math.random() - 0.5) * 40, y: (Math.random() - 0.5) * 38, rotate: Math.random() * 180 - 90 },
+            { x: (Math.random() - 0.5) * 120, y: (Math.random() - 0.5) * 80, rotate: Math.random() * 360 },
+            { x: (Math.random() - 0.5) * 140, y: (Math.random() - 0.5) * 70, rotate: Math.random() * 360 },
+            { x: (Math.random() - 0.5) * 110, y: (Math.random() - 0.5) * 90, rotate: Math.random() * 360 },
+            { x: (Math.random() - 0.5) * 130, y: (Math.random() - 0.5) * 75, rotate: Math.random() * 360 },
+            { x: (Math.random() - 0.5) * 150, y: (Math.random() - 0.5) * 85, rotate: Math.random() * 360 },
           ];
 
           return (
@@ -285,13 +290,15 @@ export default function WorkEvolution() {
               }}
               initial={{ opacity: 0, scale: 0 }}
               animate={{
-                opacity: [0, 1, 1, 1, 1, 1, 1],
-                scale: [0, 1.1, 1.05, 1, 1, 1, 1],
+                opacity: [0, 1, 1, 1, 1, 1, 1, 1, 1],
+                scale: [0, 1.15, 1.1, 1.08, 1.05, 1, 1, 1, 1],
                 x: [
                   '0%',
                   `${chaos[0].x}%`,
                   `${chaos[1].x}%`,
                   `${chaos[2].x}%`,
+                  `${chaos[3].x}%`,
+                  `${chaos[4].x}%`,
                   '0%',
                   `${(circlePos.x - chaoticPositions[idx].x)}%`,
                   `${(circlePos.x - chaoticPositions[idx].x)}%`,
@@ -301,6 +308,8 @@ export default function WorkEvolution() {
                   `${chaos[0].y}%`,
                   `${chaos[1].y}%`,
                   `${chaos[2].y}%`,
+                  `${chaos[3].y}%`,
+                  `${chaos[4].y}%`,
                   '0%',
                   `${(circlePos.y - chaoticPositions[idx].y)}%`,
                   `${(circlePos.y - chaoticPositions[idx].y)}%`,
@@ -310,16 +319,18 @@ export default function WorkEvolution() {
                   chaos[0].rotate,
                   chaos[1].rotate,
                   chaos[2].rotate,
+                  chaos[3].rotate,
+                  chaos[4].rotate,
                   0,
                   0,
                   0,
                 ],
               }}
               transition={{
-                duration: 15,
+                duration: TOTAL_DURATION,
                 repeat: Infinity,
-                ease: "easeInOut",
-                times: [0, 0.1, 0.18, 0.27, 0.35, 0.47, 1],
+                ease: "linear",
+                times: [0, 0.06, 0.12, 0.18, 0.24, 0.3, 0.35, 0.53, 1],
               }}
             >
               <motion.div
@@ -348,10 +359,10 @@ export default function WorkEvolution() {
                   ],
                 }}
                 transition={{
-                  duration: 15,
+                  duration: TOTAL_DURATION,
                   repeat: Infinity,
                   ease: "easeInOut",
-                  times: [0, 0.13, 0.27, 0.47, 0.67, 0.87, 1],
+                  times: [0, 0.18, 0.35, 0.53, 0.71, 0.88, 1],
                 }}
               >
                 <motion.div
@@ -367,10 +378,10 @@ export default function WorkEvolution() {
                     ],
                   }}
                   transition={{
-                    duration: 15,
+                    duration: TOTAL_DURATION,
                     repeat: Infinity,
                     ease: "easeInOut",
-                    times: [0, 0.13, 0.27, 0.47, 0.67, 0.87, 1],
+                    times: [0, 0.18, 0.35, 0.53, 0.71, 0.88, 1],
                   }}
                 >
                   <Icon className="w-7 h-7" />
