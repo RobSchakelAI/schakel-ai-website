@@ -177,27 +177,27 @@
         "size": "tall"
       },
       {
-        "icon": "Target",
-        "title": "AI Sales Agents & Marketing Automation",
-        "description": "AI-gestuurde agents die leads kwalificeren, opvolgen en afspraken inplannen, zodat geen kans of klantmoment meer verloren gaat",
-        "size": "large"
-      },
-      {
         "icon": "Users",
         "title": "Interne Support Agents",
-        "description": "Virtuele medewerkers die HR-, IT- en operationele vragen beantwoorden, documenten vinden en interne processen versnellen",
+        "description": "Virtuele medewerkers die HR-, IT- en operationele vragen beantwoorden",
+        "size": "small"
+      },
+      {
+        "icon": "Target",
+        "title": "AI Sales & Marketing Automation",
+        "description": "AI-agents die leads kwalificeren, opvolgen en afspraken inplannen",
         "size": "medium"
       },
       {
         "icon": "Share2",
         "title": "Workflow Automatisering",
-        "description": "Automatiseer repetitieve taken en laat processen zelfstandig lopen. Van offertes en facturen tot opvolgmails en goedkeuringen",
-        "size": "large"
+        "description": "Automatiseer repetitieve taken. Van offertes tot opvolgmails",
+        "size": "small"
       },
       {
         "icon": "GraduationCap",
-        "title": "Onboarding & Training Automatisering",
-        "description": "AI-systemen die nieuwe medewerkers sneller inwerken, kennis vastleggen en trainingsmateriaal genereren. Minder handwerk, snellere resultaten",
+        "title": "Onboarding & Training",
+        "description": "AI-systemen die medewerkers sneller inwerken en kennis vastleggen",
         "size": "medium"
       }
     ]
