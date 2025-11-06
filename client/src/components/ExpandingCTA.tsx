@@ -60,37 +60,32 @@ export default function ExpandingCTA() {
             {t.contact.subtitle}
           </p>
 
-          <AnimatePresence initial={false}>
+          <AnimatePresence>
             {!isExpanded && (
-              <motion.div
+              <motion.button
                 layoutId="cta-card-contact"
+                onClick={() => openCTA('contact')}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ delay: 0.2 }}
                 style={{ borderRadius: '100px' }}
-                className="inline-block bg-primary"
+                className="bg-primary text-primary-foreground px-8 py-4 text-lg font-medium flex items-center gap-2"
+                data-testid="button-expand-cta"
               >
-                <motion.button
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.2 }}
-                  exit={{ opacity: 0, scale: 0.8 }}
-                  onClick={() => openCTA('contact')}
-                  className="px-8 py-4 text-lg font-medium text-primary-foreground flex items-center gap-2"
-                  data-testid="button-expand-cta"
-                >
-                  {t.hero.ctaPrimary}
-                  <ArrowRight className="h-5 w-5" />
-                </motion.button>
-              </motion.div>
+                {t.hero.ctaPrimary}
+                <ArrowRight className="h-5 w-5" />
+              </motion.button>
             )}
           </AnimatePresence>
         </div>
       </section>
 
-      <AnimatePresence initial={false}>
+      <AnimatePresence>
         {isExpanded && origin && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4">
             <motion.div
               layoutId={`cta-card-${origin}`}
-              transition={{ duration: 0.3 }}
               style={{ 
                 borderRadius: '24px',
                 background: 'linear-gradient(135deg, #6EBFAA 0%, #2C9880 100%)'

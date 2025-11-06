@@ -45,23 +45,19 @@ export default function Hero() {
 
             {/* Dual CTAs */}
             <div className="flex flex-col sm:flex-row items-center md:items-start gap-3 mb-6">
-              <AnimatePresence initial={false}>
+              <AnimatePresence>
                 {!isExpanded && (
-                  <motion.div
+                  <motion.button
                     layoutId="cta-card-hero"
+                    onClick={() => openCTA('hero')}
+                    initial={false}
                     style={{ borderRadius: '100px' }}
-                    className="bg-primary"
+                    className="bg-primary text-primary-foreground text-sm px-6 py-2.5 font-medium flex items-center gap-2 shadow-xl shadow-primary/30 hover:shadow-2xl hover:shadow-primary/40"
+                    data-testid="button-cta-primary"
                   >
-                    <Button
-                      size="default"
-                      onClick={() => openCTA('hero')}
-                      className="text-sm px-6 shadow-xl shadow-primary/30 hover:shadow-2xl hover:shadow-primary/40 transition-all bg-transparent hover:bg-transparent"
-                      data-testid="button-cta-primary"
-                    >
-                      {t.hero.ctaPrimary}
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </motion.div>
+                    {t.hero.ctaPrimary}
+                    <ArrowRight className="h-4 w-4" />
+                  </motion.button>
                 )}
               </AnimatePresence>
               <Button
