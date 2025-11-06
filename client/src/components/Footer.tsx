@@ -22,7 +22,7 @@ export default function Footer() {
             <p className="text-sm text-muted-foreground mb-4 max-w-xs">
               {t.footer.tagline}
             </p>
-            <p className="text-xs text-muted-foreground">
+            <p className="text-sm text-muted-foreground">
               Schakel AI B.V.<br />
               KvK: 98312529<br />
               BTW: NL868441119B01
