@@ -17,8 +17,8 @@ export default function Home() {
       <main className="pt-20">
         <Hero />
         <ProblemSolution />
-        <Stats />
         <Vision />
+        <Stats />
         <ServicesGrid />
         <div id="approach">
           <ApproachTimeline />
