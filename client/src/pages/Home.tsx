@@ -18,8 +18,8 @@ export default function Home() {
         <Hero />
         <ProblemSolution />
         <Vision />
-        <Stats />
         <ServicesGrid />
+        <Stats />
         <div id="approach">
           <ApproachTimeline />
         </div>
