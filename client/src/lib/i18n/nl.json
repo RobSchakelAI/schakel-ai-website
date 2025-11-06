@@ -171,7 +171,7 @@
     "subtitle": "Uitgebreide AI-services ontworpen om je bedrijfsprocessen te transformeren",
     "items": [
       {
-        "icon": "Network",
+        "icon": "Bot",
         "title": "AI Chatbots & Virtuele Assistenten",
         "description": "Intelligente conversatie-agents die 24/7 klantenservice, leadkwalificatie en verkoopvragen afhandelen met natuurlijke taalverwerking"
       },
@@ -181,7 +181,7 @@
         "description": "Stroomlijn repetitieve processen en elimineer handmatig werk met intelligente automatiseringssystemen die 20+ uur per week besparen"
       },
       {
-        "icon": "GitBranch",
+        "icon": "Plug",
         "title": "AI Integratie Services",
         "description": "Naadloze integratie van AI-mogelijkheden in je bestaande systemen met custom APIs"
       },

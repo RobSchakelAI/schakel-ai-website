@@ -1,11 +1,11 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
-import { Zap, GitBranch, Network, TrendingUp } from 'lucide-react';
+import { Bot, Zap, Plug, TrendingUp } from 'lucide-react';
 
 const iconMap = {
+  Bot,
   Zap,
-  GitBranch,
-  Network,
+  Plug,
   TrendingUp,
 };
 
