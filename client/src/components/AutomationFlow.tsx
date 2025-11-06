@@ -89,8 +89,8 @@ export default function AutomationFlow() {
             />
             <animate
               attributeName="opacity"
-              values="0;1;1;1;1;1;0"
-              keyTimes="0; 0.05; 0.2; 0.4; 0.6; 0.8; 1"
+              values="1;1;1;1;1;0"
+              keyTimes="0; 0.2; 0.4; 0.6; 0.8; 1"
               dur="10s"
               repeatCount="indefinite"
             />
