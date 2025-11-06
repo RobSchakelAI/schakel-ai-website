@@ -229,7 +229,7 @@ export default function Header() {
                     className="flex-1"
                     data-testid="button-lang-ai-mobile"
                   >
-                    AI Mode
+                    AI View
                   </Button>
                 </div>
               </div>

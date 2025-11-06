@@ -89,7 +89,7 @@ export default function AIView() {
           onClick={() => setLanguage('ai')}
           data-testid="button-lang-ai-active"
         >
-          [AI MODE ACTIVE ✓]
+          [AI VIEW ACTIVE ✓]
         </button>
       </div>
 
