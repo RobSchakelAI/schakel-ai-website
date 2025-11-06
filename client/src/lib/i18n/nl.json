@@ -82,6 +82,7 @@
   },
   "footer": {
     "tagline": "Rust & Rendement",
+    "quickLinks": "Links",
     "privacy": "Privacy",
     "disclaimer": "Disclaimer"
   },
