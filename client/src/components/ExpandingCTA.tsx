@@ -60,36 +60,45 @@ export default function ExpandingCTA() {
             {t.contact.subtitle}
           </p>
 
-          <AnimatePresence>
+          <AnimatePresence initial={false}>
             {!isExpanded && (
-              <motion.button
-                layoutId="cta-card-contact"
-                onClick={() => openCTA('contact')}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ delay: 0.2 }}
-                style={{ borderRadius: '100px' }}
-                className="bg-primary text-primary-foreground px-8 py-4 text-lg font-medium flex items-center gap-2"
-                data-testid="button-expand-cta"
-              >
-                {t.hero.ctaPrimary}
-                <ArrowRight className="h-5 w-5" />
-              </motion.button>
+              <motion.div className="inline-block relative">
+                <motion.div
+                  style={{ borderRadius: '100px' }}
+                  layout
+                  layoutId="cta-card-contact"
+                  className="absolute inset-0 bg-primary transform-gpu will-change-transform"
+                />
+                <motion.button
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                  layout={false}
+                  onClick={() => openCTA('contact')}
+                  className="px-8 py-4 text-lg font-medium text-primary-foreground relative flex items-center gap-2"
+                  data-testid="button-expand-cta"
+                >
+                  {t.hero.ctaPrimary}
+                  <ArrowRight className="h-5 w-5" />
+                </motion.button>
+              </motion.div>
             )}
           </AnimatePresence>
         </div>
       </section>
 
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         {isExpanded && origin && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4">
             <motion.div
               layoutId={`cta-card-${origin}`}
+              transition={{ duration: 0.3 }}
               style={{ 
                 borderRadius: '24px',
                 background: 'linear-gradient(135deg, #6EBFAA 0%, #2C9880 100%)'
               }}
+              layout
               className="relative flex h-full w-full overflow-y-auto transform-gpu will-change-transform max-w-4xl"
             >
               {/* Subtle grid pattern background */}

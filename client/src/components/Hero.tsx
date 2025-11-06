@@ -45,19 +45,29 @@ export default function Hero() {
 
             {/* Dual CTAs */}
             <div className="flex flex-col sm:flex-row items-center md:items-start gap-3 mb-6">
-              <AnimatePresence>
+              <AnimatePresence initial={false}>
                 {!isExpanded && (
-                  <motion.button
-                    layoutId="cta-card-hero"
-                    onClick={() => openCTA('hero')}
-                    initial={false}
-                    style={{ borderRadius: '100px' }}
-                    className="bg-primary text-primary-foreground text-sm px-6 py-2.5 font-medium flex items-center gap-2 shadow-xl shadow-primary/30 hover:shadow-2xl hover:shadow-primary/40"
-                    data-testid="button-cta-primary"
-                  >
-                    {t.hero.ctaPrimary}
-                    <ArrowRight className="h-4 w-4" />
-                  </motion.button>
+                  <motion.div className="inline-block relative">
+                    <motion.div
+                      style={{ borderRadius: '100px' }}
+                      layout
+                      layoutId="cta-card-hero"
+                      className="absolute inset-0 bg-primary transform-gpu will-change-transform"
+                    />
+                    <motion.button
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.2 }}
+                      exit={{ opacity: 0, scale: 0.8 }}
+                      layout={false}
+                      onClick={() => openCTA('hero')}
+                      className="text-sm px-6 py-2.5 font-medium text-primary-foreground relative flex items-center gap-2"
+                      data-testid="button-cta-primary"
+                    >
+                      {t.hero.ctaPrimary}
+                      <ArrowRight className="h-4 w-4" />
+                    </motion.button>
+                  </motion.div>
                 )}
               </AnimatePresence>
               <Button
