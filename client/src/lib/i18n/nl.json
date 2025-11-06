@@ -11,7 +11,7 @@
     "titleVariant2": "De AI-switch die je bedrijf futureproof maakt.",
     "titleVariant3": "Schakelen naar AI. Klaar voor morgen.",
     "titleVariant4": "Van chaos naar controle. Met AI.",
-    "description": "Wij automatiseren processen die nu handmatig zijn. Binnen 30 dagen zie je aantoonbaar resultaat: minder uren, minder fouten, meer overzicht.\n\nDe meeste AI-projecten starten te breed. Wij pakken één proces aan, bouwen een werkende oplossing, en tonen het resultaat binnen 30 dagen.",
+    "description": "We automatiseren processen die nu handmatig zijn. Binnen 30 dagen zie je aantoonbaar resultaat: minder uren, minder fouten, meer overzicht.\n\nDe meeste AI-projecten starten te breed. We pakken één proces aan, bouwen een werkende oplossing, en tonen het resultaat binnen 30 dagen.",
     "ctaPrimary": "Plan een gesprek",
     "ctaSecondary": "Bekijk cases",
     "trustLine": "Al 15+ bedrijven verder geholpen"
@@ -20,9 +20,9 @@
     "title": "Waarom wij dit doen",
     "content": [
       "AI groeit razendsnel. Bedrijven die nu starten, pakken voorsprong. Wie blijft wachten, kijkt straks naar concurrenten die sneller bewogen.",
-      "Wij geloven dat snelheid het verschil maakt. Geen maanden praten over wat misschien kan, maar binnen 30 dagen tastbaar resultaat. Wij zagen het bij onze eigen bedrijven: processen die AI in weken oplost, kostten ons eerst maanden. Die ervaring zetten wij nu in voor anderen.",
-      "Wij bouwen tools die direct werken. Processen automatiseren, teams ontlasten, fouten reduceren. Dat levert rust én rendement op. Meer output met minder hectiek. Productiever werken, meer focus op wat echt telt.",
-      "Maar dat gebeurt niet vanzelf. Het gebeurt door te starten. Laten wij schakelen."
+      "Wij geloven dat snelheid het verschil maakt. Geen maanden praten over wat misschien kan, maar binnen 30 dagen tastbaar resultaat. We zagen het bij onze eigen bedrijven: processen die AI in weken oplost, kostten ons eerst maanden. Die ervaring zetten we nu in voor anderen.",
+      "We bouwen tools die direct werken. Processen automatiseren, teams ontlasten, fouten reduceren. Dat levert rust én rendement op. Meer output met minder hectiek. Productiever werken, meer focus op wat echt telt.",
+      "Maar dat gebeurt niet vanzelf. Het gebeurt door te starten. Laten we schakelen."
     ]
   },
   "approach": {
@@ -32,22 +32,22 @@
       {
         "number": "01",
         "title": "Verkenning",
-        "description": "Wij kijken waar je nu het meeste tijd verliest en wat direct op te lossen is"
+        "description": "We kijken waar je nu het meeste tijd verliest en wat direct op te lossen is"
       },
       {
         "number": "02",
         "title": "Ontwerp",
-        "description": "Wij kiezen samen het proces dat we eerst aanpakken en bepalen wat het moet doen"
+        "description": "We kiezen samen het proces dat we eerst aanpakken en bepalen wat het moet doen"
       },
       {
         "number": "03",
         "title": "Implementatie",
-        "description": "Wij bouwen het, testen met je team en zorgen dat het werkt in jullie dagelijkse proces"
+        "description": "We bouwen het, testen met je team en zorgen dat het werkt in jullie dagelijkse proces"
       },
       {
         "number": "04",
         "title": "Verbetering",
-        "description": "Wij meten het resultaat en verbeteren waar nodig"
+        "description": "We meten het resultaat en verbeteren waar nodig"
       }
     ]
   },
@@ -73,7 +73,7 @@
       "company": "Bedrijf",
       "message": "Bericht",
       "submit": "Verstuur bericht",
-      "success": "Bedankt! Wij nemen zo snel mogelijk contact op.",
+      "success": "Bedankt! We nemen zo snel mogelijk contact op.",
       "successDescription": "We nemen zo snel mogelijk contact met je op.",
       "error": "Er ging iets mis. Probeer het opnieuw."
     }
@@ -157,7 +157,7 @@
       {
         "number": "2",
         "title": "AI-strategie",
-        "description": "Wij analyseren je workflows en creëren een custom AI-strategie afgestemd op je specifieke bedrijfsdoelen"
+        "description": "We analyseren je workflows en creëren een custom AI-strategie afgestemd op je specifieke bedrijfsdoelen"
       },
       {
         "number": "3",
@@ -168,7 +168,7 @@
   },
   "services": {
     "title": "Onze AI-oplossingen",
-    "subtitle": "Een greep uit de oplossingen die wij bouwen",
+    "subtitle": "Een greep uit de oplossingen die we bouwen",
     "items": [
       {
         "icon": "MessageSquare",
