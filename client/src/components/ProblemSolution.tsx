@@ -25,9 +25,9 @@ export default function ProblemSolution() {
           </div>
 
           <div className="space-y-6">
-            <h3 className="text-2xl md:text-3xl font-display font-bold text-foreground">
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground">
               {t.problemSolution.solutionTitle}
-            </h3>
+            </h2>
             <div className="space-y-4">
               {t.problemSolution.solutions.map((solution: string, index: number) => (
                 <div key={index} className="flex items-start gap-3">
