@@ -38,7 +38,7 @@ export default function Vision() {
                 animation: `fadeInUp 0.6s ease-out ${index * 0.15}s both`
               }}
             >
-              <p className="text-base md:text-lg text-white leading-relaxed">
+              <p className="text-sm md:text-base text-white leading-relaxed">
                 {paragraph}
               </p>
             </div>
