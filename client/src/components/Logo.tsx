@@ -11,9 +11,10 @@ export default function Logo({ className = "h-10" }: { className?: string }) {
       alt="Schakel AI" 
       className={className}
       style={theme === 'light' ? {
-        clipPath: 'inset(37% 0 37% 0)',
-        transform: 'scale(3.85)',
-        objectFit: 'contain'
+        clipPath: 'inset(36% 0 36% 0)',
+        transform: 'scale(3.57)',
+        objectFit: 'contain',
+        transformOrigin: 'center center'
       } : undefined}
     />
   );
