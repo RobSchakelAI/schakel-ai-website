@@ -72,30 +72,28 @@ export default function AutomationFlow() {
         />
         
         {/* Geanimeerde data pulse synchronized with node activations */}
-        {activeNode > 0 && (
-          <circle
-            r="2"
-            fill="#6EBFAA"
-            filter="url(#glow)"
-            opacity="0"
-          >
-            <animateMotion
-              dur="10s"
-              repeatCount="indefinite"
-              path="M 15 78 C 25 77, 40 72, 50 64 C 60 56, 72 38, 85 22"
-              keyTimes="0; 0.2; 0.4; 0.6; 0.8; 1"
-              keyPoints="0; 0.25; 0.5; 0.75; 1; 0"
-              calcMode="linear"
-            />
-            <animate
-              attributeName="opacity"
-              values="1;1;1;1;1;0"
-              keyTimes="0; 0.2; 0.4; 0.6; 0.8; 1"
-              dur="10s"
-              repeatCount="indefinite"
-            />
-          </circle>
-        )}
+        <circle
+          r="2"
+          fill="#6EBFAA"
+          filter="url(#glow)"
+          opacity="0"
+        >
+          <animateMotion
+            dur="10s"
+            repeatCount="indefinite"
+            path="M 15 78 C 25 77, 40 72, 50 64 C 60 56, 72 38, 85 22"
+            keyTimes="0; 0.2; 0.4; 0.6; 0.8; 1"
+            keyPoints="0; 0.25; 0.5; 0.75; 1; 0"
+            calcMode="linear"
+          />
+          <animate
+            attributeName="opacity"
+            values="1;1;1;1;1;0"
+            keyTimes="0; 0.2; 0.4; 0.6; 0.8; 1"
+            dur="10s"
+            repeatCount="indefinite"
+          />
+        </circle>
 
         {/* Nodes */}
         {nodes.map((node) => {
