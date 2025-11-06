@@ -81,5 +81,88 @@
     "tagline": "Rust & Rendement",
     "privacy": "Privacy",
     "disclaimer": "Disclaimer"
+  },
+  "problemSolution": {
+    "problemTitle": "Nog alles handmatig aan het doen?",
+    "problems": [
+      "Uren kwijt aan repetitieve taken die geautomatiseerd kunnen",
+      "Leads mislopen omdat je niet 24/7 kunt reageren",
+      "Moeite om op te schalen zonder meer personeel",
+      "Concurrenten lopen voor met AI-gedreven processen"
+    ],
+    "solutionTitle": "Wij bouwen AI-oplossingen die werken",
+    "solutions": [
+      "AI-agents die direct klantvragen afhandelen",
+      "Workflow-automatisering die 20+ uur per week bespaart",
+      "Naadloze integratie met je bestaande systemen",
+      "Aantoonbaar resultaat binnen 30 dagen"
+    ]
+  },
+  "stats": {
+    "title": "Meetbare resultaten die ertoe doen",
+    "subtitle": "Onze klanten zien directe impact op hun bedrijfsresultaat",
+    "items": [
+      {
+        "icon": "Clock",
+        "value": "80%",
+        "label": "Tijdsbesparing op handmatig werk"
+      },
+      {
+        "icon": "TrendingUp",
+        "value": "3x",
+        "label": "Gemiddeld ROI binnen 6 maanden"
+      },
+      {
+        "icon": "Users",
+        "value": "150%",
+        "label": "Toename in leadconversie"
+      },
+      {
+        "icon": "Zap",
+        "value": "24/7",
+        "label": "Geautomatiseerde klantenservice"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Vertrouwd door groeiende bedrijven",
+    "items": [
+      {
+        "quote": "De AI-chatbot verhoogde onze leadconversie met 200% en handelt 90% van klantvragen automatisch af. ROI was binnen de eerste maand al zichtbaar.",
+        "author": "Sarah Johnson",
+        "role": "CEO, TechStart Solutions"
+      },
+      {
+        "quote": "Workflow-automatisering bespaarde ons 25 uur per week. Ons team kan zich nu focussen op strategische groei in plaats van repetitieve taken.",
+        "author": "Michael Chen",
+        "role": "Operations Director, GrowthCorp"
+      },
+      {
+        "quote": "De AI-integratie transformeerde ons e-commerce platform. Verkoop steeg met 180% door gepersonaliseerde klantbeleving.",
+        "author": "Emily Rodriguez",
+        "role": "Oprichter, RetailMax"
+      }
+    ]
+  },
+  "process": {
+    "title": "Simpel 3-stappenproces",
+    "subtitle": "Van consultatie tot implementatie, wij maken AI-adoptie naadloos",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Plan een gesprek",
+        "description": "Plan een gratis consultatie om je bedrijfsbehoeften te bespreken en automatiseringsmogelijkheden te identificeren"
+      },
+      {
+        "number": "2",
+        "title": "AI-strategie",
+        "description": "Wij analyseren je workflows en creëren een custom AI-strategie afgestemd op je specifieke bedrijfsdoelen"
+      },
+      {
+        "number": "3",
+        "title": "Implementatie",
+        "description": "Ons team bouwt, test en implementeert je AI-oplossingen met doorlopende support en optimalisatie"
+      }
+    ]
   }
 }

@@ -81,5 +81,88 @@
     "tagline": "Peace & Performance",
     "privacy": "Privacy",
     "disclaimer": "Disclaimer"
+  },
+  "problemSolution": {
+    "problemTitle": "Still doing everything manually?",
+    "problems": [
+      "Hours wasted on repetitive tasks that could be automated",
+      "Missing leads because you can't respond 24/7",
+      "Struggling to scale without hiring more staff",
+      "Competitors getting ahead with AI-powered processes"
+    ],
+    "solutionTitle": "We build AI solutions that work",
+    "solutions": [
+      "AI agents that handle customer inquiries instantly",
+      "Workflow automation that saves 20+ hours per week",
+      "Seamless integration with your existing systems",
+      "Proven results within 30 days"
+    ]
+  },
+  "stats": {
+    "title": "Measurable results that matter",
+    "subtitle": "Our clients see immediate impact on their bottom line",
+    "items": [
+      {
+        "icon": "Clock",
+        "value": "80%",
+        "label": "Time saved on manual tasks"
+      },
+      {
+        "icon": "TrendingUp",
+        "value": "3x",
+        "label": "Average ROI within 6 months"
+      },
+      {
+        "icon": "Users",
+        "value": "150%",
+        "label": "Increase in lead conversion"
+      },
+      {
+        "icon": "Zap",
+        "value": "24/7",
+        "label": "Automated customer support"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Trusted by growing businesses",
+    "items": [
+      {
+        "quote": "The AI chatbot increased our lead conversion by 200% and handles 90% of customer inquiries automatically. ROI was evident within the first month.",
+        "author": "Sarah Johnson",
+        "role": "CEO, TechStart Solutions"
+      },
+      {
+        "quote": "Workflow automation saved us 25 hours per week. Our team can now focus on strategic growth instead of repetitive tasks.",
+        "author": "Michael Chen",
+        "role": "Operations Director, GrowthCorp"
+      },
+      {
+        "quote": "The AI integration transformed our e-commerce platform. Sales increased by 180% with personalized customer experiences.",
+        "author": "Emily Rodriguez",
+        "role": "Founder, RetailMax"
+      }
+    ]
+  },
+  "process": {
+    "title": "Simple 3-step process",
+    "subtitle": "From consultation to implementation, we make AI adoption seamless",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Book a call",
+        "description": "Schedule a free consultation to discuss your business needs and identify automation opportunities"
+      },
+      {
+        "number": "2",
+        "title": "AI strategy",
+        "description": "We analyze your workflows and create a custom AI strategy tailored to your specific business goals"
+      },
+      {
+        "number": "3",
+        "title": "Implementation",
+        "description": "Our team builds, tests and deploys your AI solutions with ongoing support and optimization"
+      }
+    ]
   }
 }
