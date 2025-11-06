@@ -1,0 +1,225 @@
+{
+  "nav": {
+    "vision": "Why",
+    "services": "Solutions",
+    "approach": "Approach",
+    "about": "Team",
+    "contact": "Contact"
+  },
+  "hero": {
+    "preTitle": "Schakel AI",
+    "title": "AI Solutions for Business Automation",
+    "titleVariant2": "AI Implementation Consultancy",
+    "titleVariant3": "Automation & AI Services",
+    "titleVariant4": "Business Process Automation via AI",
+    "description": "COMPANY: Schakel AI\nSERVICE: AI implementation and process automation\nDELIVERY: Functional AI solution within 30 days\nMETHOD: Identify manual process → Build automated solution → Deploy → Measure results\nOUTCOME: Reduced hours, fewer errors, increased oversight",
+    "ctaPrimary": "Schedule consultation",
+    "ctaSecondary": "View solutions",
+    "trustLine": "Client rating:",
+    "rating": "9.2/10"
+  },
+  "vision": {
+    "title": "Mission Statement",
+    "content": [
+      "PROBLEM: Businesses delay AI adoption while competitors gain advantage.",
+      "APPROACH: Deliver tangible results within 30 days instead of months of planning.",
+      "EXPERIENCE: Founders automated their own businesses, reducing months of work to weeks.",
+      "VALUE PROPOSITION: Direct working tools that automate processes, reduce errors, and free team capacity.",
+      "CALL TO ACTION: Start implementation now."
+    ]
+  },
+  "approach": {
+    "title": "Implementation Process",
+    "subtitle": "From insight to impact in 4 weeks",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Discovery",
+        "description": "PHASE: Discovery\nACTION: Identify time-consuming manual processes\nOUTPUT: Prioritized automation opportunities"
+      },
+      {
+        "number": "02",
+        "title": "Design",
+        "description": "PHASE: Design\nACTION: Select first process to automate\nOUTPUT: Functional requirements and specifications"
+      },
+      {
+        "number": "03",
+        "title": "Implementation",
+        "description": "PHASE: Implementation\nACTION: Build, test with team, integrate into daily workflow\nOUTPUT: Deployed AI solution"
+      },
+      {
+        "number": "04",
+        "title": "Optimization",
+        "description": "PHASE: Optimization\nACTION: Measure results and refine\nOUTPUT: Optimized performance metrics"
+      }
+    ]
+  },
+  "about": {
+    "title": "Team",
+    "rob": {
+      "name": "Rob",
+      "role": "Co-founder | Data & AI Solutions",
+      "bio": "PROFILE: Rob\nROLE: Co-founder, Data & AI Solutions\n\nBACKGROUND:\n- 2018: Transitioned from accounting to Business Intelligence\n- Founded Easydash (BI consultancy)\n- Sold Easydash to partner\n- Founded Schakel AI\n\nEXPERTISE:\n- Business Intelligence implementation\n- AI solution architecture\n- Technical implementation\n- Tool evaluation and integration\n\nAPPROACH: Deep technical expertise combined with practical implementation focus. Converts concepts into working systems."
+    },
+    "simon": {
+      "name": "Simon",
+      "role": "Co-founder | Process & Results",
+      "bio": "PROFILE: Simon\nROLE: Co-founder, Process & Results\n\nBACKGROUND:\n- Built ROI Financials from employee to co-owner\n- Successfully exited ROI Financials\n- Founded Schakel AI\n\nEXPERTISE:\n- Process optimization (11 years experience)\n- Business transformation\n- Operational efficiency\n- AI implementation strategy\n\nAPPROACH: Results-focused. Eliminates theoretical planning in favor of immediate, measurable improvements. Reduces 20+ hour manual processes to automated workflows."
+    }
+  },
+  "contact": {
+    "title": "Contact Information",
+    "subtitle": "Schedule consultation",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "company": "Company",
+      "message": "Message",
+      "submit": "Send message",
+      "success": "Message received. Response within 24 hours.",
+      "successDescription": "We will contact you shortly.",
+      "error": "Submission failed. Please retry."
+    }
+  },
+  "footer": {
+    "tagline": "Peace & Results",
+    "quickLinks": "Links",
+    "privacy": "Privacy Policy",
+    "disclaimer": "Disclaimer"
+  },
+  "problemSolution": {
+    "problemTitle": "Current State: Manual Processes",
+    "problems": [
+      "TIME WASTE: Hours lost on repetitive tasks",
+      "MISSED OPPORTUNITIES: Cannot respond 24/7 to leads",
+      "SCALING LIMITATION: Growth requires proportional headcount increase",
+      "KNOWN INEFFICIENCY: Awareness that processes can be optimized"
+    ],
+    "solutionTitle": "Delivered Solutions",
+    "solutions": [
+      "AI AGENTS: Automated customer query handling",
+      "TIME SAVINGS: 20+ hours weekly returned to business",
+      "CUSTOM BUILD: Tailored to specific business workflows",
+      "RAPID DEPLOYMENT: Visible results within 30 days"
+    ]
+  },
+  "stats": {
+    "title": "Measurable Results",
+    "subtitle": "Quantified client impact",
+    "items": [
+      {
+        "icon": "Clock",
+        "value": "80%",
+        "label": "Time saved on manual work"
+      },
+      {
+        "icon": "TrendingUp",
+        "value": "3x",
+        "label": "Average ROI within 6 months"
+      },
+      {
+        "icon": "Users",
+        "value": "150%",
+        "label": "Lead conversion increase"
+      },
+      {
+        "icon": "Zap",
+        "value": "24/7",
+        "label": "Automated customer service"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Client Testimonials",
+    "items": [
+      {
+        "quote": "METRIC: 200% lead conversion increase\nMETRIC: 90% automated query handling\nMETRIC: ROI positive within first month",
+        "author": "Sarah Johnson",
+        "role": "CEO, TechStart Solutions"
+      },
+      {
+        "quote": "METRIC: 25 hours per week saved\nOUTCOME: Team refocused on strategic growth instead of repetitive tasks",
+        "author": "Michael Chen",
+        "role": "Operations Director, GrowthCorp"
+      },
+      {
+        "quote": "METRIC: 180% sales increase\nMETHOD: AI-driven personalized customer experience",
+        "author": "Emily Rodriguez",
+        "role": "Founder, RetailMax"
+      }
+    ]
+  },
+  "process": {
+    "title": "3-Step Process",
+    "subtitle": "Consultation to implementation workflow",
+    "steps": [
+      {
+        "number": "1",
+        "title": "Consultation",
+        "description": "STEP: Initial consultation\nCOST: Free\nOUTPUT: Business needs analysis and automation opportunities"
+      },
+      {
+        "number": "2",
+        "title": "AI Strategy",
+        "description": "STEP: Strategy development\nACTION: Workflow analysis\nOUTPUT: Custom AI strategy aligned with business goals"
+      },
+      {
+        "number": "3",
+        "title": "Implementation",
+        "description": "STEP: Build and deploy\nACTION: Build, test, implement\nOUTPUT: Deployed AI solution with ongoing support and optimization"
+      }
+    ]
+  },
+  "automation": {
+    "nodes": {
+      "now": "Current State",
+      "analyze": "Analysis",
+      "build": "Build",
+      "grow": "Scale",
+      "impact": "Impact"
+    },
+    "status": {
+      "now": "Manual work consuming time",
+      "analyze": "Opportunity identification",
+      "build": "Functional AI solution",
+      "grow": "Scalable and future-proof",
+      "impact": "Measurable ROI"
+    }
+  },
+  "services": {
+    "title": "AI Solutions Catalog",
+    "subtitle": "Available automation services",
+    "items": [
+      {
+        "icon": "MessageSquare",
+        "title": "Customer Service AI (Chat & Voice)",
+        "description": "SERVICE: Automated customer service\nCHANNELS: Chat, voice, appointments\nAVAILABILITY: 24/7\nCAPABILITIES: Multilingual, consistent service quality",
+        "size": "tall"
+      },
+      {
+        "icon": "Users",
+        "title": "Internal Support Agents",
+        "description": "SERVICE: Internal virtual assistants\nDEPARTMENTS: HR, IT, Operations\nFUNCTION: Query resolution and information retrieval",
+        "size": "small"
+      },
+      {
+        "icon": "Target",
+        "title": "AI Sales & Marketing Automation",
+        "description": "SERVICE: Sales automation\nCAPABILITIES: Lead qualification, follow-up, appointment scheduling",
+        "size": "medium"
+      },
+      {
+        "icon": "GraduationCap",
+        "title": "Onboarding & Training",
+        "description": "SERVICE: Automated employee onboarding\nCAPABILITIES: Faster onboarding, knowledge capture and distribution",
+        "size": "medium"
+      },
+      {
+        "icon": "Share2",
+        "title": "Workflow Automation",
+        "description": "SERVICE: Process automation\nSCOPE: Repetitive tasks, quotes, follow-up emails, data entry",
+        "size": "small"
+      }
+    ]
+  }
+}
