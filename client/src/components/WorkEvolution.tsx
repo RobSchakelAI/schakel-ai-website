@@ -188,14 +188,14 @@ export default function WorkEvolution() {
                 {/* Lines appear AFTER icons stop AND after AI pulse */}
                 <animate
                   attributeName="strokeWidth"
-                  values="0;0;0;0;0;2.5;2.5;2.5"
+                  values="0;0;0;0;0;3.5;3.5;3.5"
                   keyTimes="0;0.35;0.41;0.44;0.47;0.50;0.88;1"
                   dur="17s"
                   repeatCount="indefinite"
                 />
                 <animate
                   attributeName="opacity"
-                  values="0;0;0;0;0;0.75;0.8;0.8"
+                  values="0;0;0;0;0;0.9;0.95;0.95"
                   keyTimes="0;0.35;0.41;0.44;0.47;0.50;0.88;1"
                   dur="17s"
                   repeatCount="indefinite"
@@ -369,7 +369,7 @@ export default function WorkEvolution() {
                   `${chaos[0].x}%`,
                   `${chaos[1].x}%`,
                   `${chaos[2].x}%`,
-                  '0%',
+                  `${(circlePos.x - startPositions[idx].x)}%`,
                   `${(circlePos.x - startPositions[idx].x)}%`,
                   `${(circlePos.x - startPositions[idx].x)}%`,
                 ],
@@ -378,7 +378,7 @@ export default function WorkEvolution() {
                   `${chaos[0].y}%`,
                   `${chaos[1].y}%`,
                   `${chaos[2].y}%`,
-                  '0%',
+                  `${(circlePos.y - startPositions[idx].y)}%`,
                   `${(circlePos.y - startPositions[idx].y)}%`,
                   `${(circlePos.y - startPositions[idx].y)}%`,
                 ],
@@ -396,7 +396,7 @@ export default function WorkEvolution() {
                 duration: TOTAL_DURATION,
                 repeat: Infinity,
                 ease: idx % 2 === 0 ? "linear" : "easeInOut", // Mix of speeds
-                times: [0, 0.12, 0.24, 0.35, 0.41, 0.53, 1],
+                times: [0, 0.03, 0.24, 0.35, 0.44, 0.53, 1],
               }}
             >
               <motion.div
