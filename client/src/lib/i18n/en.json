@@ -12,10 +12,11 @@
     "titleVariant2": "The AI switch that makes your business future-proof.",
     "titleVariant3": "Switching to AI. Ready for tomorrow.",
     "titleVariant4": "From chaos to control. With AI.",
-    "description": "We automate processes that are currently manual. Within 30 days you see demonstrable results: fewer hours, fewer errors, more overview.\n\nMost AI projects start too broad. We tackle one process, build a working solution, and show the result within 30 days.",
-    "ctaPrimary": "Schedule a call",
-    "ctaSecondary": "View cases",
-    "trustLine": "Already helped 15+ companies move forward"
+    "description": "We automate processes that are currently manual. Fewer hours, fewer errors, more overview. We start with one process, build a working solution, and show the result within 30 days.",
+    "ctaPrimary": "Ready to switch?",
+    "ctaSecondary": "View solutions",
+    "trustLine": "Customers rate us",
+    "rating": "9.2"
   },
   "vision": {
     "title": "Why we do this",
@@ -57,7 +58,7 @@
     "rob": {
       "name": "Rob",
       "role": "Co-founder | Data & AI Solutions",
-      "bio": "Rob switched from accounting to Business Intelligence eight years ago. Founded Easydash - built from zero to nearly 10 employees. Sold it successfully to his partner.\n\nTechnically strong, but with clear focus: technology must work in practice. Simple enough that teams actually use it.\n\nWith AI he saw the same pattern as with BI. Companies wanted to implement it, but it often got stuck. Too theoretical, too complex, too little connection to daily practice.\n\nRob takes a different approach. Not building dashboards that two people look at. But solutions the entire team works with. Automate processes that are currently manual. Structure data that is currently scattered.\n\nHe combines that technical background with pragmatism. He can build complex, but deliberately chooses solutions that people immediately understand and use.\n\nAt Schakel AI, Rob ensures ideas become reality. From concept to working solution that delivers measurable results."
+      "bio": "In 2018 Rob switched from accounting to Business Intelligence. This was still in its infancy, but he saw the potential. He dove in completely, started freelancing and soon founded Easydash. An agency that helped companies truly utilize data.\n\nThe start was tough. Companies didn't see the point. \"We have Excel, that works fine.\" But as soon as the first results became visible, things moved fast. Within a few years, everyone was using BI tools.\n\nThen came AI. Rob sold Easydash to his partner and stepped into a new world once again. And again he saw the same pattern: skepticism, doubt, waiting. \"We don't know if it works.\" While the frontrunners are already building, learning and winning.\n\nBut AI affects more than reports. It changes entire companies. From customer service to operations, from marketing to decision-making. The impact is bigger, so the urgency is too.\n\nThat's why he founded Schakel AI. Not to talk about AI, but to help companies actually apply it. At Schakel, Rob ensures ideas become reality. Rob is a builder who dives deep into technology, masters tools and builds smart things that really work."
     },
     "simon": {
       "name": "Simon",
@@ -87,17 +88,17 @@
   "problemSolution": {
     "problemTitle": "Still doing everything manually?",
     "problems": [
-      "Hours wasted on repetitive tasks that could be automated",
-      "Missing leads because you can't respond 24/7",
-      "Struggling to scale without hiring more staff",
-      "Competitors getting ahead with AI-powered processes"
+      "You lose hours on recurring tasks that could be smarter.",
+      "Leads pile up because you can't respond 24/7.",
+      "Scaling doesn't work without more people.",
+      "While you know: this could be easier, faster, smarter."
     ],
     "solutionTitle": "We build AI solutions that work",
     "solutions": [
-      "AI agents that handle customer inquiries instantly",
-      "Workflow automation that saves 20+ hours per week",
-      "Seamless integration with your existing systems",
-      "Proven results within 30 days"
+      "AI agents that handle customer questions directly.",
+      "Smart automation that gives you back 20+ hours per week.",
+      "Built around how your business really works.",
+      "Visible results within 30 days."
     ]
   },
   "stats": {
@@ -168,28 +169,38 @@
     ]
   },
   "services": {
-    "title": "Our AI solutions",
-    "subtitle": "Comprehensive AI services designed to transform your business operations",
+    "title": "Our AI Solutions",
+    "subtitle": "A selection of the solutions we build",
     "items": [
       {
-        "icon": "Bot",
-        "title": "AI Chatbots & Virtual Assistants",
-        "description": "Intelligent conversational agents that handle customer support, lead qualification, and sales inquiries 24/7 with natural language processing"
+        "icon": "MessageSquare",
+        "title": "Customer Service AI (Chat & Voice)",
+        "description": "Smart AI assistants that handle customer questions, phone calls and appointments directly. 24/7, multilingual and always consistent in service",
+        "size": "tall"
       },
       {
-        "icon": "Workflow",
+        "icon": "Users",
+        "title": "Internal Support Agents",
+        "description": "Virtual employees that answer HR, IT and operational questions",
+        "size": "small"
+      },
+      {
+        "icon": "Target",
+        "title": "AI Sales & Marketing Automation",
+        "description": "AI agents that qualify leads, follow up and schedule appointments",
+        "size": "medium"
+      },
+      {
+        "icon": "GraduationCap",
+        "title": "Onboarding & Training",
+        "description": "AI systems that onboard employees faster and capture knowledge",
+        "size": "medium"
+      },
+      {
+        "icon": "Share2",
         "title": "Workflow Automation",
-        "description": "Streamline repetitive processes and eliminate manual tasks with intelligent automation systems that save 20+ hours per week"
-      },
-      {
-        "icon": "Cog",
-        "title": "AI Integration Services",
-        "description": "Seamlessly integrate AI capabilities into your existing systems with custom APIs"
-      },
-      {
-        "icon": "Brain",
-        "title": "Smart Analytics & Insights",
-        "description": "AI-powered analytics that provide actionable insights and predictive intelligence for better decision making"
+        "description": "Automate repetitive tasks. From quotes to follow-up emails",
+        "size": "small"
       }
     ]
   }
