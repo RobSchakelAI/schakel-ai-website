@@ -1,4 +1,4 @@
-import logoImg from '@assets/Schakel logo inverted nieuw_1762440951065.png';
+import logoImg from '@assets/schakel-logo-cropped.png';
 
 export default function Logo({ className = "h-10" }: { className?: string }) {
   return (
@@ -6,7 +6,6 @@ export default function Logo({ className = "h-10" }: { className?: string }) {
       src={logoImg} 
       alt="Schakel AI Agency" 
       className={className}
-      style={{ objectFit: 'contain', objectPosition: 'left center' }}
     />
   );
 }
