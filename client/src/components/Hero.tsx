@@ -14,7 +14,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-background pt-16 pb-6">
+    <section className="relative overflow-hidden bg-background pt-24 pb-16 md:pt-32 md:pb-24">
       {/* Subtle purple to mint gradient overlay */}
       <div 
         className="absolute inset-0 opacity-[0.03]"
@@ -94,7 +94,7 @@ export default function Hero() {
           </div>
 
           {/* Right: Geanimeerde Automation Flow */}
-          <div className="hidden md:flex items-center justify-center h-[450px]" data-testid="container-workflow-visualization">
+          <div className="hidden md:flex items-center justify-center h-[500px]" data-testid="container-workflow-visualization">
             <AutomationFlow />
           </div>
         </div>
