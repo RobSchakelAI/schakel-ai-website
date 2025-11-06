@@ -153,47 +153,6 @@ export default function AutomationFlow() {
         })}
       </svg>
 
-      {/* Floating particles voor chaos-naar-orde effect */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {[...Array(8)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 rounded-full"
-            style={{
-              background: i % 2 === 0 ? '#6EBFAA' : '#4b37bd',
-              left: `${10 + i * 10}%`,
-              top: `${20 + (i % 3) * 20}%`,
-            }}
-            initial={{ 
-              opacity: 0.8,
-              scale: 1,
-              x: Math.random() * 40 - 20,
-              y: Math.random() * 40 - 20
-            }}
-            animate={{
-              opacity: [0.3, 0.8, 0.3],
-              scale: [0.8, 1.2, 0.8],
-              x: [
-                Math.random() * 40 - 20,
-                Math.random() * 40 - 20,
-                Math.random() * 40 - 20
-              ],
-              y: [
-                Math.random() * 40 - 20,
-                Math.random() * 40 - 20,
-                Math.random() * 40 - 20
-              ]
-            }}
-            transition={{
-              duration: 4 + i * 0.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 0.2
-            }}
-          />
-        ))}
-      </div>
-
       {/* Status indicator */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-background/80 backdrop-blur-sm px-3 py-1.5 rounded-full border border-border">
         <div className="flex gap-1">
