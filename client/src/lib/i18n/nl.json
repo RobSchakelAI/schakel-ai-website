@@ -168,27 +168,37 @@
   },
   "services": {
     "title": "Onze AI-oplossingen",
-    "subtitle": "Uitgebreide AI-services ontworpen om je bedrijfsprocessen te transformeren",
+    "subtitle": "Een greep uit de oplossingen die wij bouwen",
     "items": [
       {
-        "icon": "Bot",
-        "title": "AI Chatbots & Virtuele Assistenten",
-        "description": "Intelligente conversatie-agents die 24/7 klantenservice, leadkwalificatie en verkoopvragen afhandelen met natuurlijke taalverwerking"
+        "icon": "MessageSquare",
+        "title": "Klantenservice-AI (Chat & Voice)",
+        "description": "Slimme AI-assistenten die klantvragen, telefoontjes en afspraken direct afhandelen. 24/7, meertalig en altijd consistent in service",
+        "size": "large"
+      },
+      {
+        "icon": "Users",
+        "title": "Interne Support Agents",
+        "description": "Virtuele medewerkers die HR-, IT- en operationele vragen beantwoorden, documenten vinden en interne processen versnellen",
+        "size": "medium"
       },
       {
         "icon": "Share2",
         "title": "Workflow Automatisering",
-        "description": "Stroomlijn repetitieve processen en elimineer handmatig werk met intelligente automatiseringssystemen die 20+ uur per week besparen"
+        "description": "Automatiseer repetitieve taken en laat processen zelfstandig lopen. Van offertes en facturen tot opvolgmails en goedkeuringen",
+        "size": "medium"
       },
       {
-        "icon": "Plug",
-        "title": "AI Integratie Services",
-        "description": "Naadloze integratie van AI-mogelijkheden in je bestaande systemen met custom APIs"
+        "icon": "Target",
+        "title": "AI Sales Agents & Marketing Automation",
+        "description": "AI-gestuurde agents die leads kwalificeren, opvolgen en afspraken inplannen, zodat geen kans of klantmoment meer verloren gaat",
+        "size": "large"
       },
       {
-        "icon": "TrendingUp",
-        "title": "Slimme Analytics & Inzichten",
-        "description": "AI-gedreven analytics die actiegerichte inzichten en voorspellende intelligentie leveren voor betere besluitvorming"
+        "icon": "GraduationCap",
+        "title": "Onboarding & Training Automatisering",
+        "description": "AI-systemen die nieuwe medewerkers sneller inwerken, kennis vastleggen en trainingsmateriaal genereren. Minder handwerk, snellere resultaten",
+        "size": "medium"
       }
     ]
   }
