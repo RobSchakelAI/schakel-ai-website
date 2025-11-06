@@ -65,13 +65,13 @@ export default function ExpandingCTA() {
           </p>
 
           <AnimatePresence initial={false}>
-            {!isExpanded && (
+            {!isExpanded && origin !== 'hero' && (
               <motion.div className="inline-block relative">
                 <motion.div
                   style={{ borderRadius: '100px' }}
                   layout
-                  layoutId="cta-card-contact"
-                  className="absolute inset-0 bg-primary transform-gpu will-change-transform"
+                  layoutId="cta-card"
+                  className="absolute inset-0 bg-primary items-center justify-center transform-gpu will-change-transform"
                 />
                 <motion.button
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -93,10 +93,10 @@ export default function ExpandingCTA() {
       </section>
 
       <AnimatePresence initial={false}>
-        {isExpanded && origin && (
+        {isExpanded && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4">
             <motion.div
-              layoutId={`cta-card-${origin}`}
+              layoutId="cta-card"
               transition={{ duration: 0.3 }}
               style={{ 
                 borderRadius: '24px',

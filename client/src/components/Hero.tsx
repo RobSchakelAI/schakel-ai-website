@@ -51,8 +51,8 @@ export default function Hero() {
                     <motion.div
                       style={{ borderRadius: '100px' }}
                       layout
-                      layoutId="cta-card-hero"
-                      className="absolute inset-0 bg-primary transform-gpu will-change-transform"
+                      layoutId="cta-card"
+                      className="absolute inset-0 bg-primary items-center justify-center transform-gpu will-change-transform"
                     />
                     <motion.button
                       initial={{ opacity: 0, scale: 0.8 }}
