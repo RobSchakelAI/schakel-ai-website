@@ -41,13 +41,12 @@ export default function AutomationFlow() {
             <stop offset="100%" stopColor="#4b37bd" stopOpacity="0.8" />
           </linearGradient>
           
-          <filter id="glow">
-            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-            <feMerge>
-              <feMergeNode in="coloredBlur"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
+          {/* Radial gradient voor ronde glow */}
+          <radialGradient id="node-glow">
+            <stop offset="0%" stopOpacity="0.4" />
+            <stop offset="50%" stopOpacity="0.2" />
+            <stop offset="100%" stopOpacity="0" />
+          </radialGradient>
 
           <marker
             id="arrowhead"
@@ -78,15 +77,24 @@ export default function AutomationFlow() {
           
           return (
             <g key={node.id}>
-              {/* Glow effect voor actieve node */}
+              {/* Glow effect voor actieve node - meerdere lagen voor zachte ronde glow */}
               {isActive && (
-                <circle
-                  cx={node.x}
-                  cy={node.y}
-                  r="8"
-                  fill={node.color}
-                  opacity="0.3"
-                />
+                <>
+                  <circle
+                    cx={node.x}
+                    cy={node.y}
+                    r="10"
+                    fill={node.color}
+                    opacity="0.15"
+                  />
+                  <circle
+                    cx={node.x}
+                    cy={node.y}
+                    r="7"
+                    fill={node.color}
+                    opacity="0.25"
+                  />
+                </>
               )}
               
               {/* Node cirkel */}
