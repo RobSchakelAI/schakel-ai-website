@@ -5,6 +5,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import { CTAProvider } from "@/contexts/CTAContext";
 import Home from "@/pages/Home";
 import NotFound from "@/pages/not-found";
 
@@ -26,8 +27,10 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <LanguageProvider>
-          <Toaster />
-          <Router />
+          <CTAProvider>
+            <Toaster />
+            <Router />
+          </CTAProvider>
         </LanguageProvider>
       </TooltipProvider>
     </QueryClientProvider>

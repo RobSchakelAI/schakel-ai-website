@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { X, ArrowRight, Send } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useCTA } from '@/contexts/CTAContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -10,21 +11,13 @@ import { useToast } from '@/hooks/use-toast';
 export default function ExpandingCTA() {
   const { t } = useLanguage();
   const { toast } = useToast();
-  const [isExpanded, setIsExpanded] = useState(false);
+  const { isExpanded, openCTA, closeCTA } = useCTA();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
     message: '',
   });
-
-  const handleExpand = () => {
-    setIsExpanded(true);
-  };
-
-  const handleClose = () => {
-    setIsExpanded(false);
-  };
 
   useEffect(() => {
     if (isExpanded) {
@@ -44,7 +37,7 @@ export default function ExpandingCTA() {
     });
     
     setFormData({ name: '', email: '', company: '', message: '' });
-    setIsExpanded(false);
+    closeCTA();
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -82,7 +75,7 @@ export default function ExpandingCTA() {
                   transition={{ delay: 0.2 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   layout={false}
-                  onClick={handleExpand}
+                  onClick={openCTA}
                   className="px-8 py-4 text-lg font-medium text-primary-foreground relative flex items-center gap-2"
                   data-testid="button-expand-cta"
                 >
@@ -221,7 +214,7 @@ export default function ExpandingCTA() {
               </motion.div>
 
               <motion.button
-                onClick={handleClose}
+                onClick={closeCTA}
                 className="absolute right-6 top-6 z-10 flex h-10 w-10 items-center justify-center text-primary-foreground bg-transparent transition-colors hover:bg-primary-foreground/10 rounded-full"
                 aria-label="Close"
                 data-testid="button-close-cta"

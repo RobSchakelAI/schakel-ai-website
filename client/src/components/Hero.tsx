@@ -1,17 +1,12 @@
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Play } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useCTA } from '@/contexts/CTAContext';
 import AutomationFlow from '@/components/AutomationFlow';
 
 export default function Hero() {
   const { t } = useLanguage();
-
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const { openCTA } = useCTA();
 
   return (
     <section className="relative overflow-hidden bg-background pt-24 pb-16 md:pt-32 md:pb-24">
@@ -51,7 +46,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row items-center md:items-start gap-3 mb-6">
               <Button
                 size="default"
-                onClick={scrollToContact}
+                onClick={openCTA}
                 className="text-sm px-6 shadow-xl shadow-primary/30 hover:shadow-2xl hover:shadow-primary/40 transition-all"
                 data-testid="button-cta-primary"
               >
