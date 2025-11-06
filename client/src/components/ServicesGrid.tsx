@@ -25,18 +25,19 @@ export default function ServicesGrid() {
           </p>
         </div>
 
-        {/* Asymmetric Bento Grid - Different sizes */}
-        <div className="grid grid-cols-1 md:grid-cols-6 gap-6 md:gap-8">
+        {/* Asymmetric Bento Grid - Max 2 rows */}
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8 md:grid-rows-2">
           {t.services.items.map((service: any, index: number) => {
             const Icon = iconMap[service.icon as keyof typeof iconMap];
             const isLarge = service.size === 'large';
             
+            // Custom layout: row 1 = large + medium, row 2 = 3x medium
+            const colSpan = isLarge ? 'lg:col-span-4' : 'lg:col-span-2';
+            
             return (
               <Card 
                 key={index}
-                className={`group hover-elevate active-elevate-2 transition-all duration-300 ${
-                  isLarge ? 'md:col-span-4' : 'md:col-span-3'
-                }`}
+                className={`group hover-elevate active-elevate-2 transition-all duration-300 ${colSpan}`}
                 data-testid={`service-${index}`}
               >
                 <CardContent className="p-6 md:p-8 space-y-4">
