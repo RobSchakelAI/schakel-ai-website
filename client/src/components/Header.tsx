@@ -53,6 +53,13 @@ export default function Header() {
             {t.nav.vision}
           </button>
           <button
+            onClick={() => scrollToSection('services')}
+            className="text-sm font-medium text-foreground hover-elevate active-elevate-2 px-3 py-2 rounded-md"
+            data-testid="link-services"
+          >
+            {t.nav.services}
+          </button>
+          <button
             onClick={() => scrollToSection('approach')}
             className="text-sm font-medium text-foreground hover-elevate active-elevate-2 px-3 py-2 rounded-md"
             data-testid="link-approach"
@@ -114,6 +121,13 @@ export default function Header() {
                 data-testid="link-vision-mobile"
               >
                 {t.nav.vision}
+              </button>
+              <button
+                onClick={() => scrollToSection('services')}
+                className="text-left text-lg font-medium text-foreground hover-elevate active-elevate-2 px-4 py-3 rounded-md"
+                data-testid="link-services-mobile"
+              >
+                {t.nav.services}
               </button>
               <button
                 onClick={() => scrollToSection('approach')}
