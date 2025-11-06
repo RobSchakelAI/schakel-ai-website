@@ -23,7 +23,6 @@ export default function Home() {
           <ApproachTimeline />
         </div>
         <Stats />
-        <Testimonials />
         <About />
         <ExpandingCTA />
       </main>
