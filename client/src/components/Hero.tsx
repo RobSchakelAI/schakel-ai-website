@@ -10,6 +10,13 @@ export default function Hero() {
   const { t } = useLanguage();
   const { isExpanded, openCTA } = useCTA();
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <section className="relative overflow-hidden bg-background pt-24 pb-16 md:pt-32 md:pb-24">
@@ -75,7 +82,7 @@ export default function Hero() {
               <Button
                 size="default"
                 variant="outline"
-                onClick={() => console.log('Cases clicked')}
+                onClick={() => scrollToSection('services')}
                 className="text-sm px-6 transition-all duration-300"
                 data-testid="button-cta-secondary"
               >
