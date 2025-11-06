@@ -18,10 +18,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
           {/* Company Info */}
           <div className="md:col-span-2">
-            <Logo className="h-10 mb-4" />
-            <p className="text-sm text-muted-foreground mb-4 max-w-xs">
-              {t.footer.tagline}
-            </p>
+            <Logo className="h-10 mb-6" />
             <p className="text-sm text-muted-foreground">
               Schakel AI B.V.<br />
               KvK: 98312529<br />
