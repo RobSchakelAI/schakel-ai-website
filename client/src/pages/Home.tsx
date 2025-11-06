@@ -4,7 +4,6 @@ import ProblemSolution from '@/components/ProblemSolution';
 import Stats from '@/components/Stats';
 import Vision from '@/components/Vision';
 import ServicesGrid from '@/components/ServicesGrid';
-import ProcessSteps from '@/components/ProcessSteps';
 import ApproachTimeline from '@/components/ApproachTimeline';
 import Testimonials from '@/components/Testimonials';
 import About from '@/components/About';
@@ -21,7 +20,6 @@ export default function Home() {
         <Stats />
         <Vision />
         <ServicesGrid />
-        <ProcessSteps />
         <div id="approach">
           <ApproachTimeline />
         </div>
