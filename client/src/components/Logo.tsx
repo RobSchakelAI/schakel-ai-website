@@ -11,8 +11,8 @@ export default function Logo({ className = "h-10" }: { className?: string }) {
       alt="Schakel AI" 
       className={className}
       style={theme === 'light' ? {
-        clipPath: 'inset(32% 0 32% 0)',
-        transform: 'scale(2.78)',
+        clipPath: 'inset(37% 0 37% 0)',
+        transform: 'scale(3.85)',
         objectFit: 'contain'
       } : undefined}
     />
