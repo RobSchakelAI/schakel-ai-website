@@ -10,14 +10,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   app.post('/api/contact', async (req, res) => {
     try {
-      const { name, email, company, message } = req.body;
-
-      if (!name || !email || !company || !message) {
-        return res.status(400).json({ 
-          success: false, 
-          error: 'Alle velden zijn verplicht' 
-        });
-      }
+      const { name, email, company, phone, message } = req.body;
 
       if (!process.env.MAILERSEND_API_KEY) {
         console.error('MAILERSEND_API_KEY is not configured');
@@ -39,11 +32,22 @@ export async function registerRoutes(app: Express): Promise<Server> {
         )
       ];
 
+      const subject = name && company 
+        ? `Nieuw contactformulier: ${name} - ${company}`
+        : name 
+          ? `Nieuw contactformulier: ${name}`
+          : 'Nieuw contactformulier';
+
       const emailParams = new EmailParams()
         .setFrom(sentFrom)
         .setTo(recipients)
-        .setReplyTo({ email: email, name: name })
-        .setSubject(`Nieuw contactformulier: ${name} - ${company}`)
+        .setSubject(subject);
+
+      if (email) {
+        emailParams.setReplyTo({ email: email, name: name || 'Contactformulier' });
+      }
+
+      emailParams
         .setHtml(`
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
             <div style="background: linear-gradient(135deg, #6EBFAA 0%, #2C9880 100%); padding: 30px; border-radius: 10px 10px 0 0;">
@@ -54,25 +58,29 @@ export async function registerRoutes(app: Express): Promise<Server> {
               <div style="background: white; padding: 25px; border-radius: 8px; margin-bottom: 20px;">
                 <h2 style="color: #1A1A1A; margin-top: 0; font-size: 18px;">Contactgegevens</h2>
                 <table style="width: 100%; border-collapse: collapse;">
-                  <tr>
+                  ${name ? `<tr>
                     <td style="padding: 10px 0; color: #666; font-weight: 600;">Naam:</td>
                     <td style="padding: 10px 0; color: #1A1A1A;">${name}</td>
-                  </tr>
-                  <tr>
+                  </tr>` : ''}
+                  ${email ? `<tr>
                     <td style="padding: 10px 0; color: #666; font-weight: 600;">Email:</td>
                     <td style="padding: 10px 0;"><a href="mailto:${email}" style="color: #6EBFAA; text-decoration: none;">${email}</a></td>
-                  </tr>
-                  <tr>
+                  </tr>` : ''}
+                  ${company ? `<tr>
                     <td style="padding: 10px 0; color: #666; font-weight: 600;">Bedrijf:</td>
                     <td style="padding: 10px 0; color: #1A1A1A;">${company}</td>
-                  </tr>
+                  </tr>` : ''}
+                  ${phone ? `<tr>
+                    <td style="padding: 10px 0; color: #666; font-weight: 600;">Telefoon:</td>
+                    <td style="padding: 10px 0;"><a href="tel:${phone}" style="color: #6EBFAA; text-decoration: none;">${phone}</a></td>
+                  </tr>` : ''}
                 </table>
               </div>
               
-              <div style="background: white; padding: 25px; border-radius: 8px;">
+              ${message ? `<div style="background: white; padding: 25px; border-radius: 8px;">
                 <h2 style="color: #1A1A1A; margin-top: 0; font-size: 18px;">Bericht</h2>
                 <p style="line-height: 1.6; color: #333; margin: 0; white-space: pre-wrap;">${message}</p>
-              </div>
+              </div>` : ''}
               
               <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center;">
                 <p style="color: #999; font-size: 12px; margin: 5px 0;">
@@ -90,15 +98,8 @@ Nieuw Contactformulier - Schakel AI
 
 CONTACTGEGEVENS:
 -----------------
-Naam:    ${name}
-Email:   ${email}
-Bedrijf: ${company}
-
-BERICHT:
------------------
-${message}
-
----
+${name ? `Naam:    ${name}\n` : ''}${email ? `Email:   ${email}\n` : ''}${company ? `Bedrijf: ${company}\n` : ''}${phone ? `Telefoon: ${phone}\n` : ''}
+${message ? `BERICHT:\n-----------------\n${message}\n\n` : ''}---
 Verzonden: ${new Date().toLocaleString('nl-NL')}
 Via: contactformulier op schakel.ai
         `);

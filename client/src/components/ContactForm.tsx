@@ -11,10 +11,11 @@ import { CheckCircle2, Send, AlertCircle } from 'lucide-react';
 import { apiRequest } from '@/lib/queryClient';
 
 const contactSchema = z.object({
-  name: z.string().min(2, 'Naam is verplicht'),
-  email: z.string().email('Ongeldig e-mailadres'),
-  company: z.string().min(2, 'Bedrijfsnaam is verplicht'),
-  message: z.string().min(10, 'Bericht moet minimaal 10 tekens bevatten'),
+  name: z.string().optional(),
+  email: z.string().email('Ongeldig e-mailadres').or(z.literal('')).optional(),
+  company: z.string().optional(),
+  phone: z.string().optional(),
+  message: z.string().optional(),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -30,6 +31,7 @@ export default function ContactForm() {
       name: '',
       email: '',
       company: '',
+      phone: '',
       message: '',
     },
   });
@@ -37,13 +39,9 @@ export default function ContactForm() {
   const onSubmit = async (data: ContactFormData) => {
     try {
       setError(null);
-      console.log('Submitting contact form...', data);
       
       const response = await apiRequest('POST', '/api/contact', data);
-      console.log('Response received:', response);
-      
-      const result = await response.json();
-      console.log('Result:', result);
+      await response.json();
 
       setIsSubmitted(true);
       form.reset();
@@ -151,6 +149,27 @@ export default function ContactForm() {
                           {...field}
                           className="h-12 border-2 border-white/20 bg-white text-[#1A1A1A] placeholder:text-[#1A1A1A]/40 focus:border-primary transition-colors"
                           data-testid="input-company"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="phone"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-sm font-medium text-white">
+                        Telefoonnummer
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          {...field}
+                          type="tel"
+                          className="h-12 border-2 border-white/20 bg-white text-[#1A1A1A] placeholder:text-[#1A1A1A]/40 focus:border-primary transition-colors"
+                          data-testid="input-phone"
                         />
                       </FormControl>
                       <FormMessage />

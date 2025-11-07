@@ -17,6 +17,7 @@ export function CTAOverlay() {
     name: '',
     email: '',
     company: '',
+    phone: '',
     message: '',
   });
 
@@ -32,19 +33,15 @@ export function CTAOverlay() {
     e.preventDefault();
     
     try {
-      console.log('Submitting contact form from popup...', formData);
-      
       const response = await apiRequest('POST', '/api/contact', formData);
-      const result = await response.json();
-      
-      console.log('Email sent successfully:', result);
+      await response.json();
       
       toast({
         title: t.contact.form.success,
         description: t.contact.form.successDescription,
       });
       
-      setFormData({ name: '', email: '', company: '', message: '' });
+      setFormData({ name: '', email: '', company: '', phone: '', message: '' });
       closeCTA();
     } catch (error) {
       console.error('Error submitting contact form:', error);
@@ -115,7 +112,6 @@ export function CTAOverlay() {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      required
                       className="bg-primary-foreground/10 border-0 text-primary-foreground placeholder:text-primary-foreground/50 focus-visible:ring-primary-foreground/30"
                       data-testid="input-name"
                     />
@@ -134,7 +130,6 @@ export function CTAOverlay() {
                       type="email"
                       value={formData.email}
                       onChange={handleChange}
-                      required
                       className="bg-primary-foreground/10 border-0 text-primary-foreground placeholder:text-primary-foreground/50 focus-visible:ring-primary-foreground/30"
                       data-testid="input-email"
                     />
@@ -152,9 +147,26 @@ export function CTAOverlay() {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      required
                       className="bg-primary-foreground/10 border-0 text-primary-foreground placeholder:text-primary-foreground/50 focus-visible:ring-primary-foreground/30"
                       data-testid="input-company"
+                    />
+                  </div>
+
+                  <div>
+                    <label 
+                      htmlFor="phone" 
+                      className="block text-xs font-mono uppercase tracking-wider text-primary-foreground mb-2"
+                    >
+                      Telefoonnummer
+                    </label>
+                    <Input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="bg-primary-foreground/10 border-0 text-primary-foreground placeholder:text-primary-foreground/50 focus-visible:ring-primary-foreground/30"
+                      data-testid="input-phone-popup"
                     />
                   </div>
 
@@ -170,7 +182,6 @@ export function CTAOverlay() {
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      required
                       rows={4}
                       className="bg-primary-foreground/10 border-0 text-primary-foreground placeholder:text-primary-foreground/50 focus-visible:ring-primary-foreground/30 resize-none"
                       data-testid="input-message"
