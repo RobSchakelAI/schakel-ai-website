@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
+import { apiRequest } from '@/lib/queryClient';
 
 export function CTAOverlay() {
   const { t } = useLanguage();
@@ -29,15 +30,30 @@ export function CTAOverlay() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await new Promise(resolve => setTimeout(resolve, 1000));
     
-    toast({
-      title: t.contact.form.success,
-      description: t.contact.form.successDescription,
-    });
-    
-    setFormData({ name: '', email: '', company: '', message: '' });
-    closeCTA();
+    try {
+      console.log('Submitting contact form from popup...', formData);
+      
+      const response = await apiRequest('POST', '/api/contact', formData);
+      const result = await response.json();
+      
+      console.log('Email sent successfully:', result);
+      
+      toast({
+        title: t.contact.form.success,
+        description: t.contact.form.successDescription,
+      });
+      
+      setFormData({ name: '', email: '', company: '', message: '' });
+      closeCTA();
+    } catch (error) {
+      console.error('Error submitting contact form:', error);
+      toast({
+        title: 'Er ging iets mis',
+        description: 'Probeer het later opnieuw of stuur een email naar info@schakel.ai',
+        variant: 'destructive',
+      });
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
