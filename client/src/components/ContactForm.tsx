@@ -37,9 +37,13 @@ export default function ContactForm() {
   const onSubmit = async (data: ContactFormData) => {
     try {
       setError(null);
+      console.log('Submitting contact form...', data);
       
       const response = await apiRequest('POST', '/api/contact', data);
+      console.log('Response received:', response);
+      
       const result = await response.json();
+      console.log('Result:', result);
 
       setIsSubmitted(true);
       form.reset();
