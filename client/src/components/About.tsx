@@ -23,7 +23,7 @@ export default function About() {
       data: t.about.rob,
       initial: 'R',
       image: robPhoto,
-      quote: '"Rust in je processen geeft ruimte voor groei."'
+      quote: '"Het moet werken, maar het moet ook goed in elkaar zitten."'
     }
   ];
 
