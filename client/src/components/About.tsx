@@ -23,7 +23,7 @@ export default function About() {
       data: t.about.rob,
       initial: 'R',
       image: robPhoto,
-      quote: '"Het moet werken, maar het moet ook goed in elkaar zitten."'
+      quote: '"De beste oplossingen ontstaan door te beginnen, niet door te wachten."'
     }
   ];
 
