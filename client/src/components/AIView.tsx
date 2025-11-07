@@ -136,8 +136,7 @@ STRUCTURED DATA (JSON-LD Schema.org Format)
   "vatID": "NL868441119B01",
   "taxID": "98312529",
   "areaServed": "NL",
-  "knowsAbout": ["Artificial Intelligence", "Process Automation", "Business Intelligence"],
-  "slogan": "Rust & Rendement (Peace & Results)"
+  "knowsAbout": ["Artificial Intelligence", "Process Automation", "Business Intelligence"]
 }
 `}
         </pre>
@@ -185,7 +184,6 @@ PRIMARY CONTACT:
   Email:     info@schakel.ai
   Website:   https://schakel.ai
 
-TAGLINE:         Rust & Rendement (Peace & Results)
 CLIENT RATING:   ${t.hero.rating}/10
 `}
         </pre>
@@ -350,7 +348,6 @@ btw: "NL868441119B01"
 address: "Coolsingel 65, 3012 AC Rotterdam"
 founders: ["Rob", "Simon"]
 rating: "${t.hero.rating}/10"
-tagline: "Rust & Rendement"
 process_phases: ["Discovery", "Design", "Implementation", "Optimization"]
 duration: "4 weeks"
 languages: ["nl", "en"]
@@ -365,7 +362,6 @@ languages: ["nl", "en"]
           borderColor: '#6EBFAA',
         }}>
 {`================================================================================
-${t.footer.tagline.toUpperCase()}
 © ${new Date().getFullYear()} Schakel AI B.V. - All rights reserved
 ================================================================================
 
