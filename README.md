@@ -95,21 +95,34 @@ schakel-ai-website/
 
 ## Deployment
 
-This website is deployed on **Railway**. See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
+This website uses a split deployment architecture:
+- **Frontend**: Deployed on **Vercel** for optimal CDN performance
+- **Backend**: Deployed on **Railway** for API endpoints
 
-### Quick Deploy to Railway
+See [DEPLOYMENT-GUIDE.md](./DEPLOYMENT-GUIDE.md) for detailed step-by-step instructions.
 
-1. Push code to GitHub
-2. Create new Railway project from GitHub repo
-3. Add environment variables (MailerSend credentials)
-4. Railway automatically builds and deploys
+### Quick Deploy Summary
 
-### Environment Variables Required
+**Backend (Railway)**:
+1. Deploy from GitHub to Railway
+2. Add environment variables: `MAILERSEND_API_KEY`, `MAILERSEND_FROM_EMAIL`, `MAILERSEND_TO_EMAIL`
+3. Copy your Railway URL
 
+**Frontend (Vercel)**:
+1. Deploy from GitHub to Vercel
+2. Set `VITE_API_URL` to your Railway URL
+3. Configure custom domain (schakel.ai)
+
+### Environment Variables
+
+**Railway (Backend)**:
 - `NODE_ENV=production`
 - `MAILERSEND_API_KEY` - MailerSend API token
 - `MAILERSEND_FROM_EMAIL` - Verified sender email
 - `MAILERSEND_TO_EMAIL` - Contact form recipient email
+
+**Vercel (Frontend)**:
+- `VITE_API_URL` - Railway backend URL (e.g., https://your-app.up.railway.app)
 
 ## Features in Detail
 
@@ -126,11 +139,13 @@ Toggle AI View with the button in the header.
 ### Contact Form
 
 Secure contact form with:
+- **Optional fields**: name, company, email, phone, message (all fields optional)
+- **Two form locations**: Main page bottom + popup overlay
 - Client-side validation (Zod + React Hook Form)
 - Server-side validation
 - Email delivery via MailerSend
 - Error handling and user feedback
-- Beautiful branded email templates
+- Beautiful branded email templates with conditional field rendering
 
 ### Internationalization
 
