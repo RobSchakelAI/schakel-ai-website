@@ -151,8 +151,11 @@ Preferred communication style: Simple, everyday language.
 **Active Integrations:**
 - **MailerSend** - Transactional email delivery
   - Contact form submissions sent via `/api/contact` endpoint
-  - Branded HTML email templates
+  - Branded HTML email templates with conditional field rendering
   - Reply-to functionality for easy responses
+  - **Contact Form Fields:** name, company, email, phone, message (all optional)
+  - **Form Locations:** Bottom section (ContactForm.tsx) and popup overlay (ExpandingCTA.tsx)
+  - Email templates adapt based on which fields are filled in
   
 **Future Integration Points:**
   - Analytics (e.g., Plausible, Simple Analytics) for privacy-focused tracking
