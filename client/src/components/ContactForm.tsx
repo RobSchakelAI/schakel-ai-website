@@ -38,19 +38,8 @@ export default function ContactForm() {
     try {
       setError(null);
       
-      const response = await apiRequest('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-
+      const response = await apiRequest('POST', '/api/contact', data);
       const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(result.error || 'Er ging iets mis');
-      }
 
       setIsSubmitted(true);
       form.reset();

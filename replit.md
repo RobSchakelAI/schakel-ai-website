@@ -59,30 +59,10 @@ Preferred communication style: Simple, everyday language.
 - Custom logging middleware for API request tracking
 
 **Storage Layer:**
-- In-memory storage implementation (`MemStorage`) currently active
-- Database-backed storage ready via Drizzle ORM
-- **Rationale:** Allows rapid prototyping before database provisioning
-
-### Data Storage
-
-**Database:**
-- **PostgreSQL** via Neon serverless (configured but not actively used)
-- **Problem:** Need for scalable, serverless database with connection pooling
-- **Solution:** Neon's serverless Postgres with WebSocket connections
-- **Trade-offs:** Cold start latency vs. traditional always-on database
-
-**ORM Choice:**
-- **Drizzle ORM** over Prisma or TypeORM
-- **Problem:** Need type-safe database queries with minimal overhead
-- **Solution:** Drizzle's lightweight, SQL-like syntax with full TypeScript inference
-- **Rationale:** Better performance than Prisma, more TypeScript-native than TypeORM
-- **Pros:** Zero runtime overhead, excellent TypeScript support, schema migrations
-- **Cons:** Smaller ecosystem than Prisma
-
-**Schema Design:**
-- Simple user schema with UUID primary keys
-- Zod integration via `drizzle-zod` for runtime validation
-- Schema located in `shared/schema.ts` for frontend/backend sharing
+- **No database required** for this project
+- Site is purely informational with contact form (email-only backend)
+- Database infrastructure (Drizzle + Neon) available but unused
+- **Rationale:** Simple static site doesn't need data persistence
 
 ### Build System
 
@@ -129,10 +109,12 @@ Preferred communication style: Simple, everyday language.
 - Configured via `DATABASE_URL` environment variable
 - Connection pooling via `@neondatabase/serverless`
 
-**Planned Deployment Targets:**
-- **Frontend/Static:** Vercel (JAMstack hosting)
-- **API:** Railway (backend hosting)
-- **DNS:** Namecheap (manual configuration required)
+**Deployment:**
+- **Platform:** Railway (serves both static files and API)
+- **Email:** MailerSend (transactional email service)
+- **DNS:** Namecheap (domain management)
+- **Deployment:** Automated via GitHub integration
+- **Architecture:** Single Express server serves static frontend + API endpoints
 
 ### Key NPM Dependencies
 
@@ -151,11 +133,9 @@ Preferred communication style: Simple, everyday language.
 - `@tanstack/react-query` - Async state management
 - Server-side fetch with credential support
 
-**Database:**
-- `drizzle-orm` - TypeScript ORM
-- `drizzle-zod` - Zod schema generation from Drizzle schemas
-- `@neondatabase/serverless` - Neon Postgres client with WebSocket support
-- `ws` - WebSocket library for Neon connection
+**Email:**
+- `mailersend` - Email delivery SDK
+- Handles contact form submissions with branded templates
 
 **Routing:**
 - `wouter` - Lightweight React router (< 2KB)
@@ -168,21 +148,24 @@ Preferred communication style: Simple, everyday language.
 
 ### API Integrations
 
-**Current State:**
-- No external API integrations active
-- Contact form uses mock submission (TODO: connect to actual API/email service)
-- **Future Integration Points:**
-  - Email service (e.g., SendGrid, Resend) for contact form
+**Active Integrations:**
+- **MailerSend** - Transactional email delivery
+  - Contact form submissions sent via `/api/contact` endpoint
+  - Branded HTML email templates
+  - Reply-to functionality for easy responses
+  
+**Future Integration Points:**
   - Analytics (e.g., Plausible, Simple Analytics) for privacy-focused tracking
-  - DNS setup instructions needed for Namecheap → Vercel
+  - Status monitoring (e.g., UptimeRobot, Better Uptime)
 
 ### Environment Variables
 
 **Required:**
-- `DATABASE_URL` - PostgreSQL connection string (Neon)
 - `NODE_ENV` - Environment flag (development/production)
+- `MAILERSEND_API_KEY` - MailerSend API token for email delivery
+- `MAILERSEND_FROM_EMAIL` - Verified sender email address (e.g., noreply@schakel.ai)
+- `MAILERSEND_TO_EMAIL` - Contact form recipient email (e.g., info@schakel.ai)
 
-**Optional (future):**
-- Email service API keys
-- Analytics tracking IDs
+**Optional:**
+- Analytics tracking IDs (when implemented)
 - Replit-specific variables (`REPL_ID` for plugin activation)
