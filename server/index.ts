@@ -5,25 +5,18 @@ import { setupVite, serveStatic, log } from "./vite";
 
 const app = express();
 
-// CORS configuration for production (Vercel frontend + Railway backend)
-if (process.env.NODE_ENV === 'production') {
-  app.use(cors({
-    origin: [
-      'https://schakel.ai',
-      'https://www.schakel.ai',
-      /\.vercel\.app$/  // Allow Vercel preview deployments
-    ],
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-  }));
-} else {
-  // Allow all origins in development
-  app.use(cors({
-    origin: true,
-    credentials: true
-  }));
-}
+// CORS configuration - allow Vercel frontend to communicate with Railway backend
+app.use(cors({
+  origin: [
+    'https://schakel.ai',
+    'https://www.schakel.ai',
+    /\.vercel\.app$/,  // Allow Vercel preview deployments
+    /localhost/  // Allow local development
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 declare module 'http' {
   interface IncomingMessage {
