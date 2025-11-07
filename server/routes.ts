@@ -103,12 +103,11 @@ Verzonden: ${new Date().toLocaleString('nl-NL')}
 Via: contactformulier op schakel.ai
         `);
 
-      const response = await mailerSend.email.send(emailParams);
+      await mailerSend.email.send(emailParams);
 
       res.status(200).json({ 
         success: true, 
-        message: 'Bericht succesvol verzonden',
-        messageId: response.headers.get('x-message-id')
+        message: 'Bericht succesvol verzonden'
       });
 
     } catch (error) {
