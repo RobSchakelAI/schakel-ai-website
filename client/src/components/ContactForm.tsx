@@ -7,7 +7,8 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { CheckCircle2, Send } from 'lucide-react';
+import { CheckCircle2, Send, AlertCircle } from 'lucide-react';
+import { apiRequest } from '@/lib/queryClient';
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Naam is verplicht'),
@@ -21,6 +22,7 @@ type ContactFormData = z.infer<typeof contactSchema>;
 export default function ContactForm() {
   const { t } = useLanguage();
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
@@ -33,12 +35,30 @@ export default function ContactForm() {
   });
 
   const onSubmit = async (data: ContactFormData) => {
-    console.log('Contact form submitted:', data);
-    // TODO: Remove mock functionality - connect to API endpoint
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    setIsSubmitted(true);
-    form.reset();
-    setTimeout(() => setIsSubmitted(false), 5000);
+    try {
+      setError(null);
+      
+      const response = await apiRequest('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Er ging iets mis');
+      }
+
+      setIsSubmitted(true);
+      form.reset();
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } catch (err) {
+      console.error('Error submitting contact form:', err);
+      setError(err instanceof Error ? err.message : 'Er ging iets mis bij het verzenden');
+    }
   };
 
   return (
@@ -68,6 +88,13 @@ export default function ContactForm() {
             <p className="text-sm text-white/60">Coolsingel 65</p>
             <p className="text-sm text-white/60">3012 AA Rotterdam</p>
           </div>
+
+          {error && (
+            <div className="bg-red-500/20 border border-red-500/40 rounded-lg p-6 mb-6 flex items-start gap-3" data-testid="message-error">
+              <AlertCircle className="w-6 h-6 text-white flex-shrink-0 mt-0.5" />
+              <p className="text-white">{error}</p>
+            </div>
+          )}
 
           {isSubmitted ? (
             <div className="bg-white/20 border border-white/40 rounded-lg p-8 text-center shadow-lg shadow-black/20" data-testid="message-success">
