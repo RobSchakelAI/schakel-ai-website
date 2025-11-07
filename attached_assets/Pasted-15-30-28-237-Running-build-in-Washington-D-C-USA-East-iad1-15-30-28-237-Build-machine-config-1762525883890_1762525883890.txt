@@ -1,0 +1,47 @@
+15:30:28.237 Running build in Washington, D.C., USA (East) – iad1
+15:30:28.237 Build machine configuration: 4 cores, 8 GB
+15:30:28.248 Cloning github.com/RobSchakelAI/schakel-ai-website (Branch: main, Commit: 449edc4)
+15:30:28.249 Skipping build cache, deployment was triggered without cache.
+15:30:32.276 Cloning completed: 4.028s
+15:30:32.725 Running "vercel build"
+15:30:33.161 Vercel CLI 48.8.2
+15:30:33.842 Running "install" command: `npm install --include=dev`...
+15:30:38.607 npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+15:30:38.642 npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+15:30:44.469 
+15:30:44.469 added 478 packages, and audited 479 packages in 10s
+15:30:44.469 
+15:30:44.469 64 packages are looking for funding
+15:30:44.469   run `npm fund` for details
+15:30:44.500 
+15:30:44.500 8 vulnerabilities (3 low, 5 moderate)
+15:30:44.500 
+15:30:44.501 To address issues that do not require attention, run:
+15:30:44.501   npm audit fix
+15:30:44.501 
+15:30:44.501 To address all issues (including breaking changes), run:
+15:30:44.501   npm audit fix --force
+15:30:44.501 
+15:30:44.501 Run `npm audit` for details.
+15:30:45.331 [36mvite v5.4.20 [32mbuilding for production...[36m[39m
+15:30:45.386 transforming...
+15:30:45.646 Browserslist: browsers data (caniuse-lite) is 13 months old. Please run:
+15:30:45.646   npx update-browserslist-db@latest
+15:30:45.646   Why you should do it regularly: https://github.com/browserslist/update-db#readme
+15:30:46.684 
+15:30:46.684 A PostCSS plugin did not pass the `from` option to `postcss.parse`. This may cause imported assets to be incorrectly transformed. If you've recently added a PostCSS plugin that raised this warning, please contact the package author to fix the issue.
+15:30:50.551 [32m✓[39m 2064 modules transformed.
+15:30:50.920 rendering chunks...
+15:30:50.929 computing gzip size...
+15:30:50.949 [2m../dist/public/[22m[32mindex.html                                      [39m[1m[2m  1.28 kB[22m[1m[22m[2m │ gzip:   0.57 kB[22m
+15:30:50.949 [2m../dist/public/[22m[2massets/[22m[32msimon-photo-BW3S91e9.jpg                 [39m[1m[2m  6.88 kB[22m[1m[22m
+15:30:50.949 [2m../dist/public/[22m[2massets/[22m[32mrob-photo-C27DJAiZ.jpg                   [39m[1m[2m 91.37 kB[22m[1m[22m
+15:30:50.949 [2m../dist/public/[22m[2massets/[22m[32mschakel-logo-cropped-D0YsYx8i.png        [39m[1m[2m397.54 kB[22m[1m[22m
+15:30:50.950 [2m../dist/public/[22m[2massets/[22m[32mschakel-logo-light-cropped-BxMACW9n.png  [39m[1m[2m456.28 kB[22m[1m[22m
+15:30:50.950 [2m../dist/public/[22m[2massets/[22m[35mindex-BcqHGdj5.css                       [39m[1m[2m 83.57 kB[22m[1m[22m[2m │ gzip:  13.37 kB[22m
+15:30:50.950 [2m../dist/public/[22m[2massets/[22m[36mindex-BqdsU07H.js                        [39m[1m[2m460.55 kB[22m[1m[22m[2m │ gzip: 147.93 kB[22m
+15:30:50.950 [32m✓ built in 5.59s[39m
+15:30:51.088 Build Completed in /vercel/output [17s]
+15:30:51.214 Deploying outputs...
+15:30:53.939 Deployment completed
+15:30:55.213 Creating build cache...
