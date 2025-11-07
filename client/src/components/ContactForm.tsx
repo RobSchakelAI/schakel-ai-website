@@ -117,6 +117,26 @@ export default function ContactForm() {
 
                 <FormField
                   control={form.control}
+                  name="company"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-sm font-medium text-white">
+                        {t.contact.form.company}
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          {...field}
+                          className="h-12 border-2 border-white/20 bg-white text-[#1A1A1A] placeholder:text-[#1A1A1A]/40 focus:border-primary transition-colors"
+                          data-testid="input-company"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
                   name="email"
                   render={({ field }) => (
                     <FormItem>
@@ -129,26 +149,6 @@ export default function ContactForm() {
                           type="email"
                           className="h-12 border-2 border-white/20 bg-white text-[#1A1A1A] placeholder:text-[#1A1A1A]/40 focus:border-primary transition-colors"
                           data-testid="input-email"
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="company"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-sm font-medium text-white">
-                        {t.contact.form.company}
-                      </FormLabel>
-                      <FormControl>
-                        <Input
-                          {...field}
-                          className="h-12 border-2 border-white/20 bg-white text-[#1A1A1A] placeholder:text-[#1A1A1A]/40 focus:border-primary transition-colors"
-                          data-testid="input-company"
                         />
                       </FormControl>
                       <FormMessage />
@@ -188,7 +188,7 @@ export default function ContactForm() {
                       <FormControl>
                         <Textarea
                           {...field}
-                          className="min-h-32 border-2 border-white/20 bg-white text-[#1A1A1A] placeholder:text-[#1A1A1A]/40 focus:border-primary resize-none transition-colors"
+                          className="min-h-32 md:min-h-48 border-2 border-white/20 bg-white text-[#1A1A1A] placeholder:text-[#1A1A1A]/40 focus:border-primary resize-none transition-colors"
                           data-testid="input-message"
                         />
                       </FormControl>

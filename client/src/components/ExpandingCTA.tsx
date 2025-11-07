@@ -119,6 +119,23 @@ export function CTAOverlay() {
 
                   <div>
                     <label 
+                      htmlFor="company" 
+                      className="block text-xs font-mono uppercase tracking-wider text-primary-foreground mb-2"
+                    >
+                      {t.contact.form.company}
+                    </label>
+                    <Input
+                      id="company"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleChange}
+                      className="bg-primary-foreground/10 border-0 text-primary-foreground placeholder:text-primary-foreground/50 focus-visible:ring-primary-foreground/30"
+                      data-testid="input-company"
+                    />
+                  </div>
+
+                  <div>
+                    <label 
                       htmlFor="email" 
                       className="block text-xs font-mono uppercase tracking-wider text-primary-foreground mb-2"
                     >
@@ -132,23 +149,6 @@ export function CTAOverlay() {
                       onChange={handleChange}
                       className="bg-primary-foreground/10 border-0 text-primary-foreground placeholder:text-primary-foreground/50 focus-visible:ring-primary-foreground/30"
                       data-testid="input-email"
-                    />
-                  </div>
-
-                  <div>
-                    <label 
-                      htmlFor="company" 
-                      className="block text-xs font-mono uppercase tracking-wider text-primary-foreground mb-2"
-                    >
-                      {t.contact.form.company}
-                    </label>
-                    <Input
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      className="bg-primary-foreground/10 border-0 text-primary-foreground placeholder:text-primary-foreground/50 focus-visible:ring-primary-foreground/30"
-                      data-testid="input-company"
                     />
                   </div>
 
@@ -182,8 +182,7 @@ export function CTAOverlay() {
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      rows={4}
-                      className="bg-primary-foreground/10 border-0 text-primary-foreground placeholder:text-primary-foreground/50 focus-visible:ring-primary-foreground/30 resize-none"
+                      className="min-h-24 md:min-h-40 bg-primary-foreground/10 border-0 text-primary-foreground placeholder:text-primary-foreground/50 focus-visible:ring-primary-foreground/30 resize-none"
                       data-testid="input-message"
                     />
                   </div>
