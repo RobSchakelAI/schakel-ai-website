@@ -5,6 +5,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import AutomationFlow from '@/components/AutomationFlow';
 import { CTAOverlay } from '@/components/ExpandingCTA';
 import { useCTA } from '@/contexts/CTAContext';
+import heroVideo from '@assets/hero-background.mp4';
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -20,11 +21,30 @@ export default function Hero() {
   return (
     <>
       <section className="relative overflow-hidden bg-background pt-24 pb-16 md:pt-32 md:pb-24">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ zIndex: 0 }}
+      >
+        <source src={heroVideo} type="video/mp4" />
+      </video>
+
+      {/* Dark overlay for readability */}
+      <div 
+        className="absolute inset-0 bg-background/80"
+        style={{ zIndex: 1 }}
+      />
+      
       {/* Subtle purple to mint gradient overlay */}
       <div 
-        className="absolute inset-0 opacity-[0.03]"
+        className="absolute inset-0 opacity-[0.08]"
         style={{
-          background: 'linear-gradient(135deg, rgba(69, 33, 211, 0.5) 0%, rgba(110, 191, 170, 0.5) 100%)'
+          background: 'linear-gradient(135deg, rgba(69, 33, 211, 0.5) 0%, rgba(110, 191, 170, 0.5) 100%)',
+          zIndex: 2
         }}
       />
 
