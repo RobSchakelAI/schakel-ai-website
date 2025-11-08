@@ -21,30 +21,11 @@ export default function Hero() {
   return (
     <>
       <section className="relative overflow-hidden bg-background pt-24 pb-16 md:pt-32 md:pb-24">
-      {/* Background Video */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ zIndex: 0 }}
-      >
-        <source src={heroVideo} type="video/mp4" />
-      </video>
-
-      {/* Dark overlay for readability */}
-      <div 
-        className="absolute inset-0 bg-background/80"
-        style={{ zIndex: 1 }}
-      />
-      
       {/* Subtle purple to mint gradient overlay */}
       <div 
-        className="absolute inset-0 opacity-[0.08]"
+        className="absolute inset-0 opacity-[0.03]"
         style={{
-          background: 'linear-gradient(135deg, rgba(69, 33, 211, 0.5) 0%, rgba(110, 191, 170, 0.5) 100%)',
-          zIndex: 2
+          background: 'linear-gradient(135deg, rgba(69, 33, 211, 0.5) 0%, rgba(110, 191, 170, 0.5) 100%)'
         }}
       />
 
@@ -139,10 +120,23 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right: Geanimeerde Automation Flow */}
-          <div className="hidden md:flex items-center justify-center h-[500px]" data-testid="container-workflow-visualization">
-            <AutomationFlow />
+          {/* Right: Video (experimenteel) */}
+          <div className="hidden md:flex items-center justify-center h-[500px] relative" data-testid="container-hero-video">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover rounded-lg"
+            >
+              <source src={heroVideo} type="video/mp4" />
+            </video>
           </div>
+
+          {/* Right: Geanimeerde Automation Flow (HIDDEN - experimenteren met video) */}
+          {/* <div className="hidden md:flex items-center justify-center h-[500px]" data-testid="container-workflow-visualization">
+            <AutomationFlow />
+          </div> */}
         </div>
       </div>
     </section>
