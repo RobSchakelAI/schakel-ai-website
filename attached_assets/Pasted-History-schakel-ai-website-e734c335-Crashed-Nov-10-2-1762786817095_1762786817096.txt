@@ -1,0 +1,114 @@
+History
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+schakel-ai-website
+/
+e734c335
+Crashed
+
+Nov 10, 2025, 3:57 PM
+schakel-ai-website-production.up.railway.app
+Get Help
+Details
+Build Logs
+Deploy Logs
+HTTP Logs
+Filter and search logs
+
+You reached the start of the range
+Nov 10, 2025, 3:57 PM
+Starting Container
+Error: Could not find the build directory: /app/server-dist/public, make sure to build the client first
+    at serveStatic (file:///app/server-dist/index.mjs:217:11)
+    at file:///app/server-dist/index.mjs:281:5
+Node.js v20.18.1
+file:///app/server-dist/index.mjs:217
+    throw new Error(
+          ^
+Error: Could not find the build directory: /app/server-dist/public, make sure to build the client first
+    at serveStatic (file:///app/server-dist/index.mjs:217:11)
+    at file:///app/server-dist/index.mjs:281:5
+Node.js v20.18.1
+file:///app/server-dist/index.mjs:217
+    throw new Error(
+          ^
+file:///app/server-dist/index.mjs:217
+    throw new Error(
+          ^
+Error: Could not find the build directory: /app/server-dist/public, make sure to build the client first
+    at serveStatic (file:///app/server-dist/index.mjs:217:11)
+    at file:///app/server-dist/index.mjs:281:5
+Node.js v20.18.1
+Node.js v20.18.1
+    throw new Error(
+file:///app/server-dist/index.mjs:217
+          ^
+    at serveStatic (file:///app/server-dist/index.mjs:217:11)
+    at file:///app/server-dist/index.mjs:281:5
+Error: Could not find the build directory: /app/server-dist/public, make sure to build the client first
+file:///app/server-dist/index.mjs:217
+    throw new Error(
+          ^
+Error: Could not find the build directory: /app/server-dist/public, make sure to build the client first
+    at serveStatic (file:///app/server-dist/index.mjs:217:11)
+    at file:///app/server-dist/index.mjs:281:5
+Node.js v20.18.1
+Node.js v20.18.1
+    at serveStatic (file:///app/server-dist/index.mjs:217:11)
+    at file:///app/server-dist/index.mjs:281:5
+    throw new Error(
+          ^
+Error: Could not find the build directory: /app/server-dist/public, make sure to build the client first
+file:///app/server-dist/index.mjs:217
+file:///app/server-dist/index.mjs:217
+    throw new Error(
+          ^
+Error: Could not find the build directory: /app/server-dist/public, make sure to build the client first
+    at serveStatic (file:///app/server-dist/index.mjs:217:11)
+    at file:///app/server-dist/index.mjs:281:5
+Node.js v20.18.1
+Error: Could not find the build directory: /app/server-dist/public, make sure to build the client first
+Node.js v20.18.1
+    at serveStatic (file:///app/server-dist/index.mjs:217:11)
+    at file:///app/server-dist/index.mjs:281:5
+file:///app/server-dist/index.mjs:217
+    throw new Error(
+          ^
+    at file:///app/server-dist/index.mjs:281:5
+Node.js v20.18.1
+          ^
+file:///app/server-dist/index.mjs:217
+Error: Could not find the build directory: /app/server-dist/public, make sure to build the client first
+    throw new Error(
+    at serveStatic (file:///app/server-dist/index.mjs:217:11)
+file:///app/server-dist/index.mjs:217
+    throw new Error(
+          ^
+Error: Could not find the build directory: /app/server-dist/public, make sure to build the client first
+    at serveStatic (file:///app/server-dist/index.mjs:217:11)
+    at file:///app/server-dist/index.mjs:281:5
+Node.js v20.18.1
+    at serveStatic (file:///app/server-dist/index.mjs:217:11)
+    at file:///app/server-dist/index.mjs:281:5
+Node.js v20.18.1
+file:///app/server-dist/index.mjs:217
+    throw new Error(
+          ^
+Error: Could not find the build directory: /app/server-dist/public, make sure to build the client first
