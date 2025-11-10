@@ -7,15 +7,38 @@ const app = express();
 
 // CORS configuration - allow Vercel frontend to communicate with Railway backend
 app.use(cors({
-  origin: [
-    'https://schakel.ai',
-    'https://www.schakel.ai',
-    /\.vercel\.app$/,  // Allow Vercel preview deployments
-    /localhost/  // Allow local development
-  ],
+  origin: function (origin, callback) {
+    // Allow requests with no origin (mobile apps, Postman, etc)
+    if (!origin) return callback(null, true);
+    
+    const allowedOrigins = [
+      'https://schakel.ai',
+      'https://www.schakel.ai'
+    ];
+    
+    const allowedPatterns = [
+      /\.vercel\.app$/,  // Vercel preview deployments
+      /localhost/,       // Local development
+      /127\.0\.0\.1/     // Local development
+    ];
+    
+    // Check exact matches
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    
+    // Check pattern matches
+    if (allowedPatterns.some(pattern => pattern.test(origin))) {
+      return callback(null, true);
+    }
+    
+    callback(new Error('Not allowed by CORS'));
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  preflightContinue: false,
+  optionsSuccessStatus: 204
 }));
 
 declare module 'http' {
