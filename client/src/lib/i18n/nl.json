@@ -33,22 +33,22 @@
     "steps": [
       {
         "number": "01",
-        "title": "Verkenning",
+        "title": "Verkennen",
         "description": "We kijken waar je nu het meeste tijd verliest en wat direct op te lossen is"
       },
       {
         "number": "02",
-        "title": "Ontwerp",
+        "title": "Ontwerpen",
         "description": "We kiezen samen het proces dat we eerst aanpakken en bepalen wat het moet doen"
       },
       {
         "number": "03",
-        "title": "Implementatie",
+        "title": "Implementeren",
         "description": "We bouwen het, testen met je team en zorgen dat het werkt in jullie dagelijkse proces"
       },
       {
         "number": "04",
-        "title": "Verbetering",
+        "title": "Resultaat",
         "description": "We meten het resultaat en verbeteren waar nodig"
       }
     ]
