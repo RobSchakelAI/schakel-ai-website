@@ -1,9 +1,8 @@
 import type { Express } from "express";
-import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { MailerSend, EmailParams, Sender, Recipient } from "mailersend";
 
-export async function registerRoutes(app: Express): Promise<Server> {
+export async function registerRoutes(app: Express): Promise<void> {
   const mailerSend = new MailerSend({
     apiKey: process.env.MAILERSEND_API_KEY || '',
   });
@@ -122,8 +121,4 @@ Via: contactformulier op schakel.ai
       });
     }
   });
-
-  const httpServer = createServer(app);
-
-  return httpServer;
 }
