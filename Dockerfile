@@ -10,7 +10,7 @@ ARG NODE_ENV
 
 # Copy package files
 COPY package*.json ./
-RUN npm ci
+RUN npm ci --include=dev
 
 # Copy source code
 COPY . .
