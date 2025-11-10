@@ -36,4 +36,8 @@ COPY --from=builder /app/server-dist ./server-dist
 
 EXPOSE 8080
 
-CMD ["node", "server-dist/index.mjs"]
+# Copy startup script
+COPY start.sh ./
+RUN chmod +x start.sh
+
+CMD ["./start.sh"]
