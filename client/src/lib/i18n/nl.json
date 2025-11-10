@@ -190,6 +190,12 @@
     "subtitle": "Een greep uit de oplossingen die we bouwen",
     "items": [
       {
+        "icon": "Share2",
+        "title": "Workflow Automatisering",
+        "description": "Automatiseer repetitieve taken. Van offertes tot opvolgmails",
+        "size": "medium"
+      },
+      {
         "icon": "MessageSquare",
         "title": "Klantenservice-AI (Chat & Voice)",
         "description": "Slimme AI-assistenten die klantvragen, telefoontjes en afspraken direct afhandelen. 24/7, meertalig en altijd consistent in service",
@@ -208,15 +214,15 @@
         "size": "medium"
       },
       {
-        "icon": "GraduationCap",
-        "title": "Onboarding & Training",
-        "description": "AI-systemen die medewerkers sneller inwerken en kennis vastleggen",
+        "icon": "Mail",
+        "title": "Slimme Email Automatisering",
+        "description": "AI die emails beantwoordt, sorteert en opvolgt. Van klantvragen tot interne communicatie, altijd gepast en op tijd",
         "size": "medium"
       },
       {
-        "icon": "Share2",
-        "title": "Workflow Automatisering",
-        "description": "Automatiseer repetitieve taken. Van offertes tot opvolgmails",
+        "icon": "PenTool",
+        "title": "Content Generatie",
+        "description": "Automatisch productbeschrijvingen, social media posts en documentatie schrijven. Consistent en op merkstem",
         "size": "small"
       }
     ]
