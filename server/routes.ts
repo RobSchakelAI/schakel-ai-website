@@ -1,10 +1,48 @@
-import type { Express } from "express";
+import type { Express, Request, Response } from "express";
 import { storage } from "./storage";
 import { MailerSend, EmailParams, Sender, Recipient } from "mailersend";
 
+// Helper function to set CORS headers on every API response
+const setCorsHeaders = (res: Response, origin: string | undefined) => {
+  const allowedOrigins = [
+    'https://www.schakel.ai',
+    'https://schakel.ai',
+    'http://localhost:5000',
+    'http://localhost:3000'
+  ];
+  
+  let corsOrigin = '*';
+  
+  // Match specific origin or domain patterns
+  if (origin && (allowedOrigins.includes(origin) || 
+                 origin.endsWith('.schakel.ai') || 
+                 origin.endsWith('.vercel.app') ||
+                 origin.endsWith('.railway.app'))) {
+    corsOrigin = origin;
+  }
+  
+  // Set CORS headers explicitly
+  res.header('Access-Control-Allow-Origin', corsOrigin);
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Origin, X-Requested-With, Accept');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  
+  console.log("CORS Headers Set:", { 
+    requestOrigin: origin || 'unknown',
+    allowedCorsOrigin: corsOrigin
+  });
+};
+
 export async function registerRoutes(app: Express): Promise<void> {
+  // OPTIONS preflight handler - MUST BE BEFORE ROUTES
+  app.options('/api/*', (req: Request, res: Response) => {
+    setCorsHeaders(res, req.headers.origin);
+    res.status(204).end();
+  });
+
   // Health check endpoint - helps distinguish deployment issues from CORS
-  app.get('/healthz', (_req, res) => {
+  app.get('/healthz', (req: Request, res: Response) => {
+    setCorsHeaders(res, req.headers.origin);
     res.status(200).json({ 
       status: 'ok', 
       timestamp: new Date().toISOString(),
@@ -19,8 +57,16 @@ export async function registerRoutes(app: Express): Promise<void> {
   // OPTIONS handler is handled by global app.options('*', cors()) in server/index.ts
   // No need for route-specific OPTIONS handler here
 
-  app.post('/api/contact', async (req, res) => {
+  app.post('/api/contact', async (req: Request, res: Response) => {
     try {
+      // Set CORS headers first - Noveloper style
+      setCorsHeaders(res, req.headers.origin);
+      
+      console.log("Received contact form submission", { 
+        origin: req.headers.origin,
+        hasBody: !!req.body
+      });
+      
       const { name, email, company, phone, message } = req.body;
 
       if (!process.env.MAILERSEND_API_KEY) {
