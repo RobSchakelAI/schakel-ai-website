@@ -1,0 +1,28 @@
+Analyse van de foutmelding
+De browserfout “No Access-Control-Allow-Origin header” ontstaat wanneer de preflight-OPTIONS vanuit https://www.schakel.ai geen geldige CORS-respons ontvangt. In de backend is wel degelijk een whitelist aanwezig (https://www.schakel.ai, https://schakel.ai, en lokale hosts), maar zodra een inkomende Origin niet exact matcht valt de call terug op het “debug” pad. Dat logt de herkomst maar stuurt nog steeds allow: true, zodat de header normaal gesproken mee zou moeten komen.
+
+Twee zaken kunnen er toch voor zorgen dat je in productie die header mist:
+
+Origin-mismatch – een kleine afwijking (bijv. https://schakel.ai/ met trailing slash, een ander subdomein, of een alternatieve Railway-hostnaam) komt niet door de exacte includes-check, waardoor de middleware in het “blocked”-pad belandt. Pas wanneer je de fallback weer uitschakelt zie je dat de response geen header heeft.
+
+Serverfout vóór CORS – de express-foutafhandelaar gooit na het sturen van de JSON-response opnieuw dezelfde error. In Node.js resulteert dat in een ongevangen uitzondering; het proces crasht of reset, en de browser ziet de verbinding als verbroken. Dat toont zich aan de frontend als een CORS/net::ERR_FAILED, omdat er überhaupt geen geldig antwoord meer terugkomt.
+
+Aan de frontend-kant wordt iedere submit uitgevoerd als fetch met credentials: "include". Daardoor eist de browser zowel Access-Control-Allow-Origin (met de exacte oorsprong) als Access-Control-Allow-Credentials: true. Zodra één van beide ontbreekt, blokkeert de call onmiddellijk en zie je exact de melding uit je console.
+
+Gevolg voor het contactformulier
+Ja, de verbeterpunten die ik eerder aanhaalde raken direct jouw huidige probleem:
+
+CORS-opschoning
+Door de whitelist strikt te houden én dezelfde lijst ook echt af te dwingen (in plaats van de “laat maar door”-fallback) zie je meteen welke origin mist en kun je hem toevoegen. Dat voorkomt dat https://www.schakel.ai ooit zonder header blijft hangen.
+
+Error middleware repareren
+Het verwijderen of vervangen van throw err zorgt ervoor dat de server niet meer crasht nadat hij al een foutbericht terugstuurde. Hierdoor blijft de API bereikbaar en levert hij een nette CORS-header terug, zodat de frontend tenminste een betekenisvolle foutmelding kan tonen in plaats van een geblokkeerde request.
+
+Concreet advies
+Controleer de exacte origin die in productie het formulier aanroept (via de netwerk-tab van je browser) en voeg die indien nodig toe aan allowedOrigins, eventueel met pattern-matching wanneer je meerdere subdomeinen wilt ondersteunen.
+
+Haal de throw err uit de error handler of vervang hem door logging; zo blijft het Node-proces doordraaien en blijven de CORS-headers beschikbaar voor foutresponses.
+
+Verifieer dat VITE_API_URL op Vercel exact naar dezelfde Railway-host wijst die ook in de whitelist staat; de frontend bouwt de request-URL rechtstreeks met deze env var, en bij een mismatch praat hij met een domein dat nooit geautoriseerd is.
+
+Als je deze drie punten oppakt, verdwijnt de consolefout en krijg je weer succesvolle (of in ieder geval correct geautoriseerde) responses van /api/contact.
