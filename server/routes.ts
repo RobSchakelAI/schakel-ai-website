@@ -25,35 +25,25 @@ export async function registerRoutes(app: Express): Promise<void> {
       
       const { name, email, company, phone, message } = req.body;
 
-      // DEBUG: Log environment variable status
-      console.log('MailerSend ENV check:', {
-        hasApiKey: !!process.env.MAILERSEND_API_KEY,
-        apiKeyPrefix: process.env.MAILERSEND_API_KEY?.substring(0, 10),
-        fromEmail: process.env.MAILERSEND_FROM_EMAIL,
-        toEmail: process.env.MAILERSEND_TO_EMAIL,
-        allEnvKeys: Object.keys(process.env).filter(k => k.includes('MAIL'))
-      });
+      // TEMPORARY HARDCODED TEST - proving Railway's env vars are broken
+      const HARDCODED_API_KEY = 'mlsn.51a308770deccd139b6329d22792e413fe4a867bfd035ab65b28a06b487f800b';
+      const HARDCODED_FROM = 'rob@schakel.ai';
+      const HARDCODED_TO = 'rob@schakel.ai';
 
-      if (!process.env.MAILERSEND_API_KEY) {
-        console.error('MAILERSEND_API_KEY is not configured');
-        return res.status(500).json({
-          success: false,
-          error: 'Email service is not configured'
-        });
-      }
+      console.log('HARDCODED TEST - Using hardcoded values instead of Railway env vars');
 
       const mailerSend = new MailerSend({
-        apiKey: process.env.MAILERSEND_API_KEY,
+        apiKey: HARDCODED_API_KEY,
       });
 
       const sentFrom = new Sender(
-        process.env.MAILERSEND_FROM_EMAIL || 'rob@schakel.ai',
+        HARDCODED_FROM,
         'Schakel AI Contact Form'
       );
       
       const recipients = [
         new Recipient(
-          process.env.MAILERSEND_TO_EMAIL || 'rob@schakel.ai',
+          HARDCODED_TO,
           'Schakel AI'
         )
       ];
