@@ -2,12 +2,6 @@ FROM node:20-alpine AS builder
 
 WORKDIR /app
 
-# Declare build arguments - Railway passes all variables automatically
-ARG MAILERSEND_API_KEY
-ARG MAILERSEND_FROM_EMAIL
-ARG MAILERSEND_TO_EMAIL
-ARG NODE_ENV
-
 # Copy package files
 COPY package*.json ./
 RUN npm ci --include=dev
@@ -25,18 +19,12 @@ FROM node:20-alpine AS runner
 
 WORKDIR /app
 
-# CRITICAL: Redeclare ALL ARGs in runner stage (ARGs don't carry over between stages!)
-ARG MAILERSEND_API_KEY
-ARG MAILERSEND_FROM_EMAIL
-ARG MAILERSEND_TO_EMAIL
-
-# Convert ARGs to runtime ENV variables
+# Set NODE_ENV to production (this is safe to set at build time)
 ENV NODE_ENV=production
-ENV MAILERSEND_API_KEY=$MAILERSEND_API_KEY
-ENV MAILERSEND_FROM_EMAIL=$MAILERSEND_FROM_EMAIL
-ENV MAILERSEND_TO_EMAIL=$MAILERSEND_TO_EMAIL
 
-# NOTE: Do NOT set PORT as ARG/ENV - Railway provides it dynamically at runtime
+# Railway injects environment variables at RUNTIME, not build time
+# Do NOT set MAILERSEND_*, PORT, or other runtime secrets here
+# They are automatically available as process.env.* when the container starts
 
 # Copy dependencies from builder (includes dev deps needed for vite import)
 COPY --from=builder /app/node_modules ./node_modules
