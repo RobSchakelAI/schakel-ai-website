@@ -104,16 +104,16 @@ export default function About() {
                   ))}
                 </div>
 
-                {/* Quote reveal on hover with DARK GREEN icon */}
+                {/* Quote reveal on hover with LIGHT GREEN icon */}
                 <div 
                   className={`flex items-start gap-3 p-4 rounded-lg bg-primary/5 border-l-2 transition-all duration-300 ${
                     hoveredFounder === founder.id ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
                   }`}
-                  style={hoveredFounder === founder.id ? { borderColor: '#2C9880' } : { borderColor: 'hsl(var(--primary))' }}
+                  style={hoveredFounder === founder.id ? { borderColor: '#6EBFAA' } : { borderColor: 'hsl(var(--primary))' }}
                 >
                   <Quote 
                     className="w-5 h-5 flex-shrink-0 mt-0.5 transition-colors duration-300" 
-                    style={hoveredFounder === founder.id ? { color: '#2C9880' } : { color: 'hsl(var(--primary))' }}
+                    style={hoveredFounder === founder.id ? { color: '#6EBFAA' } : { color: 'hsl(var(--primary))' }}
                   />
                   <p className="text-sm italic text-foreground/70">{founder.quote}</p>
                 </div>
