@@ -5,7 +5,6 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import AutomationFlow from '@/components/AutomationFlow';
 import { CTAOverlay } from '@/components/ExpandingCTA';
 import { useCTA } from '@/contexts/CTAContext';
-import heroVideo from '@assets/hero-background.mp4';
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -120,23 +119,10 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right: Video (experimenteel) */}
-          <div className="hidden md:flex items-center justify-center h-[500px] relative" data-testid="container-hero-video">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover rounded-lg"
-            >
-              <source src={heroVideo} type="video/mp4" />
-            </video>
-          </div>
-
-          {/* Right: Geanimeerde Automation Flow (HIDDEN - experimenteren met video) */}
-          {/* <div className="hidden md:flex items-center justify-center h-[500px]" data-testid="container-workflow-visualization">
+          {/* Right: Geanimeerde Automation Flow */}
+          <div className="hidden md:flex items-center justify-center h-[500px]" data-testid="container-workflow-visualization">
             <AutomationFlow />
-          </div> */}
+          </div>
         </div>
       </div>
     </section>
