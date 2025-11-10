@@ -12,7 +12,10 @@ import { apiRequest } from '@/lib/queryClient';
 
 const contactSchema = z.object({
   name: z.string().optional(),
-  email: z.string().email('Ongeldig e-mailadres').or(z.literal('')).optional(),
+  email: z.union([
+    z.string().email('Ongeldig e-mailadres'), 
+    z.literal('')
+  ]).optional(),
   company: z.string().optional(),
   phone: z.string().optional(),
   message: z.string().optional(),
