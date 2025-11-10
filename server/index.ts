@@ -5,8 +5,42 @@ import { setupVite, serveStatic, log } from "./vite";
 
 const app = express();
 
-// CORS is now handled manually in routes.ts using setCorsHeaders() function
-// This Noveloper-style approach gives us full control over CORS headers
+// Global CORS middleware - MUST be before all routes and body parsers
+app.use((req: Request, res: Response, next: NextFunction) => {
+  const origin = req.headers.origin;
+  
+  const allowedOrigins = [
+    'https://www.schakel.ai',
+    'https://schakel.ai',
+    'http://localhost:5000',
+    'http://localhost:3000'
+  ];
+  
+  // Determine which origin to allow
+  let allowOrigin = 'https://www.schakel.ai'; // Default fallback
+  
+  if (origin && (allowedOrigins.includes(origin) || 
+                 origin.endsWith('.schakel.ai') || 
+                 origin.endsWith('.vercel.app') ||
+                 origin.endsWith('.railway.app'))) {
+    allowOrigin = origin; // Use specific origin when matched
+  }
+  
+  // Set CORS headers - NEVER use wildcard with credentials
+  res.header('Access-Control-Allow-Origin', allowOrigin);
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Origin, X-Requested-With, Accept');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  
+  // Handle OPTIONS preflight globally - short-circuit before route logic
+  if (req.method === 'OPTIONS') {
+    console.log(`OPTIONS preflight from ${origin || 'unknown'} → ${allowOrigin}`);
+    return res.status(204).end();
+  }
+  
+  console.log(`CORS: ${origin || 'no-origin'} → ${allowOrigin}`);
+  next();
+});
 
 declare module 'http' {
   interface IncomingMessage {
