@@ -76,8 +76,12 @@ app.use((req, res, next) => {
   // doesn't interfere with the other routes
   if (app.get("env") === "development") {
     await setupVite(app, server);
-  } else {
+  } else if (process.env.SERVE_STATIC !== "false") {
+    // Only serve static files if SERVE_STATIC is not explicitly set to "false"
+    // This allows Railway to run API-only without requiring dist/public
     serveStatic(app);
+  } else {
+    log("Running in API-only mode (no static file serving)");
   }
 
   // ALWAYS serve the app on the port specified in the environment variable PORT
