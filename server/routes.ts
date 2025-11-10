@@ -25,6 +25,15 @@ export async function registerRoutes(app: Express): Promise<void> {
       
       const { name, email, company, phone, message } = req.body;
 
+      // DEBUG: Log environment variable status
+      console.log('MailerSend ENV check:', {
+        hasApiKey: !!process.env.MAILERSEND_API_KEY,
+        apiKeyPrefix: process.env.MAILERSEND_API_KEY?.substring(0, 10),
+        fromEmail: process.env.MAILERSEND_FROM_EMAIL,
+        toEmail: process.env.MAILERSEND_TO_EMAIL,
+        allEnvKeys: Object.keys(process.env).filter(k => k.includes('MAIL'))
+      });
+
       if (!process.env.MAILERSEND_API_KEY) {
         console.error('MAILERSEND_API_KEY is not configured');
         return res.status(500).json({
