@@ -38,13 +38,13 @@ export async function registerRoutes(app: Express): Promise<void> {
       });
 
       const sentFrom = new Sender(
-        process.env.MAILERSEND_FROM_EMAIL || 'noreply@schakel.ai',
+        process.env.MAILERSEND_FROM_EMAIL || 'rob@schakel.ai',
         'Schakel AI Contact Form'
       );
       
       const recipients = [
         new Recipient(
-          process.env.MAILERSEND_TO_EMAIL || 'info@schakel.ai',
+          process.env.MAILERSEND_TO_EMAIL || 'rob@schakel.ai',
           'Schakel AI'
         )
       ];
