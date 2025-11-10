@@ -8,6 +8,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
     apiKey: process.env.MAILERSEND_API_KEY || '',
   });
 
+  // Explicit OPTIONS handler for CORS preflight
+  app.options('/api/contact', (req, res) => {
+    res.status(204).end();
+  });
+
   app.post('/api/contact', async (req, res) => {
     try {
       const { name, email, company, phone, message } = req.body;

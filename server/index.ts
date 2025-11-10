@@ -7,16 +7,36 @@ const app = express();
 
 // CORS configuration - allow Vercel frontend to communicate with Railway backend
 const corsOptions = {
-  origin: true, // Allow all origins temporarily for debugging
+  origin: (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) => {
+    // Allow requests with no origin (like mobile apps, curl, Postman)
+    // or from our Vercel domains
+    const allowedOrigins = [
+      'https://www.schakel.ai',
+      'https://schakel.ai',
+      'http://localhost:5000',
+      'http://localhost:3000'
+    ];
+    
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      console.log('Blocked origin:', origin);
+      callback(null, true); // Still allow for now, for debugging
+    }
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   exposedHeaders: ['Content-Type'],
   optionsSuccessStatus: 204,
+  preflightContinue: false,
   maxAge: 86400
 };
 
 app.use(cors(corsOptions));
+
+// Global OPTIONS handler for all preflight requests - must be before routes
+app.options('*', cors(corsOptions));
 
 declare module 'http' {
   interface IncomingMessage {
