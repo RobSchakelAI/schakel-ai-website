@@ -171,18 +171,18 @@
   },
   "automation": {
     "nodes": {
-      "now": "Nu",
-      "analyze": "Analyseren",
-      "build": "Bouwen",
-      "grow": "Groeien",
-      "impact": "Impact"
+      "now": "Starten",
+      "analyze": "Verkennen",
+      "build": "Ontwerpen",
+      "grow": "Implementeren",
+      "impact": "Resultaat"
     },
     "status": {
-      "now": "Handmatig werk dat tijd kost",
-      "analyze": "Identificeren van kansen",
-      "build": "AI-oplossing die direct werkt",
-      "grow": "Schaalbaar en toekomstbestendig",
-      "impact": "Aantoonbaar rendement"
+      "now": "Handmatig werk dat veel tijd kost",
+      "analyze": "Identificeren van verbeteringen",
+      "build": "Van idee naar concrete blauwdruk",
+      "grow": "Van concept naar werkende oplossing",
+      "impact": "Rust en rendement"
     }
   },
   "services": {
