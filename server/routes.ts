@@ -16,10 +16,6 @@ export async function registerRoutes(app: Express): Promise<void> {
     });
   });
 
-  const mailerSend = new MailerSend({
-    apiKey: process.env.MAILERSEND_API_KEY || '',
-  });
-
   app.post('/api/contact', async (req: Request, res: Response) => {
     try {
       console.log("Received contact form submission", { 
@@ -36,6 +32,12 @@ export async function registerRoutes(app: Express): Promise<void> {
           error: 'Email service is not configured'
         });
       }
+
+      console.log('Using API key:', process.env.MAILERSEND_API_KEY?.substring(0, 10) + '...');
+
+      const mailerSend = new MailerSend({
+        apiKey: process.env.MAILERSEND_API_KEY,
+      });
 
       const sentFrom = new Sender(
         process.env.MAILERSEND_FROM_EMAIL || 'noreply@schakel.ai',
