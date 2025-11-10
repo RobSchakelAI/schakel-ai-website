@@ -1,6 +1,7 @@
 import type { Express, Request, Response } from "express";
 import { storage } from "./storage";
 import { MailerSend, EmailParams, Sender, Recipient } from "mailersend";
+import { getEnv } from "./env";
 
 export async function registerRoutes(app: Express): Promise<void> {
   // CORS is now handled by global middleware in server/index.ts
@@ -25,18 +26,10 @@ export async function registerRoutes(app: Express): Promise<void> {
       
       const { name, email, company, phone, message } = req.body;
 
-      // Use environment variables - Railway should inject these at runtime
-      const apiKey = process.env.MAILERSEND_API_KEY;
-      const fromEmail = process.env.MAILERSEND_FROM_EMAIL || 'rob@schakel.ai';
-      const toEmail = process.env.MAILERSEND_TO_EMAIL || 'rob@schakel.ai';
-
-      if (!apiKey) {
-        console.error('MAILERSEND_API_KEY is not configured');
-        return res.status(500).json({
-          success: false,
-          error: 'Email service is not configured'
-        });
-      }
+      // Use environment variables with placeholder detection
+      const apiKey = getEnv('MAILERSEND_API_KEY');
+      const fromEmail = getEnv('MAILERSEND_FROM_EMAIL', 'rob@schakel.ai');
+      const toEmail = getEnv('MAILERSEND_TO_EMAIL', 'rob@schakel.ai');
 
       const mailerSend = new MailerSend({
         apiKey,
