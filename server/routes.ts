@@ -3,6 +3,15 @@ import { storage } from "./storage";
 import { MailerSend, EmailParams, Sender, Recipient } from "mailersend";
 
 export async function registerRoutes(app: Express): Promise<void> {
+  // Health check endpoint - helps distinguish deployment issues from CORS
+  app.get('/healthz', (_req, res) => {
+    res.status(200).json({ 
+      status: 'ok', 
+      timestamp: new Date().toISOString(),
+      env: process.env.NODE_ENV || 'development'
+    });
+  });
+
   const mailerSend = new MailerSend({
     apiKey: process.env.MAILERSEND_API_KEY || '',
   });

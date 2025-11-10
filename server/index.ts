@@ -22,7 +22,7 @@ const corsOptions = {
       callback(null, true);
     } else {
       console.log('Blocked origin:', origin);
-      callback(null, true); // Still allow for now, for debugging
+      callback(new Error('Not allowed by CORS'));
     }
   },
   credentials: true,
