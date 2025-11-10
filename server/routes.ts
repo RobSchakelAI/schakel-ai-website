@@ -33,8 +33,6 @@ export async function registerRoutes(app: Express): Promise<void> {
         });
       }
 
-      console.log('Using API key:', process.env.MAILERSEND_API_KEY?.substring(0, 10) + '...');
-
       const mailerSend = new MailerSend({
         apiKey: process.env.MAILERSEND_API_KEY,
       });
