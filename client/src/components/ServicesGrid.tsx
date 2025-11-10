@@ -1,13 +1,14 @@
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Card, CardContent } from '@/components/ui/card';
-import { MessageSquare, Users, Share2, Target, GraduationCap } from 'lucide-react';
+import { MessageSquare, Users, Share2, Target, Mail, PenTool } from 'lucide-react';
 
 const iconMap = {
   MessageSquare,
   Users,
   Share2,
   Target,
-  GraduationCap,
+  Mail,
+  PenTool,
 };
 
 export default function ServicesGrid() {
