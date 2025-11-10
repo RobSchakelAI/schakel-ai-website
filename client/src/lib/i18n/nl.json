@@ -192,38 +192,32 @@
       {
         "icon": "Share2",
         "title": "Workflow Automatisering",
-        "description": "Automatiseer repetitieve taken. Van offertes tot opvolgmails",
-        "size": "medium"
+        "description": "Automatiseer repetitieve taken. Van offertes tot opvolgmails"
       },
       {
         "icon": "MessageSquare",
         "title": "Klantenservice-AI (Chat & Voice)",
-        "description": "Slimme AI-assistenten die klantvragen, telefoontjes en afspraken direct afhandelen. 24/7, meertalig en altijd consistent in service",
-        "size": "tall"
+        "description": "Slimme AI-assistenten die klantvragen, telefoontjes en afspraken direct afhandelen. 24/7, meertalig en altijd consistent in service"
       },
       {
         "icon": "Users",
         "title": "Interne Support Agents",
-        "description": "Virtuele medewerkers die HR-, IT- en operationele vragen beantwoorden",
-        "size": "small"
+        "description": "Virtuele medewerkers die HR-, IT- en operationele vragen beantwoorden"
       },
       {
         "icon": "Target",
         "title": "AI Sales & Marketing Automation",
-        "description": "AI-agents die leads kwalificeren, opvolgen en afspraken inplannen",
-        "size": "medium"
+        "description": "AI-agents die leads kwalificeren, opvolgen en afspraken inplannen"
       },
       {
         "icon": "Mail",
         "title": "Slimme Email Automatisering",
-        "description": "AI die emails beantwoordt, sorteert en opvolgt. Van klantvragen tot interne communicatie, altijd gepast en op tijd",
-        "size": "medium"
+        "description": "AI die emails beantwoordt, sorteert en opvolgt. Van klantvragen tot interne communicatie, altijd gepast en op tijd"
       },
       {
         "icon": "PenTool",
         "title": "Content Generatie",
-        "description": "Automatisch productbeschrijvingen, social media posts en documentatie schrijven. Consistent en op merkstem",
-        "size": "small"
+        "description": "Automatisch productbeschrijvingen, social media posts en documentatie schrijven. Consistent en op merkstem"
       }
     ]
   }
