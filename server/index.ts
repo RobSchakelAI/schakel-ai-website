@@ -1,7 +1,7 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { createServer } from "http";
 import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
+import { log } from "./vite";
 
 const app = express();
 
@@ -102,6 +102,8 @@ app.use((req, res, next) => {
   // setting up all the other routes so the catch-all route
   // doesn't interfere with the other routes
   if (app.get("env") === "development") {
+    // Dynamic import prevents esbuild from bundling vite for production
+    const { setupVite } = await import("./vite.js");
     await setupVite(app, server);
   } else {
     // Production: API-only mode (Railway backend serves only /api routes)
