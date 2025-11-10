@@ -54,9 +54,6 @@ export async function registerRoutes(app: Express): Promise<void> {
     apiKey: process.env.MAILERSEND_API_KEY || '',
   });
 
-  // OPTIONS handler is handled by global app.options('*', cors()) in server/index.ts
-  // No need for route-specific OPTIONS handler here
-
   app.post('/api/contact', async (req: Request, res: Response) => {
     try {
       // Set CORS headers first - Noveloper style

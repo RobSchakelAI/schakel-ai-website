@@ -1,43 +1,12 @@
 import express, { type Request, Response, NextFunction } from "express";
 import { createServer } from "http";
-import cors from "cors";
 import { registerRoutes } from "./routes";
 import { setupVite, serveStatic, log } from "./vite";
 
 const app = express();
 
-// CORS configuration - allow Vercel frontend to communicate with Railway backend
-const corsOptions = {
-  origin: (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) => {
-    // Allow requests with no origin (like mobile apps, curl, Postman)
-    // or from our Vercel domains
-    const allowedOrigins = [
-      'https://www.schakel.ai',
-      'https://schakel.ai',
-      'http://localhost:5000',
-      'http://localhost:3000'
-    ];
-    
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      console.log('Blocked origin:', origin);
-      callback(null, false); // Deny without crashing
-    }
-  },
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-  exposedHeaders: ['Content-Type'],
-  optionsSuccessStatus: 204,
-  preflightContinue: false,
-  maxAge: 86400
-};
-
-app.use(cors(corsOptions));
-
-// Global OPTIONS handler for all preflight requests - must be before routes
-app.options('*', cors(corsOptions));
+// CORS is now handled manually in routes.ts using setCorsHeaders() function
+// This Noveloper-style approach gives us full control over CORS headers
 
 declare module 'http' {
   interface IncomingMessage {
