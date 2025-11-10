@@ -1,0 +1,126 @@
+Region: asia-southeast1]
+==============
+Using Nixpacks
+==============
+
+context: r9jw-IbhE
+╔══════════════════════════════ Nixpacks v1.38.0 ══════════════════════════════╗
+║ setup      │ nodejs_20                                                       ║
+║──────────────────────────────────────────────────────────────────────────────║
+║ caddy      │ pkgs: caddy                                                     ║
+║            │ cmds: caddy fmt --overwrite /assets/Caddyfile                   ║
+║──────────────────────────────────────────────────────────────────────────────║
+║ install    │ npm ci                                                          ║
+║──────────────────────────────────────────────────────────────────────────────║
+║ build      │ rm -rf dist server-dist && vite build && esbuild                ║
+║            │ server/index.ts --platform=node --packages=external --bundle    ║
+║            │ --format=esm --outfile=server-dist/index.mjs                    ║
+║──────────────────────────────────────────────────────────────────────────────║
+║ start      │ NODE_ENV=production node server-dist/index.mjs                  ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+internal
+load build definition from Dockerfile
+1ms
+
+internal
+load metadata for ghcr.io/railwayapp/nixpacks:ubuntu-1745885067
+726ms
+
+internal
+load .dockerignore
+0ms
+
+internal
+load build context
+0ms
+
+stage-0
+RUN nix-env -if .nixpacks/nixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix && nix-collect-garbage -d cached
+0ms
+
+stage-0
+COPY .nixpacks/assets /assets/ cached
+0ms
+
+stage-0
+RUN nix-env -if .nixpacks/nixpkgs-ba913eda2df8eb72147259189d55932012df6301.nix && nix-collect-garbage -d cached
+0ms
+
+stage-0
+COPY .nixpacks/nixpkgs-ba913eda2df8eb72147259189d55932012df6301.nix .nixpacks/nixpkgs-ba913eda2df8eb72147259189d55932012df6301.nix cached
+0ms
+
+stage-0
+WORKDIR /app/ cached
+0ms
+
+stage-0
+COPY .nixpacks/nixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix .nixpacks/nixpkgs-ffeebf0acf3ae8b29f8c7049cd911b9636efd7e7.nix cached
+0ms
+
+stage-0
+COPY . /app/.
+145ms
+
+stage-0
+RUN  caddy fmt --overwrite /assets/Caddyfile
+250ms
+
+stage-0
+COPY . /app/.
+103ms
+
+stage-0
+RUN npm ci
+6s
+Run `npm audit` for details.
+
+stage-0
+COPY . /app/.
+261ms
+
+stage-0
+RUN rm -rf dist server-dist && vite build && esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outfile=server-dist/index.mjs
+4s
+vite v5.4.20 building for production...
+transforming...
+Browserslist: browsers data (caniuse-lite) is 13 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+
+A PostCSS plugin did not pass the `from` option to `postcss.parse`. This may cause imported assets to be incorrectly transformed. If you've recently added a PostCSS plugin that raised this warning, please contact the package author to fix the issue.
+✓ 2066 modules transformed.
+rendering chunks...
+computing gzip size...
+../dist/public/index.html                                        1.58 kB │ gzip:   0.64 kB
+../dist/public/assets/simon-photo-BW3S91e9.jpg                   6.88 kB
+../dist/public/assets/rob-photo-C27DJAiZ.jpg                    91.37 kB
+../dist/public/assets/schakel-logo-cropped-D0YsYx8i.png        397.54 kB
+../dist/public/assets/schakel-logo-light-cropped-BxMACW9n.png  456.28 kB
+../dist/public/assets/index-DjkhtMJ9.css                        82.97 kB │ gzip:  13.30 kB
+../dist/public/assets/index-CBngPL-P.js                        477.33 kB │ gzip: 152.49 kB
+✓ built in 3.81s
+
+  server-dist/index.mjs  10.3kb
+
+⚡ Done in 3ms
+
+stage-0
+RUN printf '\nPATH=/app/node_modules/.bin:$PATH' >> /root/.profile
+243ms
+
+stage-0
+COPY . /app
+96ms
+
+auth
+sharing credentials for production-asia-southeast1-eqsg3a.railway-registry.com
+0ms
+
+importing to docker
+8s
+=== Successfully Built! ===
+Run:
+docker run -it production-asia-southeast1-eqsg3a.railway-registry.com/92341e68-24c0-49b3-8f4e-4633ed8d8b3c:f7144e93-a039-471a-ad75-d431e6588f8e
+Build time: 35.51 seconds
