@@ -12,7 +12,12 @@ export async function registerRoutes(app: Express): Promise<void> {
       status: 'ok', 
       timestamp: new Date().toISOString(),
       env: process.env.NODE_ENV || 'development',
-      port: process.env.PORT || '5000'
+      port: process.env.PORT || '5000',
+      mailersend_configured: !!process.env.MAILERSEND_API_KEY,
+      mailersend_key_length: process.env.MAILERSEND_API_KEY?.length || 0,
+      mailersend_key_preview: process.env.MAILERSEND_API_KEY?.substring(0, 15) + '...',
+      from_email: process.env.MAILERSEND_FROM_EMAIL,
+      to_email: process.env.MAILERSEND_TO_EMAIL
     });
   });
 
