@@ -1,0 +1,27 @@
+# Prevent copying build artifacts - force fresh builds
+dist/
+node_modules/
+.cache/
+.env
+.env.local
+
+# Development files
+.replit
+.upm
+replit.nix
+
+# Git
+.git/
+.gitignore
+
+# Logs
+*.log
+npm-debug.log*
+
+# Testing
+coverage/
+.nyc_output/
+
+# Temp
+tmp/
+temp/
