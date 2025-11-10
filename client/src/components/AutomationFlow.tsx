@@ -15,12 +15,13 @@ export default function AutomationFlow() {
   }, []);
 
   // Nodes evenly distributed along arc length (calculated by arc-length parameterization)
+  // Color gradient: rood → lichtgroen → donkergroen (logo teal)
   const nodes = [
     { id: 0, icon: AlertCircle, label: t.automation.nodes.now, x: 15, y: 78, color: '#ef4444' },
-    { id: 1, icon: Search, label: t.automation.nodes.analyze, x: 37.21, y: 71.61, color: '#6EBFAA' },
-    { id: 2, icon: Zap, label: t.automation.nodes.build, x: 56.09, y: 58.37, color: '#4b37bd' },
-    { id: 3, icon: TrendingUp, label: t.automation.nodes.grow, x: 70.75, y: 39.93, color: '#2C9880' },
-    { id: 4, icon: CheckCircle2, label: t.automation.nodes.impact, x: 85, y: 22, color: '#6EBFAA' }
+    { id: 1, icon: Search, label: t.automation.nodes.analyze, x: 37.21, y: 71.61, color: '#8FD4BD' },
+    { id: 2, icon: Zap, label: t.automation.nodes.build, x: 56.09, y: 58.37, color: '#6EBFAA' },
+    { id: 3, icon: TrendingUp, label: t.automation.nodes.grow, x: 70.75, y: 39.93, color: '#4FB59D' },
+    { id: 4, icon: CheckCircle2, label: t.automation.nodes.impact, x: 85, y: 22, color: '#2C9880' }
   ];
 
   const connections = [
