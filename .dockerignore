@@ -1,5 +1,6 @@
 # Prevent copying build artifacts - force fresh builds
 dist/
+server-dist/
 node_modules/
 .cache/
 .env

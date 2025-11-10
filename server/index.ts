@@ -81,7 +81,7 @@ app.use((req, res, next) => {
     // This allows Railway to run API-only without requiring dist/public
     serveStatic(app);
   } else {
-    log("Running in API-only mode (no static file serving)");
+    log("🚀 Running in API-only mode (no static file serving) - CORS enabled");
   }
 
   // ALWAYS serve the app on the port specified in the environment variable PORT
