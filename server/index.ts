@@ -76,11 +76,9 @@ app.use((req, res, next) => {
   // doesn't interfere with the other routes
   if (app.get("env") === "development") {
     await setupVite(app, server);
-  } else if (process.env.SERVE_STATIC !== "false") {
-    // Only serve static files if SERVE_STATIC is not explicitly set to "false"
-    // This allows Railway to run API-only without requiring dist/public
-    serveStatic(app);
   } else {
+    // Production: API-only mode (Railway backend serves only /api routes)
+    // Frontend is served separately by Vercel
     log("🚀 Running in API-only mode (no static file serving) - CORS enabled");
   }
 
