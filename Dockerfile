@@ -29,14 +29,14 @@ WORKDIR /app
 ARG MAILERSEND_API_KEY
 ARG MAILERSEND_FROM_EMAIL
 ARG MAILERSEND_TO_EMAIL
-ARG PORT
 
 # Convert ARGs to runtime ENV variables
 ENV NODE_ENV=production
 ENV MAILERSEND_API_KEY=$MAILERSEND_API_KEY
 ENV MAILERSEND_FROM_EMAIL=$MAILERSEND_FROM_EMAIL
 ENV MAILERSEND_TO_EMAIL=$MAILERSEND_TO_EMAIL
-ENV PORT=$PORT
+
+# NOTE: Do NOT set PORT as ARG/ENV - Railway provides it dynamically at runtime
 
 # Copy package files and install ALL dependencies (vite needed for dynamic import)
 COPY package*.json ./
