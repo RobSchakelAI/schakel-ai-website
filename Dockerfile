@@ -25,16 +25,18 @@ FROM node:20-alpine AS runner
 
 WORKDIR /app
 
-# Declare runtime arguments
+# CRITICAL: Redeclare ALL ARGs in runner stage (ARGs don't carry over between stages!)
 ARG MAILERSEND_API_KEY
 ARG MAILERSEND_FROM_EMAIL
 ARG MAILERSEND_TO_EMAIL
+ARG PORT
 
-# Set environment variables
-ENV NODE_ENV=production \
-    MAILERSEND_API_KEY=$MAILERSEND_API_KEY \
-    MAILERSEND_FROM_EMAIL=$MAILERSEND_FROM_EMAIL \
-    MAILERSEND_TO_EMAIL=$MAILERSEND_TO_EMAIL
+# Convert ARGs to runtime ENV variables
+ENV NODE_ENV=production
+ENV MAILERSEND_API_KEY=$MAILERSEND_API_KEY
+ENV MAILERSEND_FROM_EMAIL=$MAILERSEND_FROM_EMAIL
+ENV MAILERSEND_TO_EMAIL=$MAILERSEND_TO_EMAIL
+ENV PORT=$PORT
 
 # Copy built files and dependencies
 COPY package*.json ./
