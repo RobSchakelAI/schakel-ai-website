@@ -38,9 +38,9 @@ ENV MAILERSEND_TO_EMAIL=$MAILERSEND_TO_EMAIL
 
 # NOTE: Do NOT set PORT as ARG/ENV - Railway provides it dynamically at runtime
 
-# Copy package files and install ALL dependencies (vite needed for dynamic import)
-COPY package*.json ./
-RUN npm ci
+# Copy dependencies from builder (includes dev deps needed for vite import)
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/package*.json ./
 
 # Copy built files
 COPY --from=builder /app/dist ./dist
