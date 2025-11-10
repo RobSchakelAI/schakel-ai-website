@@ -38,10 +38,11 @@ ENV MAILERSEND_FROM_EMAIL=$MAILERSEND_FROM_EMAIL
 ENV MAILERSEND_TO_EMAIL=$MAILERSEND_TO_EMAIL
 ENV PORT=$PORT
 
-# Copy built files and dependencies
+# Copy package files and install ALL dependencies (vite needed for dynamic import)
 COPY package*.json ./
-RUN npm ci --only=production
+RUN npm ci
 
+# Copy built files
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/server-dist ./server-dist
 
