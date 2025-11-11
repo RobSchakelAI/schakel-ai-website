@@ -9,6 +9,8 @@ import { useCTA } from '@/contexts/CTAContext';
 export default function Hero() {
   const { t } = useLanguage();
   const { isExpanded, openCTA } = useCTA();
+  
+  const isPreview = import.meta.env.VITE_API_URL?.includes('staging');
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -32,11 +34,13 @@ export default function Hero() {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           {/* Left: Content */}
           <div className="text-center md:text-left">
-            {/* DEV ENVIRONMENT TEST BADGE */}
-            <div className="inline-flex items-center gap-2 mb-3 px-4 py-2 rounded-full border border-green-500/30 bg-green-500/10">
-              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <span className="text-sm font-medium text-green-700 dark:text-green-400">🧪 DEV Environment - Test Badge</span>
-            </div>
+            {/* DEV ENVIRONMENT TEST BADGE - Only shows on Preview/Staging */}
+            {isPreview && (
+              <div className="inline-flex items-center gap-2 mb-3 px-4 py-2 rounded-full border border-green-500/30 bg-green-500/10">
+                <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                <span className="text-sm font-medium text-green-700 dark:text-green-400">🧪 Staging Environment</span>
+              </div>
+            )}
 
             {/* Pre-title with mint accent */}
             <div className="inline-flex items-center gap-2 mb-4 px-4 py-2 rounded-full border border-primary/20 bg-primary/5">
