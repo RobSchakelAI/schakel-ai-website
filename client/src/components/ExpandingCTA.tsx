@@ -237,6 +237,21 @@ export default function ExpandingCTA() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div className="rounded-md overflow-hidden border border-border h-[300px] md:h-[400px]">
+            <iframe
+              src={mapUrl}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              className="dark:invert dark:hue-rotate-180 dark:brightness-90 dark:contrast-110"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Schakel AI Location"
+              data-testid="map-location"
+            />
+          </div>
+
           <div className="space-y-6">
             <div>
               <h3 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
@@ -270,21 +285,6 @@ export default function ExpandingCTA() {
                 <p className="text-sm">{t.contact.info.btw}</p>
               </div>
             </div>
-          </div>
-
-          <div className="rounded-md overflow-hidden border border-border h-[300px] md:h-[400px]">
-            <iframe
-              src={mapUrl}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              className="dark:invert dark:hue-rotate-180 dark:brightness-90 dark:contrast-110"
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Schakel AI Location"
-              data-testid="map-location"
-            />
           </div>
         </div>
 
