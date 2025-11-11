@@ -31,26 +31,30 @@ export default function ApproachTimeline() {
             <div className="max-w-6xl mx-auto px-0 grid grid-cols-4 gap-10">
               {t.approach.steps.map((step, index) => {
                 if (index >= t.approach.steps.length - 1) return null;
+                
+                // Only show arrow if this step is completed
+                if (activeStep <= index) return <div key={index} className="relative" />;
+                
                 return (
                   <div key={index} className="relative">
-                    {/* Arrow with spacing from circles */}
+                    {/* Green arrow for completed steps only */}
                     <div className="absolute top-0 flex items-center" style={{ 
-                      left: 'calc(50% + 45px)', // centrum bol + ruimte
-                      width: 'calc(50% + 2.5rem - 90px)' // tot centrum volgende bol - ruimte
+                      left: 'calc(50% + 50px)', // centrum bol + ruimte
+                      width: 'calc(100% + 2.5rem - 100px)' // tot centrum volgende bol - ruimte
                     }}>
                       <div 
-                        className="h-[2px] flex-1 transition-colors duration-500"
-                        style={{ backgroundColor: activeStep > index ? '#2C9880' : '#e4e4e7' }}
+                        className="h-[2px] flex-1 transition-all duration-500"
+                        style={{ backgroundColor: '#2C9880' }}
                       />
                       {/* Arrow head */}
                       <div 
-                        className="transition-colors duration-500"
+                        className="transition-all duration-500"
                         style={{
                           width: 0,
                           height: 0,
                           borderTop: '6px solid transparent',
                           borderBottom: '6px solid transparent',
-                          borderLeft: `12px solid ${activeStep > index ? '#2C9880' : '#e4e4e7'}`
+                          borderLeft: '12px solid #2C9880'
                         }}
                       />
                     </div>
