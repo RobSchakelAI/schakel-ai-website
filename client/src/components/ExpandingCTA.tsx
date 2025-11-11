@@ -37,6 +37,10 @@ export function CTAOverlay() {
       const response = await apiRequest('POST', '/api/contact', formData);
       await response.json();
       
+      if (typeof window !== 'undefined' && (window as any).umami) {
+        (window as any).umami.track('form-submit', { type: 'contact' });
+      }
+      
       toast({
         title: t.contact.form.success,
         description: t.contact.form.successDescription,
@@ -305,7 +309,12 @@ export default function ExpandingCTA() {
                   transition={{ delay: 0.2 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                   layout={false}
-                  onClick={() => openCTA('contact')}
+                  onClick={() => {
+                    openCTA('contact');
+                    if (typeof window !== 'undefined' && (window as any).umami) {
+                      (window as any).umami.track('cta-click', { location: 'contact' });
+                    }
+                  }}
                   className="px-8 py-4 text-lg font-medium text-primary-foreground relative flex items-center gap-2"
                   data-testid="button-expand-cta"
                 >

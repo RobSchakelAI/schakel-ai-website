@@ -79,7 +79,12 @@ export default function Hero() {
                       transition={{ delay: 0.2 }}
                       exit={{ opacity: 0, scale: 0.8 }}
                       layout={false}
-                      onClick={() => openCTA('hero')}
+                      onClick={() => {
+                        openCTA('hero');
+                        if (typeof window !== 'undefined' && (window as any).umami) {
+                          (window as any).umami.track('cta-click', { location: 'hero' });
+                        }
+                      }}
                       className="text-sm px-6 py-2.5 font-medium text-primary-foreground relative flex items-center gap-2"
                       data-testid="button-cta-primary"
                     >
