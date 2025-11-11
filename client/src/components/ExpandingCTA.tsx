@@ -227,13 +227,10 @@ export default function ExpandingCTA() {
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
       
       <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-12">
-        <div className="text-center space-y-8 mb-12">
+        <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground">
             {t.contact.title}
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            {t.contact.subtitle}
-          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
