@@ -13,6 +13,13 @@ Schakel AI is a minimalist Dutch AI consultancy website built with a modern JAMs
 - Arrows only visible for completed steps (activeStep logic)
 - Improved visual hierarchy with centered arrows and pijlpunt (arrow head)
 
+**AI View Page Optimization:**
+- Reduced whitespace between sections (12px gap between blocks)
+- Widened content blocks to 1000px for better readability
+- Optimized separator lines to 133 characters (prevents horizontal scroll)
+- Removed duplicate padding between explanation block and main content
+- More compact, scannable layout for AI assistants and web scrapers
+
 **Tech Stack:**
 - **Frontend:** React + TypeScript + Vite
 - **Styling:** Tailwind CSS + shadcn/ui components
