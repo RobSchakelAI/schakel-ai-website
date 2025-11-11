@@ -26,7 +26,7 @@ export default function ApproachTimeline() {
 
         {/* Desktop: Grid layout like ServicesGrid - auto equal heights */}
         <div className="hidden md:block max-w-6xl mx-auto">
-          <div className="grid grid-cols-4 gap-6">
+          <div className="grid grid-cols-4 gap-8">
             {t.approach.steps.map((step, index) => {
               const isActive = index === activeStep;
               const isPast = index < activeStep;
