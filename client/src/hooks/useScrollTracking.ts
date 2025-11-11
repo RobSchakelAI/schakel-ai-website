@@ -14,8 +14,7 @@ export function useScrollTracking() {
             
             if (!trackedSections.has(sectionId)) {
               trackedSections.add(sectionId);
-              const scrollDepth = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
-              trackEvent('section-view', { section: sectionId, scrollDepth });
+              trackEvent('section-view', { section: sectionId });
             }
           }
         });
