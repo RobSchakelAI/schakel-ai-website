@@ -99,7 +99,7 @@ export function CTAOverlay() {
                   </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4 flex-1">
                   <div>
                     <label 
                       htmlFor="name" 
@@ -170,7 +170,7 @@ export function CTAOverlay() {
                     />
                   </div>
 
-                  <div>
+                  <div className="flex flex-col flex-1">
                     <label 
                       htmlFor="message" 
                       className="block text-xs font-mono uppercase tracking-wider text-primary-foreground mb-2"
@@ -182,7 +182,7 @@ export function CTAOverlay() {
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      className="min-h-16 md:min-h-24 bg-primary-foreground/10 border-0 text-primary-foreground placeholder:text-primary-foreground/50 focus-visible:ring-primary-foreground/30 resize-none"
+                      className="flex-1 min-h-16 md:min-h-24 bg-primary-foreground/10 border-0 text-primary-foreground placeholder:text-primary-foreground/50 focus-visible:ring-primary-foreground/30 resize-none"
                       data-testid="input-message"
                     />
                   </div>
