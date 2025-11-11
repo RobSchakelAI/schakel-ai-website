@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { X, ArrowRight, Send } from 'lucide-react';
+import { X, ArrowRight, Send, MapPin, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useCTA } from '@/contexts/CTAContext';
+import { useTheme } from '@/contexts/ThemeContext';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -217,44 +218,104 @@ export function CTAOverlay() {
 export default function ExpandingCTA() {
   const { t } = useLanguage();
   const { isExpanded, origin, openCTA } = useCTA();
+  const { theme } = useTheme();
+
+  const mapUrl = theme === 'dark'
+    ? 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2461.2707743534843!2d4.473373176914644!3d51.92182197193344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c433c0b0f4c3b1%3A0x6e3b3e9e0b0f4c3b!2sCoolsingel%2065%2C%203012%20AC%20Rotterdam!5e0!3m2!1sen!2snl!4v1699999999999!5m2!1sen!2snl&style=element:geometry%7Ccolor:0x212121&style=element:labels.icon%7Cvisibility:off&style=element:labels.text.fill%7Ccolor:0x757575&style=element:labels.text.stroke%7Ccolor:0x212121&style=feature:administrative%7Celement:geometry%7Ccolor:0x757575&style=feature:administrative.country%7Celement:labels.text.fill%7Ccolor:0x9e9e9e&style=feature:administrative.locality%7Celement:labels.text.fill%7Ccolor:0xbdbdbd&style=feature:poi%7Celement:labels.text.fill%7Ccolor:0x757575&style=feature:poi.park%7Celement:geometry%7Ccolor:0x181818&style=feature:poi.park%7Celement:labels.text.fill%7Ccolor:0x616161&style=feature:road%7Celement:geometry.fill%7Ccolor:0x2c2c2c&style=feature:road%7Celement:labels.text.fill%7Ccolor:0x8a8a8a&style=feature:road.arterial%7Celement:geometry%7Ccolor:0x373737&style=feature:road.highway%7Celement:geometry%7Ccolor:0x3c3c3c&style=feature:road.highway.controlled_access%7Celement:geometry%7Ccolor:0x4e4e4e&style=feature:road.local%7Celement:labels.text.fill%7Ccolor:0x616161&style=feature:transit%7Celement:labels.text.fill%7Ccolor:0x757575&style=feature:water%7Celement:geometry%7Ccolor:0x000000&style=feature:water%7Celement:labels.text.fill%7Ccolor:0x3d3d3d'
+    : 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2461.2707743534843!2d4.473373176914644!3d51.92182197193344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c433c0b0f4c3b1%3A0x6e3b3e9e0b0f4c3b!2sCoolsingel%2065%2C%203012%20AC%20Rotterdam!5e0!3m2!1sen!2snl!4v1699999999999!5m2!1sen!2snl';
 
   return (
     <section id="contact" className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-br from-primary/10 via-background to-background">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent" />
       
-      <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 text-center space-y-8">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground">
-          {t.contact.title}
-        </h2>
-        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-          {t.contact.subtitle}
-        </p>
+      <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-12">
+        <div className="text-center space-y-8 mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-foreground">
+            {t.contact.title}
+          </h2>
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            {t.contact.subtitle}
+          </p>
+        </div>
 
-        <AnimatePresence initial={false}>
-          {!isExpanded && origin !== 'hero' && (
-            <motion.div className="inline-block relative">
-              <motion.div
-                style={{ borderRadius: '100px' }}
-                layout
-                layoutId="cta-card-contact"
-                className="absolute inset-0 bg-primary items-center justify-center transform-gpu will-change-transform"
-              />
-              <motion.button
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.2 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                layout={false}
-                onClick={() => openCTA('contact')}
-                className="px-8 py-4 text-lg font-medium text-primary-foreground relative flex items-center gap-2"
-                data-testid="button-expand-cta"
-              >
-                {t.hero.ctaPrimary}
-                <ArrowRight className="h-5 w-5" />
-              </motion.button>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+                <MapPin className="h-5 w-5 text-primary" />
+                {t.contact.address.title}
+              </h3>
+              <div className="space-y-2 text-muted-foreground">
+                <p className="font-semibold text-foreground">{t.contact.address.company}</p>
+                <p>{t.contact.address.street}</p>
+                <p>{t.contact.address.postal}</p>
+                <p>{t.contact.address.country}</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+                <Mail className="h-5 w-5 text-primary" />
+                Contact
+              </h3>
+              <div className="space-y-2 text-muted-foreground">
+                <p>
+                  <a 
+                    href={`mailto:${t.contact.info.email}`}
+                    className="hover:text-primary transition-colors"
+                    data-testid="link-email"
+                  >
+                    {t.contact.info.email}
+                  </a>
+                </p>
+                <p className="text-sm">{t.contact.info.kvk}</p>
+                <p className="text-sm">{t.contact.info.btw}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-md overflow-hidden border border-border h-[300px] md:h-[400px]">
+            <iframe
+              src={mapUrl}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Schakel AI Location"
+              data-testid="map-location"
+            />
+          </div>
+        </div>
+
+        <div className="text-center">
+          <AnimatePresence initial={false}>
+            {!isExpanded && origin !== 'hero' && (
+              <motion.div className="inline-block relative">
+                <motion.div
+                  style={{ borderRadius: '100px' }}
+                  layout
+                  layoutId="cta-card-contact"
+                  className="absolute inset-0 bg-primary items-center justify-center transform-gpu will-change-transform"
+                />
+                <motion.button
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                  layout={false}
+                  onClick={() => openCTA('contact')}
+                  className="px-8 py-4 text-lg font-medium text-primary-foreground relative flex items-center gap-2"
+                  data-testid="button-expand-cta"
+                >
+                  {t.hero.ctaPrimary}
+                  <ArrowRight className="h-5 w-5" />
+                </motion.button>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </section>
   );
