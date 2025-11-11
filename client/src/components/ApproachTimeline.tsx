@@ -39,8 +39,8 @@ export default function ApproachTimeline() {
                   <div key={index} className="relative">
                     {/* Green arrow for completed steps only */}
                     <div className="absolute top-0 flex items-center" style={{ 
-                      left: 'calc(50% + 50px)', // centrum bol + ruimte
-                      width: 'calc(100% + 2.5rem - 100px)' // tot centrum volgende bol - ruimte
+                      left: 'calc(50% + 60px)', // centrum bol + meer ruimte
+                      width: 'calc(100% + 2.5rem - 120px)' // korter aan beide kanten
                     }}>
                       <div 
                         className="h-[2px] flex-1 transition-all duration-500"
