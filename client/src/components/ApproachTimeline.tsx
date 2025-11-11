@@ -34,7 +34,10 @@ export default function ApproachTimeline() {
                 return (
                   <div key={index} className="relative">
                     {/* Arrow with spacing from circles */}
-                    <div className="absolute left-[calc(50%+50px)] right-[calc(-100%-50px+50%)] top-0 flex items-center gap-1">
+                    <div className="absolute top-0 flex items-center" style={{ 
+                      left: 'calc(50% + 45px)', // centrum bol + ruimte
+                      width: 'calc(50% + 2.5rem - 90px)' // tot centrum volgende bol - ruimte
+                    }}>
                       <div 
                         className="h-[2px] flex-1 transition-colors duration-500"
                         style={{ backgroundColor: activeStep > index ? '#2C9880' : '#e4e4e7' }}
