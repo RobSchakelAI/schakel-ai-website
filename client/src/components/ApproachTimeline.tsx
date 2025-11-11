@@ -25,7 +25,36 @@ export default function ApproachTimeline() {
         </div>
 
         {/* Desktop: Grid layout like ServicesGrid - auto equal heights */}
-        <div className="hidden md:block max-w-6xl mx-auto">
+        <div className="hidden md:block max-w-6xl mx-auto relative">
+          {/* Arrows between circles - positioned absolutely */}
+          <div className="absolute left-0 right-0 pointer-events-none" style={{ top: '40px' }}>
+            <div className="max-w-6xl mx-auto px-0 grid grid-cols-4 gap-10">
+              {t.approach.steps.map((step, index) => {
+                if (index >= t.approach.steps.length - 1) return null;
+                return (
+                  <div key={index} className="relative">
+                    <div className="absolute left-[calc(50%+40px)] right-[calc(-100%-40px+50%)] top-0 flex items-center">
+                      <div 
+                        className="h-[2px] flex-1 transition-colors duration-500"
+                        style={{ backgroundColor: activeStep > index ? '#2C9880' : '#e4e4e7' }}
+                      />
+                      <div 
+                        className="transition-colors duration-500"
+                        style={{
+                          width: 0,
+                          height: 0,
+                          borderTop: '5px solid transparent',
+                          borderBottom: '5px solid transparent',
+                          borderLeft: `10px solid ${activeStep > index ? '#2C9880' : '#e4e4e7'}`
+                        }}
+                      />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+          
           <div className="grid grid-cols-4 gap-10 relative">
             {t.approach.steps.map((step, index) => {
               const isActive = index === activeStep;
@@ -40,25 +69,6 @@ export default function ApproachTimeline() {
                 >
                   {/* Node circle with logo color for active state */}
                   <div className="flex justify-center mb-4 relative">
-                    {/* Arrow to next step */}
-                    {index < t.approach.steps.length - 1 && (
-                      <div className="absolute left-[calc(100%+10px)] top-1/2 -translate-y-1/2 pointer-events-none" style={{ width: 'calc(100% + 20px)' }}>
-                        <div className={`h-[2px] transition-colors duration-500`} style={{
-                          background: activeStep > index 
-                            ? 'repeating-linear-gradient(to right, #2C9880 0, #2C9880 8px, transparent 8px, transparent 12px)'
-                            : 'repeating-linear-gradient(to right, #e4e4e7 0, #e4e4e7 8px, transparent 8px, transparent 12px)'
-                        }}>
-                          <div className="absolute right-0 top-1/2 -translate-y-1/2" style={{
-                            width: 0,
-                            height: 0,
-                            borderTop: '4px solid transparent',
-                            borderBottom: '4px solid transparent',
-                            borderLeft: `8px solid ${activeStep > index ? '#2C9880' : '#e4e4e7'}`
-                          }} />
-                        </div>
-                      </div>
-                    )}
-                    
                     <div className="relative">
                       <div
                         className={`w-20 h-20 rounded-full border-[3px] flex items-center justify-center transition-all duration-500 ${
