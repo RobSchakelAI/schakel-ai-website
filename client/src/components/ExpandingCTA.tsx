@@ -182,7 +182,7 @@ export function CTAOverlay() {
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      className="min-h-24 md:min-h-40 bg-primary-foreground/10 border-0 text-primary-foreground placeholder:text-primary-foreground/50 focus-visible:ring-primary-foreground/30 resize-none"
+                      className="min-h-16 md:min-h-24 bg-primary-foreground/10 border-0 text-primary-foreground placeholder:text-primary-foreground/50 focus-visible:ring-primary-foreground/30 resize-none"
                       data-testid="input-message"
                     />
                   </div>
