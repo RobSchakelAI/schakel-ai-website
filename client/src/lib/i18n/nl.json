@@ -69,6 +69,18 @@
   "contact": {
     "title": "Contact",
     "subtitle": "Laten we schakelen",
+    "address": {
+      "title": "Bezoekadres",
+      "company": "Schakel AI B.V.",
+      "street": "Coolsingel 65",
+      "postal": "3012 AC Rotterdam",
+      "country": "Nederland"
+    },
+    "info": {
+      "email": "info@schakel.ai",
+      "kvk": "KVK: 98312529",
+      "btw": "BTW: NL868441119B01"
+    },
     "form": {
       "name": "Naam",
       "email": "E-mailadres",

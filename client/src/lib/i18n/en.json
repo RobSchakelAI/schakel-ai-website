@@ -13,7 +13,7 @@
     "titleVariant3": "Switching to AI. Ready for tomorrow.",
     "titleVariant4": "From chaos to control. With AI.",
     "description": "We automate processes that are currently manual. Fewer hours, fewer errors, more oversight. We start with one process, build a working solution, and deliver results within 30 days.",
-    "ctaPrimary": "Let's switch",
+    "ctaPrimary": "Let's talk",
     "ctaSecondary": "View solutions",
     "trustLine": "Our clients rate us",
     "rating": "9.2"
@@ -24,11 +24,11 @@
       "AI is growing at lightning speed. Companies that start now gain the lead. Those who keep waiting will soon watch competitors who moved faster.",
       "We believe speed makes the difference. No months of talking about what might work, but tangible results within 30 days. We saw it in our own companies: processes that AI solves in weeks used to take us months. We now apply that experience for others.",
       "We build tools that work immediately. Automate processes, relieve teams, reduce errors. That delivers peace and profit. More output with less chaos. Work more productively, more focus on what truly matters.",
-      "But that doesn't happen automatically. It happens by starting. Let's switch."
+      "But that doesn't happen automatically. It happens by starting. Let's talk."
     ]
   },
   "approach": {
-    "title": "How we switch",
+    "title": "How we work",
     "subtitle": "From insight to impact in 4 weeks",
     "steps": [
       {
@@ -68,7 +68,19 @@
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Let's switch",
+    "subtitle": "Let's talk",
+    "address": {
+      "title": "Visit us",
+      "company": "Schakel AI B.V.",
+      "street": "Coolsingel 65",
+      "postal": "3012 AC Rotterdam",
+      "country": "The Netherlands"
+    },
+    "info": {
+      "email": "info@schakel.ai",
+      "kvk": "Chamber of Commerce: 98312529",
+      "btw": "VAT: NL868441119B01"
+    },
     "form": {
       "name": "Name",
       "email": "Email address",

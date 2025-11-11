@@ -70,6 +70,18 @@
   "contact": {
     "title": "Contact Information",
     "subtitle": "Schedule consultation",
+    "address": {
+      "title": "Office Location",
+      "company": "Schakel AI B.V.",
+      "street": "Coolsingel 65",
+      "postal": "3012 AC Rotterdam",
+      "country": "Netherlands"
+    },
+    "info": {
+      "email": "info@schakel.ai",
+      "kvk": "Registration: 98312529",
+      "btw": "VAT: NL868441119B01"
+    },
     "form": {
       "name": "Name",
       "email": "Email",

@@ -5,6 +5,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import AutomationFlow from '@/components/AutomationFlow';
 import { CTAOverlay } from '@/components/ExpandingCTA';
 import { useCTA } from '@/contexts/CTAContext';
+import { trackEvent } from '@/lib/analytics';
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -79,7 +80,10 @@ export default function Hero() {
                       transition={{ delay: 0.2 }}
                       exit={{ opacity: 0, scale: 0.8 }}
                       layout={false}
-                      onClick={() => openCTA('hero')}
+                      onClick={() => {
+                        openCTA('hero');
+                        trackEvent('cta-click', { location: 'hero' });
+                      }}
                       className="text-sm px-6 py-2.5 font-medium text-primary-foreground relative flex items-center gap-2"
                       data-testid="button-cta-primary"
                     >
