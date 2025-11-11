@@ -67,7 +67,7 @@ export default function ApproachTimeline() {
 
                   {/* Content card - grid auto-height */}
                   <div
-                    className={`p-5 rounded-lg border-2 transition-all duration-500 bg-card w-full ${
+                    className={`p-5 rounded-lg border-2 transition-all duration-500 bg-card w-full h-full flex flex-col ${
                       isActive
                         ? 'shadow-lg shadow-[#2C9880]/10'
                         : 'border-border/50'
@@ -75,12 +75,12 @@ export default function ApproachTimeline() {
                     style={isActive ? { borderColor: '#2C9880' } : undefined}
                   >
                     <h3
-                      className={`text-lg font-semibold mb-2 transition-colors`}
+                      className={`text-lg font-semibold mb-2 transition-colors flex-shrink-0`}
                       style={isActive ? { color: '#2C9880' } : undefined}
                     >
                       {step.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
+                    <p className="text-sm text-muted-foreground leading-relaxed flex-1">
                       {step.description}
                     </p>
                   </div>
