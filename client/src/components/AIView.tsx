@@ -15,7 +15,7 @@ export default function AIView() {
 
   const sectionStyle: React.CSSProperties = {
     padding: '20px 20px',
-    maxWidth: '1200px',
+    maxWidth: '1000px',
     margin: '0 auto',
   };
 
@@ -101,9 +101,9 @@ export default function AIView() {
           color: '#6EBFAA',
           borderColor: '#6EBFAA',
         }}>
-{`================================================================================
+{`====================================================================================================
 AI VIEW EXPLANATION
-================================================================================
+====================================================================================================
 
 This page is optimized for AI assistants, web scrapers, and automated parsing.
 It provides structured, machine-readable information about Schakel AI B.V.
@@ -119,7 +119,7 @@ For the standard web interface with visual design, switch to [NL] or [EN] mode a
 Last Updated: ${new Date().toISOString()}
 Format Version: 1.0
 Encoding: UTF-8
-================================================================================
+====================================================================================================
 `}
         </pre>
       </div>
@@ -127,9 +127,9 @@ Encoding: UTF-8
       <div style={{ ...sectionStyle, paddingTop: '0' }}>
         {/* Structured Data - JSON-LD Format */}
         <pre style={codeBlockStyle}>
-{`================================================================================
+{`====================================================================================================
 STRUCTURED DATA (JSON-LD Schema.org Format)
-================================================================================
+====================================================================================================
 
 {
   "@context": "https://schema.org",
@@ -174,9 +174,9 @@ STRUCTURED DATA (JSON-LD Schema.org Format)
 
         {/* Table of Contents */}
         <pre style={codeBlockStyle}>
-{`================================================================================
+{`====================================================================================================
 TABLE OF CONTENTS
-================================================================================
+====================================================================================================
 
 1. COMPANY INFORMATION
 2. SERVICE OVERVIEW
@@ -191,9 +191,9 @@ TABLE OF CONTENTS
 
         {/* Section 1: Company Information */}
         <pre style={codeBlockStyle}>
-{`================================================================================
+{`====================================================================================================
 SECTION 1: COMPANY INFORMATION
-================================================================================
+====================================================================================================
 
 LEGAL NAME:      Schakel AI B.V.
 TRADE NAME:      Schakel AI
@@ -221,9 +221,9 @@ CLIENT RATING:   ${t.hero.rating}/10
 
         {/* Section 2: Service Overview */}
         <pre style={codeBlockStyle}>
-{`================================================================================
+{`====================================================================================================
 SECTION 2: SERVICE OVERVIEW
-================================================================================
+====================================================================================================
 
 PRIMARY SERVICE:
 ${t.hero.title}
@@ -241,9 +241,9 @@ DELIVERY MODEL:
 
         {/* Section 3: Mission & Vision */}
         <pre style={codeBlockStyle}>
-{`================================================================================
+{`====================================================================================================
 SECTION 3: MISSION & VISION
-================================================================================
+====================================================================================================
 
 ${t.vision.title.toUpperCase()}
 
@@ -253,16 +253,16 @@ ${t.vision.content.map((p, i) => `${i + 1}. ${p}`).join('\n\n')}
 
         {/* Section 4: Service Catalog */}
         <pre style={codeBlockStyle}>
-{`================================================================================
+{`====================================================================================================
 SECTION 4: SERVICE CATALOG
-================================================================================
+====================================================================================================
 
 ${t.services.title.toUpperCase()}
 ${t.services.subtitle}
 
 ${t.services.items.map((service, index) => `
 SERVICE ${index + 1}: ${service.title}
-${'-'.repeat(80)}
+${'-'.repeat(100)}
 ${service.description}
 `).join('\n')}
 `}
@@ -270,16 +270,16 @@ ${service.description}
 
         {/* Section 5: Implementation Process */}
         <pre style={codeBlockStyle}>
-{`================================================================================
+{`====================================================================================================
 SECTION 5: IMPLEMENTATION PROCESS
-================================================================================
+====================================================================================================
 
 ${t.approach.title.toUpperCase()}
 ${t.approach.subtitle}
 
 ${t.approach.steps.map((step, index) => `
 PHASE ${step.number}: ${step.title.toUpperCase()}
-${'-'.repeat(80)}
+${'-'.repeat(100)}
 ${step.description}
 `).join('\n')}
 
@@ -289,12 +289,12 @@ TOTAL DURATION: 4 weeks (from discovery to optimization)
 
         {/* Section 6: Team Profiles */}
         <pre style={codeBlockStyle}>
-{`================================================================================
+{`====================================================================================================
 SECTION 6: TEAM PROFILES
-================================================================================
+====================================================================================================
 
 FOUNDER 1: ${t.about.rob.name.toUpperCase()}
-${'-'.repeat(80)}
+${'-'.repeat(100)}
 Role:  ${t.about.rob.role}
 
 Professional Background:
@@ -302,7 +302,7 @@ ${t.about.rob.bio}
 
 
 FOUNDER 2: ${t.about.simon.name.toUpperCase()}
-${'-'.repeat(80)}
+${'-'.repeat(100)}
 Role:  ${t.about.simon.role}
 
 Professional Background:
@@ -312,51 +312,51 @@ ${t.about.simon.bio}
 
         {/* Section 7: Problem & Solution Analysis */}
         <pre style={codeBlockStyle}>
-{`================================================================================
+{`====================================================================================================
 SECTION 7: PROBLEM & SOLUTION ANALYSIS
-================================================================================
+====================================================================================================
 
 CURRENT PROBLEMS (Manual Processes):
-${'-'.repeat(80)}
+${'-'.repeat(100)}
 ${t.problemSolution.problems.map((p, i) => `${i + 1}. ${p}`).join('\n')}
 
 
 DELIVERED SOLUTIONS (AI Automation):
-${'-'.repeat(80)}
+${'-'.repeat(100)}
 ${t.problemSolution.solutions.map((s, i) => `${i + 1}. ${s}`).join('\n')}
 `}
         </pre>
 
         {/* Section 8: Contact Information */}
         <pre style={codeBlockStyle}>
-{`================================================================================
+{`====================================================================================================
 SECTION 8: CONTACT INFORMATION
-================================================================================
+====================================================================================================
 
 ${t.contact.title.toUpperCase()}
 ${t.contact.subtitle}
 
 CONTACT METHODS:
-${'-'.repeat(80)}
+${'-'.repeat(100)}
 Email (Primary):     info@schakel.ai
 Web Form:            Available on website
 Response Time:       Within 24 hours
 
 OFFICE ADDRESS:
-${'-'.repeat(80)}
+${'-'.repeat(100)}
 Schakel AI B.V.
 Coolsingel 65
 3012 AC Rotterdam
 Netherlands
 
 BUSINESS DETAILS:
-${'-'.repeat(80)}
+${'-'.repeat(100)}
 Chamber of Commerce: 98312529
 VAT Number:          NL868441119B01
 Legal Form:          B.V. (Private Limited Company)
 
 OPERATING HOURS:
-${'-'.repeat(80)}
+${'-'.repeat(100)}
 Contact via email anytime
 Response during Dutch business hours (09:00-17:00 CET)
 `}
@@ -364,9 +364,9 @@ Response during Dutch business hours (09:00-17:00 CET)
 
         {/* Machine-Readable Quick Reference */}
         <pre style={codeBlockStyle}>
-{`================================================================================
+{`====================================================================================================
 MACHINE-READABLE QUICK REFERENCE (Key-Value Pairs)
-================================================================================
+====================================================================================================
 
 company_name: "Schakel AI B.V."
 industry: "AI Consultancy"
@@ -392,9 +392,9 @@ languages: ["nl", "en"]
           color: '#6EBFAA',
           borderColor: '#6EBFAA',
         }}>
-{`================================================================================
+{`====================================================================================================
 © ${new Date().getFullYear()} Schakel AI B.V. - All rights reserved
-================================================================================
+====================================================================================================
 `}
         </pre>
       </div>
