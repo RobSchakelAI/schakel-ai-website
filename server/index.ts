@@ -34,11 +34,9 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   
   // Handle OPTIONS preflight globally - short-circuit before route logic
   if (req.method === 'OPTIONS') {
-    console.log(`OPTIONS preflight from ${origin || 'unknown'} → ${allowOrigin}`);
     return res.status(204).end();
   }
   
-  console.log(`CORS: ${origin || 'no-origin'} → ${allowOrigin}`);
   next();
 });
 

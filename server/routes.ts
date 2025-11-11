@@ -19,14 +19,8 @@ export async function registerRoutes(app: Express): Promise<void> {
 
   app.post('/api/contact', async (req: Request, res: Response) => {
     try {
-      console.log("Received contact form submission", { 
-        origin: req.headers.origin,
-        hasBody: !!req.body
-      });
-      
       const { name, email, company, phone, message } = req.body;
 
-      // Use environment variables with placeholder detection
       const apiKey = getEnv('MAILERSEND_API_KEY');
       const fromEmail = getEnv('MAILERSEND_FROM_EMAIL', 'rob@schakel.ai');
       const toEmail = getEnv('MAILERSEND_TO_EMAIL', 'rob@schakel.ai');
