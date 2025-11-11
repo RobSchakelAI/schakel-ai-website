@@ -93,6 +93,37 @@ export default function AIView() {
         </button>
       </div>
 
+      {/* Explanation block - moved to top */}
+      <div style={sectionStyle}>
+        <pre style={{
+          ...codeBlockStyle,
+          backgroundColor: '#000',
+          color: '#6EBFAA',
+          borderColor: '#6EBFAA',
+        }}>
+{`================================================================================
+AI VIEW EXPLANATION
+================================================================================
+
+This page is optimized for AI assistants, web scrapers, and automated parsing.
+It provides structured, machine-readable information about Schakel AI B.V.
+
+WHY THIS EXISTS:
+- Easy data extraction for AI tools and search engines
+- Structured format (JSON-LD, key-value pairs)
+- All company information in one place
+- No JavaScript rendering required
+
+For the standard web interface with visual design, switch to [NL] or [EN] mode above.
+
+Last Updated: ${new Date().toISOString()}
+Format Version: 1.0
+Encoding: UTF-8
+================================================================================
+`}
+        </pre>
+      </div>
+
       <div style={sectionStyle}>
         {/* Structured Data - JSON-LD Format */}
         <pre style={codeBlockStyle}>
@@ -354,7 +385,7 @@ languages: ["nl", "en"]
 `}
         </pre>
 
-        {/* Footer */}
+        {/* Footer - copyright only */}
         <pre style={{
           ...codeBlockStyle,
           backgroundColor: '#000',
@@ -364,13 +395,6 @@ languages: ["nl", "en"]
 {`================================================================================
 © ${new Date().getFullYear()} Schakel AI B.V. - All rights reserved
 ================================================================================
-
-This page is optimized for AI assistants, web scrapers, and automated parsing.
-For the standard web interface, switch to [NL] or [EN] mode above.
-
-Last Updated: ${new Date().toISOString()}
-Format Version: 1.0
-Encoding: UTF-8
 `}
         </pre>
       </div>

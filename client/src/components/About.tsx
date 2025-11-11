@@ -16,7 +16,7 @@ export default function About() {
       data: t.about.simon,
       initial: 'S',
       image: simonPhoto,
-      quote: '"AI is een middel, geen doel. Pragmatisme wint."'
+      quote: '"AI is een middel, geen doel"'
     },
     {
       id: 'rob',

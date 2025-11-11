@@ -97,7 +97,7 @@ export default function ApproachTimeline() {
               return (
                 <div
                   key={index}
-                  className="absolute"
+                  className="absolute flex flex-col items-center"
                   style={{
                     left: `${leftPosition}%`,
                     top: '80px',
@@ -134,14 +134,19 @@ export default function ApproachTimeline() {
                     </div>
                   </div>
 
-                  {/* Content card */}
+                  {/* Content card - fixed height for consistency */}
                   <div
-                    className={`p-5 rounded-lg border-2 transition-all duration-500 bg-card ${
+                    className={`p-5 rounded-lg border-2 transition-all duration-500 bg-card w-full ${
                       isActive
                         ? 'shadow-lg shadow-[#2C9880]/10'
                         : 'border-border/50'
                     }`}
-                    style={isActive ? { borderColor: '#2C9880' } : undefined}
+                    style={{
+                      ...(isActive ? { borderColor: '#2C9880' } : undefined),
+                      minHeight: '140px',
+                      display: 'flex',
+                      flexDirection: 'column'
+                    }}
                   >
                     <h3
                       className={`text-lg font-semibold mb-2 transition-colors`}
