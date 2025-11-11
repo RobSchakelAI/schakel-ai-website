@@ -24,86 +24,17 @@ export default function ApproachTimeline() {
           </p>
         </div>
 
-        {/* Desktop: Node flow diagram - horizontal linear workflow */}
-        <div className="hidden md:block max-w-6xl mx-auto relative">
-          <div className="relative" style={{ height: '420px' }}>
-            {/* SVG layer for all connecting lines - horizontal arrows */}
-            <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 5 }} viewBox="0 0 100 100" preserveAspectRatio="none">
-              <defs>
-                <marker
-                  id="arrow-active"
-                  markerWidth="8"
-                  markerHeight="8"
-                  refX="6"
-                  refY="4"
-                  orient="auto"
-                  markerUnits="strokeWidth"
-                >
-                  <path d="M 0 0 L 8 4 L 0 8 Z" fill="#2C9880" />
-                </marker>
-                <marker
-                  id="arrow-inactive"
-                  markerWidth="8"
-                  markerHeight="8"
-                  refX="6"
-                  refY="4"
-                  orient="auto"
-                  markerUnits="strokeWidth"
-                >
-                  <path d="M 0 0 L 8 4 L 0 8 Z" fill="#e4e4e7" />
-                </marker>
-              </defs>
-
-              {/* Connection from step 1 to step 2 */}
-              <path
-                d="M 13 30 L 29 30"
-                stroke={activeStep >= 1 ? '#2C9880' : '#e4e4e7'}
-                strokeWidth="0.5"
-                strokeDasharray="1.5 1"
-                fill="none"
-                markerEnd={activeStep >= 1 ? 'url(#arrow-active)' : 'url(#arrow-inactive)'}
-                vectorEffect="non-scaling-stroke"
-              />
-
-              {/* Connection from step 2 to step 3 */}
-              <path
-                d="M 38 30 L 54 30"
-                stroke={activeStep >= 2 ? '#2C9880' : '#e4e4e7'}
-                strokeWidth="0.5"
-                strokeDasharray="1.5 1"
-                fill="none"
-                markerEnd={activeStep >= 2 ? 'url(#arrow-active)' : 'url(#arrow-inactive)'}
-                vectorEffect="non-scaling-stroke"
-              />
-
-              {/* Connection from step 3 to step 4 */}
-              <path
-                d="M 63 30 L 79 30"
-                stroke={activeStep >= 3 ? '#2C9880' : '#e4e4e7'}
-                strokeWidth="0.5"
-                strokeDasharray="1.5 1"
-                fill="none"
-                markerEnd={activeStep >= 3 ? 'url(#arrow-active)' : 'url(#arrow-inactive)'}
-                vectorEffect="non-scaling-stroke"
-              />
-            </svg>
-
-            {/* Step nodes - all at same vertical level */}
+        {/* Desktop: Grid layout like ServicesGrid - auto equal heights */}
+        <div className="hidden md:block max-w-6xl mx-auto">
+          <div className="grid grid-cols-4 gap-6">
             {t.approach.steps.map((step, index) => {
               const isActive = index === activeStep;
               const isPast = index < activeStep;
-              const leftPosition = 2 + index * 25;
 
               return (
                 <div
                   key={index}
-                  className="absolute flex flex-col items-center"
-                  style={{
-                    left: `${leftPosition}%`,
-                    top: '80px',
-                    width: '220px',
-                    zIndex: 10
-                  }}
+                  className="flex flex-col items-center relative"
                   data-testid={`step-${index}`}
                   onMouseEnter={() => setActiveStep(index)}
                 >
@@ -134,27 +65,22 @@ export default function ApproachTimeline() {
                     </div>
                   </div>
 
-                  {/* Content card - fixed height for consistency */}
+                  {/* Content card - grid auto-height */}
                   <div
                     className={`p-5 rounded-lg border-2 transition-all duration-500 bg-card w-full ${
                       isActive
                         ? 'shadow-lg shadow-[#2C9880]/10'
                         : 'border-border/50'
                     }`}
-                    style={{
-                      ...(isActive ? { borderColor: '#2C9880' } : undefined),
-                      height: '160px',
-                      display: 'flex',
-                      flexDirection: 'column'
-                    }}
+                    style={isActive ? { borderColor: '#2C9880' } : undefined}
                   >
                     <h3
-                      className={`text-lg font-semibold mb-2 transition-colors flex-shrink-0`}
+                      className={`text-lg font-semibold mb-2 transition-colors`}
                       style={isActive ? { color: '#2C9880' } : undefined}
                     >
                       {step.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed flex-1 overflow-hidden">
+                    <p className="text-sm text-muted-foreground leading-relaxed">
                       {step.description}
                     </p>
                   </div>
