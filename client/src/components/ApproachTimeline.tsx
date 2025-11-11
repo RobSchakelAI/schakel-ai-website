@@ -33,19 +33,21 @@ export default function ApproachTimeline() {
                 if (index >= t.approach.steps.length - 1) return null;
                 return (
                   <div key={index} className="relative">
-                    <div className="absolute left-[calc(50%+40px)] right-[calc(-100%-40px+50%)] top-0 flex items-center">
+                    {/* Arrow with spacing from circles */}
+                    <div className="absolute left-[calc(50%+50px)] right-[calc(-100%-50px+50%)] top-0 flex items-center gap-1">
                       <div 
                         className="h-[2px] flex-1 transition-colors duration-500"
                         style={{ backgroundColor: activeStep > index ? '#2C9880' : '#e4e4e7' }}
                       />
+                      {/* Arrow head */}
                       <div 
                         className="transition-colors duration-500"
                         style={{
                           width: 0,
                           height: 0,
-                          borderTop: '5px solid transparent',
-                          borderBottom: '5px solid transparent',
-                          borderLeft: `10px solid ${activeStep > index ? '#2C9880' : '#e4e4e7'}`
+                          borderTop: '6px solid transparent',
+                          borderBottom: '6px solid transparent',
+                          borderLeft: `12px solid ${activeStep > index ? '#2C9880' : '#e4e4e7'}`
                         }}
                       />
                     </div>
