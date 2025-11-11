@@ -5,6 +5,7 @@ import { Menu, Sun, Moon } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useTheme } from '@/contexts/ThemeContext';
 import Logo from '@/components/Logo';
+import { trackEvent } from '@/lib/analytics';
 
 export default function Header() {
   const { language, setLanguage, t } = useLanguage();
@@ -25,9 +26,7 @@ export default function Header() {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       setMobileMenuOpen(false);
-      if (typeof window !== 'undefined' && (window as any).umami) {
-        (window as any).umami.track('navigation-click', { section: id });
-      }
+      trackEvent('navigation-click', { section: id });
     }
   };
 
@@ -91,10 +90,9 @@ export default function Header() {
               variant="ghost"
               size="icon"
               onClick={() => {
+                const newTheme = theme === 'light' ? 'dark' : 'light';
                 toggleTheme();
-                if (typeof window !== 'undefined' && (window as any).umami) {
-                  (window as any).umami.track('theme-toggle', { to: theme === 'light' ? 'dark' : 'light' });
-                }
+                trackEvent('theme-toggle', { to: newTheme });
               }}
               className="h-8 w-8"
               data-testid="button-theme-toggle"
@@ -113,9 +111,7 @@ export default function Header() {
                 size="sm"
                 onClick={() => {
                   setLanguage('nl');
-                  if (typeof window !== 'undefined' && (window as any).umami) {
-                    (window as any).umami.track('language-switch', { to: 'nl' });
-                  }
+                  trackEvent('language-switch', { to: 'nl' });
                 }}
                 className="text-xs h-8 px-3"
                 data-testid="button-lang-nl"
@@ -127,9 +123,7 @@ export default function Header() {
                 size="sm"
                 onClick={() => {
                   setLanguage('en');
-                  if (typeof window !== 'undefined' && (window as any).umami) {
-                    (window as any).umami.track('language-switch', { to: 'en' });
-                  }
+                  trackEvent('language-switch', { to: 'en' });
                 }}
                 className="text-xs h-8 px-3"
                 data-testid="button-lang-en"
@@ -141,9 +135,7 @@ export default function Header() {
                 size="sm"
                 onClick={() => {
                   setLanguage('ai');
-                  if (typeof window !== 'undefined' && (window as any).umami) {
-                    (window as any).umami.track('language-switch', { to: 'ai' });
-                  }
+                  trackEvent('language-switch', { to: 'ai' });
                 }}
                 className="text-xs h-8 px-3"
                 data-testid="button-lang-ai"
@@ -209,10 +201,9 @@ export default function Header() {
                   variant="outline"
                   size="sm"
                   onClick={() => {
+                    const newTheme = theme === 'light' ? 'dark' : 'light';
                     toggleTheme();
-                    if (typeof window !== 'undefined' && (window as any).umami) {
-                      (window as any).umami.track('theme-toggle', { to: theme === 'light' ? 'dark' : 'light', device: 'mobile' });
-                    }
+                    trackEvent('theme-toggle', { to: newTheme, device: 'mobile' });
                   }}
                   className="w-full justify-start gap-2"
                   data-testid="button-theme-toggle-mobile"
@@ -237,9 +228,7 @@ export default function Header() {
                     size="sm"
                     onClick={() => {
                       setLanguage('nl');
-                      if (typeof window !== 'undefined' && (window as any).umami) {
-                        (window as any).umami.track('language-switch', { to: 'nl', device: 'mobile' });
-                      }
+                      trackEvent('language-switch', { to: 'nl', device: 'mobile' });
                     }}
                     className="flex-1"
                     data-testid="button-lang-nl-mobile"
@@ -251,9 +240,7 @@ export default function Header() {
                     size="sm"
                     onClick={() => {
                       setLanguage('en');
-                      if (typeof window !== 'undefined' && (window as any).umami) {
-                        (window as any).umami.track('language-switch', { to: 'en', device: 'mobile' });
-                      }
+                      trackEvent('language-switch', { to: 'en', device: 'mobile' });
                     }}
                     className="flex-1"
                     data-testid="button-lang-en-mobile"
@@ -265,9 +252,7 @@ export default function Header() {
                     size="sm"
                     onClick={() => {
                       setLanguage('ai');
-                      if (typeof window !== 'undefined' && (window as any).umami) {
-                        (window as any).umami.track('language-switch', { to: 'ai', device: 'mobile' });
-                      }
+                      trackEvent('language-switch', { to: 'ai', device: 'mobile' });
                     }}
                     className="flex-1"
                     data-testid="button-lang-ai-mobile"

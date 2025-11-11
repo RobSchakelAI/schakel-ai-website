@@ -9,6 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { apiRequest } from '@/lib/queryClient';
+import { trackEvent } from '@/lib/analytics';
 
 export function CTAOverlay() {
   const { t } = useLanguage();
@@ -37,9 +38,7 @@ export function CTAOverlay() {
       const response = await apiRequest('POST', '/api/contact', formData);
       await response.json();
       
-      if (typeof window !== 'undefined' && (window as any).umami) {
-        (window as any).umami.track('form-submit', { type: 'contact' });
-      }
+      trackEvent('form-submit', { type: 'contact' });
       
       toast({
         title: t.contact.form.success,
@@ -311,9 +310,7 @@ export default function ExpandingCTA() {
                   layout={false}
                   onClick={() => {
                     openCTA('contact');
-                    if (typeof window !== 'undefined' && (window as any).umami) {
-                      (window as any).umami.track('cta-click', { location: 'contact' });
-                    }
+                    trackEvent('cta-click', { location: 'contact' });
                   }}
                   className="px-8 py-4 text-lg font-medium text-primary-foreground relative flex items-center gap-2"
                   data-testid="button-expand-cta"

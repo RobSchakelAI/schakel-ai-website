@@ -5,6 +5,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import AutomationFlow from '@/components/AutomationFlow';
 import { CTAOverlay } from '@/components/ExpandingCTA';
 import { useCTA } from '@/contexts/CTAContext';
+import { trackEvent } from '@/lib/analytics';
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -81,9 +82,7 @@ export default function Hero() {
                       layout={false}
                       onClick={() => {
                         openCTA('hero');
-                        if (typeof window !== 'undefined' && (window as any).umami) {
-                          (window as any).umami.track('cta-click', { location: 'hero' });
-                        }
+                        trackEvent('cta-click', { location: 'hero' });
                       }}
                       className="text-sm px-6 py-2.5 font-medium text-primary-foreground relative flex items-center gap-2"
                       data-testid="button-cta-primary"

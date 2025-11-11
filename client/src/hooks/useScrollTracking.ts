@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { trackEvent } from '@/lib/analytics';
 
 export function useScrollTracking() {
   useEffect(() => {
@@ -13,13 +14,8 @@ export function useScrollTracking() {
             
             if (!trackedSections.has(sectionId)) {
               trackedSections.add(sectionId);
-              
-              if (typeof window !== 'undefined' && (window as any).umami) {
-                (window as any).umami.track('section-view', { 
-                  section: sectionId,
-                  scrollDepth: Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100)
-                });
-              }
+              const scrollDepth = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+              trackEvent('section-view', { section: sectionId, scrollDepth });
             }
           }
         });
