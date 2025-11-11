@@ -25,16 +25,24 @@ function Router() {
   );
 }
 
+function AppContent() {
+  const { language } = useLanguage();
+  
+  return (
+    <CTAProvider>
+      <Toaster />
+      <Router key={language} />
+    </CTAProvider>
+  );
+}
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <ThemeProvider>
           <LanguageProvider>
-            <CTAProvider>
-              <Toaster />
-              <Router />
-            </CTAProvider>
+            <AppContent />
           </LanguageProvider>
         </ThemeProvider>
       </TooltipProvider>
