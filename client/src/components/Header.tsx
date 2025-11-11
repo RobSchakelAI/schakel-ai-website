@@ -24,7 +24,10 @@ export default function Header() {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      setMobileMenuOpen(false); // Close mobile menu after navigation
+      setMobileMenuOpen(false);
+      if (typeof window !== 'undefined' && (window as any).umami) {
+        (window as any).umami.track('navigation-click', { section: id });
+      }
     }
   };
 
@@ -87,7 +90,12 @@ export default function Header() {
             <Button
               variant="ghost"
               size="icon"
-              onClick={toggleTheme}
+              onClick={() => {
+                toggleTheme();
+                if (typeof window !== 'undefined' && (window as any).umami) {
+                  (window as any).umami.track('theme-toggle', { to: theme === 'light' ? 'dark' : 'light' });
+                }
+              }}
               className="h-8 w-8"
               data-testid="button-theme-toggle"
             >
@@ -103,7 +111,12 @@ export default function Header() {
               <Button
                 variant={language === 'nl' ? 'secondary' : 'ghost'}
                 size="sm"
-                onClick={() => setLanguage('nl')}
+                onClick={() => {
+                  setLanguage('nl');
+                  if (typeof window !== 'undefined' && (window as any).umami) {
+                    (window as any).umami.track('language-switch', { to: 'nl' });
+                  }
+                }}
                 className="text-xs h-8 px-3"
                 data-testid="button-lang-nl"
               >
@@ -112,7 +125,12 @@ export default function Header() {
               <Button
                 variant={language === 'en' ? 'secondary' : 'ghost'}
                 size="sm"
-                onClick={() => setLanguage('en')}
+                onClick={() => {
+                  setLanguage('en');
+                  if (typeof window !== 'undefined' && (window as any).umami) {
+                    (window as any).umami.track('language-switch', { to: 'en' });
+                  }
+                }}
                 className="text-xs h-8 px-3"
                 data-testid="button-lang-en"
               >
@@ -121,7 +139,12 @@ export default function Header() {
               <Button
                 variant={language === 'ai' ? 'secondary' : 'ghost'}
                 size="sm"
-                onClick={() => setLanguage('ai')}
+                onClick={() => {
+                  setLanguage('ai');
+                  if (typeof window !== 'undefined' && (window as any).umami) {
+                    (window as any).umami.track('language-switch', { to: 'ai' });
+                  }
+                }}
                 className="text-xs h-8 px-3"
                 data-testid="button-lang-ai"
               >
@@ -185,7 +208,12 @@ export default function Header() {
                 <Button
                   variant="outline"
                   size="sm"
-                  onClick={toggleTheme}
+                  onClick={() => {
+                    toggleTheme();
+                    if (typeof window !== 'undefined' && (window as any).umami) {
+                      (window as any).umami.track('theme-toggle', { to: theme === 'light' ? 'dark' : 'light', device: 'mobile' });
+                    }
+                  }}
                   className="w-full justify-start gap-2"
                   data-testid="button-theme-toggle-mobile"
                 >
@@ -207,7 +235,12 @@ export default function Header() {
                   <Button
                     variant={language === 'nl' ? 'secondary' : 'ghost'}
                     size="sm"
-                    onClick={() => setLanguage('nl')}
+                    onClick={() => {
+                      setLanguage('nl');
+                      if (typeof window !== 'undefined' && (window as any).umami) {
+                        (window as any).umami.track('language-switch', { to: 'nl', device: 'mobile' });
+                      }
+                    }}
                     className="flex-1"
                     data-testid="button-lang-nl-mobile"
                   >
@@ -216,7 +249,12 @@ export default function Header() {
                   <Button
                     variant={language === 'en' ? 'secondary' : 'ghost'}
                     size="sm"
-                    onClick={() => setLanguage('en')}
+                    onClick={() => {
+                      setLanguage('en');
+                      if (typeof window !== 'undefined' && (window as any).umami) {
+                        (window as any).umami.track('language-switch', { to: 'en', device: 'mobile' });
+                      }
+                    }}
                     className="flex-1"
                     data-testid="button-lang-en-mobile"
                   >
@@ -225,7 +263,12 @@ export default function Header() {
                   <Button
                     variant={language === 'ai' ? 'secondary' : 'ghost'}
                     size="sm"
-                    onClick={() => setLanguage('ai')}
+                    onClick={() => {
+                      setLanguage('ai');
+                      if (typeof window !== 'undefined' && (window as any).umami) {
+                        (window as any).umami.track('language-switch', { to: 'ai', device: 'mobile' });
+                      }
+                    }}
                     className="flex-1"
                     data-testid="button-lang-ai-mobile"
                   >
