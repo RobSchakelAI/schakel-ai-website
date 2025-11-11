@@ -94,7 +94,7 @@ export default function AIView() {
       </div>
 
       {/* Explanation block - moved to top */}
-      <div style={sectionStyle}>
+      <div style={{ ...sectionStyle, paddingBottom: '0' }}>
         <pre style={{
           ...codeBlockStyle,
           backgroundColor: '#000',
@@ -124,7 +124,7 @@ Encoding: UTF-8
         </pre>
       </div>
 
-      <div style={sectionStyle}>
+      <div style={{ ...sectionStyle, paddingTop: '0' }}>
         {/* Structured Data - JSON-LD Format */}
         <pre style={codeBlockStyle}>
 {`================================================================================
