@@ -4,6 +4,22 @@
 
 Schakel AI is a minimalist Dutch AI consultancy website built with a modern JAMstack architecture. The site communicates the core message "Rust & Rendement" (Peace & Results) through a single-page design featuring a hero section, vision statement, approach timeline, team profiles, and contact form. The project emphasizes performance, accessibility, and clean design inspired by Morningside.com and Apple's minimalist aesthetic.
 
+## Recent Changes (November 11, 2025)
+
+**Timeline Component Improvements:**
+- Redesigned "Hoe wij schakelen" timeline using CSS Grid for equal-height cards (gap-10)
+- Added green arrows between timeline circles for completed steps only
+- Arrows are solid lines with proper spacing from circles (60px on each side)
+- Arrows only visible for completed steps (activeStep logic)
+- Improved visual hierarchy with centered arrows and pijlpunt (arrow head)
+
+**AI View Page Optimization:**
+- Reduced whitespace between sections (12px gap between blocks)
+- Widened content blocks to 1000px for better readability
+- Optimized separator lines to 133 characters (prevents horizontal scroll)
+- Removed duplicate padding between explanation block and main content
+- More compact, scannable layout for AI assistants and web scrapers
+
 **Tech Stack:**
 - **Frontend:** React + TypeScript + Vite
 - **Styling:** Tailwind CSS + shadcn/ui components
