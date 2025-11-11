@@ -5,11 +5,7 @@ export function trackEvent(eventName: string, eventData?: Record<string, string 
     const umami = (window as any).umami;
     if (umami && typeof umami.track === 'function') {
       console.log('[Analytics] Tracking event:', eventName, eventData);
-      if (eventData) {
-        umami.track(eventName, eventData);
-      } else {
-        umami.track(eventName);
-      }
+      umami.track(eventName, eventData || {});
     } else {
       console.warn('[Analytics] Umami not loaded yet');
     }
