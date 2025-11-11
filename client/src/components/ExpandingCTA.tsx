@@ -220,9 +220,7 @@ export default function ExpandingCTA() {
   const { isExpanded, origin, openCTA } = useCTA();
   const { theme } = useTheme();
 
-  const mapUrl = theme === 'dark'
-    ? 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2461.2707743534843!2d4.473373176914644!3d51.92182197193344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c433c0b0f4c3b1%3A0x6e3b3e9e0b0f4c3b!2sCoolsingel%2065%2C%203012%20AC%20Rotterdam!5e0!3m2!1sen!2snl!4v1699999999999!5m2!1sen!2snl&style=element:geometry%7Ccolor:0x212121&style=element:labels.icon%7Cvisibility:off&style=element:labels.text.fill%7Ccolor:0x757575&style=element:labels.text.stroke%7Ccolor:0x212121&style=feature:administrative%7Celement:geometry%7Ccolor:0x757575&style=feature:administrative.country%7Celement:labels.text.fill%7Ccolor:0x9e9e9e&style=feature:administrative.locality%7Celement:labels.text.fill%7Ccolor:0xbdbdbd&style=feature:poi%7Celement:labels.text.fill%7Ccolor:0x757575&style=feature:poi.park%7Celement:geometry%7Ccolor:0x181818&style=feature:poi.park%7Celement:labels.text.fill%7Ccolor:0x616161&style=feature:road%7Celement:geometry.fill%7Ccolor:0x2c2c2c&style=feature:road%7Celement:labels.text.fill%7Ccolor:0x8a8a8a&style=feature:road.arterial%7Celement:geometry%7Ccolor:0x373737&style=feature:road.highway%7Celement:geometry%7Ccolor:0x3c3c3c&style=feature:road.highway.controlled_access%7Celement:geometry%7Ccolor:0x4e4e4e&style=feature:road.local%7Celement:labels.text.fill%7Ccolor:0x616161&style=feature:transit%7Celement:labels.text.fill%7Ccolor:0x757575&style=feature:water%7Celement:geometry%7Ccolor:0x000000&style=feature:water%7Celement:labels.text.fill%7Ccolor:0x3d3d3d'
-    : 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2461.2707743534843!2d4.473373176914644!3d51.92182197193344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c433c0b0f4c3b1%3A0x6e3b3e9e0b0f4c3b!2sCoolsingel%2065%2C%203012%20AC%20Rotterdam!5e0!3m2!1sen!2snl!4v1699999999999!5m2!1sen!2snl';
+  const mapUrl = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2461.2707743534843!2d4.473373176914644!3d51.92182197193344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c433c0b0f4c3b1%3A0x6e3b3e9e0b0f4c3b!2sCoolsingel%2065%2C%203012%20AC%20Rotterdam!5e0!3m2!1sen!2snl!4v1699999999999!5m2!1sen!2snl';
 
   return (
     <section id="contact" className="relative py-16 md:py-24 overflow-hidden bg-gradient-to-br from-primary/10 via-background to-background">
@@ -280,6 +278,7 @@ export default function ExpandingCTA() {
               width="100%"
               height="100%"
               style={{ border: 0 }}
+              className="dark:invert dark:hue-rotate-180 dark:brightness-90 dark:contrast-110"
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
