@@ -253,36 +253,40 @@ export default function ExpandingCTA() {
           </div>
 
           <div className="space-y-6">
-            <div>
-              <h3 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <MapPin className="h-5 w-5 text-primary" />
-                {t.contact.address.title}
-              </h3>
-              <div className="space-y-2 text-muted-foreground">
-                <p className="font-semibold text-foreground">{t.contact.address.company}</p>
-                <p>{t.contact.address.street}</p>
-                <p>{t.contact.address.postal}</p>
-                <p>{t.contact.address.country}</p>
+            <div className="flex gap-3">
+              <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+              <div className="flex-1">
+                <h3 className="text-xl font-semibold text-foreground mb-4">
+                  {t.contact.address.title}
+                </h3>
+                <div className="space-y-2 text-muted-foreground">
+                  <p className="font-semibold text-foreground">{t.contact.address.company}</p>
+                  <p>{t.contact.address.street}</p>
+                  <p>{t.contact.address.postal}</p>
+                  <p>{t.contact.address.country}</p>
+                </div>
               </div>
             </div>
 
-            <div>
-              <h3 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                <Mail className="h-5 w-5 text-primary" />
-                Contact
-              </h3>
-              <div className="space-y-2 text-muted-foreground">
-                <p>
-                  <a 
-                    href={`mailto:${t.contact.info.email}`}
-                    className="hover:text-primary transition-colors"
-                    data-testid="link-email"
-                  >
-                    {t.contact.info.email}
-                  </a>
-                </p>
-                <p className="text-sm">{t.contact.info.kvk}</p>
-                <p className="text-sm">{t.contact.info.btw}</p>
+            <div className="flex gap-3">
+              <Mail className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
+              <div className="flex-1">
+                <h3 className="text-xl font-semibold text-foreground mb-4">
+                  Contact
+                </h3>
+                <div className="space-y-2 text-muted-foreground">
+                  <p>
+                    <a 
+                      href={`mailto:${t.contact.info.email}`}
+                      className="hover:text-primary transition-colors"
+                      data-testid="link-email"
+                    >
+                      {t.contact.info.email}
+                    </a>
+                  </p>
+                  <p className="text-sm">{t.contact.info.kvk}</p>
+                  <p className="text-sm">{t.contact.info.btw}</p>
+                </div>
               </div>
             </div>
           </div>
