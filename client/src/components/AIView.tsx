@@ -14,8 +14,8 @@ export default function AIView() {
   };
 
   const sectionStyle: React.CSSProperties = {
-    padding: '40px 20px',
-    maxWidth: '900px',
+    padding: '20px 20px',
+    maxWidth: '1200px',
     margin: '0 auto',
   };
 
@@ -23,7 +23,7 @@ export default function AIView() {
     backgroundColor: '#f5f5f5',
     padding: '20px',
     border: '1px solid #ddd',
-    marginBottom: '20px',
+    marginBottom: '12px',
     whiteSpace: 'pre-wrap',
     fontFamily: 'monospace',
     fontSize: '12px',
