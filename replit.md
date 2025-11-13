@@ -130,11 +130,12 @@ Preferred communication style: Simple, everyday language.
 - Connection pooling via `@neondatabase/serverless`
 
 **Deployment:**
-- **Platform:** Railway (serves both static files and API)
+- **Frontend:** Vercel (schakel.ai) - static site hosting with automatic pre-rendering
+- **Backend:** Railway - API endpoints only
 - **Email:** MailerSend (transactional email service)
 - **DNS:** Namecheap (domain management)
-- **Deployment:** Automated via GitHub integration
-- **Architecture:** Single Express server serves static frontend + API endpoints
+- **Git Workflow:** Push to GitHub DEV branch → Merge DEV to Main → Auto-deploys to Vercel + Railway
+- **Architecture:** Split deployment - Vercel serves static frontend, Railway serves API
 
 ### Key NPM Dependencies
 
