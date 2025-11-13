@@ -7,7 +7,7 @@ export default function Logo({ className = "h-10" }: { className?: string }) {
     <img 
       src={theme === 'light' ? '/logo-light.png' : '/logo-dark.png'}
       alt="Schakel AI" 
-      className={className}
+      className={`${className} w-auto`}
       width={320}
       height={90}
     />
