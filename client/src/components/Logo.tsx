@@ -14,7 +14,6 @@ export default function Logo({ className = "h-10" }: { className?: string }) {
             className={className}
             width={320}
             height={90}
-            fetchPriority="high"
           />
         </>
       ) : (
@@ -26,7 +25,6 @@ export default function Logo({ className = "h-10" }: { className?: string }) {
             className={className}
             width={320}
             height={90}
-            fetchPriority="high"
           />
         </>
       )}
