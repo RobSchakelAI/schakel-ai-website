@@ -1,0 +1,87 @@
+# Schakel AI - AI Consultancy & Implementation
+# Description: Wij automatiseren bedrijfsprocessen met praktische AI-oplossingen
+
+## Company Information
+- Name: Schakel AI B.V.
+- Location: Coolsingel 65, 3012 AC Rotterdam, Netherlands
+- Website: https://www.schakel.ai
+- Email: info@schakel.ai
+- KVK (Chamber of Commerce): 98312529
+- BTW (VAT): NL868441119B01
+
+## Core Expertise
+Schakel AI specializes in practical AI implementation that delivers measurable results within 30 days. We focus on one process at a time, building working solutions that integrate seamlessly with existing workflows.
+
+### AI Solutions We Provide:
+1. **Workflow Automatisering** - Automate repetitive tasks and manual processes. Connect systems so tasks are automatically picked up, followed up, and completed.
+
+2. **Klantenservice-AI (Chat & Voice)** - Smart AI assistants that handle customer questions, phone calls, and appointments directly. Available 24/7, multilingual, and always consistent in service.
+
+3. **Interne Support Agents** - Virtual employees that answer HR, IT, and operational questions. Direct answers to policy questions, technical problems, and operational procedures, available day and night.
+
+4. **AI Sales & Marketing** - AI systems that support lead qualification, follow-up and scheduling of appointments, and assist with marketing activities.
+
+5. **Email Management** - AI that answers, sorts, and follows up on emails. From customer questions to internal communication, always appropriate and on time.
+
+6. **Content Generatie** - From product descriptions to social posts and documentation - AI writes content that sounds like you wrote it yourself. Scalable, consistent, and time-saving.
+
+## Team & Leadership
+
+### Simon - Co-founder | Process Optimization & Results
+- 11 years of transformation experience
+- Built and scaled ROI Financials from employee to co-owner
+- Successfully sold ROI Financials after optimizing company processes
+- Expertise: Process optimization, business transformation, AI implementation strategy
+- Philosophy: "AI is a means, not an end"
+- Focus: Delivering concrete first steps instead of strategic roadmaps
+
+### Rob - Co-founder | Data & AI Solutions
+- Founded and scaled Easydash (Business Intelligence agency)
+- Early adopter of BI tools in 2018 when market was skeptical
+- Sold Easydash to focus on AI implementation
+- Expertise: Data analysis, Business Intelligence, AI solution architecture, technical implementation
+- Philosophy: "The best solutions emerge by starting, not by waiting"
+- Focus: Building practical AI tools that actually work
+
+## Our Approach (4-Week Method)
+
+1. **Verkennen (Explore)** - We identify where you currently lose the most time and what can be solved immediately.
+
+2. **Ontwerpen (Design)** - Together we choose which process to tackle first and determine what it needs to do.
+
+3. **Implementeren (Implement)** - We build it, test with your team, and ensure it works in your daily process.
+
+4. **Resultaat (Results)** - We measure the outcome and improve where necessary.
+
+## Key Differentiators
+
+- **30-Day Results**: Tangible, working solution within one month
+- **Focus on One Process**: We don't spread thin - we solve one problem completely before moving to the next
+- **Practical Implementation**: No theoretical plans or endless analysis - we build and deploy
+- **Built on Experience**: Our founders optimized their own companies with AI before helping others
+- **Measurable Impact**: From 20 hours of manual work to automated flows - we track and prove ROI
+
+## Target Markets
+- Netherlands (primary market)
+- Dutch and English language support
+- Industries: Professional services, e-commerce, SaaS, healthcare, finance
+
+## Technology Stack
+We work with:
+- Large Language Models (OpenAI, Anthropic Claude, Google Gemini)
+- Workflow automation platforms
+- API integrations and custom development
+- Voice AI for phone automation
+- RAG (Retrieval-Augmented Generation) systems
+
+## Contact
+For AI implementation inquiries or consultation:
+- Email: info@schakel.ai
+- Website: https://www.schakel.ai
+- Office: Coolsingel 65, Rotterdam
+
+## Quick Facts
+- Customer Rating: 9.2/10
+- Typical Project Start: Within 1 week of initial contact
+- Approach: Start small, prove value, then scale
+- Philosophy: Speed creates competitive advantage in AI adoption
