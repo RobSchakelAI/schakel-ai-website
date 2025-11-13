@@ -1,0 +1,40 @@
+Hier de huidige puur SEO-technische minpunten (kort puntsgewijs, gebaseerd op exacte extract – alleen wat nog niet goed genoeg is):
+Algemene SEO
+
+Geen meta description → Google snippet wordt zwak of leeg.
+Geen OG/Twitter cards → social shares tonen kale link (geen title/image).
+Geen canonical tag → risico duplicates, vooral met ?lang=en variant.
+Geen structured data/JSON-LD → geen rich snippets (bijv. Organization schema of FAQ).
+Geen alt-teksten op images → geen images zichtbaar in extract, dus blind voor crawlers.
+Geen <meta name="robots"> → geen expliciete index/follow.
+Title tag oké, maar kan beter (voeg | AI Implementatie Nederland toe voor keywords).
+
+Crawl/AI-crawler
+
+robots.txt bestaat niet (of leeg/"insufficient") → default Allow, maar unclear voor bots (GPTBot/ClaudeBot/Googlebot wel oké, maar expliciet maken).
+Geen verification files → GSC/Bing niet geclaimd (geen insights/errors).
+AI-crawlers zien content goed, maar missen schema/meta voor diepere context.
+
+Indexering
+
+Nog niet geïndexeerd → "site:www.schakel.ai" geeft 0 resultaten in Google.
+Geen backlinks/authority → DR 0, nieuwe site.
+Sitemap.xml top (met hreflang + en-alternate super), maar submit hem in GSC voor snelle index!
+
+Quick wins (vandaag, copy-paste)
+
+Meta/OG in <head>:text<meta name="description" content="AI-consultancy Rotterdam: directe besparingen met workflow automatisering en AI-implementatie voor MKB in Nederland.">
+<meta property="og:title" content="Schakel AI - AI Consultancy Rotterdam">
+<meta property="og:description" content="AI-oplossingen die direct tijd en geld opleveren.">
+<meta property="og:image" content="https://www.schakel.ai/og-image.jpg">
+<meta property="og:url" content="https://www.schakel.ai/">
+<meta name="twitter:card" content="summary_large_image">
+JSON-LD (Organization + LocalBusiness):text<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Schakel AI","url":"https://www.schakel.ai/","address":{"@type":"PostalAddress","streetAddress":"Coolsingel 65","addressLocality":"Rotterdam","postalCode":"3012 AC","addressCountry":"NL"},"contactPoint":{"@type":"ContactPoint","email":"info@schakel.ai"}}
+</script>
+robots.txt (maak file):textUser-agent: *
+Allow: /
+Sitemap: https://www.schakel.ai/sitemap.xml
+Claim GSC + submit sitemap + verify domain.
+
+Nu 95% daar – site is crawl-vriendelijk en content rijk.
