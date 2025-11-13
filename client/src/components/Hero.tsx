@@ -106,15 +106,12 @@ export default function Hero() {
             </div>
 
             {/* Trust indicators */}
-            <div className="flex flex-wrap items-center justify-center md:justify-start gap-3">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-primary/5 text-primary border border-primary/20">
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-2">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-primary/5 text-primary border border-primary/20">
                 📍 Rotterdam, Nederland
               </span>
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-primary/5 text-primary border border-primary/20">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-primary/5 text-primary border border-primary/20">
                 ⚡ Resultaat binnen 30 dagen
-              </span>
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-primary/5 text-primary border border-primary/20">
-                ✓ Opgericht 2024
               </span>
             </div>
           </div>
