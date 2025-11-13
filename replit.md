@@ -4,21 +4,25 @@
 
 Schakel AI is a minimalist Dutch AI consultancy website built with a modern JAMstack architecture. The site communicates the core message "Rust & Rendement" (Peace & Results) through a single-page design featuring a hero section, vision statement, approach timeline, team profiles, and contact form. The project emphasizes performance, accessibility, and clean design inspired by Morningside.com and Apple's minimalist aesthetic.
 
-## Recent Changes (November 11, 2025)
+## Recent Changes (November 13, 2025)
 
-**Timeline Component Improvements:**
-- Redesigned "Hoe wij schakelen" timeline using CSS Grid for equal-height cards (gap-10)
-- Added green arrows between timeline circles for completed steps only
-- Arrows are solid lines with proper spacing from circles (60px on each side)
-- Arrows only visible for completed steps (activeStep logic)
-- Improved visual hierarchy with centered arrows and pijlpunt (arrow head)
+**Comprehensive SEO Optimization:**
+- **robots.txt**: Explicit allow rules for AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Applebot-Extended), sitemap reference
+- **llms.txt**: Machine-readable company overview following 2024 standard - includes expertise, team, approach, contact info
+- **sitemap.xml**: XML sitemap with hreflang annotations (nl/en/x-default), proper lastmod and priority settings
+- **Schema.org Structured Data**: 
+  - LocalBusiness schema with geo coordinates, opening hours, founder profiles, aggregate rating
+  - Service schema with OfferCatalog listing all 6 AI solutions
+  - FAQPage schema with 5 common questions about AI implementation
+- **Enhanced Meta Tags**:
+  - Canonical URLs, hreflang tags (nl/en/x-default)
+  - Extended Open Graph properties (image dimensions, locale, site_name)
+  - Twitter Card markup (summary_large_image)
+  - Comprehensive robots directives (max-image-preview, max-snippet, max-video-preview)
 
-**AI View Page Optimization:**
-- Reduced whitespace between sections (12px gap between blocks)
-- Widened content blocks to 1000px for better readability
-- Optimized separator lines to 133 characters (prevents horizontal scroll)
-- Removed duplicate padding between explanation block and main content
-- More compact, scannable layout for AI assistants and web scrapers
+**Previous Changes (November 11, 2025):**
+- Timeline Component: CSS Grid layout, green arrows between completed steps
+- AI View Page: Optimized whitespace, 1000px content width, 133-char separator lines
 
 **Tech Stack:**
 - **Frontend:** React + TypeScript + Vite
