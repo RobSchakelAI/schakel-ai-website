@@ -105,15 +105,10 @@ export default function Hero() {
               </Button>
             </div>
 
-            {/* Trust indicators */}
-            <div className="flex flex-wrap items-center justify-center md:justify-start gap-2">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-primary/5 text-primary border border-primary/20">
-                📍 Rotterdam, Nederland
-              </span>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-primary/5 text-primary border border-primary/20">
-                ⚡ Resultaat binnen 30 dagen
-              </span>
-            </div>
+            {/* Trust indicator - minimal */}
+            <p className="text-xs text-muted-foreground/60 font-medium tracking-wide uppercase text-center md:text-left">
+              Resultaat binnen 30 dagen
+            </p>
           </div>
 
           {/* Right: Geanimeerde Automation Flow */}
