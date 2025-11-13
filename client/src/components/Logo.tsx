@@ -1,16 +1,35 @@
 import { useTheme } from '@/contexts/ThemeContext';
-import logoLight from '@assets/schakel-logo-light-cropped.png';
-import logoDark from '@assets/schakel-logo-cropped.png';
 
 export default function Logo({ className = "h-10" }: { className?: string }) {
   const { theme } = useTheme();
   
   return (
-    <img 
-      src={theme === 'light' ? logoLight : logoDark} 
-      alt="Schakel AI" 
-      className={className}
-      loading="lazy"
-    />
+    <picture>
+      {theme === 'light' ? (
+        <>
+          <source srcSet="/logo-light.webp" type="image/webp" />
+          <img 
+            src="/logo-light.png" 
+            alt="Schakel AI" 
+            className={className}
+            width={320}
+            height={90}
+            fetchPriority="high"
+          />
+        </>
+      ) : (
+        <>
+          <source srcSet="/logo-dark.webp" type="image/webp" />
+          <img 
+            src="/logo-dark.png" 
+            alt="Schakel AI" 
+            className={className}
+            width={320}
+            height={90}
+            fetchPriority="high"
+          />
+        </>
+      )}
+    </picture>
   );
 }

@@ -95,6 +95,7 @@ export default function Header() {
                 trackEvent('theme-toggle', { to: newTheme });
               }}
               className="h-8 w-8"
+              aria-label="Toggle theme"
               data-testid="button-theme-toggle"
             >
               {theme === 'light' ? (
@@ -152,6 +153,7 @@ export default function Header() {
             <Button 
               variant="ghost" 
               size="icon"
+              aria-label="Open navigation menu"
               data-testid="button-mobile-menu"
             >
               <Menu className="h-6 w-6" />
