@@ -6,19 +6,26 @@ Schakel AI is a minimalist Dutch AI consultancy website built with a modern JAMs
 
 ## Recent Changes (November 13, 2025)
 
-**Comprehensive SEO Optimization:**
+**Comprehensive SEO Optimization (Production-Ready):**
 - **robots.txt**: Explicit allow rules for AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Applebot-Extended), sitemap reference
 - **llms.txt**: Machine-readable company overview following 2024 standard - includes expertise, team, approach, contact info
 - **sitemap.xml**: XML sitemap with hreflang annotations (nl/en/x-default), proper lastmod and priority settings
-- **Schema.org Structured Data**: 
-  - LocalBusiness schema with geo coordinates, opening hours, founder profiles, aggregate rating
+- **Schema.org Structured Data (6 types - all validated)**:
+  - LocalBusiness schema with geo coordinates, opening hours, founder profiles, aggregate rating (9.2/10)
   - Service schema with OfferCatalog listing all 6 AI solutions
   - FAQPage schema with 5 common questions about AI implementation
+  - WebSite schema with SearchAction for Google search box integration
+  - Organization schema (extended) with legal entities, contact points, founding date, slogan
+  - BreadcrumbList schema for navigation structure (Home → AI-oplossingen → Over ons → Contact)
 - **Enhanced Meta Tags**:
   - Canonical URLs, hreflang tags (nl/en/x-default)
   - Extended Open Graph properties (image dimensions, locale, site_name)
   - Twitter Card markup (summary_large_image)
   - Comprehensive robots directives (max-image-preview, max-snippet, max-video-preview)
+- **Noscript Fallback (Crawler-optimized)**:
+  - Semantically structured HTML with microdata (LocalBusiness → OfferCatalog → Offer → Service)
+  - SEO-optimized content with natural keyword integration
+  - Full business info, services, team, and contact details for non-JS crawlers
 
 **Previous Changes (November 11, 2025):**
 - Timeline Component: CSS Grid layout, green arrows between completed steps

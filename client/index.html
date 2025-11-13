@@ -239,33 +239,172 @@
     }
     </script>
     
+    <!-- Schema.org Structured Data - WebSite with Search -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Schakel AI",
+      "alternateName": "Schakel AI B.V.",
+      "url": "https://www.schakel.ai",
+      "description": "AI-oplossingen die direct tijd en geld opleveren. Workflow automatisering, klantenservice-AI, en email management.",
+      "inLanguage": ["nl", "en"],
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.schakel.ai/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <!-- Schema.org Structured Data - Organization (Extended) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Schakel AI B.V.",
+      "legalName": "Schakel AI B.V.",
+      "url": "https://www.schakel.ai",
+      "logo": "https://www.schakel.ai/logo.png",
+      "description": "AI-consultancy die bedrijfsprocessen automatiseert met tastbaar resultaat binnen 30 dagen.",
+      "email": "info@schakel.ai",
+      "taxID": "NL868441119B01",
+      "vatID": "NL868441119B01",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Coolsingel 65",
+        "addressLocality": "Rotterdam",
+        "postalCode": "3012 AC",
+        "addressCountry": "NL"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "info@schakel.ai",
+        "availableLanguage": ["Dutch", "English"]
+      },
+      "foundingDate": "2024",
+      "numberOfEmployees": {
+        "@type": "QuantitativeValue",
+        "value": 2
+      },
+      "slogan": "Rust & Rendement",
+      "knowsAbout": [
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Process Automation",
+        "Workflow Optimization",
+        "Customer Service AI",
+        "Business Intelligence",
+        "AI Implementation",
+        "Email Automation",
+        "Content Generation"
+      ],
+      "areaServed": {
+        "@type": "Country",
+        "name": "Netherlands"
+      }
+    }
+    </script>
+    
+    <!-- Schema.org Structured Data - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.schakel.ai/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "AI-oplossingen",
+          "item": "https://www.schakel.ai/#oplossingen"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Over ons",
+          "item": "https://www.schakel.ai/#team"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Contact",
+          "item": "https://www.schakel.ai/#contact"
+        }
+      ]
+    }
+    </script>
+    
     <!-- Analytics -->
     <script defer src="https://cloud.umami.is/script.js" data-website-id="15185f46-0b14-469b-b7bf-d24ef5aea8eb"></script>
   </head>
   <body>
     <!-- Fallback content for crawlers and users without JavaScript -->
     <noscript>
-      <div style="font-family: Inter, system-ui, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; line-height: 1.6;">
+      <div itemscope itemtype="https://schema.org/LocalBusiness" style="font-family: Inter, system-ui, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; line-height: 1.6;">
         <header style="text-align: center; margin-bottom: 40px;">
-          <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 10px;">Schakel AI</h1>
-          <p style="font-size: 1.25rem; color: #6EBFAA;">AI-oplossingen die direct tijd en geld opleveren</p>
+          <h1 itemprop="name" style="font-size: 2.5rem; font-weight: 700; margin-bottom: 10px;">Schakel AI - AI Consultancy Rotterdam</h1>
+          <p itemprop="description" style="font-size: 1.25rem; color: #6EBFAA;">AI-oplossingen die direct tijd en geld opleveren. Workflow automatisering, klantenservice-AI en procesoptimalisatie.</p>
+          <meta itemprop="priceRange" content="€€" />
+          <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+            <meta itemprop="ratingValue" content="9.2" />
+            <meta itemprop="bestRating" content="10" />
+            <p style="margin-top: 10px;">⭐ Klantbeoordeling: <span itemprop="ratingValue">9.2</span>/10</p>
+          </div>
         </header>
         
         <section style="margin-bottom: 40px;">
-          <h2 style="font-size: 2rem; margin-bottom: 20px;">Wat we doen</h2>
-          <p>We automatiseren processen die je nu tijd kosten. Van workflow optimalisatie tot klantenservice-AI en email management. Direct inzetbaar, meetbare impact vanaf week één.</p>
+          <h2 style="font-size: 2rem; margin-bottom: 20px;">AI Consultancy & Implementatie Nederland</h2>
+          <p><strong>Schakel AI</strong> is een Nederlandse AI-consultancy gespecialiseerd in <strong>procesautomatisering</strong>, <strong>workflow optimalisatie</strong> en <strong>AI-implementatie</strong>. We helpen bedrijven in Nederland met het automatiseren van repetitieve taken door middel van kunstmatige intelligentie (Artificial Intelligence).</p>
+          <p>Van <em>klantenservice automatisering</em> tot <em>email management</em> en <em>content generatie</em> - we bouwen AI-oplossingen die direct resultaat opleveren. Tastbaar resultaat binnen 30 dagen.</p>
+          <p><strong>Kernwaarden:</strong> Rust & Rendement | <strong>Locatie:</strong> Rotterdam, Nederland | <strong>Diensten:</strong> AI Implementation, Process Automation, Workflow Optimization</p>
         </section>
         
         <section style="margin-bottom: 40px;">
-          <h2 style="font-size: 2rem; margin-bottom: 20px;">Onze AI-oplossingen</h2>
-          <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 15px;"><strong>Workflow Automatisering</strong> - Automatiseer repetitieve werkzaamheden en handmatige processen</li>
-            <li style="margin-bottom: 15px;"><strong>Klantenservice-AI (Chat & Voice)</strong> - Slimme AI-assistenten die klantvragen, telefoontjes en afspraken direct afhandelen</li>
-            <li style="margin-bottom: 15px;"><strong>Interne Support Agents</strong> - Virtuele medewerkers die HR-, IT- en operationele vragen beantwoorden</li>
-            <li style="margin-bottom: 15px;"><strong>AI Sales & Marketing</strong> - AI-systemen voor lead kwalificatie en opvolgen van afspraken</li>
-            <li style="margin-bottom: 15px;"><strong>Email Management</strong> - AI die emails beantwoordt, sorteert en opvolgt</li>
-            <li style="margin-bottom: 15px;"><strong>Content Generatie</strong> - Van productbeschrijvingen tot social posts en documentatie</li>
-          </ul>
+          <h2 style="font-size: 2rem; margin-bottom: 20px;">AI-oplossingen voor Bedrijven in Nederland</h2>
+          <div itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+            <ul style="list-style: none; padding: 0;">
+              <li itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer" style="margin-bottom: 15px;">
+                <div itemprop="itemOffered" itemscope itemtype="https://schema.org/Service">
+                  <strong itemprop="name">Workflow Automatisering</strong> - <span itemprop="description">Automatiseer repetitieve werkzaamheden en handmatige processen. Verbind systemen zodat taken automatisch worden opgepakt en afgehandeld.</span>
+                </div>
+              </li>
+              <li itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer" style="margin-bottom: 15px;">
+                <div itemprop="itemOffered" itemscope itemtype="https://schema.org/Service">
+                  <strong itemprop="name">Klantenservice-AI (Chat & Voice Bots)</strong> - <span itemprop="description">Slimme AI-assistenten die klantvragen, telefoontjes en afspraken direct afhandelen. 24/7 beschikbaar, meertalig en altijd consistent.</span>
+                </div>
+              </li>
+              <li itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer" style="margin-bottom: 15px;">
+                <div itemprop="itemOffered" itemscope itemtype="https://schema.org/Service">
+                  <strong itemprop="name">Interne Support Agents (AI Helpdesk)</strong> - <span itemprop="description">Virtuele medewerkers die HR-, IT- en operationele vragen beantwoorden. Directe antwoorden op beleidsvragen en technische problemen.</span>
+                </div>
+              </li>
+              <li itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer" style="margin-bottom: 15px;">
+                <div itemprop="itemOffered" itemscope itemtype="https://schema.org/Service">
+                  <strong itemprop="name">AI Sales & Marketing Automatisering</strong> - <span itemprop="description">AI-systemen voor lead kwalificatie, follow-up en het inplannen van afspraken. Marketing automation met AI.</span>
+                </div>
+              </li>
+              <li itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer" style="margin-bottom: 15px;">
+                <div itemprop="itemOffered" itemscope itemtype="https://schema.org/Service">
+                  <strong itemprop="name">Email Management & Automatisering</strong> - <span itemprop="description">AI die emails beantwoordt, sorteert en opvolgt. Van klantvragen tot interne communicatie, altijd gepast en op tijd.</span>
+                </div>
+              </li>
+              <li itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer" style="margin-bottom: 15px;">
+                <div itemprop="itemOffered" itemscope itemtype="https://schema.org/Service">
+                  <strong itemprop="name">AI Content Generatie</strong> - <span itemprop="description">Van productbeschrijvingen tot social media posts en documentatie - AI schrijft content die klinkt alsof jij het zelf deed. Schaalbaar en tijdbesparend.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
         </section>
         
         <section style="margin-bottom: 40px;">
