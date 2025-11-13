@@ -1,0 +1,247 @@
+hierbij wat er allemaal staat en hoe we het gebouwd hebben.
+Voor onze Social media uitingen ( kan nog wat bijschaven, maar denkrichting!):
+
+Hoe we schakel.ai bouwden en deployden - Een tech journey
+Van logo tot live website in een paar dagen
+We hebben de Schakel AI website van nul tot productie gebouwd, volledig custom, en dit is hoe we het deden:
+🎨 Stap 1: Logo Design met AI
+Voordat je een website hebt, heb je branding nodig. We hebben de Schakel AI logo icon ontworpen met een combinatie van:
+ChatGPT - Voor concepten en design direction
+Google Imagen - AI image generation voor varianten
+Nano Banana - Fine-tuning en optimalisatie
+Het resultaat: Een strak mint/teal "S"-icon dat schakelen symboliseert. Clean, modern, herkenbaar.
+💻 Stap 2: Website Development in Replit
+Wat is Replit?
+Replit is een online development environment. Denk aan het als VS Code in de cloud, maar dan met ingebouwde hosting, database, en deployment tools. Je hoeft niks lokaal te installeren.
+Wat hebben we gebouwd?
+Een single-page React website met:
+Tweetalig (Nederlands/Engels) - Custom i18n systeem
+Dark/Light mode - Theme toggle met CSS variables
+AI View mode - Machine-readable content voor AI agents
+Responsive design - Mobile-first approach
+Contact forms (2 stuks) - Met backend integratie
+Tech stack:
+Frontend:  React + TypeScript + Vite
+Styling:   Tailwind CSS + shadcn/ui components
+State:     TanStack Query (React Query)
+Backend:   Express.js + TypeScript
+Waarom deze stack?
+Vite → Snelste build tool & hot module reload
+shadcn/ui → Hoogwaardige, toegankelijke UI components zonder bloat
+TanStack Query → Slimme server state management met caching
+TypeScript → Type safety = minder bugs in productie
+🔗 Stap 3: Version Control met GitHub
+Alle code staat in een GitHub repository: github.com/RobSchakelAI/schakel-ai-website
+Waarom GitHub?
+Versiegeschiedenis van elke wijziging
+Automatische deployment triggers
+Samenwerken mogelijk (later met team)
+Backup van je complete codebase
+Workflow:
+Replit (development) 
+    ↓ git push
+GitHub (source of truth)
+    ↓ automatic trigger
+Vercel + Railway (production)
+🌐 Stap 4: Split Deployment - Vercel + Railway
+Hier wordt het interessant. We hebben niet gekozen voor één platform, maar een split architecture:
+Vercel (Frontend) - schakel.ai
+Wat doet Vercel?
+Vercel host de React applicatie. Ze zijn gemaakt door de mensen achter Next.js en zijn specialist in frontend hosting.
+Waarom Vercel?
+✅ Blazing fast CDN - Wereldwijd edge network
+✅ Automatische SSL - HTTPS out-of-the-box
+✅ Preview deployments - Elke git branch krijgt eigen URL
+✅ Zero-config - Detecteert Vite automatisch
+Build configuratie:
+// vercel.json
+{
+  "buildCommand": "npm install --include=dev && npx vite build",
+  "outputDirectory": "dist/public"
+}
+Environment variable:
+VITE_API_URL → Wijst naar Railway backend
+Railway (Backend API)
+Wat doet Railway?
+Railway host de Express.js backend die het contactformulier afhandelt en emails verstuurt.
+Waarom Railway en niet alles op Vercel?
+✅ Node.js backend support - Vercel is vooral frontend
+✅ Environment secrets - Veilig API keys opslaan
+✅ Persistent processes - Express server draait altijd
+✅ Database ready - PostgreSQL beschikbaar (voor later)
+Backend functionaliteit:
+1. /api/contact endpoint
+2. Valideert formulier data
+3. Verstuurt email via MailerSend
+4. Retourneert success/error
+CORS configuratie:
+Omdat frontend (Vercel) en backend (Railway) op verschillende domains draaien, hebben we CORS middleware nodig:
+// server/index.ts
+app.use(cors({
+  origin: ['https://schakel.ai', 'https://www.schakel.ai'],
+  credentials: true
+}));
+Dit zorgt dat de browser de cross-origin requests toestaat.
+📧 Stap 5: Email met MailerSend
+Wat is MailerSend?
+Een transactional email service. Als iemand het contactformulier invult, moet er een email verstuurd worden naar info@schakel.ai.
+Waarom MailerSend (en niet Gmail/Outlook)?
+✅ Deliverability - Emails komen aan (geen spam folder)
+✅ SPF/DKIM records - Email authentication
+✅ Templates - HTML emails met branding
+✅ Tracking - Open rates, click rates, bounces
+✅ API-first - Makkelijk te integreren
+Hoe werkt het?
+User vult form in → Frontend POST request → Railway backend
+                                                  ↓
+                                          MailerSend API
+                                                  ↓
+                                        Email naar info@schakel.ai
+Environment secrets (Railway):
+MAILERSEND_API_KEY         → API token
+MAILERSEND_FROM_EMAIL      → noreply@schakel.ai
+MAILERSEND_TO_EMAIL        → info@schakel.ai
+🌍 Stap 6: DNS Setup met Namecheap
+Wat is DNS?
+Domain Name System - vertaalt schakel.ai naar een IP-adres waar je website staat.
+Namecheap configuratie:
+Record Type | Host | Value
+------------|------|------------------
+A           | @    | 216.150.1.1 (Vercel IP)
+CNAME       | www  | cname.vercel-dns.com
+Wat betekent dit?
+schakel.ai → Wijst direct naar Vercel
+www.schakel.ai → Wijst ook naar Vercel (via CNAME)
+DNS propagatie:
+Na het instellen duurt het 10-30 minuten voordat het wereldwijd werkt (DNS cache refresh).
+🧪 Stap 7: Code Testing (Coming Soon)
+We gaan de code testen met Claude Code of Codex (nog te doen):
+Wat gaan we testen?
+✅ Component rendering
+✅ Form validation
+✅ API endpoints
+✅ Cross-browser compatibility
+✅ Performance metrics
+Testing tools:
+Vitest - Unit tests
+Playwright - End-to-end tests
+Lighthouse - Performance audits
+🎯 Eindresultaat: Complete Infrastructure
+┌─────────────────────────────────────────────────┐
+│                 DEVELOPMENT                      │
+│              Replit IDE + Preview                │
+│         (localhost:5000 development)             │
+└────────────────────┬────────────────────────────┘
+                     │ git push
+                     ▼
+┌─────────────────────────────────────────────────┐
+│               GitHub Repository                  │
+│      Version Control + CI/CD Trigger             │
+└────────┬─────────────────────────┬───────────────┘
+         │                         │
+         │ Auto deploy             │ Auto deploy
+         ▼                         ▼
+┌─────────────────┐       ┌────────────────────────┐
+│     VERCEL      │       │       RAILWAY          │
+│   (Frontend)    │◄─────►│      (Backend)         │
+│                 │ CORS  │                        │
+│  React + Vite   │       │   Express.js API       │
+│  Tailwind CSS   │       │   /api/contact         │
+│  shadcn/ui      │       │        │               │
+│                 │       │        ▼               │
+│ schakel.ai      │       │   MailerSend API       │
+│ www.schakel.ai  │       │        │               │
+└─────────────────┘       └────────┼───────────────┘
+         ▲                         │
+         │                         ▼
+         │               ┌──────────────────┐
+         │               │  Email Delivery  │
+         │               │ info@schakel.ai  │
+         │               └──────────────────┘
+         │
+         ▼
+┌─────────────────────────────────────────────────┐
+│              Namecheap DNS                       │
+│       schakel.ai → Vercel IP                     │
+│       www.schakel.ai → Vercel CNAME              │
+└─────────────────────────────────────────────────┘
+📊 Volledige Tool Stack Overzicht
+Fase
+Tool
+Functie
+Design
+ChatGPT
+Logo concepten
+Google Imagen
+AI image generation
+Nano Banana
+Design refinement
+Development
+Replit
+Cloud IDE + preview
+React + TypeScript
+Frontend framework
+Vite
+Build tool
+Tailwind CSS
+Styling framework
+shadcn/ui
+UI component library
+Express.js
+Backend server
+Version Control
+GitHub
+Code repository + CI/CD
+Hosting
+Vercel
+Frontend deployment
+Railway
+Backend API deployment
+Email
+MailerSend
+Transactional emails
+DNS
+Namecheap
+Domain management
+Testing
+Claude Code/Codex
+Code testing (coming)
+🚀 Deployment Flow
+Hoe gaat een code change live?
+Develop in Replit → Code wijzigen, direct preview
+Git commit → git add . && git commit -m "message"
+Git push → git push origin main
+GitHub webhook → Triggert Vercel + Railway
+Vercel build → npm install && vite build (30-60 sec)
+Railway build → esbuild backend bundle (15-30 sec)
+Live! → Beide platforms deployen tegelijk
+DNS routing → schakel.ai wijst naar nieuwe versie
+Totale deployment tijd: ~2 minuten ⚡
+💡 Waarom deze setup zo goed werkt
+1. Developer Experience
+Code in de cloud (Replit) = overal werken
+Hot reload = direct feedback
+TypeScript = minder bugs
+2. Snelheid
+Vite = snelste builds
+Vercel CDN = wereldwijd snel
+Split deploy = frontend & backend parallel
+3. Betrouwbaarheid
+GitHub = versiecontrole + backup
+Auto-deploy = geen handmatige stappen
+Environment secrets = veilig
+4. Schaalbaarheid
+Vercel schaalt automatisch
+Railway kan upgraden naar dedicated
+Database klaar voor groei (PostgreSQL)
+5. Cost-effective
+Vercel: Free tier (hobby projects)
+Railway: $5-10/maand (starter)
+MailerSend: Gratis tot 12k emails/maand
+Totaal: ~$10-15/maand voor professionele setup
+🎓 Wat hebben we geleerd?
+AI tools kunnen echt design werk doen (logo!)
+Modern web development is cloud-first
+Split architectures geven flexibiliteit
+Automation bespaart enorm veel tijd
+Type safety (TypeScript) = must-have

@@ -1,0 +1,24 @@
+# Schakel AI - Allow all search engines and AI crawlers
+
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Explicitly allow AI crawlers (OpenAI, Anthropic, Perplexity, Apple)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.schakel.ai/sitemap.xml
