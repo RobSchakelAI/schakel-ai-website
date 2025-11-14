@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight, Play, Zap } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import AutomationFlow from '@/components/AutomationFlow';
 import { CTAOverlay } from '@/components/ExpandingCTA';
@@ -106,9 +106,17 @@ export default function Hero() {
             </div>
 
             {/* Trust indicator - minimal */}
-            <p className="text-xs text-muted-foreground/60 font-medium tracking-wide uppercase text-center md:text-left">
-              ⚡ AI First • Resultaat binnen 30 dagen
-            </p>
+            <div className="flex items-center gap-3 text-xs text-muted-foreground/60 font-medium tracking-wide uppercase justify-center md:justify-start">
+              <span className="flex items-center gap-1.5">
+                <Zap className="w-3.5 h-3.5" />
+                AI First
+              </span>
+              <span>•</span>
+              <span className="flex items-center gap-1.5">
+                <Zap className="w-3.5 h-3.5" />
+                Resultaat binnen 30 dagen
+              </span>
+            </div>
           </div>
 
           {/* Right: Geanimeerde Automation Flow */}
