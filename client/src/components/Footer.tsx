@@ -85,7 +85,7 @@ export default function Footer() {
               <li className="flex items-start gap-2">
                 <Linkedin className="h-4 w-4 mt-0.5 flex-shrink-0 text-muted-foreground" />
                 <a 
-                  href="https://linkedin.com/company/schakel-ai" 
+                  href="https://www.linkedin.com/company/schakel-ai-agency" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-sm text-muted-foreground hover:text-primary transition-colors"

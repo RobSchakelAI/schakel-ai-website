@@ -1,0 +1,71 @@
+========================================
+SEO VALIDATOR LINKS - www.schakel.ai
+========================================
+
+Test deze links ZELF om te bewijzen dat de SEO perfect werkt:
+
+1. GOOGLE RICH RESULTS TEST
+   https://search.google.com/test/rich-results?url=https://www.schakel.ai/
+   
+   → Test alle JSON-LD structured data
+   → Laat zien welke rich results je krijgt in Google
+
+2. SCHEMA.ORG VALIDATOR  
+   https://validator.schema.org/#url=https://www.schakel.ai/
+   
+   → Valideer alle Schema.org markup
+   → Checks LocalBusiness, Organization, Service, FAQPage, etc.
+
+3. FACEBOOK SHARING DEBUGGER
+   https://developers.facebook.com/tools/debug/?q=https://www.schakel.ai/
+   
+   → Test Open Graph tags
+   → Zie hoe de site eruit ziet als je het deelt op Facebook
+
+4. LINKEDIN POST INSPECTOR
+   https://www.linkedin.com/post-inspector/inspect/https://www.schakel.ai/
+   
+   → Test LinkedIn share preview
+   → Zie hoe de site eruit ziet als je het deelt op LinkedIn
+
+5. TWITTER CARD VALIDATOR
+   https://cards-dev.twitter.com/validator
+   
+   → Voer in: https://www.schakel.ai/
+   → Test Twitter Card markup
+
+========================================
+CURL VERIFICATIE COMMANDO'S
+========================================
+
+Test zelf via terminal:
+
+# Meta description
+curl -s https://www.schakel.ai | grep 'meta name="description"'
+
+# Open Graph tags count
+curl -s https://www.schakel.ai | grep -c 'property="og:'
+
+# JSON-LD structured data count (moet 6 zijn)
+curl -s https://www.schakel.ai | grep -c 'application/ld+json'
+
+# robots.txt
+curl -s https://www.schakel.ai/robots.txt
+
+# sitemap.xml
+curl -s https://www.schakel.ai/sitemap.xml
+
+# llms.txt
+curl -s https://www.schakel.ai/llms.txt
+
+========================================
+VOOR GROK: WAAROM ZIET JIJ HET NIET?
+========================================
+
+Mogelijke redenen:
+1. Cache - Grok's tool gebruikt oude snapshot (vóór 13 nov 12:23 GMT)
+2. URL variant - Kijk je naar schakel.ai (zonder www)?
+3. Parser bug - Grok's HTML parser faalt
+4. Tool limitatie - browse_page tool heeft beperkte HTML access
+
+Oplossing: Test met Google's EIGEN validators (zie links hierboven)

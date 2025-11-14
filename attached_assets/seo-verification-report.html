@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEO Verification Report - www.schakel.ai</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .container { max-width: 1200px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    h1 { color: #1a1a1a; margin-bottom: 30px; border-bottom: 3px solid #6EBFAA; padding-bottom: 15px; }
+    h2 { color: #2c9880; margin-top: 40px; margin-bottom: 20px; font-size: 24px; }
+    .section { margin-bottom: 30px; }
+    .status { display: inline-block; padding: 4px 12px; border-radius: 4px; font-weight: 600; font-size: 14px; }
+    .status.pass { background: #d4edda; color: #155724; }
+    .status.info { background: #d1ecf1; color: #0c5460; }
+    pre { 
+      background: #f8f9fa; 
+      padding: 15px; 
+      border-radius: 6px; 
+      overflow-x: auto;
+      border-left: 4px solid #6EBFAA;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    code { font-family: 'Courier New', monospace; color: #d63384; }
+    .highlight { background: #fff3cd; padding: 2px 4px; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+    th { background: #6EBFAA; color: white; font-weight: 600; }
+    tr:hover { background: #f8f9fa; }
+    .badge { 
+      display: inline-block; 
+      padding: 6px 12px; 
+      background: #6EBFAA; 
+      color: white; 
+      border-radius: 20px; 
+      font-size: 12px;
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+    .timestamp { color: #6c757d; font-size: 14px; margin-bottom: 20px; }
+    .command { background: #1a1a1a; color: #0f0; padding: 10px 15px; border-radius: 4px; font-family: monospace; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔍 SEO Verification Report</h1>
+    <div class="timestamp">
+      <strong>Website:</strong> https://www.schakel.ai<br>
+      <strong>Verified:</strong> 13 November 2025, 13:45 UTC<br>
+      <strong>Method:</strong> Direct curl to production HTML<br>
+      <strong>Last Modified:</strong> Thu, 13 Nov 2025 12:23:43 GMT
+    </div>
+
+    <div class="section">
+      <h2>📊 Executive Summary</h2>
+      <table>
+        <tr>
+          <th>Category</th>
+          <th>Status</th>
+          <th>Count</th>
+          <th>Details</th>
+        </tr>
+        <tr>
+          <td><strong>Meta Tags</strong></td>
+          <td><span class="status pass">✓ PASS</span></td>
+          <td>5</td>
+          <td>title, description, author, robots, viewport</td>
+        </tr>
+        <tr>
+          <td><strong>Open Graph</strong></td>
+          <td><span class="status pass">✓ PASS</span></td>
+          <td>9</td>
+          <td>type, url, title, desc, image, width, height, locale, site_name</td>
+        </tr>
+        <tr>
+          <td><strong>Twitter Cards</strong></td>
+          <td><span class="status pass">✓ PASS</span></td>
+          <td>5</td>
+          <td>card, url, title, description, image</td>
+        </tr>
+        <tr>
+          <td><strong>Structured Data</strong></td>
+          <td><span class="status pass">✓ PASS</span></td>
+          <td>21 types</td>
+          <td>LocalBusiness, Organization, Service, FAQPage, WebSite, BreadcrumbList + 15 nested</td>
+        </tr>
+        <tr>
+          <td><strong>Hreflang</strong></td>
+          <td><span class="status pass">✓ PASS</span></td>
+          <td>3</td>
+          <td>nl, en, x-default</td>
+        </tr>
+        <tr>
+          <td><strong>Canonical URL</strong></td>
+          <td><span class="status pass">✓ PASS</span></td>
+          <td>1</td>
+          <td>https://www.schakel.ai/</td>
+        </tr>
+        <tr>
+          <td><strong>robots.txt</strong></td>
+          <td><span class="status pass">✓ PASS</span></td>
+          <td>409 bytes</td>
+          <td>GPTBot, ClaudeBot, PerplexityBot, Applebot allowed</td>
+        </tr>
+        <tr>
+          <td><strong>sitemap.xml</strong></td>
+          <td><span class="status pass">✓ PASS</span></td>
+          <td>613 bytes</td>
+          <td>Homepage + hreflang annotations</td>
+        </tr>
+        <tr>
+          <td><strong>llms.txt</strong></td>
+          <td><span class="status pass">✓ PASS</span></td>
+          <td>4321 bytes</td>
+          <td>Company info, services, approach</td>
+        </tr>
+        <tr>
+          <td><strong>Noscript Fallback</strong></td>
+          <td><span class="status pass">✓ PASS</span></td>
+          <td>1</td>
+          <td>Microdata for non-JS crawlers</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>🏷️ Meta Tags (Raw HTML)</h2>
+      <p class="command">$ curl -s https://www.schakel.ai | grep 'meta name='</p>
+      <pre>&lt;meta name="title" content="Schakel AI - AI-oplossingen die direct tijd en geld opleveren" /&gt;
+&lt;meta name="description" content="We automatiseren processen die je nu tijd kosten. Workflow optimalisatie, klantenservice-AI, email management. Direct inzetbaar, meetbare impact vanaf week één." /&gt;
+&lt;meta name="author" content="Schakel AI B.V." /&gt;
+&lt;meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" /&gt;</pre>
+    </div>
+
+    <div class="section">
+      <h2>📱 Open Graph Tags</h2>
+      <p class="command">$ curl -s https://www.schakel.ai | grep 'property="og:'</p>
+      <pre>&lt;meta property="og:type" content="website" /&gt;
+&lt;meta property="og:url" content="https://www.schakel.ai/" /&gt;
+&lt;meta property="og:title" content="Schakel AI - AI-oplossingen die direct tijd en geld opleveren" /&gt;
+&lt;meta property="og:description" content="We automatiseren processen die je nu tijd kosten..." /&gt;
+&lt;meta property="og:image" content="https://www.schakel.ai/logo.png" /&gt;
+&lt;meta property="og:image:width" content="1200" /&gt;
+&lt;meta property="og:image:height" content="630" /&gt;
+&lt;meta property="og:locale" content="nl_NL" /&gt;
+&lt;meta property="og:site_name" content="Schakel AI" /&gt;</pre>
+    </div>
+
+    <div class="section">
+      <h2>🐦 Twitter Card Tags</h2>
+      <p class="command">$ curl -s https://www.schakel.ai | grep 'twitter:'</p>
+      <pre>&lt;meta name="twitter:card" content="summary_large_image" /&gt;
+&lt;meta name="twitter:url" content="https://www.schakel.ai/" /&gt;
+&lt;meta name="twitter:title" content="Schakel AI - AI-oplossingen die direct tijd en geld opleveren" /&gt;
+&lt;meta name="twitter:description" content="We automatiseren processen die je nu tijd kosten..." /&gt;
+&lt;meta name="twitter:image" content="https://www.schakel.ai/logo.png" /&gt;</pre>
+    </div>
+
+    <div class="section">
+      <h2>🏢 Schema.org Structured Data (JSON-LD)</h2>
+      <p><span class="status info">6 JSON-LD scripts detected</span></p>
+      <div style="margin-top: 15px;">
+        <span class="badge">LocalBusiness</span>
+        <span class="badge">Organization</span>
+        <span class="badge">Service</span>
+        <span class="badge">FAQPage</span>
+        <span class="badge">WebSite</span>
+        <span class="badge">BreadcrumbList</span>
+      </div>
+      <p style="margin-top: 15px;"><strong>Plus 15 nested types:</strong></p>
+      <div style="margin-top: 10px;">
+        <span class="badge">Person</span>
+        <span class="badge">PostalAddress</span>
+        <span class="badge">GeoCoordinates</span>
+        <span class="badge">OpeningHoursSpecification</span>
+        <span class="badge">AggregateRating</span>
+        <span class="badge">OfferCatalog</span>
+        <span class="badge">Offer</span>
+        <span class="badge">Question</span>
+        <span class="badge">Answer</span>
+        <span class="badge">SearchAction</span>
+        <span class="badge">EntryPoint</span>
+        <span class="badge">ContactPoint</span>
+        <span class="badge">QuantitativeValue</span>
+        <span class="badge">ListItem</span>
+        <span class="badge">Country</span>
+      </div>
+      <p class="command" style="margin-top: 20px;">$ curl -s https://www.schakel.ai | grep -o '"@type": "[^"]*"' | sort | uniq</p>
+      <pre>"@type": "AggregateRating"
+"@type": "Answer"
+"@type": "BreadcrumbList"
+"@type": "ContactPoint"
+"@type": "Country"
+"@type": "EntryPoint"
+"@type": "FAQPage"
+"@type": "GeoCoordinates"
+"@type": "ListItem"
+"@type": "LocalBusiness"
+"@type": "Offer"
+"@type": "OfferCatalog"
+"@type": "OpeningHoursSpecification"
+"@type": "Organization"
+"@type": "Person"
+"@type": "PostalAddress"
+"@type": "QuantitativeValue"
+"@type": "Question"
+"@type": "SearchAction"
+"@type": "Service"
+"@type": "WebSite"</pre>
+    </div>
+
+    <div class="section">
+      <h2>🌐 Hreflang Tags</h2>
+      <pre>&lt;link rel="alternate" hreflang="nl" href="https://www.schakel.ai/" /&gt;
+&lt;link rel="alternate" hreflang="en" href="https://www.schakel.ai/?lang=en" /&gt;
+&lt;link rel="alternate" hreflang="x-default" href="https://www.schakel.ai/" /&gt;</pre>
+    </div>
+
+    <div class="section">
+      <h2>🤖 AI Crawler Support</h2>
+      <p><strong>robots.txt:</strong> <span class="status pass">✓ 409 bytes</span></p>
+      <pre># Schakel AI - Allow all search engines and AI crawlers
+
+User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+Sitemap: https://www.schakel.ai/sitemap.xml</pre>
+
+      <p style="margin-top: 30px;"><strong>llms.txt:</strong> <span class="status pass">✓ 4321 bytes</span></p>
+      <pre># Schakel AI - AI Consultancy & Implementation
+# Description: Wij automatiseren bedrijfsprocessen met praktische AI-oplossingen
+
+## Company Information
+- Name: Schakel AI B.V.
+- Location: Coolsingel 65, 3012 AC Rotterdam, Netherlands
+- Website: https://www.schakel.ai
+- Email: info@schakel.ai
+- KVK: 98312529
+- BTW: NL868441119B01
+
+## Core Expertise
+Schakel AI specializes in practical AI implementation...</pre>
+    </div>
+
+    <div class="section">
+      <h2>🗺️ XML Sitemap</h2>
+      <p><strong>sitemap.xml:</strong> <span class="status pass">✓ 613 bytes</span></p>
+      <pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"&gt;
+  
+  &lt;url&gt;
+    &lt;loc&gt;https://www.schakel.ai/&lt;/loc&gt;
+    &lt;lastmod&gt;2025-11-13&lt;/lastmod&gt;
+    &lt;changefreq&gt;weekly&lt;/changefreq&gt;
+    &lt;priority&gt;1.0&lt;/priority&gt;
+    &lt;xhtml:link rel="alternate" hreflang="nl" href="https://www.schakel.ai/" /&gt;
+    &lt;xhtml:link rel="alternate" hreflang="en" href="https://www.schakel.ai/?lang=en" /&gt;
+    &lt;xhtml:link rel="alternate" hreflang="x-default" href="https://www.schakel.ai/" /&gt;
+  &lt;/url&gt;
+
+&lt;/urlset&gt;</pre>
+    </div>
+
+    <div class="section">
+      <h2>✅ Validation Links (Test Zelf)</h2>
+      <p>Omdat Google's validators reCAPTCHA vereisen, moet je deze handmatig testen:</p>
+      <ol style="line-height: 2;">
+        <li><strong>Google Rich Results Test:</strong><br>
+          <a href="https://search.google.com/test/rich-results?url=https%3A%2F%2Fwww.schakel.ai%2F" target="_blank">
+            https://search.google.com/test/rich-results?url=https://www.schakel.ai/
+          </a>
+        </li>
+        <li><strong>Schema.org Validator:</strong><br>
+          <a href="https://validator.schema.org/#url=https%3A%2F%2Fwww.schakel.ai%2F" target="_blank">
+            https://validator.schema.org/#url=https://www.schakel.ai/
+          </a>
+        </li>
+        <li><strong>Facebook Sharing Debugger:</strong><br>
+          <a href="https://developers.facebook.com/tools/debug/?q=https%3A%2F%2Fwww.schakel.ai%2F" target="_blank">
+            https://developers.facebook.com/tools/debug/?q=https://www.schakel.ai/
+          </a>
+        </li>
+        <li><strong>LinkedIn Post Inspector:</strong><br>
+          <a href="https://www.linkedin.com/post-inspector/inspect/https:%2F%2Fwww.schakel.ai%2F" target="_blank">
+            https://www.linkedin.com/post-inspector/inspect/https://www.schakel.ai/
+          </a>
+        </li>
+      </ol>
+    </div>
+
+    <div class="section" style="background: #d4edda; padding: 20px; border-radius: 6px; border-left: 4px solid #28a745;">
+      <h2 style="color: #155724; margin-top: 0;">✅ CONCLUSIE</h2>
+      <p style="color: #155724; font-size: 16px; line-height: 1.8;">
+        <strong>Alle SEO-elementen zijn live en crawlbaar in de statische HTML.</strong><br>
+        Dit is GEEN client-side rendering - alles staat in de bron-HTML.<br>
+        De website is 100% SEO-ready voor Google, Bing, en AI crawlers.<br><br>
+        <strong>Laatste deployment:</strong> Thu, 13 Nov 2025 12:23:43 GMT<br>
+        <strong>Stack:</strong> Vite + React (SSR via static build)<br>
+        <strong>Hosting:</strong> Vercel
+      </p>
+    </div>
+  </div>
+</body>
+</html>
