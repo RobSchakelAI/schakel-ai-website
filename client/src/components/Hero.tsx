@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Play, Zap } from 'lucide-react';
+import { ArrowRight, Play } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import AutomationFlow from '@/components/AutomationFlow';
 import { CTAOverlay } from '@/components/ExpandingCTA';
