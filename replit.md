@@ -4,14 +4,24 @@
 
 Schakel AI is a minimalist Dutch AI consultancy website built with a modern JAMstack architecture. The site communicates the core message "Rust & Rendement" (Peace & Results) through a single-page design featuring a hero section, vision statement, approach timeline, team profiles, and contact form. The project emphasizes performance, accessibility, and clean design inspired by Morningside.com and Apple's minimalist aesthetic.
 
-## Recent Changes (November 13, 2025)
+## Recent Changes (November 14, 2025)
+
+**Google Search Console Integration:**
+- Added Google Search Console verification file (`googledf62b6f2cc2593ac.html`) to `client/public/` for domain verification
+- Enables tracking of search performance, indexing status, and Core Web Vitals in Google Search Console
+
+**Hero Section Cleanup:**
+- Removed trust indicator badges ("⚡ AI First • Resultaat binnen 30 dagen") for ultra-minimal design
+- Hero now features only: pre-title badge, headline, description, and CTA buttons
+
+**Previous Changes (November 13, 2025):**
 
 **Comprehensive SEO Optimization (Production-Ready - Architect Approved):**
 - **robots.txt**: Explicit allow rules for AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Applebot-Extended), sitemap reference
 - **llms.txt**: Machine-readable company overview following 2024 standard - includes expertise, team, approach, contact info
 - **sitemap.xml**: XML sitemap with hreflang annotations (nl/en/x-default), proper lastmod and priority settings
 - **Schema.org Structured Data (6 types - all validated)**:
-  - LocalBusiness schema with geo coordinates, opening hours, founder profiles, aggregate rating (9.2/10)
+  - LocalBusiness schema with geo coordinates, opening hours, founder profiles (no fake ratings - removed for authenticity)
   - Service schema with OfferCatalog listing all 6 AI solutions
   - FAQPage schema with 5 common questions about AI implementation
   - WebSite schema with SearchAction for Google search box integration
