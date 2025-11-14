@@ -107,7 +107,7 @@ export default function Hero() {
 
             {/* Trust indicator - minimal */}
             <p className="text-xs text-muted-foreground/60 font-medium tracking-wide uppercase text-center md:text-left">
-              Resultaat binnen 30 dagen
+              ⚡ AI First
             </p>
           </div>
 
