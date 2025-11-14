@@ -104,19 +104,6 @@ export default function Hero() {
                 {t.hero.ctaSecondary}
               </Button>
             </div>
-
-            {/* Trust indicator - minimal */}
-            <div className="flex items-center gap-3 text-xs text-muted-foreground/60 font-medium tracking-wide uppercase justify-center md:justify-start">
-              <span className="flex items-center gap-1.5">
-                <Zap className="w-3.5 h-3.5" />
-                AI First
-              </span>
-              <span>•</span>
-              <span className="flex items-center gap-1.5">
-                <Zap className="w-3.5 h-3.5" />
-                Resultaat binnen 30 dagen
-              </span>
-            </div>
           </div>
 
           {/* Right: Geanimeerde Automation Flow */}
