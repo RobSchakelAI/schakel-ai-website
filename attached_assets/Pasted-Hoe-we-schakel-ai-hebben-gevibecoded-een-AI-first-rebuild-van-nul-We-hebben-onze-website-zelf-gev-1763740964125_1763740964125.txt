@@ -1,0 +1,324 @@
+Hoe we schakel.ai hebben gevibecoded — een AI-first rebuild van nul
+
+We hebben onze website zelf gevibecoded.
+Niet omdat het moest, maar omdat het kan, én omdat het gewoon tof is.
+
+Bij Schakel bekijken we alles wat we bouwen door een AI-first lens.
+Dat betekent dat we elk proces, systeem en project beginnen met dezelfde vraag:
+
+“Hoe ziet dit eruit als je het vandaag opnieuw zou ontwerpen, met de tooling van nu?”
+en
+“Welke delen kan AI alvast voor ons bouwen, controleren of verbeteren?”
+
+Onze website was klein genoeg om vrijuit te experimenteren, maar groot genoeg om onze werkwijze te testen.
+Hieronder delen we hoe we het hebben opgebouwd—technisch, nuchter, en zonder marketinglaag.
+
+1. Architectuur-overzicht — klein project, grote basis
+
+Voor deze website hadden we in principe weinig nodig.
+Maar we wilden hem wel bouwen op dezelfde manier als grote projecten: robuust, modulair, AI-first en future-proof.
+
+Daarom werken we met een duidelijke tweedeling:
+
+a) de Schakel Core Stack (fundament, project-onafhankelijk)
+b) build tooling die per project kan wisselen
+
+2. Schakel Core Stack (platformlaag)
+
+Onze “fundament-laag".
+Deze verandert zelden en vormt de basis voor grotere builds.
+
+Supabase → auth, database, storage, edge functions
+
+Vercel → frontend hosting + wereldwijd edge network
+
+Railway → Node runtimes & microservices
+
+GitHub → version control, CI/CD, repo-structuur
+
+Replit → vibecoding, snelle iteratie, AI-agent workflows
+
+Codex → AI code review + static analysis
+
+LLM’s: ChatGPT, Claude, Gemini, Grok, Perplexity
+
+Schakel Development Standards → interne richtlijnen (architectuur, naming, error handling, API-structuur, security)
+
+Deze core stack blijft hetzelfde, ongeacht met welke frontend-framework we bouwen.
+
+3. Build tooling (voor deze specifieke website)
+
+Voor deze site kozen we voor een lichte, snelle en prettige toolset:
+
+React + TypeScript
+
+Vite
+
+Tailwind
+
+shadcn/ui
+
+Dit zijn geen verplichte onderdelen in onze aanpak.
+Het zijn tools die op dit moment de minste frictie geven—meer niet.
+
+4. Development setup — Replit + GitHub
+
+Replit is op dit moment onze favoriete vibecoding tool.
+
+Waarom:
+
+volledig cloud-based
+
+intuïtief
+
+zero lokale setup
+
+directe previews
+
+snelle iteratie
+
+Replit Agent 3 kan langere workflows zelfstandig uitvoeren
+
+GitHub is de fundering daaronder:
+
+versiebeheer
+
+branches
+
+CI/CD
+
+automatische deploys naar Vercel & Railway
+
+preview builds
+
+Belangrijk:
+Niets in deze setup bindt ons aan één ecosysteem.
+We houden het bewust modulair.
+
+5. Frontend — licht, snel en direct
+
+De frontend bestaat uit:
+
+React + TS
+
+Vite (absurd snel)
+
+Tailwind
+
+shadcn/ui
+
+eenvoudige NL/EN i18n
+
+Hero-animatie → gemaakt door Replit Agent 3
+
+We hebben de homepage-animatie volledig laten genereren door Replit Agent 3.
+Een paar prompts, wat iteraties, handmatige tweaks—klaar.
+
+AI-view (simpel grapje)
+
+We hebben een AI-view toegevoegd als derde “taal”.
+Het is vooral een knipoog: een plain-text versie van de content.
+Niet essentieel.
+
+Echte AI-readiness zit in structuur
+
+nette HTML
+
+voorspelbare headers
+
+consistente content
+
+duidelijke metadata
+
+robots.txt en ai.txt (llm.txt) goed ingesteld
+
+Dit is wat AI-agents daadwerkelijk helpt.
+
+Dark mode + Google Maps
+
+Google Maps ondersteunt geen dark mode, dus we hebben het omgekeerd met CSS:
+
+.dark iframe[src*="google.com/maps"] {
+  filter: invert(90%) hue-rotate(180deg) brightness(0.9) contrast(1.1);
+}
+
+
+Werkt beter dan het zou moeten.
+
+6. Backend — Express, Railway & MailerSend
+
+De backend is klein maar functioneel:
+
+Express.js (TS)
+
+Zod validatie
+
+Railway hosting
+
+MailerSend voor email
+
+Flow van het contactformulier
+
+frontend stuurt POST → /api/contact
+
+Zod valideert de input
+
+MailerSend stuurt een HTML mail door
+
+backend stuurt success/error retour
+
+Umami logt een event
+
+Is Railway nodig bij zo'n simpele endpoint?
+
+Nee.
+Maar het maakt de structuur consistent met grotere builds.
+En dat was precies de bedoeling.
+
+CORS
+
+Netjes beperkt tot onze domeinen:
+
+app.use(cors({
+  origin: ['https://schakel.ai', 'https://www.schakel.ai']
+}));
+
+7. Deployment — split tussen Vercel & Railway
+Frontend (Vercel)
+
+snelle CDN
+
+zero-config builds
+
+branch previews
+
+automatische SSL
+
+Backend (Railway)
+
+full-time Node runtimes
+
+environment secrets
+
+logs
+
+gemakkelijk uitbreidbaar (DB, microservices)
+
+Split deployment is overzichtelijk en eenvoudig te onderhouden.
+
+8. DNS — simpel en functioneel
+
+DNS staat bij Namecheap.
+Records wijzen naar Vercel.
+
+Niet spannend, wel nodig.
+
+9. Code review — AI als eerste laag, programmeur als laatste laag
+
+We gebruiken AI als eerste code reviewer.
+Daarna doet een programmeur de echte review.
+
+Eerste laag: AI (Codex)
+
+Codex controleert o.a.:
+
+structuur
+
+naming
+
+type safety
+
+consistentie
+
+kleine optimalisaties
+
+afwijkingen van onze Schakel Development Standards
+
+Het haalt veel kleine issues weg voordat er iemand naar hoeft te kijken.
+
+Tweede laag: programmeur (final approval)
+
+De menselijke reviewer checkt vervolgens:
+
+klopt de logica écht?
+
+is de code herbruikbaar?
+
+is de structuur toekomstbestendig?
+
+voldoet het aan onze wensen?
+
+past het in de architectuur?
+
+AI maakt het sneller.
+De mens maakt het correct.
+
+10. Observability — Umami
+
+Voor analytics gebruiken we Umami:
+
+lichtgewicht
+
+cookieloos
+
+privacy-first
+
+We tracken:
+
+pageviews
+
+sectie-views
+
+navigatie
+
+taalwissels
+
+theme toggles
+
+formulier-submissions
+
+Precies genoeg inzicht zonder trackingfrictie.
+
+11. AI-hulp tijdens het schrijf- en bouwproces
+
+ChatGPT, Claude, Gemini, Grok en Perplexity hielpen bij:
+
+schetsen van tekst
+
+technische uitleg aanscherpen
+
+code sanity checks
+
+componentvarianten
+
+debugging hints
+
+andere invalshoeken verkennen
+
+AI schrijft nooit het eindresultaat, maar versnelt alles daartussen.
+
+12. Nerd notes
+
+Vite blijft onrealistisch snel
+
+shadcn/ui is precies minimalistisch genoeg
+
+Zod haalt 80% van de input-bugs eruit
+
+Railway voelt stabieler dan serverless voor kleine APIs
+
+Replit Agent 3 is verrassend bruikbaar voor UI-taken
+
+AI-readiness komt door structuur, niet gimmicks
+
+CSS dark-mode hacks blijven leuk
+
+Split deployment geeft rust
+
+13. Slot
+
+De website zelf is klein, maar het was een goede oefening om onze AI-first manier van bouwen opnieuw te testen.
+
+We hebben tooling gebruikt waar we enthousiast van worden, een animatie laten bouwen door een AI-agent, nieuwe patronen uitgeprobeerd en onze eigen core stack verder aangescherpt.
+
+En het bouwen was gewoon leuk — misschien wel de belangrijkste reden om het zo te doen.
