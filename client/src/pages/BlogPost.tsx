@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useRoute, Link } from 'wouter';
+import { useRoute, Link, useLocation } from 'wouter';
 import { Calendar, Clock, Share2, Home, BookOpen } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -15,6 +15,7 @@ import { trackEvent } from '@/lib/analytics';
 
 export default function BlogPost() {
   const [, params] = useRoute('/blog/:slug');
+  const [, setLocation] = useLocation();
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeSection, setActiveSection] = useState('');
   const [tableOfContents, setTableOfContents] = useState<Array<{ id: string; title: string }>>([]);
@@ -252,16 +253,39 @@ export default function BlogPost() {
                   Bekijk onze aanpak of neem contact op voor een gesprek over jouw project.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <Link href="/">
-                    <Button size="lg" data-testid="button-cta-primary">
-                      Bekijk onze aanpak
-                    </Button>
-                  </Link>
-                  <Link href="/#contact">
-                    <Button variant="outline" size="lg" data-testid="button-cta-contact">
-                      Neem contact op
-                    </Button>
-                  </Link>
+                  <Button 
+                    size="lg" 
+                    data-testid="button-cta-primary"
+                    onClick={() => {
+                      setLocation('/');
+                      setTimeout(() => {
+                        const element = document.getElementById('approach');
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }, 100);
+                      trackEvent('cta-click', { from: 'blog-post', to: 'approach' });
+                    }}
+                  >
+                    Bekijk onze aanpak
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    data-testid="button-cta-contact"
+                    onClick={() => {
+                      setLocation('/');
+                      setTimeout(() => {
+                        const element = document.getElementById('contact');
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }, 100);
+                      trackEvent('cta-click', { from: 'blog-post', to: 'contact' });
+                    }}
+                  >
+                    Neem contact op
+                  </Button>
                 </div>
               </div>
             </div>
