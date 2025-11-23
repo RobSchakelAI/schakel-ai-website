@@ -15,14 +15,14 @@ import { trackEvent } from '@/lib/analytics';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function BlogPost() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [, params] = useRoute('/blog/:slug');
   const [, setLocation] = useLocation();
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeSection, setActiveSection] = useState('');
   const [tableOfContents, setTableOfContents] = useState<Array<{ id: string; title: string }>>([]);
   
-  const post = params?.slug ? getBlogPostBySlug(params.slug) : undefined;
+  const post = params?.slug ? getBlogPostBySlug(params.slug, language) : undefined;
 
   // Extract table of contents from rendered DOM after markdown is processed
   useEffect(() => {

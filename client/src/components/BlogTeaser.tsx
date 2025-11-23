@@ -5,8 +5,8 @@ import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function BlogTeaser() {
-  const { t } = useLanguage();
-  const latestPost = getLatestBlogPost();
+  const { t, language } = useLanguage();
+  const latestPost = getLatestBlogPost(language);
 
   if (!latestPost) {
     return null; // Don't show section if no posts

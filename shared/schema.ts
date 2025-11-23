@@ -18,22 +18,29 @@ export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
 
 // Blog post types (static content, not database-backed)
-export interface BlogPost {
-  slug: string;
+export interface BlogPostTranslations {
   title: string;
   excerpt: string;
   content: string;
+  metaDescription: string;
+  keywords: string[];
+  category?: string;
   author: {
     name: string;
     role: string;
     bio: string;
   };
+}
+
+export interface BlogPost {
+  slug: string;
   publishDate: string; // ISO date string
   readingTime: number; // minutes
-  metaDescription: string;
-  keywords: string[];
   ogImage?: string;
-  category?: string;
+  translations: {
+    nl: BlogPostTranslations;
+    en: BlogPostTranslations;
+  };
 }
 
 // SEO page types (for future landing pages)

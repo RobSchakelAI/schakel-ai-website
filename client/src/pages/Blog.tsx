@@ -7,8 +7,8 @@ import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Blog() {
-  const { t } = useLanguage();
-  const posts = getAllBlogPosts();
+  const { t, language } = useLanguage();
+  const posts = getAllBlogPosts(language);
 
   return (
     <div className="min-h-screen bg-background">

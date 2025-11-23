@@ -1,8 +1,8 @@
 import { Helmet } from 'react-helmet-async';
-import type { BlogPost } from '@shared/schema';
+import type { LocalizedBlogPost } from '@shared/blog-data';
 
 interface BlogSEOProps {
-  post: BlogPost;
+  post: LocalizedBlogPost;
   url: string;
 }
 
