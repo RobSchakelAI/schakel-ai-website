@@ -19,11 +19,11 @@ Toch kun je tegenwoordig een website bouwen met AI, zolang je:
 3. en AI niet dom volgt, maar kritisch gebruikt.
 
 Dit was trouwens niet onze allereerste AI-first build.
-Vorig jaar bouwden we onze eerste gevibecode website — dat was de échte vuurdoop waar we alles voor het eerst uitvogelden.
+Vorig jaar bouwden we onze eerste gevibecode website: dat was de échte vuurdoop waar we alles voor het eerst uitvogelden.
 Sindsdien hebben we meerdere webapplicaties gebouwd (een website is natuurlijk een vrij simpele webapplicatie).
 Over die eerste projecten heb ik nooit publiekelijk geschreven.
 
-Maar de lessen, de struggles, de doorbraken — die zijn universeel.
+Maar de lessen, de struggles, de doorbraken? Die zijn universeel.
 Dus dit verhaal gaat over hoe we schakel.ai bouwden, maar de ervaring die je hier leest? 
 Die komt uit al die projecten samen.
 
@@ -31,7 +31,7 @@ Hier het eerlijke, volledige verhaal.
 
 ---
 
-## AI-first bouwen — dit is hoe wij werken
+## AI-first bouwen: dit is hoe wij werken
 
 Bij [Schakel](https://schakel.ai) proberen we alles opnieuw te bekijken.
 
@@ -43,15 +43,14 @@ Onze basisvragen:
 
 **Kunnen we dit (deels) door AI laten maken, en zelf de kwaliteit bewaken?**
 
-Je hoeft geen fulltime developer te zijn om met AI een website te bouwen —
-maar je moet wél snappen wat je aan het doen bent.
+Je hoeft geen fulltime developer te zijn om met AI een website te bouwen, maar je moet wél snappen wat je aan het doen bent.
 
 De website was een ideaal testproject:
 klein genoeg om helder te blijven, groot genoeg om alle onderdelen écht tegen te komen.
 
 ---
 
-## Waarom deze architectuur — future-proof zonder gedoe
+## Waarom deze architectuur: future-proof zonder gedoe
 
 We hadden deze site in een dag op één platform kunnen zetten,
 maar dat was níet het doel.
@@ -66,10 +65,10 @@ We wilden een setup die:
 
 Daarom werken we standaard met twee lagen:
 
-**1. Core Stack → de vaste basis**
+**1. Core Stack: de vaste basis**
 Deze verandert niet snel.
 
-**2. Build Tooling → per project, per vibe**
+**2. Build Tooling: per project, per vibe**
 Wat nu logisch is, kan over een jaar anders zijn.
 
 Dat geeft rust en duidelijkheid. Vooral als je snel wilt bouwen.
@@ -80,14 +79,14 @@ Dat geeft rust en duidelijkheid. Vooral als je snel wilt bouwen.
 
 Deze tools vormen de fundering van onze manier van bouwen:
 
-- [Supabase](https://supabase.com) → auth, database, storage, edge functions
-- [Vercel](https://vercel.com) → super snelle frontend hosting
-- [Railway](https://railway.app) → Node runtimes & microservices
-- [GitHub](https://github.com) → version control + CI/CD (Continuous Integration/Deployment: automatisch testen en deployen)
-- [Replit](https://replit.com) → vibecoding + AI agents
-- Codex → AI code reviewer
+- [Supabase](https://supabase.com): auth, database, storage, edge functions
+- [Vercel](https://vercel.com): super snelle frontend hosting
+- [Railway](https://railway.app): Node runtimes & microservices
+- [GitHub](https://github.com): version control + CI/CD (Continuous Integration/Deployment: automatisch testen en deployen)
+- [Replit](https://replit.com): vibecoding + AI agents
+- Codex: AI code reviewer
 - LLM's: ChatGPT, Claude, Gemini, Grok, Perplexity
-- [Schakel Development Standards](https://schakel.ai) → onze eigen spelregels
+- [Schakel Development Standards](https://schakel.ai): onze eigen spelregels
 
 Voor deze website hadden we géén database nodig, dus we bleven bij in-memory opslag + MailerSend.
 
@@ -96,7 +95,7 @@ Deze stack is getest, schaalbaar, en voelt logisch in de praktijk.
 
 ---
 
-## Build tooling (voor deze site) — gewoon wat nu het lekkerst werkt
+## Build tooling (voor deze site): gewoon wat nu het lekkerst werkt
 
 Voor deze site gebruikten we:
 
@@ -119,7 +118,7 @@ React + Vite bleek voor nu het meest logisch.
 
 ---
 
-## Frontend — vooral de animatie (en de tekst!) waren werk
+## Frontend: vooral de animatie (en de tekst!) waren werk
 
 Hier moet ik eerlijk zijn:
 de hero-animatie was níet "AI deed dit wel even".
@@ -164,7 +163,7 @@ Dat merkten we hier heel sterk.
 
 ---
 
-## Backend — simpel, duidelijk, en exact wat het moet doen (niet meer)
+## Backend: simpel, duidelijk, en exact wat het moet doen
 
 De backend doet één ding:
 het contactformulier verwerken.
@@ -231,7 +230,7 @@ Dan werkt je hele website niet.
 
 ---
 
-## Code review met AI — maar eerst: onze Schakel Standards
+## Code review met AI, maar eerst: onze Schakel Standards
 
 Voordat we het over code review hebben, iets belangrijks:
 
@@ -249,7 +248,7 @@ Tijdens het bouwen blijven we continu scherp op:
 - schaalbaarheid
 
 AI kan snel bouwen, maar zonder standaarden krijg je rommel.
-Wij zorgen dat alles netjes blijft — van eerste commit tot laatste deploy.
+Wij zorgen dat alles netjes blijft, van eerste commit tot laatste deploy.
 
 **Dan pas komt de review**
 
