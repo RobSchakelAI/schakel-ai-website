@@ -31,7 +31,7 @@ Hier het eerlijke, volledige verhaal.
 
 ---
 
-## AI-first bouwen — dit is hoe wij werken {#ai-first-bouwen}
+## AI-first bouwen — dit is hoe wij werken
 
 Bij [Schakel](https://schakel.ai) proberen we alles opnieuw te bekijken.
 
@@ -51,7 +51,7 @@ klein genoeg om helder te blijven, groot genoeg om alle onderdelen écht tegen t
 
 ---
 
-## Waarom deze architectuur — future-proof zonder gedoe {#architectuur}
+## Waarom deze architectuur — future-proof zonder gedoe
 
 We hadden deze site in een dag op één platform kunnen zetten,
 maar dat was níet het doel.
@@ -76,7 +76,7 @@ Dat geeft rust en duidelijkheid. Vooral als je snel wilt bouwen.
 
 ---
 
-## Onze Schakel Core Stack (de stabiele basis onder alles) {#core-stack}
+## Onze Schakel Core Stack (de stabiele basis onder alles)
 
 Deze tools vormen de fundering van onze manier van bouwen:
 
@@ -96,7 +96,7 @@ Deze stack is getest, schaalbaar, en voelt logisch in de praktijk.
 
 ---
 
-## Build tooling (voor deze site) — gewoon wat nu het lekkerst werkt {#build-tooling}
+## Build tooling (voor deze site) — gewoon wat nu het lekkerst werkt
 
 Voor deze site gebruikten we:
 
@@ -119,7 +119,7 @@ React + Vite bleek voor nu het meest logisch.
 
 ---
 
-## Frontend — vooral de animatie (en de tekst!) waren werk {#frontend}
+## Frontend — vooral de animatie (en de tekst!) waren werk
 
 Hier moet ik eerlijk zijn:
 de hero-animatie was níet "AI deed dit wel even".
@@ -164,7 +164,7 @@ Dat merkten we hier heel sterk.
 
 ---
 
-## Backend — simpel, duidelijk, en exact wat het moet doen (niet meer) {#backend}
+## Backend — simpel, duidelijk, en exact wat het moet doen (niet meer)
 
 De backend doet één ding:
 het contactformulier verwerken.
@@ -202,7 +202,7 @@ Custom middleware, geen wildcardgedoe.
 
 ---
 
-## Deployment: frontend op Vercel, backend op Railway {#deployment}
+## Deployment: frontend op Vercel, backend op Railway
 
 Dit is misschien wel de keuze die het meeste rust geeft.
 
@@ -220,7 +220,7 @@ We bouwen niet voor nu, we bouwen voor straks.
 
 ---
 
-## DNS: klein onderdeel, maar cruciaal {#dns}
+## DNS: klein onderdeel, maar cruciaal
 
 DNS staat bij Namecheap.
 Een paar records naar Vercel.
@@ -231,7 +231,7 @@ Dan werkt je hele website niet.
 
 ---
 
-## Code review met AI — maar eerst: onze Schakel Standards {#code-review}
+## Code review met AI — maar eerst: onze Schakel Standards
 
 Voordat we het over code review hebben, iets belangrijks:
 
@@ -286,7 +286,7 @@ En precies deze combi maakt bouwen écht haalbaar als je geen fulltime developer
 
 ---
 
-## Analytics: Umami (licht, cookieloos, simpel) {#analytics}
+## Analytics: Umami (licht, cookieloos, simpel)
 
 We gebruiken [Umami](https://umami.is) omdat het precies genoeg data geeft zonder gedoe.
 
@@ -305,7 +305,7 @@ Geen irritatie.
 
 ---
 
-## AI tijdens bouwen & schrijven: supercharger, geen vervanging {#ai-tijdens-bouwen}
+## AI tijdens bouwen & schrijven: supercharger, geen vervanging
 
 AI heeft geholpen bij:
 
@@ -324,7 +324,7 @@ maar alleen als je zelf precies weet wat je wil.
 
 ---
 
-## Vibecode-notities: wat tegenviel en wat meeviel {#vibecode-notities}
+## Vibecode-notities: wat tegenviel en wat meeviel
 
 **Agent 3 is bizar!**
 Probeer het zelf, simpelweg bizar. Een aanzienlijk verschil met maanden geleden. De kwaliteit van wat het genereert is echt next level.
@@ -361,7 +361,7 @@ Commit vaak, met duidelijke messages. Als iets kapot gaat, kun je terug. Git is 
 
 ---
 
-## Slot {#slot}
+## Slot
 
 Het eindresultaat is een website die:
 
