@@ -2,8 +2,10 @@ import { Link } from 'wouter';
 import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import { getLatestBlogPost } from '@shared/blog-data';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function BlogTeaser() {
+  const { t } = useLanguage();
   const latestPost = getLatestBlogPost();
 
   if (!latestPost) {
@@ -17,15 +19,15 @@ export default function BlogTeaser() {
         <div className="flex items-center justify-between mb-12">
           <div>
             <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-2">
-              Laatste blog
+              {t.blog.latestTitle}
             </h2>
             <p className="text-muted-foreground">
-              Praktische inzichten over AI-first development
+              {t.blog.latestSubtitle}
             </p>
           </div>
           <Link href="/blog">
             <Button variant="ghost" className="hidden md:flex items-center gap-2" data-testid="link-view-all-posts">
-              Alle posts
+              {t.blog.allPosts}
               <ArrowRight className="w-4 h-4" />
             </Button>
           </Link>
@@ -56,7 +58,7 @@ export default function BlogTeaser() {
               </div>
               <div className="flex items-center gap-1">
                 <Clock className="w-4 h-4" />
-                <span>{latestPost.readingTime} min leestijd</span>
+                <span>{latestPost.readingTime} {t.blog.readingTime}</span>
               </div>
             </div>
 
@@ -73,7 +75,7 @@ export default function BlogTeaser() {
             {/* Read More */}
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2 text-primary font-medium group-hover:gap-3 transition-all">
-                <span>Lees het volledige verhaal</span>
+                <span>{t.blog.readMore}</span>
                 <ArrowRight className="w-5 h-5" />
               </div>
               
@@ -96,7 +98,7 @@ export default function BlogTeaser() {
         {/* Mobile View All Link */}
         <Link href="/blog">
           <Button variant="ghost" className="md:hidden mt-6 w-full" data-testid="link-view-all-posts-mobile">
-            Alle posts
+            {t.blog.allPosts}
             <ArrowRight className="w-4 h-4 ml-2" />
           </Button>
         </Link>

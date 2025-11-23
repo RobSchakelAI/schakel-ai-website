@@ -12,8 +12,10 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import NotFound from '@/pages/not-found';
 import { trackEvent } from '@/lib/analytics';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function BlogPost() {
+  const { t } = useLanguage();
   const [, params] = useRoute('/blog/:slug');
   const [, setLocation] = useLocation();
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -140,7 +142,7 @@ export default function BlogPost() {
             <li>
               <Link href="/blog" className="hover:text-foreground transition-colors flex items-center gap-1">
                 <BookOpen className="w-4 h-4" />
-                Blog
+                {t.blog.title}
               </Link>
             </li>
             <span>/</span>
@@ -181,7 +183,7 @@ export default function BlogPost() {
                   </div>
                   <div className="flex items-center gap-1">
                     <Clock className="w-4 h-4" />
-                    <span>{post.readingTime} min leestijd</span>
+                    <span>{post.readingTime} {t.blog.readingTime}</span>
                   </div>
                   <Button
                     variant="ghost"
@@ -247,10 +249,10 @@ export default function BlogPost() {
               {/* CTA Section */}
               <div className="mt-16 p-8 rounded-lg bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20">
                 <h3 className="font-display font-bold text-2xl text-foreground mb-3">
-                  Wil je ook AI-first bouwen?
+                  {t.blog.ctaTitle}
                 </h3>
                 <p className="text-muted-foreground mb-6">
-                  Bekijk onze aanpak of neem contact op voor een gesprek over jouw project.
+                  {t.blog.ctaDescription}
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <Button 
@@ -267,7 +269,7 @@ export default function BlogPost() {
                       trackEvent('cta-click', { from: 'blog-post', to: 'approach' });
                     }}
                   >
-                    Bekijk onze aanpak
+                    {t.blog.ctaApproach}
                   </Button>
                   <Button 
                     variant="outline" 
@@ -284,7 +286,7 @@ export default function BlogPost() {
                       trackEvent('cta-click', { from: 'blog-post', to: 'contact' });
                     }}
                   >
-                    Neem contact op
+                    {t.blog.ctaContact}
                   </Button>
                 </div>
               </div>
@@ -295,7 +297,7 @@ export default function BlogPost() {
               <aside className="hidden lg:block">
                 <div className="sticky top-24">
                   <h3 className="font-display font-bold text-sm text-foreground mb-4 uppercase tracking-wide">
-                    Op deze pagina
+                    {t.blog.tableOfContents}
                   </h3>
                   <nav>
                     <ul className="space-y-2 text-sm">

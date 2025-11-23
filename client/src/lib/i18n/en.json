@@ -232,5 +232,25 @@
         "description": "From product descriptions to social posts and documentation - AI writes content that sounds like you wrote it yourself. Scalable, consistent, and time-saving"
       }
     ]
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Practical stories about AI-first development, vibecoding, AI automations, and how we use technology to build smarter.",
+    "latestTitle": "Latest blog",
+    "latestSubtitle": "Practical insights about AI-first development",
+    "allPosts": "All posts",
+    "readMore": "Read the full story",
+    "readingTime": "min read",
+    "publishedOn": "Published on",
+    "shareOn": "Share on",
+    "backToBlog": "Back to blog",
+    "backToHome": "Back to home",
+    "tableOfContents": "On this page",
+    "ctaTitle": "Want to build AI-first too?",
+    "ctaDescription": "Check out our approach or get in touch for a conversation about your project.",
+    "ctaApproach": "View our approach",
+    "ctaContact": "Get in touch",
+    "noPosts": "No blog posts yet. Check back soon!",
+    "readFurther": "Read more"
   }
 }

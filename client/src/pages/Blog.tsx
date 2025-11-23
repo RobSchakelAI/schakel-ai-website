@@ -4,8 +4,10 @@ import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { getAllBlogPosts } from '@shared/blog-data';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Blog() {
+  const { t } = useLanguage();
   const posts = getAllBlogPosts();
 
   return (
@@ -32,10 +34,10 @@ export default function Blog() {
           {/* Page Header */}
           <div className="mb-16">
             <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-              Blogs
+              {t.blog.title}
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl">
-              Praktische verhalen over AI-first development, vibecoding, AI automations en hoe we technologie inzetten om slimmer te bouwen.
+              {t.blog.subtitle}
             </p>
           </div>
 
@@ -66,7 +68,7 @@ export default function Blog() {
                     </div>
                     <div className="flex items-center gap-1">
                       <Clock className="w-4 h-4" />
-                      <span>{post.readingTime} min leestijd</span>
+                      <span>{post.readingTime} {t.blog.readingTime}</span>
                     </div>
                   </div>
 
@@ -82,7 +84,7 @@ export default function Blog() {
 
                   {/* Read More Link */}
                   <div className="flex items-center gap-2 text-primary font-medium group-hover:gap-3 transition-all">
-                    <span>Lees verder</span>
+                    <span>{t.blog.readFurther}</span>
                     <ArrowRight className="w-4 h-4" />
                   </div>
 
@@ -109,7 +111,7 @@ export default function Blog() {
           {posts.length === 0 && (
             <div className="text-center py-20">
               <p className="text-muted-foreground text-lg">
-                Nog geen blogposts. Kom binnenkort terug!
+                {t.blog.noPosts}
               </p>
             </div>
           )}
