@@ -5,9 +5,9 @@ Ja. Wij deden het. En het werkte verrassend goed.
 We hebben onze website zelf gevibecoded.
 Niet omdat het moest, maar omdat we wilden testen hoe ver je komt als je:
 
-• geen programmeur bent,
-• wél snapt hoe systemen werken,
-• én AI slim inzet om het zware werk te doen.
+- geen programmeur bent,
+- wél snapt hoe systemen werken,
+- én AI slim inzet om het zware werk te doen.
 
 Mijn achtergrond ligt in finance en BI. Dus ik kan prima nadenken in processen, datastructuren, afhankelijkheden en logica.
 Maar dingen als React, Vite, bundlers, CORS (Cross-Origin Resource Sharing: de regels die bepalen welke websites met elkaar mogen praten), UI components… dat was allemaal vrij nieuw voor me.
@@ -58,11 +58,11 @@ maar dat was níet het doel.
 
 We wilden een setup die:
 
-• modulair is
-• schaalbaar is
-• AI-first werkt
-• netjes te debuggen is
-• logisch is voor grotere projecten
+- modulair is
+- schaalbaar is
+- AI-first werkt
+- netjes te debuggen is
+- logisch is voor grotere projecten
 
 Daarom werken we standaard met twee lagen:
 
@@ -80,14 +80,14 @@ Dat geeft rust en duidelijkheid. Vooral als je snel wilt bouwen.
 
 Deze tools vormen de fundering van onze manier van bouwen:
 
-• [Supabase](https://supabase.com) → auth, database, storage, edge functions
-• [Vercel](https://vercel.com) → super snelle frontend hosting
-• [Railway](https://railway.app) → Node runtimes & microservices
-• [GitHub](https://github.com) → version control + CI/CD (Continuous Integration/Deployment: automatisch testen en deployen)
-• [Replit](https://replit.com) → vibecoding + AI agents
-• Codex → AI code reviewer
-• LLM's: ChatGPT, Claude, Gemini, Grok, Perplexity
-• [Schakel Development Standards](https://schakel.ai) → onze eigen spelregels
+- [Supabase](https://supabase.com) → auth, database, storage, edge functions
+- [Vercel](https://vercel.com) → super snelle frontend hosting
+- [Railway](https://railway.app) → Node runtimes & microservices
+- [GitHub](https://github.com) → version control + CI/CD (Continuous Integration/Deployment: automatisch testen en deployen)
+- [Replit](https://replit.com) → vibecoding + AI agents
+- Codex → AI code reviewer
+- LLM's: ChatGPT, Claude, Gemini, Grok, Perplexity
+- [Schakel Development Standards](https://schakel.ai) → onze eigen spelregels
 
 Voor deze website hadden we géén database nodig, dus we bleven bij in-memory opslag + MailerSend.
 
@@ -100,16 +100,16 @@ Deze stack is getest, schaalbaar, en voelt logisch in de praktijk.
 
 Voor deze site gebruikten we:
 
-• React + TypeScript
-• Vite
-• Tailwind
-• shadcn/ui
+- React + TypeScript
+- Vite
+- Tailwind
+- shadcn/ui
 
 Niet omdat het "moet", maar omdat het:
 
-• snel is,
-• prettig itereren is,
-• en AI goed met deze toolset overweg kan.
+- snel is,
+- prettig itereren is,
+- en AI goed met deze toolset overweg kan.
 
 Ik ben niet begonnen met "React is de beste keuze",
 maar met:
@@ -126,21 +126,21 @@ de hero-animatie was níet "AI deed dit wel even".
 
 **We hebben echt veel iteraties gedaan**
 
-• tientallen varianten
-• heel veel prompts
-• Agent 3 die soms compleet andere kanten opging
-• dingen die te druk waren
-• dingen die te simpel waren
-• dingen die gewoon lelijk waren
+- tientallen varianten
+- heel veel prompts
+- Agent 3 die soms compleet andere kanten opging
+- dingen die te druk waren
+- dingen die te simpel waren
+- dingen die gewoon lelijk waren
 
 **Veel sparren met Simon**
 
 We hebben continu afgestemd:
 
-• past dit bij Schakel?
-• past dit bij wie wij zijn?
-• voelt het modern maar niet schreeuwerig?
-• klopt de vibe?
+- past dit bij Schakel?
+- past dit bij wie wij zijn?
+- voelt het modern maar niet schreeuwerig?
+- klopt de vibe?
 
 **70% itereren, 30% AI, 100% teamwork**
 
@@ -151,13 +151,13 @@ Wij gaven richting, nuance en smaak.
 
 Omdat:
 
-• het moet passen bij onze stijl
-• het moet menselijk zijn
-• niet marketingachtig
-• niet stoffig
-• niet te saai
-• niet te blij
-• en wel persoonlijk
+- het moet passen bij onze stijl
+- het moet menselijk zijn
+- niet marketingachtig
+- niet stoffig
+- niet te saai
+- niet te blij
+- en wel persoonlijk
 
 AI kan je helpen oefenen, maar de inhoud moet van jezelf komen.
 Dat merkten we hier heel sterk.
@@ -171,10 +171,10 @@ het contactformulier verwerken.
 
 Met:
 
-• Express + TS
-• Zod validatie
-• Railway hosting
-• MailerSend
+- Express + TS
+- Zod validatie
+- Railway hosting
+- MailerSend
 
 Dat is alles.
 En dat is precies genoeg.
@@ -193,10 +193,10 @@ CORS is basically een regel-setje dat bepaalt wie tegen je backend mag praten.
 
 Onze regels:
 
-• schakel.ai
-• www.schakel.ai
-• localhost (tijdens bouwen)
-• preview-URL's van Vercel en Railway
+- schakel.ai
+- www.schakel.ai
+- localhost (tijdens bouwen)
+- preview-URL's van Vercel en Railway
 
 Custom middleware, geen wildcardgedoe.
 
@@ -242,11 +242,11 @@ Dit zijn onze eigen spelregels voor hoe code eruitziet, hoe componenten worden o
 
 Tijdens het bouwen blijven we continu scherp op:
 
-• gecentraliseerde code (niet overal hetzelfde herhalen)
-• consistente naming
-• logische structuur
-• herbruikbaarheid
-• schaalbaarheid
+- gecentraliseerde code (niet overal hetzelfde herhalen)
+- consistente naming
+- logische structuur
+- herbruikbaarheid
+- schaalbaarheid
 
 AI kan snel bouwen, maar zonder standaarden krijg je rommel.
 Wij zorgen dat alles netjes blijft — van eerste commit tot laatste deploy.
@@ -259,12 +259,12 @@ Dit is een workflow die we vaker gaan gebruiken:
 
 Codex checkt:
 
-• structuur
-• naming
-• type fouten
-• inconsistenties
-• kleine optimalisaties
-• afwijkingen van onze standards
+- structuur
+- naming
+- type fouten
+- inconsistenties
+- kleine optimalisaties
+- afwijkingen van onze standards
 
 Het haalt de ruis eruit, zodat je niet alles handmatig hoeft na te lopen.
 
@@ -272,11 +272,11 @@ Het haalt de ruis eruit, zodat je niet alles handmatig hoeft na te lopen.
 
 Die kijkt:
 
-• klopt de logica echt?
-• is dit herbruikbaar?
-• blijft dit stabiel als we uitbreiden?
-• klopt het binnen onze architectuur?
-• ziet dit eruit zoals wij willen?
+- klopt de logica echt?
+- is dit herbruikbaar?
+- blijft dit stabiel als we uitbreiden?
+- klopt het binnen onze architectuur?
+- ziet dit eruit zoals wij willen?
 
 AI maakt het snel.
 Mens maakt het goed.
@@ -292,12 +292,12 @@ We gebruiken [Umami](https://umami.is) omdat het precies genoeg data geeft zonde
 
 We meten:
 
-• pageviews
-• sectie-views
-• taalwissels
-• thema-toggles
-• navigatie
-• form-submits
+- pageviews
+- sectie-views
+- taalwissels
+- thema-toggles
+- navigatie
+- form-submits
 
 Geen cookies.
 Geen banners.
@@ -309,12 +309,12 @@ Geen irritatie.
 
 AI heeft geholpen bij:
 
-• eerste drafts
-• brainstorms
-• debug hints
-• code sanity checks
-• refactor suggesties
-• tekststructuur
+- eerste drafts
+- brainstorms
+- debug hints
+- code sanity checks
+- refactor suggesties
+- tekststructuur
 
 Maar:
 de keuzes, de smaak, de logica en het verhaal waren menselijk.
@@ -365,11 +365,11 @@ Commit vaak, met duidelijke messages. Als iets kapot gaat, kun je terug. Git is 
 
 Het eindresultaat is een website die:
 
-• snel is
-• modern is
-• AI-first is
-• technisch netjes in elkaar zit
-• en precies past bij wie wij zijn
+- snel is
+- modern is
+- AI-first is
+- technisch netjes in elkaar zit
+- en precies past bij wie wij zijn
 
 En misschien nog het belangrijkste:
 het was leuk om te bouwen.
