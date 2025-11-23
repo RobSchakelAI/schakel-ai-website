@@ -16,3 +16,33 @@ export const insertUserSchema = createInsertSchema(users).pick({
 
 export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
+
+// Blog post types (static content, not database-backed)
+export interface BlogPost {
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  author: {
+    name: string;
+    role: string;
+    bio: string;
+  };
+  publishDate: string; // ISO date string
+  readingTime: number; // minutes
+  metaDescription: string;
+  keywords: string[];
+  ogImage?: string;
+  category?: string;
+}
+
+// SEO page types (for future landing pages)
+export interface SEOPage {
+  slug: string;
+  title: string;
+  metaDescription: string;
+  content: string;
+  keywords: string[];
+  ogImage?: string;
+  schema?: Record<string, any>; // Custom schema per page
+}
