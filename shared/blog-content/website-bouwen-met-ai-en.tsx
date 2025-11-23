@@ -68,253 +68,289 @@ That's why we work with two layers by default:
 **1. Core Stack: the fixed foundation**
 This doesn't change quickly.
 
-Our reliable foundation that just works:
+**2. Build Tooling: per project, per vibe**
+What makes sense now might be different in a year.
 
-- **Backend**: Railway (easy deployment, no fuss)
-- **Database**: Supabase (PostgreSQL, real-time capabilities, auth built-in)
-- **Frontend**: Vercel (blazing fast, CDN everywhere, automatic pre-rendering)
-- **DNS & Domain**: Namecheap (clean, no nonsense)
-
-These tools aren't new. They're proven. They simply work.
-
-What matters: not using five different services if one does the job.
-
-This stack scales from MVP to production. No migration needed.
-
-**2. AI Tools: flexible and replaceable**
-This changes often.
-
-We work with AI agents that help us build faster:
-
-- Replit Agent (for full-stack development)
-- ChatGPT / Claude (for code reviews, debugging, brainstorming)
-- Codex (for architecture decisions)
-
-Important: these tools are replaceable. If something better comes along tomorrow, we switch.
-
-The stack stays.
-The AI tools change.
-
-That keeps us flexible without losing stability.
+That provides peace and clarity. Especially when you want to build fast.
 
 ---
 
-## Tool choice: tools that get out of your way
+## Our Schakel Core Stack (the stable foundation under everything)
 
-**Replit Agent 3: the AI builder**
-We built the entire website with Replit Agent 3.
+These tools form the foundation of our way of building:
 
-Why?
+- [Supabase](https://supabase.com): auth, database, storage, edge functions
+- [Vercel](https://vercel.com): super fast frontend hosting
+- [Railway](https://railway.app): Node runtimes & microservices
+- [GitHub](https://github.com): version control + CI/CD (Continuous Integration/Deployment: automatic testing and deploying)
+- [Replit](https://replit.com): vibecoding + AI agents
+- [Codex](https://codex.storage): AI code reviewer
+- LLMs: [ChatGPT](https://openai.com/chatgpt), [Claude](https://claude.ai), [Gemini](https://gemini.google.com), [Grok](https://x.ai), [Perplexity](https://perplexity.ai)
+- [Schakel Development Standards](https://schakel.ai): our own rules
 
-- It understands context. You can say "make it like the about section, but then for services" and it gets it.
-- It's fast. Changes happen in seconds.
-- It thinks in full-stack. Frontend, backend, database - one conversation.
-- It works iteratively. You keep refining until it's right.
+For this website we didn't need a database, so we stuck with in-memory storage + MailerSend.
 
-But - and this is crucial - you need to know what you're asking for.
-If you don't understand what a component does or how an API works, you'll still get stuck.
-
-AI makes building faster, not easier. You still need to think.
-
-**Supabase: database as a service**
-We chose Supabase because:
-
-- It's PostgreSQL (real database, no toy stuff)
-- It has built-in auth (less code to write)
-- It scales automatically (no sudden surprises)
-- It integrates with everything (Railway, Vercel, you name it)
-
-We don't use it to its full potential yet. But it's there when we need it.
-
-**Vercel: frontend in production**
-Vercel hosts our frontend because:
-
-- It's ridiculously fast (CDN everywhere)
-- It pre-renders automatically (better SEO)
-- It deploys on every Git push (zero manual work)
-- It just works (seriously, no configuration needed)
-
-Push to GitHub, auto-deploy to production. That's how modern should feel.
-
-**Railway: backend without complexity**
-Railway runs our backend because:
-
-- It's simple (no Kubernetes, no Docker files, just works)
-- It scales when needed (and doesn't when not needed)
-- It has clear pricing (no surprise bills)
-- It connects to Supabase seamlessly (one click, done)
-
-No over-engineering. Just what you need.
-
-**GitHub: version control**
-Git is non-negotiable. Period.
-
-We work with two branches:
-- DEV (everything lands here first)
-- MAIN (only clean, tested code)
-
-Push to DEV → Test → Merge to MAIN → Auto-deploys to Vercel + Railway
-
-Simple. Clean. Works.
+The core:
+This stack is tested, scalable, and feels logical in practice.
 
 ---
 
-## The build process: iteration over perfection
+## Build tooling (for this site): just what works best right now
 
-**Start with the foundation**
-First, we set up the basics:
+For this site we used:
 
-- Database schema (what data do we need?)
-- API routes (how does data flow?)
-- Core components (button, card, form - reusable building blocks)
+- React + TypeScript
+- Vite
+- Tailwind
+- shadcn/ui
 
-This seems boring, but it saves you later.
-Good foundation = fast iterations.
+Not because it's "required", but because it:
 
-**Build page by page**
-We didn't build everything at once.
+- is fast,
+- iterates nicely,
+- and AI handles this toolset well.
 
-First the homepage.
-Then the about page.
-Then the contact form.
+I didn't start with "React is the best choice",
+but with:
+"What's the fastest way to build this design and these interactions?"
 
-One thing at a time. Get it working. Move on.
-
-AI helps here: "Make a contact form with name, email, message fields and validation."
-Done in 10 minutes instead of 2 hours.
-
-**Iterate ruthlessly**
-Nothing was right the first time.
-
-We built → tested → broke → fixed → tested → improved.
-
-That's the process. That's how it should be.
-
-AI makes iterations faster, but you still need to iterate.
-
-**Deploy early, deploy often**
-We deployed to production from day one.
-
-Not because it was ready, but to test in a real environment.
-
-Local development is nice. Production is truth.
-
-Deploy, break, fix, deploy. Repeat.
+React + Vite turned out to be most logical for now.
 
 ---
 
-## What worked surprisingly well
+## Frontend: especially the animation (and the text!) were work
 
-**AI for code generation**
-Replit Agent 3 wrote 80% of the code. Seriously.
+Let me be honest here:
+the hero animation was not "AI just did this real quick".
 
-We focused on:
+**We did a lot of iterations**
 
-- What should it do?
-- How should it look?
-- How should it behave?
+- dozens of variants
+- lots of prompts
+- Agent 3 sometimes going in completely different directions
+- things that were too busy
+- things that were too simple
+- things that were just ugly
 
-AI focused on:
+**Lots of sparring with Simon**
 
-- How do we build that?
-- Which libraries do we use?
-- How do we structure the code?
+We continuously aligned:
 
-That division worked incredibly well.
+- does this fit Schakel?
+- does this fit who we are?
+- does it feel modern but not loud?
+- is the vibe right?
 
-**Rapid prototyping**
-From idea to working prototype: hours instead of days.
+**70% iterating, 30% AI, 100% teamwork**
 
-"Make a timeline component with steps, arrows, and animations."
-15 minutes later: done.
+Replit Agent 3 made the rough version each time.
+We provided direction, nuance and taste.
 
-Refine, adjust, improve - but the foundation was there.
+**But the text... that was really the most work**
 
-**Real-time testing**
-Deploy on every change. Test immediately in production.
+Because:
 
-No "it works on my machine" moments.
+- it has to fit our style
+- it has to be human
+- not marketing-like
+- not dusty
+- not too boring
+- not too cheerful
+- and personal
 
-If it worked in production, it worked. Period.
-
----
-
-## What was harder than expected
-
-**Context is everything**
-AI is only as good as the context you give it.
-
-Vague instructions → vague results.
-Clear instructions → good results.
-
-"Make it better" doesn't work.
-"Make the spacing larger, center the text, and use the primary color for the button" works.
-
-You need to know what you want before AI can help you.
-
-**Integration complexity**
-Connecting Vercel + Railway + Supabase + GitHub wasn't plug-and-play.
-
-CORS errors, authentication flows, environment variables - we spent hours debugging.
-
-AI helped, but didn't solve everything automatically.
-
-You still need to understand how systems connect.
-
-**Quality control**
-AI doesn't care about clean code.
-
-It works? Ship it. That's the AI mindset.
-
-But you care.
-Messy code becomes unmaintainable code.
-
-So we reviewed everything:
-
-- Does this make sense?
-- Is this the clean approach?
-- Can we simplify this?
-
-AI builds fast. You ensure quality.
+AI can help you practice, but the content has to come from yourself.
+We noticed that very strongly here.
 
 ---
 
-## Key lessons: what we'd tell our past selves
+## Backend: simple, clear, and exactly what it needs to do
 
-**Don't start with the design**
-We initially spent too much time on perfect design.
+The backend does one thing:
+process the contact form.
 
-Wrong approach.
+With:
 
-Build functionality first. Make it work. Then make it beautiful.
+- Express + TS
+- Zod validation
+- Railway hosting
+- MailerSend
 
-A beautiful broken website is still broken.
+That's all.
+And that's exactly enough.
 
-**Set up deployment from day one**
-Don't wait until "it's ready" to deploy.
+**Flow**
 
-Deploy from the start. See what breaks in production. Fix it immediately.
+1. form → POST
+2. backend validates
+3. MailerSend sends email
+4. backend responds
+5. Umami logs
 
-Deployment is part of development, not something you do at the end.
+**CORS (friendly explanation)**
 
-**Use AI for iteration, not creation**
-AI is amazing for refining things.
+CORS is basically a set of rules that determines who can talk to your backend.
 
-"Make this component responsive"
-"Add error handling to this form"
-"Optimize this database query"
+Our rules:
 
-But it's not great at:
+- schakel.ai
+- www.schakel.ai
+- localhost (while building)
+- preview URLs from Vercel and Railway
 
-"Build me a complete website"
+Custom middleware, no wildcard stuff.
 
-Start with structure. Let AI fill in the details.
+---
 
-**Keep iterating until it's actually good**
-And try not to throw your laptop out the window. Some bugs are frustrating, but almost always solvable.
+## Deployment: frontend on Vercel, backend on Railway
+
+This is perhaps the choice that provides the most peace of mind.
+
+**Frontend → [Vercel](https://vercel.com)**
+**Backend → [Railway](https://railway.app)**
+
+This setup is actually overkill for a simple website like this.
+But it's exactly how we want to work.
+
+It's future-proof.
+It lays the foundation for larger projects.
+It makes scaling easy when needed.
+
+We don't build for now, we build for later.
+
+---
+
+## DNS: small part, but crucial
+
+DNS is at Namecheap.
+A few records to Vercel.
+That was it.
+
+DNS seems simple, until it's wrong.
+Then your entire website doesn't work.
+
+---
+
+## Code review with AI, but first: our Schakel Standards
+
+Before we talk about code review, something important:
+
+**We don't just build**
+
+Based on earlier builds we've created Schakel Development Standards.
+These are our own rules for what code looks like, how components are set up, and how everything talks to each other.
+
+During building we continuously stay sharp on:
+
+- centralized code (not repeating the same everywhere)
+- consistent naming
+- logical structure
+- reusability
+- scalability
+
+AI can build fast, but without standards you get a mess.
+We ensure everything stays clean, from first commit to last deploy.
+
+**Then comes the review**
+
+This is a workflow we'll use more often:
+
+**Step 1: AI (Codex) does the first review**
+
+Codex checks:
+
+- structure
+- naming
+- type errors
+- inconsistencies
+- small optimizations
+- deviations from our standards
+
+It removes the noise, so you don't have to manually check everything.
+
+**Step 2: programmer does the final check**
+
+They look at:
+
+- is the logic actually correct?
+- is this reusable?
+- will this stay stable when we expand?
+- does this fit within our architecture?
+- does this look the way we want?
+
+AI makes it fast.
+Human makes it good.
+Standards make it consistent.
+
+And precisely this combination makes building truly feasible when you're not a full-time developer.
+
+---
+
+## Analytics: Umami (light, cookieless, simple)
+
+We use [Umami](https://umami.is) because it provides exactly enough data without hassle.
+
+We measure:
+
+- pageviews
+- section-views
+- language switches
+- theme-toggles
+- navigation
+- form-submits
+
+No cookies.
+No banners.
+No irritation.
+
+---
+
+## AI during building & writing: supercharger, not replacement
+
+AI helped with:
+
+- first drafts
+- brainstorms
+- debug hints
+- code sanity checks
+- refactor suggestions
+- text structure
+
+But:
+the choices, the taste, the logic and the story were human.
+
+AI makes you ten times faster,
+but only if you know exactly what you want yourself.
+
+---
+
+## Vibecode notes: what disappointed and what exceeded expectations
+
+**Agent 3 is insane!**
+Try it yourself, simply insane. A significant difference from months ago. The quality of what it generates is truly next level.
+
+**Stay on task, and watch the details**
+Replit's first version looks great, but the devil is in the details. And then the real work begins. That last 20% costs 80% of your time.
+
+**Always realize an LLM is talking with you**
+It's never critical enough. Make sure you stay continuously critical and challenge the LLM on what it proposes or says. It will almost always say "yes that's correct", even when it's not correct.
+
+**Think carefully about architecture**
+Make sure you think carefully about how processes run and what the application flow is. Really think carefully about the architecture before you start. AI helps you build, but not with strategic thinking.
+
+**Spar with multiple LLMs**
+Spar with one LLM and then spar with another LLM. Be super critical. Claude sometimes says something different than ChatGPT. Use that.
+
+**Keep it simple: less is more**
+Every extra feature is extra complexity. Every extra animation is something that can break. Start minimal, add what's really needed.
+
+**Watch your budget with Replit**
+Use LLMs that you already pay a fixed monthly amount for, and not only through Replit. You can, but the bill is determined by usage. Can add up quickly.
+
+**Have patience!**
+Keep iterating until it's really good. And try not to throw your laptop out the window. Some bugs are frustrating, but almost always solvable.
 
 **Document your choices**
-Write down why you did something a certain way. In two months, you won't remember. Future you will be grateful.
+Write down why you did something a certain way. In two months you won't remember. Future you will be grateful.
 
 **Test in different browsers**
 What works in Chrome doesn't always work in Safari. What works on desktop doesn't always work on mobile. Test early, test often.
@@ -343,11 +379,11 @@ building smarter, not more complicated.
 ---
 
 **Want to build AI-first too?**
-Check out our approach or get in touch for a conversation about your project.
+[Check out our approach](https://schakel.ai) or [get in touch](https://schakel.ai/#contact) for a conversation about your project.
 
 ---
 
-## FAQ about building websites with AI
+## Frequently asked questions about building websites with AI
 
 **Do you need programming experience to build a website with AI?**
 No programming experience required, but logical thinking is essential. You need to understand systems and use AI critically, not follow it blindly.
