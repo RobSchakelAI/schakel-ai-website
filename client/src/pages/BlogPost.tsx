@@ -210,7 +210,7 @@ export default function BlogPost() {
 
               {/* Article Content */}
               <article 
-                className="prose dark:prose-invert max-w-none prose-headings:font-display prose-headings:font-bold prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-strong:text-foreground prose-code:text-foreground prose-code:bg-muted prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-pre:bg-muted prose-pre:border prose-pre:border-border prose-p:leading-relaxed prose-ul:my-4 prose-li:my-0"
+                className="prose dark:prose-invert max-w-none prose-headings:font-display prose-headings:font-bold prose-h2:text-2xl prose-a:text-primary prose-a:no-underline hover:prose-a:underline prose-strong:text-foreground prose-code:text-foreground prose-code:bg-muted prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-pre:bg-muted prose-pre:border prose-pre:border-border prose-p:leading-relaxed prose-ul:my-4 prose-li:my-0"
                 data-testid="article-content"
               >
                 <ReactMarkdown 
