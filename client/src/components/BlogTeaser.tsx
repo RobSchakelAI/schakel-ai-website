@@ -17,7 +17,7 @@ export default function BlogTeaser() {
         <div className="flex items-center justify-between mb-12">
           <div>
             <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-2">
-              Latest Writing
+              Laatste blog
             </h2>
             <p className="text-muted-foreground">
               Praktische inzichten over AI-first development

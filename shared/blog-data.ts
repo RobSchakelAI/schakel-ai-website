@@ -9,7 +9,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: 'Zonder programmeur onze website gebouwd met AI. Het complete verhaal over vibecoding, tech stack keuzes en wat echt werkt. AI-first development uitgelegd.',
     author: {
       name: 'Rob van Zutphen',
-      role: 'Oprichter Schakel',
+      role: 'Mede-oprichter Schakel',
       bio: 'Rob helpt bedrijven slimmer werken met AI. Achtergrond in finance en BI, nu gefocust op praktische AI-implementaties die écht rendement opleveren.'
     },
     publishDate: '2025-11-23',

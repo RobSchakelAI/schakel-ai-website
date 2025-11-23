@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, Sun, Moon } from 'lucide-react';
@@ -77,6 +78,15 @@ export default function Header() {
           >
             {t.nav.about}
           </button>
+          <Link href="/blog">
+            <button
+              className="text-sm font-medium text-foreground hover-elevate active-elevate-2 px-3 py-2 rounded-md"
+              data-testid="link-blog"
+              onClick={() => trackEvent('navigation-click', { section: 'blog' })}
+            >
+              Blog
+            </button>
+          </Link>
           <button
             onClick={() => scrollToSection('contact')}
             className="text-sm font-medium text-foreground hover-elevate active-elevate-2 px-3 py-2 rounded-md"
@@ -189,6 +199,18 @@ export default function Header() {
               >
                 {t.nav.about}
               </button>
+              <Link href="/blog">
+                <button
+                  className="text-left text-lg font-medium text-foreground hover-elevate active-elevate-2 px-4 py-3 rounded-md w-full"
+                  data-testid="link-blog-mobile"
+                  onClick={() => {
+                    trackEvent('navigation-click', { section: 'blog', device: 'mobile' });
+                    setMobileMenuOpen(false);
+                  }}
+                >
+                  Blog
+                </button>
+              </Link>
               <button
                 onClick={() => scrollToSection('contact')}
                 className="text-left text-lg font-medium text-foreground hover-elevate active-elevate-2 px-4 py-3 rounded-md"
