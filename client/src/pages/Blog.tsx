@@ -32,10 +32,10 @@ export default function Blog() {
           {/* Page Header */}
           <div className="mb-16">
             <h1 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-              Latest Writing
+              Blogs
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl">
-              Praktische verhalen over AI-first development, vibecoding en hoe we technologie inzetten om slimmer te bouwen.
+              Praktische verhalen over AI-first development, vibecoding, AI automations en hoe we technologie inzetten om slimmer te bouwen.
             </p>
           </div>
 
