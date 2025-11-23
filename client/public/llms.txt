@@ -74,6 +74,19 @@ We work with:
 - Voice AI for phone automation
 - RAG (Retrieval-Augmented Generation) systems
 
+## Blog & Resources
+
+### Latest Writing: Website bouwen met AI
+- URL: https://www.schakel.ai/blog/website-bouwen-met-ai
+- Published: November 23, 2025
+- Author: Rob van Zutphen
+- Topic: Complete story about building schakel.ai using AI-first development and vibecoding
+- Key Topics: Replit Agent 3, AI-first development, React + TypeScript + Vite, practical AI implementation, vibecoding workflow
+- Reading Time: 12 minutes
+- Summary: Detailed technical and practical guide about building a professional website with AI assistance, including architecture decisions, tech stack choices, and lessons learned from multiple AI-first projects
+
+More blog posts: https://www.schakel.ai/blog
+
 ## Contact
 For AI implementation inquiries or consultation:
 - Email: info@schakel.ai

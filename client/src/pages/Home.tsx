@@ -7,6 +7,7 @@ import ServicesGrid from '@/components/ServicesGrid';
 import ApproachTimeline from '@/components/ApproachTimeline';
 import Testimonials from '@/components/Testimonials';
 import About from '@/components/About';
+import BlogTeaser from '@/components/BlogTeaser';
 import ExpandingCTA from '@/components/ExpandingCTA';
 import Footer from '@/components/Footer';
 import { useScrollTracking } from '@/hooks/useScrollTracking';
@@ -26,6 +27,7 @@ export default function Home() {
           <ApproachTimeline />
         </div>
         <About />
+        <BlogTeaser />
         <ExpandingCTA />
       </main>
       <Footer />

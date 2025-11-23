@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, Sun, Moon } from 'lucide-react';
@@ -12,6 +13,7 @@ export default function Header() {
   const { theme, toggleTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [location, setLocation] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,12 +24,25 @@ export default function Header() {
   }, []);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setMobileMenuOpen(false);
-      trackEvent('navigation-click', { section: id });
+    // If not on homepage, navigate to homepage first
+    if (location !== '/') {
+      setLocation('/');
+      // Wait for navigation, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // Already on homepage, just scroll
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
     }
+    setMobileMenuOpen(false);
+    trackEvent('navigation-click', { section: id });
   };
 
   return (
@@ -40,7 +55,13 @@ export default function Header() {
     >
       <div className="max-w-6xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
         <button 
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          onClick={() => {
+            if (location !== '/') {
+              setLocation('/');
+            } else {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+          }}
           className="hover-elevate active-elevate-2 rounded-md transition-transform hover:scale-105"
           data-testid="link-home"
         >
@@ -77,6 +98,15 @@ export default function Header() {
           >
             {t.nav.about}
           </button>
+          <Link href="/blog">
+            <button
+              className="text-sm font-medium text-foreground hover-elevate active-elevate-2 px-3 py-2 rounded-md"
+              data-testid="link-blog"
+              onClick={() => trackEvent('navigation-click', { section: 'blog' })}
+            >
+              Blog
+            </button>
+          </Link>
           <button
             onClick={() => scrollToSection('contact')}
             className="text-sm font-medium text-foreground hover-elevate active-elevate-2 px-3 py-2 rounded-md"
@@ -189,6 +219,18 @@ export default function Header() {
               >
                 {t.nav.about}
               </button>
+              <Link href="/blog">
+                <button
+                  className="text-left text-lg font-medium text-foreground hover-elevate active-elevate-2 px-4 py-3 rounded-md w-full"
+                  data-testid="link-blog-mobile"
+                  onClick={() => {
+                    trackEvent('navigation-click', { section: 'blog', device: 'mobile' });
+                    setMobileMenuOpen(false);
+                  }}
+                >
+                  Blog
+                </button>
+              </Link>
               <button
                 onClick={() => scrollToSection('contact')}
                 className="text-left text-lg font-medium text-foreground hover-elevate active-elevate-2 px-4 py-3 rounded-md"

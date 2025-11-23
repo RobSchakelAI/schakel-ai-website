@@ -232,5 +232,25 @@
         "description": "Van productbeschrijvingen tot social posts en documentatie - AI schrijft content die klinkt alsof jij het zelf deed. Schaalbaar, consistent en tijdbesparend"
       }
     ]
+  },
+  "blog": {
+    "title": "Blogs",
+    "subtitle": "Praktische verhalen over AI-first development, vibecoding, AI automations en hoe we technologie inzetten om slimmer te bouwen.",
+    "latestTitle": "Laatste blog",
+    "latestSubtitle": "Praktische inzichten over AI-first development",
+    "allPosts": "Alle posts",
+    "readMore": "Lees het volledige verhaal",
+    "readingTime": "min leestijd",
+    "publishedOn": "Gepubliceerd op",
+    "shareOn": "Deel op",
+    "backToBlog": "Terug naar blog",
+    "backToHome": "Terug naar home",
+    "tableOfContents": "Op deze pagina",
+    "ctaTitle": "Wil je ook AI-first bouwen?",
+    "ctaDescription": "Bekijk onze aanpak of neem contact op voor een gesprek over jouw project.",
+    "ctaApproach": "Bekijk onze aanpak",
+    "ctaContact": "Neem contact op",
+    "noPosts": "Nog geen blogposts. Kom binnenkort terug!",
+    "readFurther": "Lees verder"
   }
 }
