@@ -84,8 +84,8 @@ Deze tools vormen de fundering van onze manier van bouwen:
 - [Railway](https://railway.app): Node runtimes & microservices
 - [GitHub](https://github.com): version control + CI/CD (Continuous Integration/Deployment: automatisch testen en deployen)
 - [Replit](https://replit.com): vibecoding + AI agents
-- Codex: AI code reviewer
-- LLM's: ChatGPT, Claude, Gemini, Grok, Perplexity
+- [Codex](https://codex.storage): AI code reviewer
+- LLM's: [ChatGPT](https://openai.com/chatgpt), [Claude](https://claude.ai), [Gemini](https://gemini.google.com), [Grok](https://x.ai), [Perplexity](https://perplexity.ai)
 - [Schakel Development Standards](https://schakel.ai): onze eigen spelregels
 
 Voor deze website hadden we géén database nodig, dus we bleven bij in-memory opslag + MailerSend.
