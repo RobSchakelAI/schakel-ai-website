@@ -2,6 +2,9 @@ import express, { type Request, Response, NextFunction } from "express";
 import { createServer } from "http";
 import { registerRoutes } from "./routes";
 import { log } from "./vite";
+import { validateEnv, isOriginAllowed, ALLOWED_ORIGINS } from "./config";
+
+validateEnv();
 
 const app = express();
 
@@ -9,30 +12,22 @@ const app = express();
 app.use((req: Request, res: Response, next: NextFunction) => {
   const origin = req.headers.origin;
   
-  const allowedOrigins = [
-    'https://www.schakel.ai',
-    'https://schakel.ai',
-    'http://localhost:5000',
-    'http://localhost:3000'
-  ];
+  let allowOrigin: string = ALLOWED_ORIGINS[0];
   
-  // Determine which origin to allow
-  let allowOrigin = 'https://www.schakel.ai'; // Default fallback
-  
-  if (origin && (allowedOrigins.includes(origin) || 
-                 origin.endsWith('.schakel.ai') || 
-                 origin.endsWith('.vercel.app') ||
-                 origin.endsWith('.railway.app'))) {
-    allowOrigin = origin; // Use specific origin when matched
+  if (origin && isOriginAllowed(origin)) {
+    allowOrigin = origin;
   }
   
-  // Set CORS headers - NEVER use wildcard with credentials
   res.header('Access-Control-Allow-Origin', allowOrigin);
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Origin, X-Requested-With, Accept');
   res.header('Access-Control-Allow-Credentials', 'true');
   
-  // Handle OPTIONS preflight globally - short-circuit before route logic
+  res.header('X-Content-Type-Options', 'nosniff');
+  res.header('X-Frame-Options', 'DENY');
+  res.header('X-XSS-Protection', '1; mode=block');
+  res.header('Referrer-Policy', 'strict-origin-when-cross-origin');
+  
   if (req.method === 'OPTIONS') {
     return res.status(204).end();
   }

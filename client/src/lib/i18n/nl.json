@@ -85,11 +85,14 @@
       "name": "Naam",
       "email": "E-mailadres",
       "company": "Bedrijf",
+      "phone": "Telefoonnummer",
       "message": "Bericht",
       "submit": "Verstuur bericht",
       "success": "Bedankt! We nemen zo snel mogelijk contact op.",
       "successDescription": "We nemen zo snel mogelijk contact met je op.",
-      "error": "Er ging iets mis. Probeer het opnieuw."
+      "error": "Er ging iets mis. Probeer het opnieuw.",
+      "tooManyRequests": "Te veel verzoeken. Probeer het over een uur opnieuw.",
+      "fillAtLeastOne": "Vul ten minste één veld in."
     }
   },
   "footer": {

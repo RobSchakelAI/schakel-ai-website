@@ -15,19 +15,23 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>('nl');
+  const [language, setLanguage] = useState<Language>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('language') as Language;
+      if (saved && (saved === 'nl' || saved === 'en' || saved === 'ai')) {
+        return saved;
+      }
+    }
+    return 'nl';
+  });
 
   useEffect(() => {
-    const saved = localStorage.getItem('language') as Language;
-    if (saved && (saved === 'nl' || saved === 'en' || saved === 'ai')) {
-      setLanguage(saved);
-    }
-  }, []);
+    document.documentElement.lang = language === 'ai' ? 'nl' : language;
+  }, [language]);
 
   const handleSetLanguage = (lang: Language) => {
     setLanguage(lang);
     localStorage.setItem('language', lang);
-    document.documentElement.lang = lang;
   };
 
   const content = language === 'nl' ? nlContent : language === 'en' ? enContent : aiContent;

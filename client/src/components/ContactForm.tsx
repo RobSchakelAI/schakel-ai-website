@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -9,19 +8,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '
 import { useLanguage } from '@/contexts/LanguageContext';
 import { CheckCircle2, Send, AlertCircle } from 'lucide-react';
 import { apiRequest } from '@/lib/queryClient';
-
-const contactSchema = z.object({
-  name: z.string().optional(),
-  email: z.union([
-    z.string().email('Ongeldig e-mailadres'), 
-    z.literal('')
-  ]).optional(),
-  company: z.string().optional(),
-  phone: z.string().optional(),
-  message: z.string().optional(),
-});
-
-type ContactFormData = z.infer<typeof contactSchema>;
+import { contactSchema, type ContactFormData } from '@shared/contact';
 
 export default function ContactForm() {
   const { t } = useLanguage();
@@ -78,9 +65,9 @@ export default function ContactForm() {
           </p>
 
           <div className="text-center mb-12 space-y-1">
-            <p className="text-sm font-medium text-white">Schakel AI B.V.</p>
-            <p className="text-sm text-white/60">Coolsingel 65</p>
-            <p className="text-sm text-white/60">3012 AA Rotterdam</p>
+            <p className="text-sm font-medium text-white">{t.contact.address.company}</p>
+            <p className="text-sm text-white/60">{t.contact.address.street}</p>
+            <p className="text-sm text-white/60">{t.contact.address.postal}</p>
           </div>
 
           {error && (
@@ -165,7 +152,7 @@ export default function ContactForm() {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="text-sm font-medium text-white">
-                        Telefoonnummer
+                        {t.contact.form.phone}
                       </FormLabel>
                       <FormControl>
                         <Input
@@ -207,7 +194,7 @@ export default function ContactForm() {
                   data-testid="button-submit"
                 >
                   {form.formState.isSubmitting ? (
-                    'Verzenden...'
+                    t.contact.form.submit + '...'
                   ) : (
                     <>
                       {t.contact.form.submit}

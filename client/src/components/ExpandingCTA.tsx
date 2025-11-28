@@ -161,7 +161,7 @@ export function CTAOverlay() {
                       htmlFor="phone" 
                       className="block text-xs font-mono uppercase tracking-wider text-primary-foreground mb-2"
                     >
-                      Telefoonnummer
+                      {t.contact.form.phone}
                     </label>
                     <Input
                       id="phone"

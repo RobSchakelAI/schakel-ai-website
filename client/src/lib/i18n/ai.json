@@ -86,11 +86,14 @@
       "name": "Name",
       "email": "Email",
       "company": "Company",
+      "phone": "Phone",
       "message": "Message",
       "submit": "Send message",
       "success": "Message received. Response within 24 hours.",
       "successDescription": "We will contact you shortly.",
-      "error": "Submission failed. Please retry."
+      "error": "Submission failed. Please retry.",
+      "tooManyRequests": "Rate limit exceeded. Retry in 1 hour.",
+      "fillAtLeastOne": "At least one field required."
     }
   },
   "footer": {
@@ -233,5 +236,25 @@
         "size": "small"
       }
     ]
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Technical articles on AI-first development, vibecoding, AI automations, and implementation strategies.",
+    "latestTitle": "Latest post",
+    "latestSubtitle": "Technical insights on AI-first development",
+    "allPosts": "All posts",
+    "readMore": "Read full article",
+    "readingTime": "min read",
+    "publishedOn": "Published",
+    "shareOn": "Share on",
+    "backToBlog": "Back to blog",
+    "backToHome": "Back to home",
+    "tableOfContents": "Contents",
+    "ctaTitle": "Implement AI-first development?",
+    "ctaDescription": "Review implementation approach or schedule consultation.",
+    "ctaApproach": "View approach",
+    "ctaContact": "Contact",
+    "noPosts": "No posts available.",
+    "readFurther": "Continue reading"
   }
 }

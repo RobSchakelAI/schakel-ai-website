@@ -85,11 +85,14 @@
       "name": "Name",
       "email": "Email address",
       "company": "Company",
+      "phone": "Phone number",
       "message": "Message",
       "submit": "Send message",
       "success": "Thank you! We'll be in touch soon.",
       "successDescription": "We'll contact you as soon as possible.",
-      "error": "Something went wrong. Please try again."
+      "error": "Something went wrong. Please try again.",
+      "tooManyRequests": "Too many requests. Please try again in an hour.",
+      "fillAtLeastOne": "Please fill in at least one field."
     }
   },
   "footer": {
