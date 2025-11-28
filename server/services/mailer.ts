@@ -1,6 +1,14 @@
+/**
+ * MailerSend Email Service
+ * 
+ * Handles all outbound email for the contact form.
+ * Uses singleton pattern to avoid creating new SDK instances per request.
+ */
+
 import { MailerSend, EmailParams, Sender, Recipient } from "mailersend";
 import { ContactFormData } from "@shared/contact";
 
+// Singleton: one SDK instance reused across all requests
 let mailerInstance: MailerSend | null = null;
 
 export function getMailerSend(): MailerSend {
@@ -110,6 +118,7 @@ Via: contactformulier op schakel.ai
   `.trim();
 }
 
+// XSS prevention: escape user input before embedding in HTML
 function escapeHtml(text: string): string {
   const htmlEscapes: Record<string, string> = {
     "&": "&amp;",
@@ -121,6 +130,10 @@ function escapeHtml(text: string): string {
   return text.replace(/[&<>"']/g, (char) => htmlEscapes[char] || char);
 }
 
+/**
+ * Sends contact form submission via MailerSend.
+ * Sets reply-to to submitter's email for easy response.
+ */
 export async function sendContactEmail(data: ContactFormData): Promise<void> {
   const mailer = getMailerSend();
   const config = getMailerConfig();
@@ -135,6 +148,7 @@ export async function sendContactEmail(data: ContactFormData): Promise<void> {
     .setHtml(buildContactEmailHtml(data))
     .setText(buildContactEmailText(data));
 
+  // Reply-to: allows direct response to submitter
   if (data.email) {
     emailParams.setReplyTo({
       email: data.email,

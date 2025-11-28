@@ -1,3 +1,10 @@
+/**
+ * API Routes
+ * 
+ * All backend endpoints for the Schakel AI website.
+ * Currently handles: health checks and contact form submissions.
+ */
+
 import type { Express, Request, Response } from "express";
 import { serverContactSchema, normalizeContactData, isEmptySubmission } from "@shared/contact";
 import { sendContactEmail } from "./services/mailer";
@@ -5,6 +12,7 @@ import { contactRateLimit } from "./middleware/rateLimit";
 import { getConfig } from "./config";
 
 export async function registerRoutes(app: Express): Promise<void> {
+  // Health check endpoints for monitoring (Railway, uptime services)
   app.get("/api/health", (_req: Request, res: Response) => {
     res.status(200).json({
       status: "ok",
@@ -22,10 +30,21 @@ export async function registerRoutes(app: Express): Promise<void> {
     });
   });
 
+  /**
+   * Contact Form Endpoint
+   * 
+   * Security layers (in order):
+   * 1. Rate limiting (middleware) - 5 requests/hour per client
+   * 2. Honeypot check - hidden field that bots fill in
+   * 3. Zod validation - shared schema with frontend
+   * 4. Empty submission check - at least one field required
+   */
   app.post("/api/contact", contactRateLimit, async (req: Request, res: Response) => {
     try {
       const rawData = req.body;
 
+      // Honeypot: hidden field that humans don't fill but bots do
+      // Returns fake success to not reveal detection
       if (rawData._honeypot && rawData._honeypot.length > 0) {
         console.warn("Honeypot triggered - likely bot submission");
         return res.status(200).json({
@@ -34,6 +53,7 @@ export async function registerRoutes(app: Express): Promise<void> {
         });
       }
 
+      // Validate using shared schema (same as frontend for consistency)
       const parseResult = serverContactSchema.safeParse(rawData);
 
       if (!parseResult.success) {
@@ -51,8 +71,10 @@ export async function registerRoutes(app: Express): Promise<void> {
         });
       }
 
+      // Normalize: trim whitespace, lowercase email
       const normalizedData = normalizeContactData(parseResult.data);
 
+      // Final check: prevent completely empty submissions
       if (isEmptySubmission(normalizedData)) {
         return res.status(400).json({
           success: false,
@@ -60,6 +82,7 @@ export async function registerRoutes(app: Express): Promise<void> {
         });
       }
 
+      // Check email service availability
       const config = getConfig();
       if (!config.MAILERSEND_API_KEY) {
         console.error("MailerSend API key not configured");

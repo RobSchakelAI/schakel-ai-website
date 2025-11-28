@@ -1,3 +1,15 @@
+/**
+ * Rate Limiting Middleware
+ * 
+ * In-memory rate limiter with bounded storage to prevent memory exhaustion.
+ * Uses sliding window approach: tracks requests per client within a time window.
+ * 
+ * Memory Management:
+ * - Max 10,000 entries to prevent unbounded growth
+ * - Periodic cleanup of expired entries (every 60s)
+ * - LRU-style eviction when limit reached (removes 20% oldest)
+ */
+
 import type { Request, Response, NextFunction } from "express";
 import { RATE_LIMIT } from "../config";
 
@@ -6,10 +18,12 @@ interface RateLimitEntry {
   firstRequest: number;
 }
 
+// Memory bound: prevents DoS via memory exhaustion
 const MAX_STORE_SIZE = 10000;
 
 const rateLimitStore = new Map<string, RateLimitEntry>();
 
+// Removes entries older than the rate limit window
 function cleanupExpiredEntries(): void {
   const now = Date.now();
   const keys = Array.from(rateLimitStore.keys());
@@ -21,6 +35,7 @@ function cleanupExpiredEntries(): void {
   }
 }
 
+// LRU eviction: removes 20% oldest entries when store is full
 function evictOldestEntries(): void {
   const entries = Array.from(rateLimitStore.entries());
   entries.sort((a, b) => a[1].firstRequest - b[1].firstRequest);
@@ -31,8 +46,14 @@ function evictOldestEntries(): void {
   }
 }
 
+// Background cleanup task
 setInterval(cleanupExpiredEntries, 60 * 1000);
 
+/**
+ * Generates unique client identifier from IP + User-Agent.
+ * Combining both makes it harder to bypass by rotating IPs alone.
+ * X-Forwarded-For header is used when behind a proxy (Railway, Vercel).
+ */
 function getClientIdentifier(req: Request): string {
   const forwarded = req.headers["x-forwarded-for"];
   const ip = typeof forwarded === "string" 
@@ -44,6 +65,10 @@ function getClientIdentifier(req: Request): string {
   return `${ip}:${userAgent.slice(0, 50)}`;
 }
 
+/**
+ * Express middleware for rate limiting contact form submissions.
+ * Returns 429 Too Many Requests when limit exceeded.
+ */
 export function contactRateLimit(req: Request, res: Response, next: NextFunction) {
   const clientId = getClientIdentifier(req);
   const now = Date.now();

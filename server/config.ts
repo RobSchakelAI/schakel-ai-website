@@ -1,5 +1,13 @@
+/**
+ * Server Configuration
+ * 
+ * Centralized environment validation and security configuration.
+ * Uses Zod for type-safe validation with fail-fast behavior in production.
+ */
+
 import { z } from "zod";
 
+// Base schema shared between development and production
 const baseEnvSchema = z.object({
   NODE_ENV: z.enum(["development", "production", "test"]).default("development"),
   PORT: z.string().regex(/^\d+$/).default("5000"),
@@ -7,10 +15,12 @@ const baseEnvSchema = z.object({
   MAILERSEND_TO_EMAIL: z.string().email().default("rob@schakel.ai"),
 });
 
+// Development: API key optional (allows testing without email)
 const devEnvSchema = baseEnvSchema.extend({
   MAILERSEND_API_KEY: z.string().optional().default(""),
 });
 
+// Production: API key required (fail-fast if missing)
 const prodEnvSchema = baseEnvSchema.extend({
   MAILERSEND_API_KEY: z.string().min(1, "MAILERSEND_API_KEY is required in production"),
 });
@@ -25,6 +35,11 @@ export type EnvConfig = {
 
 let validatedEnv: EnvConfig | null = null;
 
+/**
+ * Validates environment variables at startup.
+ * Throws immediately if required vars are missing - prevents silent failures.
+ * Called once; result is cached for subsequent calls.
+ */
 export function validateEnv(): EnvConfig {
   if (validatedEnv) {
     return validatedEnv;
@@ -55,8 +70,13 @@ export function getConfig(): EnvConfig {
   return validatedEnv;
 }
 
-const allowedOriginsSchema = z.array(z.string());
-
+/**
+ * CORS Security Configuration
+ * 
+ * Explicit allowlist - no wildcards to prevent subdomain hijacking.
+ * Production: Only schakel.ai domains allowed
+ * Development: Also allows localhost for testing
+ */
 export const ALLOWED_ORIGINS = [
   "https://www.schakel.ai",
   "https://schakel.ai",
@@ -67,10 +87,12 @@ export const ALLOWED_ORIGINS = [
 export function isOriginAllowed(origin: string | undefined): boolean {
   if (!origin) return false;
   
+  // Check explicit allowlist first
   if ((ALLOWED_ORIGINS as readonly string[]).includes(origin)) {
     return true;
   }
   
+  // Development: allow any localhost port for flexibility
   if (process.env.NODE_ENV === "development") {
     if (origin.startsWith("http://localhost:") || origin.startsWith("http://127.0.0.1:")) {
       return true;
@@ -80,7 +102,13 @@ export function isOriginAllowed(origin: string | undefined): boolean {
   return false;
 }
 
+/**
+ * Rate Limiting Configuration
+ * 
+ * Protects contact form from abuse: 5 requests per hour per client.
+ * Client identified by IP + User-Agent combination.
+ */
 export const RATE_LIMIT = {
-  windowMs: 60 * 60 * 1000,
-  maxRequests: 5,
+  windowMs: 60 * 60 * 1000, // 1 hour window
+  maxRequests: 5,           // max requests per window
 } as const;

@@ -1,3 +1,11 @@
+/**
+ * Theme Context (Dark/Light Mode)
+ * 
+ * Manages dark/light mode with localStorage persistence.
+ * Works with Tailwind's class-based dark mode (darkMode: ["class"]).
+ * Default: dark mode (matches brand aesthetic)
+ */
+
 import { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 
 type Theme = 'light' | 'dark';
@@ -11,11 +19,13 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
+  // Initialize from localStorage, default to dark
   const [theme, setTheme] = useState<Theme>(() => {
     const saved = localStorage.getItem('theme');
     return (saved as Theme) || 'dark';
   });
 
+  // Sync theme class on <html> element for Tailwind dark mode
   useEffect(() => {
     const root = document.documentElement;
     root.classList.remove('light', 'dark');
@@ -34,6 +44,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   );
 }
 
+// Hook for consuming theme context
 export function useTheme() {
   const context = useContext(ThemeContext);
   if (!context) {
