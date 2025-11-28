@@ -7,17 +7,18 @@
 
 import { MailerSend, EmailParams, Sender, Recipient } from "mailersend";
 import { ContactFormData } from "@shared/contact";
+import { getConfig } from "../config";
 
 // Singleton: one SDK instance reused across all requests
 let mailerInstance: MailerSend | null = null;
 
 export function getMailerSend(): MailerSend {
   if (!mailerInstance) {
-    const apiKey = process.env.MAILERSEND_API_KEY;
-    if (!apiKey) {
+    const config = getConfig();
+    if (!config.MAILERSEND_API_KEY) {
       throw new Error("MAILERSEND_API_KEY is not configured");
     }
-    mailerInstance = new MailerSend({ apiKey });
+    mailerInstance = new MailerSend({ apiKey: config.MAILERSEND_API_KEY });
   }
   return mailerInstance;
 }
@@ -30,10 +31,11 @@ export interface MailerConfig {
 }
 
 export function getMailerConfig(): MailerConfig {
+  const config = getConfig();
   return {
-    fromEmail: process.env.MAILERSEND_FROM_EMAIL || "rob@schakel.ai",
+    fromEmail: config.MAILERSEND_FROM_EMAIL,
     fromName: "Schakel AI Contact Form",
-    toEmail: process.env.MAILERSEND_TO_EMAIL || "rob@schakel.ai",
+    toEmail: config.MAILERSEND_TO_EMAIL,
     toName: "Schakel AI",
   };
 }

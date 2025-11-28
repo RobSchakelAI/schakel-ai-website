@@ -94,7 +94,7 @@ export async function registerRoutes(app: Express): Promise<void> {
 
       await sendContactEmail(normalizedData);
 
-      console.log(`Contact form submitted: ${normalizedData.name || "Anonymous"} <${normalizedData.email || "no email"}>`);
+      console.log("Contact form submitted successfully");
 
       return res.status(200).json({
         success: true,

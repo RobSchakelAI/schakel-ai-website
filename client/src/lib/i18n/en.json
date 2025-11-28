@@ -236,6 +236,27 @@
       }
     ]
   },
+  "outcomes": {
+    "title": "Results that matter",
+    "subtitle": "Measurable impact for your business",
+    "items": [
+      {
+        "metric": "80%",
+        "label": "Time saved",
+        "description": "Less manual work through smart automation"
+      },
+      {
+        "metric": "30",
+        "label": "Days to results",
+        "description": "Quickly from idea to working solution"
+      },
+      {
+        "metric": "3x",
+        "label": "ROI",
+        "description": "Average return on investment within 6 months"
+      }
+    ]
+  },
   "blog": {
     "title": "Blog",
     "subtitle": "Practical stories about AI-first development, vibecoding, AI automations, and how we use technology to build smarter.",

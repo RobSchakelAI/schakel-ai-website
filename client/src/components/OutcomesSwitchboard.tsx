@@ -20,7 +20,7 @@ export default function OutcomesSwitchboard() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {t.outcomes.items.map((item, index) => {
+          {t.outcomes.items.map((item: { metric: string; label: string; description: string }, index: number) => {
             const Icon = icons[index];
             return (
               <Card

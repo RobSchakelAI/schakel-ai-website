@@ -236,6 +236,27 @@
       }
     ]
   },
+  "outcomes": {
+    "title": "Resultaten die ertoe doen",
+    "subtitle": "Meetbare impact voor uw bedrijf",
+    "items": [
+      {
+        "metric": "80%",
+        "label": "Tijdsbesparing",
+        "description": "Minder handmatig werk door slimme automatisering"
+      },
+      {
+        "metric": "30",
+        "label": "Dagen tot resultaat",
+        "description": "Snel van idee naar werkende oplossing"
+      },
+      {
+        "metric": "3x",
+        "label": "ROI",
+        "description": "Gemiddelde return on investment binnen 6 maanden"
+      }
+    ]
+  },
   "blog": {
     "title": "Blogs",
     "subtitle": "Praktische verhalen over AI-first development, vibecoding, AI automations en hoe we technologie inzetten om slimmer te bouwen.",
