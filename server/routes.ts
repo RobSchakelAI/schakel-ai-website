@@ -101,22 +101,7 @@ export async function registerRoutes(app: Express): Promise<void> {
         message: "Bericht succesvol verzonden",
       });
     } catch (error) {
-      // Log full error details for debugging
-      console.error("=== EMAIL ERROR DETAILS ===");
-      console.error("Error type:", error?.constructor?.name);
-      console.error("Error message:", error instanceof Error ? error.message : String(error));
-      if (error instanceof Error && error.stack) {
-        console.error("Stack trace:", error.stack);
-      }
-      // Log any additional properties (MailerSend errors often have response data)
-      if (typeof error === 'object' && error !== null) {
-        const errorObj = error as Record<string, unknown>;
-        if (errorObj.response) console.error("Response:", JSON.stringify(errorObj.response, null, 2));
-        if (errorObj.body) console.error("Body:", JSON.stringify(errorObj.body, null, 2));
-        if (errorObj.statusCode) console.error("Status code:", errorObj.statusCode);
-      }
-      console.error("=== END ERROR DETAILS ===");
-      
+      console.error("Contact form error:", error instanceof Error ? error.message : error);
       return res.status(500).json({
         success: false,
         error: "Er ging iets mis bij het verzenden. Probeer het later opnieuw.",
