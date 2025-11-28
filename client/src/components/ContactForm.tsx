@@ -23,6 +23,7 @@ export default function ContactForm() {
       company: '',
       phone: '',
       message: '',
+      _honeypot: '',
     },
   });
 
@@ -85,6 +86,16 @@ export default function ContactForm() {
           ) : (
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                {/* Honeypot field - hidden from users, catches bots */}
+                <input
+                  type="text"
+                  {...form.register('_honeypot')}
+                  className="absolute -left-[9999px] opacity-0 h-0 w-0"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                />
+
                 <FormField
                   control={form.control}
                   name="name"
