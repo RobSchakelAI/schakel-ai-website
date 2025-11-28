@@ -1,0 +1,53 @@
+script.js:1  Failed to load resource: net::ERR_BLOCKED_BY_CLIENT
+Error with Permissions-Policy header: Unrecognized feature: 'browsing-topics'.
+index-Cu3-KMN3.js:342 [Analytics] Umami not loaded yet
+Ze @ index-Cu3-KMN3.js:342
+onClick @ index-Cu3-KMN3.js:352
+uP @ index-Cu3-KMN3.js:37
+dP @ index-Cu3-KMN3.js:37
+fP @ index-Cu3-KMN3.js:37
+hv @ index-Cu3-KMN3.js:37
+Pb @ index-Cu3-KMN3.js:37
+(anonymous) @ index-Cu3-KMN3.js:37
+Wm @ index-Cu3-KMN3.js:40
+J1 @ index-Cu3-KMN3.js:37
+uf @ index-Cu3-KMN3.js:37
+vm @ index-Cu3-KMN3.js:37
+TP @ index-Cu3-KMN3.js:37
+(index):1 Access to fetch at 'https://schakel-ai-website-staging.up.railway.app/api/contact' from origin 'https://schakel-ai-website-git-dev-schakel-ai-projects.vercel.app' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: The 'Access-Control-Allow-Origin' header has a value 'https://www.schakel.ai' that is not equal to the supplied origin. Have the server send the header with a valid value.
+index-Cu3-KMN3.js:48 Fetch failed loading: POST "https://schakel-ai-website-staging.up.railway.app/api/contact".
+i_ @ index-Cu3-KMN3.js:48
+s @ index-Cu3-KMN3.js:350
+(anonymous) @ index-Cu3-KMN3.js:350
+await in (anonymous)
+uP @ index-Cu3-KMN3.js:37
+dP @ index-Cu3-KMN3.js:37
+fP @ index-Cu3-KMN3.js:37
+hv @ index-Cu3-KMN3.js:37
+Pb @ index-Cu3-KMN3.js:37
+(anonymous) @ index-Cu3-KMN3.js:37
+Wm @ index-Cu3-KMN3.js:40
+J1 @ index-Cu3-KMN3.js:37
+uf @ index-Cu3-KMN3.js:37
+vm @ index-Cu3-KMN3.js:37
+TP @ index-Cu3-KMN3.js:37
+index-Cu3-KMN3.js:48  POST https://schakel-ai-website-staging.up.railway.app/api/contact net::ERR_FAILED
+i_ @ index-Cu3-KMN3.js:48
+s @ index-Cu3-KMN3.js:350
+(anonymous) @ index-Cu3-KMN3.js:350
+await in (anonymous)
+uP @ index-Cu3-KMN3.js:37
+dP @ index-Cu3-KMN3.js:37
+fP @ index-Cu3-KMN3.js:37
+hv @ index-Cu3-KMN3.js:37
+Pb @ index-Cu3-KMN3.js:37
+(anonymous) @ index-Cu3-KMN3.js:37
+Wm @ index-Cu3-KMN3.js:40
+J1 @ index-Cu3-KMN3.js:37
+uf @ index-Cu3-KMN3.js:37
+vm @ index-Cu3-KMN3.js:37
+TP @ index-Cu3-KMN3.js:37
+index-Cu3-KMN3.js:350 Error submitting contact form: TypeError: Failed to fetch
+    at i_ (index-Cu3-KMN3.js:48:30205)
+    at s (index-Cu3-KMN3.js:350:91312)
+    at index-Cu3-KMN3.js:350:22645

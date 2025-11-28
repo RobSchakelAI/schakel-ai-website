@@ -92,6 +92,12 @@ export function isOriginAllowed(origin: string | undefined): boolean {
     return true;
   }
   
+  // Allow Vercel preview/deployment URLs for schakel-ai project
+  // Pattern: https://schakel-ai-website-*.vercel.app
+  if (origin.startsWith("https://schakel-ai-website") && origin.endsWith(".vercel.app")) {
+    return true;
+  }
+  
   // Development: allow any localhost port for flexibility
   if (process.env.NODE_ENV === "development") {
     if (origin.startsWith("http://localhost:") || origin.startsWith("http://127.0.0.1:")) {
