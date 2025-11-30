@@ -1,9 +1,67 @@
 import type { BlogPost } from './schema';
 import { websiteBouwenMetAIContent } from './blog-content/website-bouwen-met-ai';
 import { websiteBouwenMetAIContentEN } from './blog-content/website-bouwen-met-ai-en';
+import { meetingAutomationCenterContent } from './blog-content/meeting-automation-center';
+import { meetingAutomationCenterContentEN } from './blog-content/meeting-automation-center-en';
 
 // Blog post data - add new posts here
 export const blogPosts: BlogPost[] = [
+  {
+    slug: 'meeting-automation-center',
+    publishDate: '2025-11-30',
+    readingTime: 10,
+    ogImage: '/images/blog/meeting-automation-center.jpg',
+    translations: {
+      nl: {
+        title: 'Van Transcriptie naar Automatische Workflow: Hoe Wij Meetings Opgelost Hebben',
+        excerpt: 'Tools transcriberen prima, maar het administratieve werk blijft hangen. Wij bouwden een systeem dat alles automatisch regelt: van meeting tot notulen in SharePoint en taken in Productive.io.',
+        content: meetingAutomationCenterContent,
+        metaDescription: 'Hoe wij een Meeting Automation Center bouwden dat transcripties automatisch omzet naar notulen, SharePoint uploads, Outlook mails en taken in Productive.io.',
+        keywords: [
+          'meeting automatisering',
+          'AI notulen',
+          'Fireflies.ai',
+          'Claude AI',
+          'workflow automatisering',
+          'SharePoint integratie',
+          'Productive.io',
+          'transcriptie naar taken',
+          'meeting notes automation',
+          'AI workflow'
+        ],
+        category: 'AI Automation',
+        author: {
+          name: 'Rob van Zutphen',
+          role: 'Mede-oprichter Schakel',
+          bio: 'Rob helpt bedrijven slimmer werken met AI. Achtergrond in finance en BI, nu gefocust op praktische AI-implementaties die écht rendement opleveren.'
+        }
+      },
+      en: {
+        title: 'From Transcription to Automatic Workflow: How We Solved Meetings',
+        excerpt: 'Tools transcribe just fine, but the administrative work gets stuck. We built a system that handles everything automatically: from meeting to notes in SharePoint and tasks in Productive.io.',
+        content: meetingAutomationCenterContentEN,
+        metaDescription: 'How we built a Meeting Automation Center that automatically converts transcriptions into meeting notes, SharePoint uploads, Outlook emails, and tasks in Productive.io.',
+        keywords: [
+          'meeting automation',
+          'AI meeting notes',
+          'Fireflies.ai',
+          'Claude AI',
+          'workflow automation',
+          'SharePoint integration',
+          'Productive.io',
+          'transcription to tasks',
+          'meeting notes automation',
+          'AI workflow'
+        ],
+        category: 'AI Automation',
+        author: {
+          name: 'Rob van Zutphen',
+          role: 'Co-founder Schakel',
+          bio: 'Rob helps companies work smarter with AI. Background in finance and BI, now focused on practical AI implementations that truly deliver results.'
+        }
+      }
+    }
+  },
   {
     slug: 'website-bouwen-met-ai',
     publishDate: '2025-11-23',

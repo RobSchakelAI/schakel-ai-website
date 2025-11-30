@@ -5,7 +5,7 @@
   <!-- Homepage (Dutch - Default) -->
   <url>
     <loc>https://www.schakel.ai/</loc>
-    <lastmod>2025-11-23</lastmod>
+    <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="nl" href="https://www.schakel.ai/" />
@@ -16,9 +16,17 @@
   <!-- Blog Index -->
   <url>
     <loc>https://www.schakel.ai/blog</loc>
-    <lastmod>2025-11-23</lastmod>
+    <lastmod>2025-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Post: Meeting Automation Center -->
+  <url>
+    <loc>https://www.schakel.ai/blog/meeting-automation-center</loc>
+    <lastmod>2025-11-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <!-- Blog Post: Website bouwen met AI -->
