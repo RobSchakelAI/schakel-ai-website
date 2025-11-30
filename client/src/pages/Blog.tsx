@@ -42,7 +42,7 @@ export default function Blog() {
           </div>
 
           {/* Blog Posts Grid */}
-          <div className="space-y-8">
+          <div className="flex flex-col gap-8">
             {posts.map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`}>
                 <article 
