@@ -66,7 +66,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'website-bouwen-met-ai',
     publishDate: '2025-11-23',
     readingTime: 12,
-    ogImage: '/images/blog/schakel-ai-website-hero.jpg',
+    ogImage: '/images/blog/website-bouwen-met-ai.jpg',
     translations: {
       nl: {
         title: 'Website bouwen met AI: Hoe we schakel.ai zelf maakten',
