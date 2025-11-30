@@ -76,7 +76,16 @@ We work with:
 
 ## Blog & Resources
 
-### Latest Writing: Website bouwen met AI
+### Latest Writing: Van Transcriptie naar Automatische Workflow
+- URL: https://www.schakel.ai/blog/meeting-automation-center
+- Published: November 30, 2025
+- Author: Rob van Zutphen
+- Topic: How we built a Meeting Automation Center that handles everything from transcription to tasks
+- Key Topics: Fireflies.ai, Claude AI, workflow automation, SharePoint integration, Productive.io, two-layer prompting, approval workflows
+- Reading Time: 10 minutes
+- Summary: Complete walkthrough of our automated meeting workflow system. From the moment a meeting ends, transcripts are automatically retrieved, processed by Claude AI with custom prompts, converted to branded HTML documents, uploaded to SharePoint, drafted as emails in Outlook, and action items are created as tasks in Productive.io. Includes technical architecture, lessons learned about speaker identification, confidence scores, and the importance of approval workflows.
+
+### Previous Writing: Website bouwen met AI
 - URL: https://www.schakel.ai/blog/website-bouwen-met-ai
 - Published: November 23, 2025
 - Author: Rob van Zutphen

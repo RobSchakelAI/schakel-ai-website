@@ -1,0 +1,169 @@
+export const meetingAutomationCenterContent = `
+**Je kent het wel.** Je hebt een meeting die vol zat met belangrijke punten. Het is opgenomen. Teams Premium of Otter of Fireflies maakt automatisch een transcript en een samenvatting. Perfect! Dat was 2 jaar geleden nog wel anders!
+
+Maar dan... niets. Drie dagen later vraag je je af: waar zijn die notulen? Wie zet de actiepunten in Monday/Asana/Productive? En waarom staat die samenvatting nog steeds in Fireflies, in plaats van in SharePoint waar iedereen het kan vinden?
+
+Dit soort verspilde tijd gebeurt in teams over de hele wereld. Tools transcriberen inmiddels prima, en vatten het ook nog eens samen, maar het administratieve werk eromheen? Dat blijft altijd hangen. Dus hebben wij het opgelost. Met een systeem dat alles automatisch regelt. Van het moment dat een meeting eindigt, tot het moment dat actiepunten in je projectmanagement-tool staan. Zonder dat iemand er nog naar om hoeft te kijken.
+
+Dit is het verhaal van onze Meeting Automation Center.
+
+---
+
+## Het Probleem: Repetitief Handwerk na het Automatische Deel
+
+We zijn met z'n tweeën, dus dit lijkt misschien geen groot probleem. Maar wij hebben een filosofie: elk repetitief proces proberen we te automatiseren met AI. Waarom? Zodat wij de tijd en rust hebben om ons te concentreren op de echte waarde.
+
+De situatie was dit: we gebruikten Fireflies.ai voor automatische transcripties en samenvattingen. Top. Maar daarna was er nog steeds werk: die samenvatting moest naar ons eigen format, moest in SharePoint, moest als mail verstuurd worden, en de actiepunten moesten in Productive.io. Dus ondanks dat we geen notulen meer hoeven te schrijven, bleef het een vervelend en tijdrovende klus. Het werk dat we gewoon niet willen doen.
+
+Dus vroegen wij ons af: hoe kunnen we een automatisering bouwen die dit voor ons oplost?
+
+---
+
+## De Oplossing: Een Centrale Orchestrator
+
+We besloten een applicatie te bouwen die alles automatiseert. Geen vijf verschillende tools meer, maar één systeem dat alles regelt. Hier is hoe het werkt.
+
+### Stap 1: De Meeting Wordt Automatisch "Opgehaald"
+
+Fireflies.ai neemt deel aan elke meeting die wij hebben. Na afloop stuurt het automatisch een webhook naar onze app, met de boodschap: "Hé, je hebt een nieuwe meeting!"
+
+Dit event bevat de meeting ID, die we nodig hebben om het volledige transcript op te halen. We halen alleen het transcript, niet de samenvatting van Fireflies zelf, want die is te generiek en willen we door Claude laten genereren in precies het formaat en de structuur die wij willen.
+
+### Stap 2: Intelligente Eigenaar-Detectie
+
+Het systeem weet nu dat er een meeting was, maar niet wie de eigenaar is. Was Simon de organisator of Rob?
+
+We hebben per teamlid ingesteld welke e-mailadressen en namen bij hen horen. Het systeem kijkt naar de deelnemerslijst van de meeting en matcht die met onze teamconfiguratie. Zo weet het direct wie de eigenaar is en dus verantwoordelijk voor de follow-up.
+
+### Stap 3: Claude Maakt Notulen in Onze Exacte Voorkeur
+
+We sturen het transcript naar Claude met een zeer specifieke prompt die we zelf hebben opgesteld. Die prompt zegt precies: "Maak notulen met deze structuur, focus op deze zaken, in deze toon, met deze aandacht voor detail."
+
+Het gaat hier niet om "laat Claude samenvatten", maar om Claude gebruiken als onze persoonlijke notulist die precies weet wat wij belangrijk vinden. Consistent en altijd in onze stijl.
+
+### Stap 4: Automatische Categorisering
+
+We laten Claude ook het transcript analyseren en aangeven wat voor soort meeting het was: een klantgesprek? Een intern teamoverleg?
+
+Waarom is dat handig? Omdat we zo weten waar de notulen in SharePoint moeten komen. Klantgesprekken hier, interne meetings daar.
+
+We kunnen dit ook handmatig overriden, en we kunnen instellen hoe zeker de AI moet zijn voordat het systeem een auto-categorisering doet. Niet zeker genoeg? Dan vraagt het systeem het aan ons.
+
+### Stap 5-10: The Full Pipeline
+
+Van hieruit gaat het snel:
+
+**Professionele documenten maken:** Er worden twee versies gegenereerd. Een Markdown-versie voor intern gebruik voor eventuele verdere (nog te bouwen) automatiseringen, waarin alle belangrijke informatie netjes wordt gepresenteerd zonder poespas. De tweede is een HTML-versie die volledig is opgemaakt in onze huisstijl met logo en kleuren. Dit maakt het document niet alleen functioneel, maar ook visueel aantrekkelijk voor externe ontvangers.
+
+Dit is geen extern tooltje: onze eigen applicatie bouwt deze HTML-template op basis van de branding-instellingen die we dynamisch instelbaar hebben gemaakt. Voor nu geen noodzaak, maar we bouwen niet alleen voor nu, ook voor later. En later willen we misschien andere bedrijven onboarden in deze tool.
+
+**Upload naar SharePoint:** Nadat de documenten zijn gegenereerd, worden ze automatisch geüpload naar de juiste SharePoint-map. Ons systeem bepaalt op basis van de categorisering (bijvoorbeeld klantgesprek, intern overleg) waar het bestand precies terechtkomt. Dit zorgt ervoor dat alle documenten op de juiste plek staan, zodat we altijd snel kunnen vinden wat we nodig hebben.
+
+**Conceptmail in Outlook:** Terwijl we na een vergadering even evalueren en een nieuwe koffie halen, wordt er al een conceptmail voor ons klaargezet in Outlook. De notulen worden toegevoegd als HTML-bijlage, netjes opgemaakt en klaar om verstuurd te worden. We hoeven enkel op "Versturen" te klikken en we kunnen weer verder met ons werk. Geen gedoe met het schrijven van een samenvatting of het opmaken van de tekst.
+
+**Actiepunten → Taken:** Dit is waar we het nog een versnelling hoger schakelen. Alle actiepunten die uit de notulen naar voren komen, worden automatisch omgezet naar taken in Productive.io, onze projectmanagementtool. Het systeem weet wie verantwoordelijk is voor welke taak, op basis van de inhoud van de notulen. En ja, de deadlines, indien besproken, worden ook automatisch ingesteld. Het enige wat we hoeven te doen is de taken uit te voeren (tenzij AI dat ook voor ons kan doen 😉).
+
+**Notificaties via Teams:** Zodra de notulen klaar zijn, ontvangen we een notificatie in Teams. Dit hebben we voor onszelf weer uitgezet, want dat was een beetje overkill voor ons tweeën, maar dit kan in de toekomst wel van toegevoegde waarde zijn.
+
+Het resultaat? Van meeting tot verstuurde notulen en geplande taken, zonder dat iemand er nog naar om hoeft te kijken. Alles gebeurt op de achtergrond, zodat we ons kunnen concentreren op de belangrijke dingen.
+
+---
+
+## Een Belangrijk Ingredient: Two-Layer Prompting
+
+Wanneer we het transcript naar Claude sturen, gebruiken we twee prompts die samenwerken:
+
+**System Prompt (vast):** Dit is een vaste instructie die Claude vertelt: "Je bent een meeting-analist. Extraheer altijd deze metadata in JSON-formaat: titel, categorie, confidence score. Daarna volgt de samenvatting." Dit zorgt dat de output altijd voorspelbaar en gestructureerd is—ongeacht welke meeting we verwerken.
+
+**User Prompt (met configureerbare instructies):** Hierin zit de meeting-context (transcript, deelnemers, beschikbare categorieën) én jouw persoonlijke instructies voor de samenvatting. Die instructies pas je aan in de settings: "Formeel of informeel?", "Welke onderdelen zijn belangrijk?", "Extra aandacht voor X?". We hebben onze applicatie op deze manier meteen voorbereid op hergebruik door andere bedrijven die andere criteria hebben.
+
+Beide prompts worden samen naar Claude gestuurd via de Anthropic API. De system prompt garandeert de structuur en metadata-extractie, de custom instructies bepalen de inhoud en stijl van de samenvatting. Zo krijg je het beste van twee werelden: consistente output, maar volledig personaliseerbaar.
+
+---
+
+## Approval Workflows: Noch Volledig Auto, Noch Volledig Handmatig
+
+Een veel voorkomend probleem bij automatisering: als je alles op autopilot doet, loop je risico op fouten. Als je alles handmatig moet goedkeuren, is het niet echt automatisering meer.
+
+Wij hebben hier een oplossing voor: optionele approval workflows.
+
+Je kan instellen: automatisch taken aanmaken, óf vereisen dat iemand eerst de actiepunten reviewt en eventueel bewerkt voordat ze als officiële taken in Productive.io landen. Dit biedt de perfecte balans: de snelheid van automatisering, maar het behoud van controle.
+
+---
+
+## Wat We Echt Gaan Merken
+
+Oké, genoeg over hoe het werkt. Wat is nu het echte voordeel?
+
+**Tijdsbesparing:** Wat voorheen repetitief handwerk was (notulen transformeren, email schrijven, documenten opslaan, taken aanmaken), doe je nu in twee klikken. En eigenlijk: nul klikken als je het full-auto instelt.
+
+**Consistentie:** Elke notulen volgt dezelfde standaard. Geen inconsistente samenvattingen meer, geen actiepunten die over het hoofd worden gezien.
+
+**Geen Informatieverlies:** Actiepunten verdwijnen niet meer in notulen en worden langzaam maar zeker vergeten. Ze staan meteen in Productive.io, en iedereen ziet ze. Deadlines staan erin, verantwoordelijkheden zijn duidelijk.
+
+**Professionele Presentatie:** De HTML-mails met ons logo en huiskleuren zien er altijd top uit. Zeker naar klanten toe komt dat professioneel over.
+
+**Eén applicatie waar we alles kunnen monitoren:** Tenslotte hebben we onze eigen custom applicatie waarin we het gehele proces kunnen monitoren, zaken eventueel kunnen aanpassen, en meetings kunnen inzien. Niet een plek waar we vaak gaan komen, maar wanneer processen geautomatiseerd zijn is het in onze ogen wel een harde eis om een intuïtieve en gebruiksvriendelijke app te hebben om de boel te monitoren.
+
+---
+
+## Hoe het Technisch in Elkaar Zit (voor de nerds)
+
+Als je het onder-de-motorkap wil zien:
+
+**Frontend:** React 18 met TypeScript, gebouwd met Vite. We gebruiken TanStack Query voor slimme server-state management en Shadcn/UI voor visuele componenten. Dit geeft een snelle, responsive interface.
+
+**Backend:** Express.js met TypeScript en Drizzle ORM. Dit zorgt dat we het backend schoon en modulair houden.
+
+**Database:** PostgreSQL via Supabase. Met Supabase Storage kunnen we ook logo's en andere assets opslaan.
+
+**Deployment:** Frontend op Vercel, Backend op Railway. Dit scheiden geeft ons flexibiliteit.
+
+**Integraties:**
+- Fireflies.ai (GraphQL API + Webhook) voor transcripties
+- Anthropic Claude via hun REST API voor AI-verwerking (niet Fireflies' eigen AI)
+- Microsoft Graph API voor SharePoint, Outlook en Teams
+- Productive.io REST API voor taakbeheer
+
+Het is opgebouwd als een orkest: veel verschillende onderdelen, maar één dirigent (onze backend) die ervoor zorgt dat alles op het juiste moment samenkomt.
+
+---
+
+## Lessons Learned: Wat We Onderweg Leerden
+
+### 1. Speaker Identification Heeft een Fallback Nodig
+
+Fireflies identificeert sprekers in het transcript, maar levert niet altijd een naam—soms alleen een numeriek speaker-ID. Dus hebben we fallback-logica gebouwd: wanneer Fireflies geen naam kan koppelen, gebruiken we het speaker-ID dat Fireflies wél levert om "Spreker 1", "Spreker 2" te genereren. Is er helemaal geen identificatie? Dan staat er "Onbekend". Niet perfect, maar transparant. We zien altijd wie wat zei, ook al is de naam niet bekend.
+
+### 2. Categorisering Heeft een Confidence-Score Nodig
+
+AI is goed, maar niet altijd zeker. Een meeting categoriseren als "Klantgesprek" zonder zeker te zijn? Riskant. Dus hebben we AI confidence-scores ingebouwd. Onder een bepaalde drempel vraagt het systeem het aan ons in plaats van zelf te beslissen.
+
+### 3. Approval Workflows zijn Essentieel
+
+In theorie: automatisering doet alles. In praktijk: je wilt soms even controleren voordat taken naar je projectmanagement gaan. Dus hebben we optionele approval workflows voor taken ingebouwd. Jij kiest of je full-auto gaat of eerst wilt reviewen.
+
+---
+
+## De Echte Winst
+
+De echte winst van onze Meeting Automation Center? Het is niet onze applicatie zelf. Het is dat we niks meer hoeven te doen. We hebben onze meeting gehad, en terwijl we koffie drinken, staan de notulen in SharePoint, staat de conceptmail klaar in Outlook en zijn de taken in Productive.io gezet.
+
+Dat is toch magisch.
+
+---
+
+## Volgende Stap?
+
+Het Meeting Automation Center is wat we nu hebben gebouwd. Maar wat we écht hebben gebouwd is een patroon: een systeem dat events opvangt, AI inzet voor analyse, en vervolgens meerdere externe systemen aanstuurt. Allemaal zonder menselijke tussenkomst.
+
+Dat patroon werkt voor veel meer dan meetings. Denk aan: binnenkomende facturen automatisch categoriseren en boeken. Leadformulieren scoren en routeren naar de juiste salesperson. Support tickets analyseren en prioriteren. Contracten screenen op risico's. You name it.
+
+Alles kan. Als we het maar slim uitdenken.
+
+---
+
+**Ben je benieuwd hoe dit voor jouw team zou werken?** Of heb je andere repetitieve processen die om automatisering schreeuwen?
+
+[Neem contact op](https://schakel.ai/#contact) en we helpen je verder.
+`;

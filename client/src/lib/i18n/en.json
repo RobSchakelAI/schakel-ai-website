@@ -85,11 +85,14 @@
       "name": "Name",
       "email": "Email address",
       "company": "Company",
+      "phone": "Phone number",
       "message": "Message",
       "submit": "Send message",
       "success": "Thank you! We'll be in touch soon.",
       "successDescription": "We'll contact you as soon as possible.",
-      "error": "Something went wrong. Please try again."
+      "error": "Something went wrong. Please try again.",
+      "tooManyRequests": "Too many requests. Please try again in an hour.",
+      "fillAtLeastOne": "Please fill in at least one field."
     }
   },
   "footer": {
@@ -230,6 +233,27 @@
         "icon": "PenTool",
         "title": "Content Generation",
         "description": "From product descriptions to social posts and documentation - AI writes content that sounds like you wrote it yourself. Scalable, consistent, and time-saving"
+      }
+    ]
+  },
+  "outcomes": {
+    "title": "Results that matter",
+    "subtitle": "Measurable impact for your business",
+    "items": [
+      {
+        "metric": "80%",
+        "label": "Time saved",
+        "description": "Less manual work through smart automation"
+      },
+      {
+        "metric": "30",
+        "label": "Days to results",
+        "description": "Quickly from idea to working solution"
+      },
+      {
+        "metric": "3x",
+        "label": "ROI",
+        "description": "Average return on investment within 6 months"
       }
     ]
   },

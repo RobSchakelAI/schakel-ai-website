@@ -4,7 +4,19 @@
 
 Schakel AI is a minimalist Dutch AI consultancy website built with a modern JAMstack architecture. The site communicates the core message "Rust & Rendement" (Peace & Results) through a single-page design featuring a hero section, vision statement, approach timeline, team profiles, and contact form. The project emphasizes performance, accessibility, and clean design inspired by Morningside.com and Apple's minimalist aesthetic.
 
-## Recent Changes (November 14, 2025)
+## Recent Changes (November 28, 2025)
+
+**Contact API Security Hardening (Architect Approved):**
+- **Shared Schema:** Created `shared/contact.ts` with Zod validation schema used by both frontend and backend
+- **MailerSend Service:** Singleton pattern in `server/services/mailer.ts` to avoid per-request instantiation
+- **Server-side Validation:** All contact submissions validated via Zod before processing
+- **Rate Limiting:** 10 requests/hour per client identifier (IP + User-Agent) with bounded memory store (10k max entries, 20% LRU eviction)
+- **Honeypot Protection:** Silent acceptance of honeypot submissions to fool bots
+- **Environment Validation:** Fail-fast at startup when required vars missing in production (MAILERSEND_API_KEY)
+- **CORS Hardening:** Explicit allowed origins list (schakel.ai, www.schakel.ai, localhost in dev), no wildcards
+- **i18n Centralization:** Contact metadata moved from hardcoded values to i18n files
+
+**Previous Changes (November 14, 2025):**
 
 **Google Search Console Integration:**
 - Added Google Search Console verification file (`googledf62b6f2cc2593ac.html`) to `client/public/` for domain verification
@@ -14,7 +26,7 @@ Schakel AI is a minimalist Dutch AI consultancy website built with a modern JAMs
 - Removed trust indicator badges ("⚡ AI First • Resultaat binnen 30 dagen") for ultra-minimal design
 - Hero now features only: pre-title badge, headline, description, and CTA buttons
 
-**Previous Changes (November 13, 2025):**
+**Changes from November 13, 2025:**
 
 **Comprehensive SEO Optimization (Production-Ready - Architect Approved):**
 - **robots.txt**: Explicit allow rules for AI crawlers (GPTBot, ClaudeBot, PerplexityBot, Applebot-Extended), sitemap reference

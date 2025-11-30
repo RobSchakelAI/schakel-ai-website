@@ -1,4 +1,14 @@
-import { useState, useEffect } from 'react';
+/**
+ * Expanding CTA Component
+ * 
+ * Animated contact form overlay that expands from CTA buttons.
+ * Uses react-hook-form with shared Zod schema for consistent validation.
+ * Includes honeypot field for spam protection.
+ */
+
+import { useEffect } from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { X, ArrowRight, Send, MapPin, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -10,19 +20,26 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { apiRequest } from '@/lib/queryClient';
 import { trackEvent } from '@/lib/analytics';
+import { contactSchema, type ContactFormData } from '@shared/contact';
 
 export function CTAOverlay() {
   const { t } = useLanguage();
   const { toast } = useToast();
   const { isExpanded, closeCTA, getLayoutId } = useCTA();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    phone: '',
-    message: '',
+
+  const form = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+    defaultValues: {
+      name: '',
+      email: '',
+      company: '',
+      phone: '',
+      message: '',
+      _honeypot: '',
+    },
   });
 
+  // Lock body scroll when overlay is open
   useEffect(() => {
     if (isExpanded) {
       document.body.style.overflow = 'hidden';
@@ -31,11 +48,9 @@ export function CTAOverlay() {
     }
   }, [isExpanded]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
+  const onSubmit = async (data: ContactFormData) => {
     try {
-      const response = await apiRequest('POST', '/api/contact', formData);
+      const response = await apiRequest('POST', '/api/contact', data);
       await response.json();
       
       trackEvent('form-submit', { type: 'contact' });
@@ -45,23 +60,15 @@ export function CTAOverlay() {
         description: t.contact.form.successDescription,
       });
       
-      setFormData({ name: '', email: '', company: '', phone: '', message: '' });
+      form.reset();
       closeCTA();
     } catch (error) {
       console.error('Error submitting contact form:', error);
       toast({
-        title: 'Er ging iets mis',
-        description: 'Probeer het later opnieuw of stuur een email naar info@schakel.ai',
+        title: t.contact.form.error,
         variant: 'destructive',
       });
     }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
   };
 
   return (
@@ -103,91 +110,91 @@ export function CTAOverlay() {
                   </p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4 flex-1">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-4 flex-1">
+                  {/* Honeypot field - hidden from users, catches bots */}
+                  <input
+                    type="text"
+                    {...form.register('_honeypot')}
+                    className="absolute -left-[9999px] opacity-0 h-0 w-0"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    aria-hidden="true"
+                  />
+
                   <div>
                     <label 
-                      htmlFor="name" 
+                      htmlFor="popup-name" 
                       className="block text-xs font-mono uppercase tracking-wider text-primary-foreground mb-2"
                     >
                       {t.contact.form.name}
                     </label>
                     <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
+                      id="popup-name"
+                      {...form.register('name')}
                       className="bg-primary-foreground/10 border-0 text-primary-foreground placeholder:text-primary-foreground/50 focus-visible:ring-primary-foreground/30"
-                      data-testid="input-name"
+                      data-testid="input-popup-name"
                     />
                   </div>
 
                   <div>
                     <label 
-                      htmlFor="company" 
+                      htmlFor="popup-company" 
                       className="block text-xs font-mono uppercase tracking-wider text-primary-foreground mb-2"
                     >
                       {t.contact.form.company}
                     </label>
                     <Input
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
+                      id="popup-company"
+                      {...form.register('company')}
                       className="bg-primary-foreground/10 border-0 text-primary-foreground placeholder:text-primary-foreground/50 focus-visible:ring-primary-foreground/30"
-                      data-testid="input-company"
+                      data-testid="input-popup-company"
                     />
                   </div>
 
                   <div>
                     <label 
-                      htmlFor="email" 
+                      htmlFor="popup-email" 
                       className="block text-xs font-mono uppercase tracking-wider text-primary-foreground mb-2"
                     >
                       {t.contact.form.email}
                     </label>
                     <Input
-                      id="email"
-                      name="email"
+                      id="popup-email"
                       type="email"
-                      value={formData.email}
-                      onChange={handleChange}
+                      {...form.register('email')}
                       className="bg-primary-foreground/10 border-0 text-primary-foreground placeholder:text-primary-foreground/50 focus-visible:ring-primary-foreground/30"
-                      data-testid="input-email"
+                      data-testid="input-popup-email"
                     />
                   </div>
 
                   <div>
                     <label 
-                      htmlFor="phone" 
+                      htmlFor="popup-phone" 
                       className="block text-xs font-mono uppercase tracking-wider text-primary-foreground mb-2"
                     >
-                      Telefoonnummer
+                      {t.contact.form.phone}
                     </label>
                     <Input
-                      id="phone"
-                      name="phone"
+                      id="popup-phone"
                       type="tel"
-                      value={formData.phone}
-                      onChange={handleChange}
+                      {...form.register('phone')}
                       className="bg-primary-foreground/10 border-0 text-primary-foreground placeholder:text-primary-foreground/50 focus-visible:ring-primary-foreground/30"
-                      data-testid="input-phone-popup"
+                      data-testid="input-popup-phone"
                     />
                   </div>
 
                   <div className="flex flex-col flex-1">
                     <label 
-                      htmlFor="message" 
+                      htmlFor="popup-message" 
                       className="block text-xs font-mono uppercase tracking-wider text-primary-foreground mb-2"
                     >
                       {t.contact.form.message}
                     </label>
                     <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
+                      id="popup-message"
+                      {...form.register('message')}
                       className="flex-1 min-h-16 md:min-h-24 bg-primary-foreground/10 border-0 text-primary-foreground placeholder:text-primary-foreground/50 focus-visible:ring-primary-foreground/30 resize-none"
-                      data-testid="input-message"
+                      data-testid="input-popup-message"
                     />
                   </div>
 
@@ -195,10 +202,17 @@ export function CTAOverlay() {
                     type="submit"
                     size="lg"
                     className="w-full bg-primary-foreground text-primary hover:bg-primary-foreground/90"
-                    data-testid="button-submit-contact"
+                    disabled={form.formState.isSubmitting}
+                    data-testid="button-submit-popup"
                   >
-                    <Send className="mr-2 h-5 w-5" />
-                    {t.contact.form.submit}
+                    {form.formState.isSubmitting ? (
+                      <>{t.contact.form.submit}...</>
+                    ) : (
+                      <>
+                        <Send className="mr-2 h-5 w-5" />
+                        {t.contact.form.submit}
+                      </>
+                    )}
                   </Button>
                 </form>
               </motion.div>

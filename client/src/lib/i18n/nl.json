@@ -85,11 +85,14 @@
       "name": "Naam",
       "email": "E-mailadres",
       "company": "Bedrijf",
+      "phone": "Telefoonnummer",
       "message": "Bericht",
       "submit": "Verstuur bericht",
       "success": "Bedankt! We nemen zo snel mogelijk contact op.",
       "successDescription": "We nemen zo snel mogelijk contact met je op.",
-      "error": "Er ging iets mis. Probeer het opnieuw."
+      "error": "Er ging iets mis. Probeer het opnieuw.",
+      "tooManyRequests": "Te veel verzoeken. Probeer het over een uur opnieuw.",
+      "fillAtLeastOne": "Vul ten minste één veld in."
     }
   },
   "footer": {
@@ -230,6 +233,27 @@
         "icon": "PenTool",
         "title": "Content Generatie",
         "description": "Van productbeschrijvingen tot social posts en documentatie - AI schrijft content die klinkt alsof jij het zelf deed. Schaalbaar, consistent en tijdbesparend"
+      }
+    ]
+  },
+  "outcomes": {
+    "title": "Resultaten die ertoe doen",
+    "subtitle": "Meetbare impact voor uw bedrijf",
+    "items": [
+      {
+        "metric": "80%",
+        "label": "Tijdsbesparing",
+        "description": "Minder handmatig werk door slimme automatisering"
+      },
+      {
+        "metric": "30",
+        "label": "Dagen tot resultaat",
+        "description": "Snel van idee naar werkende oplossing"
+      },
+      {
+        "metric": "3x",
+        "label": "ROI",
+        "description": "Gemiddelde return on investment binnen 6 maanden"
       }
     ]
   },
