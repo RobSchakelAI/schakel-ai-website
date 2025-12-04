@@ -257,6 +257,22 @@
       }
     ]
   },
+  "tools": {
+    "pageTitle": "Tools",
+    "pageDescription": "Interne tools gebouwd door Schakel AI. Van meeting automatisering tot workflow optimalisatie.",
+    "badge": "Interne Tools",
+    "title": "Onze Tools",
+    "subtitle": "Tools die we bouwen en gebruiken om slimmer te werken. Sommige delen we met klanten.",
+    "openTool": "Openen",
+    "comingSoon": "Binnenkort beschikbaar",
+    "moreToolsSoon": "Meer tools volgen binnenkort. We bouwen continu nieuwe oplossingen.",
+    "items": {
+      "map": {
+        "name": "Meeting Automation Platform",
+        "description": "Automatische verwerking van meeting transcripties naar notulen, taken en follow-ups. Van opname tot actie in minuten."
+      }
+    }
+  },
   "blog": {
     "title": "Blogs",
     "subtitle": "Praktische verhalen over AI-first development, vibecoding, AI automations en hoe we technologie inzetten om slimmer te bouwen.",

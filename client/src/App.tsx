@@ -10,6 +10,7 @@ import { ThemeProvider } from "@/contexts/ThemeContext";
 import Home from "@/pages/Home";
 import Blog from "@/pages/Blog";
 import BlogPost from "@/pages/BlogPost";
+import Tools from "@/pages/Tools";
 import NotFound from "@/pages/not-found";
 import AIView from "@/components/AIView";
 
@@ -25,6 +26,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/blog" component={Blog} />
       <Route path="/blog/:slug" component={BlogPost} />
+      <Route path="/tools" component={Tools} />
       <Route component={NotFound} />
     </Switch>
   );
