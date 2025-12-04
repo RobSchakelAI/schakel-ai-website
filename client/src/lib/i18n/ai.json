@@ -237,6 +237,22 @@
       }
     ]
   },
+  "tools": {
+    "pageTitle": "Tools",
+    "pageDescription": "Internal tools built by Schakel AI. Meeting automation, workflow optimization.",
+    "badge": "Internal Tools",
+    "title": "Tools",
+    "subtitle": "Internal tools for automation and workflow optimization.",
+    "openTool": "Open",
+    "comingSoon": "Coming soon",
+    "moreToolsSoon": "More tools in development.",
+    "items": {
+      "map": {
+        "name": "Meeting Automation Platform",
+        "description": "SERVICE: Meeting transcript processing\nOUTPUT: Notes, tasks, follow-ups\nTIME: Minutes from recording to action"
+      }
+    }
+  },
   "blog": {
     "title": "Blog",
     "subtitle": "Technical articles on AI-first development, vibecoding, AI automations, and implementation strategies.",
