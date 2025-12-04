@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, Sun, Moon } from 'lucide-react';
+import { Menu, Sun, Moon, LogIn } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useTheme } from '@/contexts/ThemeContext';
 import Logo from '@/components/Logo';
@@ -65,7 +65,7 @@ export default function Header() {
           className="hover-elevate active-elevate-2 rounded-md transition-transform hover:scale-105"
           data-testid="link-home"
         >
-          <Logo className="h-12" />
+          <Logo className="h-12 w-40" />
         </button>
 
         {/* Desktop Navigation */}
@@ -115,6 +115,20 @@ export default function Header() {
             {t.nav.contact}
           </button>
           <div className="flex items-center gap-3 ml-4">
+            {/* Login button */}
+            <Link href="/tools">
+              <Button
+                variant="outline"
+                size="sm"
+                className="gap-2 h-8"
+                data-testid="button-login"
+                onClick={() => trackEvent('navigation-click', { section: 'tools-login' })}
+              >
+                <LogIn className="h-4 w-4" />
+                Login
+              </Button>
+            </Link>
+            
             {/* Theme toggle */}
             <Button
               variant="ghost"
@@ -240,6 +254,23 @@ export default function Header() {
               </button>
               
               <div className="border-t border-border pt-6 mt-2 space-y-4">
+                {/* Login button */}
+                <Link href="/tools">
+                  <Button
+                    variant="default"
+                    size="sm"
+                    className="w-full justify-start gap-2"
+                    data-testid="button-login-mobile"
+                    onClick={() => {
+                      trackEvent('navigation-click', { section: 'tools-login', device: 'mobile' });
+                      setMobileMenuOpen(false);
+                    }}
+                  >
+                    <LogIn className="h-4 w-4" />
+                    Login
+                  </Button>
+                </Link>
+                
                 {/* Theme toggle */}
                 <Button
                   variant="outline"

@@ -1,3 +1,4 @@
+import { Link } from 'wouter';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Logo from '@/components/Logo';
 import { Mail, MapPin, Linkedin } from 'lucide-react';
@@ -58,6 +59,16 @@ export default function Footer() {
                 >
                   {t.nav.about}
                 </button>
+              </li>
+              <li>
+                <Link href="/tools">
+                  <span
+                    className="text-sm text-muted-foreground hover:text-foreground hover-elevate active-elevate-2 px-2 py-1 rounded-md -ml-2 transition-colors cursor-pointer inline-block"
+                    data-testid="footer-link-tools"
+                  >
+                    {t.tools?.pageTitle || 'Tools'}
+                  </span>
+                </Link>
               </li>
             </ul>
           </div>
