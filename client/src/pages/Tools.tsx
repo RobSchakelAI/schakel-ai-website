@@ -1,14 +1,15 @@
 import { Helmet } from 'react-helmet-async';
-import { ExternalLink, Calendar, FileText, Zap } from 'lucide-react';
+import { ExternalLink, FileText, Zap } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
+import mapLogo from '@assets/logo_resized_1764864220988.png';
 
 interface Tool {
   id: string;
-  icon: typeof Calendar;
+  logo?: string;
   url: string;
   status: 'active' | 'coming-soon';
 }
@@ -16,7 +17,7 @@ interface Tool {
 const tools: Tool[] = [
   {
     id: 'map',
-    icon: Calendar,
+    logo: mapLogo,
     url: 'https://map.schakel.ai',
     status: 'active',
   },
@@ -61,7 +62,6 @@ export default function Tools() {
 
           <div className="grid gap-6 md:grid-cols-2">
             {tools.map((tool) => {
-              const IconComponent = tool.icon;
               const toolTranslation = t.tools.items[tool.id as keyof typeof t.tools.items];
               
               return (
@@ -71,8 +71,16 @@ export default function Tools() {
                   data-testid={`card-tool-${tool.id}`}
                 >
                   <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-lg bg-primary/10 text-primary">
-                      <IconComponent className="w-6 h-6" />
+                    <div className="p-3 rounded-lg bg-primary/10">
+                      {tool.logo ? (
+                        <img 
+                          src={tool.logo} 
+                          alt={toolTranslation.name} 
+                          className="w-8 h-8 object-contain"
+                        />
+                      ) : (
+                        <FileText className="w-6 h-6 text-primary" />
+                      )}
                     </div>
                     <div className="flex-1">
                       <h2 className="text-xl font-display font-bold text-foreground mb-2">
