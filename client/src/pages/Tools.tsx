@@ -75,7 +75,7 @@ export default function Tools() {
                       <img 
                         src={tool.logo} 
                         alt={toolTranslation.name} 
-                        className="w-16 h-16 object-contain"
+                        className="w-20 h-20 object-contain mt-1"
                       />
                     ) : (
                       <div className="p-3 rounded-lg bg-primary/10">
