@@ -71,17 +71,17 @@ export default function Tools() {
                   data-testid={`card-tool-${tool.id}`}
                 >
                   <div className="flex items-start gap-4">
-                    <div className="p-3 rounded-lg bg-primary/10">
-                      {tool.logo ? (
-                        <img 
-                          src={tool.logo} 
-                          alt={toolTranslation.name} 
-                          className="w-8 h-8 object-contain"
-                        />
-                      ) : (
+                    {tool.logo ? (
+                      <img 
+                        src={tool.logo} 
+                        alt={toolTranslation.name} 
+                        className="w-12 h-12 object-contain"
+                      />
+                    ) : (
+                      <div className="p-3 rounded-lg bg-primary/10">
                         <FileText className="w-6 h-6 text-primary" />
-                      )}
-                    </div>
+                      </div>
+                    )}
                     <div className="flex-1">
                       <h2 className="text-xl font-display font-bold text-foreground mb-2">
                         {toolTranslation.name}
