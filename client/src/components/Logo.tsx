@@ -9,7 +9,7 @@ export default function Logo({ className = "h-10" }: { className?: string }) {
     <img 
       src={theme === 'light' ? logoLight : logoDark} 
       alt="Schakel AI" 
-      className={className}
+      className={`${className} object-contain object-left`}
       loading="lazy"
     />
   );

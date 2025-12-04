@@ -65,7 +65,7 @@ export default function Header() {
           className="hover-elevate active-elevate-2 rounded-md transition-transform hover:scale-105"
           data-testid="link-home"
         >
-          <Logo className="h-12" />
+          <Logo className="h-12 w-40" />
         </button>
 
         {/* Desktop Navigation */}
