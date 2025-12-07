@@ -104,10 +104,9 @@ function generateBreadcrumbSchema(post: BlogPost, lang: Language): string {
 function generateHTML(post: BlogPost, lang: Language): string {
   const translation = post.translations[lang];
   const htmlContent = marked.parse(translation.content) as string;
-  const canonicalUrl = `https://www.schakel.ai/blog/${post.slug}`;
-  const alternateUrl = lang === 'nl' 
-    ? `https://www.schakel.ai/blog/${post.slug}?lang=en`
-    : `https://www.schakel.ai/blog/${post.slug}`;
+  const canonicalUrl = lang === 'nl' 
+    ? `https://www.schakel.ai/blog/${post.slug}`
+    : `https://www.schakel.ai/blog/${post.slug}?lang=en`;
   
   const formattedDate = new Date(post.publishDate).toLocaleDateString(
     lang === 'nl' ? 'nl-NL' : 'en-US',
