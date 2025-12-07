@@ -4,7 +4,34 @@
 
 Schakel AI is a minimalist Dutch AI consultancy website built with a modern JAMstack architecture. The site communicates the core message "Rust & Rendement" (Peace & Results) through a single-page design featuring a hero section, vision statement, approach timeline, team profiles, and contact form. The project emphasizes performance, accessibility, and clean design inspired by Morningside.com and Apple's minimalist aesthetic.
 
-## Recent Changes (November 28, 2025)
+## Recent Changes (December 7, 2025)
+
+**Blog Pre-rendering for SEO & LLM Accessibility:**
+- **Pre-render Script:** `scripts/prerender-blog.ts` generates static HTML for each blog post
+- **Static HTML Output:** `client/public/blog/<slug>/index.html` (NL) and `<slug>/<lang>.html` (per language)
+- **Full SEO Metadata:** Title, description, keywords, canonical URLs, hreflang tags
+- **Open Graph & Twitter Cards:** Complete social sharing metadata
+- **Schema.org Structured Data:** Article schema with author, publisher, dates, keywords, word count
+- **Breadcrumb Schema:** Navigation structure for search engines
+- **Readable Content:** Full article text in styled HTML for crawlers and LLMs
+
+**How to regenerate static blog pages:**
+```bash
+npx tsx scripts/prerender-blog.ts
+```
+Run this command after adding or updating blog posts, then commit the generated files.
+
+**Tools Portal:**
+- Added `/tools` page for internal tools access
+- Login button in header (desktop & mobile)
+- Meeting Automation Platform (map.schakel.ai) as first tool
+
+**Logo Width Fix:**
+- Fixed logo width in header to prevent layout shift during theme switching
+
+---
+
+## Previous Changes (November 28, 2025)
 
 **Contact API Security Hardening (Architect Approved):**
 - **Shared Schema:** Created `shared/contact.ts` with Zod validation schema used by both frontend and backend
