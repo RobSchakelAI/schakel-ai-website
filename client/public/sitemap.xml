@@ -2,10 +2,10 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
-  <!-- Homepage (Dutch - Default) -->
+  <!-- Homepage -->
   <url>
     <loc>https://www.schakel.ai/</loc>
-    <lastmod>2025-11-30</lastmod>
+    <lastmod>2025-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="nl" href="https://www.schakel.ai/" />
@@ -16,25 +16,56 @@
   <!-- Blog Index -->
   <url>
     <loc>https://www.schakel.ai/blog</loc>
-    <lastmod>2025-11-30</lastmod>
+    <lastmod>2025-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.schakel.ai/blog" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schakel.ai/blog?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.schakel.ai/blog" />
   </url>
 
-  <!-- Blog Post: Meeting Automation Center -->
+  <!-- Blog Post: Meeting Automation Center (NL) -->
   <url>
     <loc>https://www.schakel.ai/blog/meeting-automation-center</loc>
     <lastmod>2025-11-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.schakel.ai/blog/meeting-automation-center" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schakel.ai/blog/meeting-automation-center?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.schakel.ai/blog/meeting-automation-center" />
   </url>
 
-  <!-- Blog Post: Website bouwen met AI -->
+  <!-- Blog Post: Website bouwen met AI (NL) -->
   <url>
     <loc>https://www.schakel.ai/blog/website-bouwen-met-ai</loc>
     <lastmod>2025-11-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.schakel.ai/blog/website-bouwen-met-ai" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schakel.ai/blog/website-bouwen-met-ai?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.schakel.ai/blog/website-bouwen-met-ai" />
+  </url>
+
+  <!-- Tools Portal -->
+  <url>
+    <loc>https://www.schakel.ai/tools</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.schakel.ai/tools" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schakel.ai/tools?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.schakel.ai/tools" />
+  </url>
+
+  <!-- AI View (Technical Documentation) -->
+  <url>
+    <loc>https://www.schakel.ai/ai-view</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.schakel.ai/ai-view" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schakel.ai/ai-view?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.schakel.ai/ai-view" />
   </url>
 
 </urlset>
