@@ -6,20 +6,26 @@ Schakel AI is a minimalist Dutch AI consultancy website built with a modern JAMs
 
 ## Recent Changes (December 7, 2025)
 
-**Blog Pre-rendering for SEO & LLM Accessibility:**
-- **Pre-render Script:** `scripts/prerender-blog.ts` generates static HTML for each blog post
-- **Static HTML Output:** `client/public/blog/<slug>/index.html` (NL) and `<slug>/<lang>.html` (per language)
-- **Full SEO Metadata:** Title, description, keywords, canonical URLs, hreflang tags
-- **Open Graph & Twitter Cards:** Complete social sharing metadata
-- **Schema.org Structured Data:** Article schema with author, publisher, dates, keywords, word count
-- **Breadcrumb Schema:** Navigation structure for search engines
-- **Readable Content:** Full article text in styled HTML for crawlers and LLMs
+**Complete SEO Pre-rendering for Crawlers & LLMs:**
 
-**How to regenerate static blog pages:**
+All SPA pages now have static HTML equivalents for crawlers (Google, Bing) and AI agents (ChatGPT, Claude, Perplexity):
+
+- **Blog Posts:** `scripts/prerender-blog.ts` generates `/blog/<slug>/index.html`
+- **Other Pages:** `scripts/prerender-pages.ts` generates `/blog/index.html`, `/tools/index.html`, `/ai-view/index.html`
+- **Full SEO Metadata:** Title, description, keywords, canonical URLs, hreflang tags (NL/EN)
+- **Open Graph & Twitter Cards:** Complete social sharing metadata
+- **Schema.org Structured Data:** Article, Blog, WebPage, TechArticle, Breadcrumb schemas
+- **Readable Content:** Full page content in styled HTML for crawlers and LLMs
+
+**How to regenerate static pages:**
 ```bash
+# After adding/updating blog posts:
 npx tsx scripts/prerender-blog.ts
+
+# After changing other pages (tools, ai-view, blog index):
+npx tsx scripts/prerender-pages.ts
 ```
-Run this command after adding or updating blog posts, then commit the generated files.
+Run these commands before deploying, then commit the generated files.
 
 **Tools Portal:**
 - Added `/tools` page for internal tools access
