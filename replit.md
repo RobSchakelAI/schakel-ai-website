@@ -4,6 +4,11 @@
 
 Schakel AI is a minimalist Dutch AI consultancy website built with a modern JAMstack architecture. The site communicates the core message "Rust & Rendement" (Peace & Results) through a single-page design featuring a hero section, vision statement, approach timeline, team profiles, and contact form. The project emphasizes performance, accessibility, and clean design inspired by Morningside.com and Apple's minimalist aesthetic.
 
+**IMPORTANT - Deployment Workflow:**
+- **DO NOT use Replit's publish/deploy feature**
+- Push changes to GitHub (DEV branch) → Merge to Main → Auto-deploys to Vercel + Railway
+- User works via Replit Agent, never locally
+
 ## Recent Changes (December 8, 2025)
 
 **New Blog Post: "Het einde van de tussenlaag"**
