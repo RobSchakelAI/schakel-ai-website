@@ -30,6 +30,22 @@ export async function registerRoutes(app: Express): Promise<void> {
     });
   });
 
+  // Debug endpoint to check email config (masks secrets)
+  app.get("/api/debug/email-config", (_req: Request, res: Response) => {
+    const apiKey = process.env.MAILERSEND_API_KEY || "";
+    const fromEmail = process.env.MAILERSEND_FROM_EMAIL || "";
+    const toEmail = process.env.MAILERSEND_TO_EMAIL || "";
+    
+    res.status(200).json({
+      hasApiKey: apiKey.length > 0,
+      apiKeyPrefix: apiKey.substring(0, 8) + "...",
+      apiKeyLength: apiKey.length,
+      fromEmail: fromEmail,
+      toEmail: toEmail,
+      nodeEnv: process.env.NODE_ENV || "development",
+    });
+  });
+
   /**
    * Contact Form Endpoint
    * 
@@ -101,7 +117,12 @@ export async function registerRoutes(app: Express): Promise<void> {
         message: "Bericht succesvol verzonden",
       });
     } catch (error) {
-      console.error("Contact form error:", error instanceof Error ? error.message : error);
+      // Detailed error logging for debugging Railway issues
+      console.error("Contact form error:", {
+        message: error instanceof Error ? error.message : String(error),
+        stack: error instanceof Error ? error.stack : undefined,
+        name: error instanceof Error ? error.name : undefined,
+      });
       return res.status(500).json({
         success: false,
         error: "Er ging iets mis bij het verzenden. Probeer het later opnieuw.",
