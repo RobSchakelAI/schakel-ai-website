@@ -74,6 +74,28 @@ We work with:
 - Voice AI for phone automation
 - RAG (Retrieval-Augmented Generation) systems
 
+## Site Pages
+
+### Homepage
+- URL: https://www.schakel.ai
+- Description: Main landing page with company overview, services, team, and contact information
+- Content: AI solutions overview, 4-week approach, team bios, contact form
+
+### Blog Index
+- URL: https://www.schakel.ai/blog
+- Description: All blog posts and articles about AI implementation
+- Available in: Dutch (default), English (?lang=en)
+
+### Tools Portal
+- URL: https://www.schakel.ai/tools
+- Description: Access portal for client AI tools and platforms
+- Contains: Meeting Automation Platform (map.schakel.ai)
+
+### AI View
+- URL: https://www.schakel.ai/ai-view
+- Description: Technical documentation and machine-readable content for AI agents
+- Purpose: Provides structured information for LLMs and crawlers
+
 ## Blog & Resources
 
 ### Latest Writing: Van Transcriptie naar Automatische Workflow
