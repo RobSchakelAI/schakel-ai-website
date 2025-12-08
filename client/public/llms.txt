@@ -98,7 +98,16 @@ We work with:
 
 ## Blog & Resources
 
-### Latest Writing: Van Transcriptie naar Automatische Workflow
+### Latest Writing: Het einde van de tussenlaag
+- URL: https://www.schakel.ai/blog/einde-van-de-tussenlaag
+- Published: December 8, 2025
+- Author: Rob van Zutphen
+- Topic: Why we skip low-code and go all-in on vibecoding (AI-assisted full-code development)
+- Key Topics: vibecoding, low-code vs full-code, AI-assisted development, Replit, Lovable, Cursor, software ownership, vendor lock-in, modular stack
+- Reading Time: 8 minutes
+- Summary: Analysis of why the low-code sweet spot is disappearing in the AI era. Covers four main arguments: (1) AI has lowered the barrier to real code, (2) low-code creates vendor lock-in while vibecoding gives ownership, (3) modern AI models produce consistent, production-quality code, (4) humans still control architecture and security. Includes research citations from McKinsey, Stanford AI Index, Microsoft Research, and Harvard/MIT/Boston University on AI-assisted development productivity gains.
+
+### Previous Writing: Van Transcriptie naar Automatische Workflow
 - URL: https://www.schakel.ai/blog/meeting-automation-center
 - Published: November 30, 2025
 - Author: Rob van Zutphen

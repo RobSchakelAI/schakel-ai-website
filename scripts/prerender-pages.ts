@@ -21,6 +21,15 @@ interface BlogPostData {
 const blogPosts: Record<Language, BlogPostData[]> = {
   nl: [
     {
+      slug: 'einde-van-de-tussenlaag',
+      title: 'Het einde van de tussenlaag: waarom wij de low-code route overslaan',
+      excerpt: 'Low-code was jarenlang de brug tussen business en IT. Maar in het AI-tijdperk wordt vibecoding de nieuwe standaard.',
+      publishDate: '2025-12-08',
+      readingTime: 8,
+      category: 'AI Development',
+      authorName: 'Rob van Zutphen'
+    },
+    {
       slug: 'meeting-automation-center',
       title: 'Van Transcriptie naar Automatische Workflow: Hoe Wij Meetings Opgelost Hebben',
       excerpt: 'Tools transcriberen prima, maar het administratieve werk blijft hangen. Wij bouwden een systeem dat alles automatisch regelt.',
@@ -40,6 +49,15 @@ const blogPosts: Record<Language, BlogPostData[]> = {
     }
   ],
   en: [
+    {
+      slug: 'einde-van-de-tussenlaag',
+      title: 'The end of the middle layer: why we skip the low-code route',
+      excerpt: 'Low-code was the bridge between business and IT for years. But in the AI era, vibecoding becomes the new standard.',
+      publishDate: '2025-12-08',
+      readingTime: 8,
+      category: 'AI Development',
+      authorName: 'Rob van Zutphen'
+    },
     {
       slug: 'meeting-automation-center',
       title: 'From Transcription to Automatic Workflow: How We Solved Meetings',

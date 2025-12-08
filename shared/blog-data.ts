@@ -3,9 +3,67 @@ import { websiteBouwenMetAIContent } from './blog-content/website-bouwen-met-ai'
 import { websiteBouwenMetAIContentEN } from './blog-content/website-bouwen-met-ai-en';
 import { meetingAutomationCenterContent } from './blog-content/meeting-automation-center';
 import { meetingAutomationCenterContentEN } from './blog-content/meeting-automation-center-en';
+import { eindeVanDeTussenlaagContent } from './blog-content/einde-van-de-tussenlaag';
+import { eindeVanDeTussenlaagContentEN } from './blog-content/einde-van-de-tussenlaag-en';
 
 // Blog post data - add new posts here
 export const blogPosts: BlogPost[] = [
+  {
+    slug: 'einde-van-de-tussenlaag',
+    publishDate: '2025-12-08',
+    readingTime: 8,
+    ogImage: '/images/blog/einde-van-de-tussenlaag.jpg',
+    translations: {
+      nl: {
+        title: 'Het einde van de tussenlaag: waarom wij de low-code route overslaan',
+        excerpt: 'Low-code was jarenlang de brug tussen business en IT. Maar in het AI-tijdperk wordt vibecoding de nieuwe standaard. Meer controle, meer flexibiliteit, meer eigenaarschap.',
+        content: eindeVanDeTussenlaagContent,
+        metaDescription: 'Waarom Schakel AI kiest voor vibecoding in plaats van low-code. AI-assisted development biedt meer controle, flexibiliteit en eigenaarschap over je software.',
+        keywords: [
+          'vibecoding',
+          'low-code vs vibecoding',
+          'AI-assisted development',
+          'Replit',
+          'Lovable',
+          'Cursor',
+          'no-code alternatief',
+          'software eigenaarschap',
+          'AI coding',
+          'full-code development'
+        ],
+        category: 'AI Development',
+        author: {
+          name: 'Rob van Zutphen',
+          role: 'Mede-oprichter Schakel',
+          bio: 'Rob helpt bedrijven slimmer werken met AI. Achtergrond in finance en BI, nu gefocust op praktische AI-implementaties die echt rendement opleveren.'
+        }
+      },
+      en: {
+        title: 'The end of the middle layer: why we skip the low-code route',
+        excerpt: 'Low-code was the bridge between business and IT for years. But in the AI era, vibecoding becomes the new standard. More control, more flexibility, more ownership.',
+        content: eindeVanDeTussenlaagContentEN,
+        metaDescription: 'Why Schakel AI chooses vibecoding over low-code. AI-assisted development offers more control, flexibility, and ownership over your software.',
+        keywords: [
+          'vibecoding',
+          'low-code vs vibecoding',
+          'AI-assisted development',
+          'Replit',
+          'Lovable',
+          'Cursor',
+          'no-code alternative',
+          'software ownership',
+          'AI coding',
+          'full-code development'
+        ],
+        category: 'AI Development',
+        author: {
+          name: 'Rob van Zutphen',
+          role: 'Co-founder Schakel',
+          bio: 'Rob helps companies work smarter with AI. Background in finance and BI, now focused on practical AI implementations that truly deliver results.'
+        }
+      }
+    }
+  },
   {
     slug: 'meeting-automation-center',
     publishDate: '2025-11-30',

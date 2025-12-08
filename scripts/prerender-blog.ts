@@ -313,7 +313,26 @@ async function loadBlogPosts(): Promise<BlogPost[]> {
     let nlKeywords: string[] = [];
     let enKeywords: string[] = [];
     
-    if (slug === 'meeting-automation-center') {
+    if (slug === 'einde-van-de-tussenlaag') {
+      nlContent = contentMap['eindeVanDeTussenlaagContent'] || '';
+      enContent = contentMap['eindeVanDeTussenlaagContentEN'] || '';
+      nlTitle = 'Het einde van de tussenlaag: waarom wij de low-code route overslaan';
+      enTitle = 'The end of the middle layer: why we skip the low-code route';
+      nlExcerpt = 'Low-code was jarenlang de brug tussen business en IT. Maar in het AI-tijdperk wordt vibecoding de nieuwe standaard.';
+      enExcerpt = 'Low-code was the bridge between business and IT for years. But in the AI era, vibecoding becomes the new standard.';
+      nlMetaDesc = 'Waarom Schakel AI kiest voor vibecoding in plaats van low-code. AI-assisted development biedt meer controle, flexibiliteit en eigenaarschap over je software.';
+      enMetaDesc = 'Why Schakel AI chooses vibecoding over low-code. AI-assisted development offers more control, flexibility, and ownership over your software.';
+      nlCategory = 'AI Development';
+      enCategory = 'AI Development';
+      nlAuthorName = 'Rob van Zutphen';
+      nlAuthorRole = 'Mede-oprichter Schakel';
+      nlAuthorBio = 'Rob helpt bedrijven slimmer werken met AI.';
+      enAuthorName = 'Rob van Zutphen';
+      enAuthorRole = 'Co-founder Schakel';
+      enAuthorBio = 'Rob helps companies work smarter with AI.';
+      nlKeywords = ['vibecoding', 'low-code vs vibecoding', 'AI-assisted development', 'Replit', 'software eigenaarschap'];
+      enKeywords = ['vibecoding', 'low-code vs vibecoding', 'AI-assisted development', 'Replit', 'software ownership'];
+    } else if (slug === 'meeting-automation-center') {
       nlContent = contentMap['meetingAutomationCenterContent'] || '';
       enContent = contentMap['meetingAutomationCenterContentEN'] || '';
       nlTitle = 'Van Transcriptie naar Automatische Workflow: Hoe Wij Meetings Opgelost Hebben';
