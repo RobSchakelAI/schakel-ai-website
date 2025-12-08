@@ -1,0 +1,112 @@
+export const eindeVanDeTussenlaagContentEN = `
+When you look at how non-developers have been automating processes in recent years, it usually happens through low-code platforms like Make, n8n, or Zapier. Or through corporate variants like Power Automate. You click building blocks together, set parameters per step, and build a working process. And want an interface around it? Then you use Softr, Retool, Appsmith, or Power Apps to build a simple app.
+
+This has worked excellently for years. It was the essence of the "Low-Code Revolution": people who understand processes but don't write code can suddenly automate things that previously required developers.
+
+But in this AI era of recent years - and certainly in the coming years - that middle layer becomes increasingly illogical for many modern use cases. Not because low-code is "bad," but because it's no longer the fastest, most flexible, or most future-proof route. At Schakel AI, we therefore skip that layer entirely. We choose vibecoding: AI-assisted full-code.
+
+And to prevent a misunderstanding right away:
+
+**We're not saying vibecoding is better than traditional coding. We are saying that every developer should embrace AI-assisted coding.**
+
+What we're stating is simple: vibecoding is a better choice than low-code in many situations.
+
+Here's why.
+
+---
+
+## 1. The sweet spot of low-code has largely disappeared
+
+Low-code emerged for one reason:
+
+*"I can't code, so I use a visual tool."*
+
+That reasoning is becoming increasingly irrelevant.
+
+With the current generation of models, like Claude Opus 4.5, GPT-5.1, and Gemini 3.0, combined with AI agents in Replit, Lovable, and Cursor, the barrier to writing real code has virtually disappeared.
+
+The bottleneck is no longer *can you code*, but:
+
+**Can you think logically, understand processes, and clearly formulate your intent?**
+
+And that's exactly what we've been doing for years with our background in Finance and Business Intelligence.
+
+In Power Automate or n8n, you're still searching through menus and configuring blocks. In Replit, you tell the agent what you want, and the code is there in seconds.
+
+That this can be not only faster but also more professional is confirmed by multiple independent studies:
+
+- **McKinsey Global Institute** shows that AI coding can automate 20-45% of development tasks and substantially increases productivity in software engineering.
+- **Stanford AI Index (2024/2025)** shows that generative AI in development teams worldwide leads to shorter review cycles, higher code quality, and rapid adoption.
+- **Microsoft Research** shows in a controlled experiment that developers with Copilot are 55.8% faster than without.
+- **Harvard, MIT & Boston University** found that AI assistance results in 12% faster output and 40% higher quality for knowledge workers.
+
+The point remains the same: **AI assisted development is here to stay.**
+
+---
+
+## 2. Ownership vs. Rent: the vendor lock-in trap
+
+This is a principled and essential point for us.
+
+Building in low-code means building on rented ground:
+
+- You're locked into licensing models that can increase.
+- You're stuck with connectors that might not do what you want.
+- You're trapped in a UI framework you can't customize.
+
+This is precisely why recent analyses on vibecoding state that the fundamental difference isn't "speed," but **ownership of your software**.
+
+With vibecoding, it's different.
+
+Platforms like Replit and Lovable do offer an integrated all-in-one experience (frontend, backend, database), but it's not required. At Schakel AI, we deliberately build in a modular stack:
+
+- **Vercel** (frontend)
+- **Railway** (backend)
+- **Supabase** (database)
+
+Everything is in our own Git repositories.
+
+Want to migrate later? Fine. No longer find Replit the best vibecoding tool? Then you switch to Lovable or something new.
+
+**The code belongs to us and the client, not to a platform.**
+
+---
+
+## 3. AI speaks the language of code - more consistent than often thought
+
+There are misconceptions around AI-assisted coding: that the code would be unreliable, that it's only suitable for prototypes, or that you spend more time on fixes than on building. That image belongs to the first generation of AI tools.
+
+The reality is different.
+
+On the independent benchmark SWE-bench Verified, modern models (like GPT-5.1 and Opus) solve complex software problems, including edge cases and error handling.
+
+In practice, vibecoding works like this: you describe what the system should do, the AI generates a consistent codebase, and you oversee architecture, security, and nuance. The result isn't an "AI demo," but a solid implementation that you can fully test, adjust, and extend.
+
+---
+
+## 4. The human element: architecture, security, and control
+
+Does this mean we blindly leave everything to AI? Absolutely not.
+
+**AI is the engine, but we're at the wheel.**
+
+Our approach combines the speed of AI with the certainty of human expertise. The code generated by the agent is reviewed and optimized where necessary by an experienced developer. AI does the heavy lifting (the first 80%), allowing us to focus on the crucial last 20%: security, architecture, scalability, and edge cases.
+
+This way you get the speed of a prototype, but the robustness of enterprise software.
+
+---
+
+## Conclusion
+
+Low-code was the logical choice for years: a bridge between business and IT, and a way to build software without programming knowledge.
+
+But the sweet spot is shrinking. AI-assisted development has taken over the original promise of low-code - building fast without technical depth - but with more control, flexibility, and ownership.
+
+That's why at Schakel AI we choose vibecoding.
+
+- Non-developers can now build things that were previously impossible.
+- Developers become 5x to 10x more productive.
+- And we prefer building real software assets over solutions locked in someone else's environment.
+
+**This is how we build robust, simple, and ready for the future.**
+`;

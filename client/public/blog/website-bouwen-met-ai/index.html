@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary Meta Tags -->
+  <title>Website bouwen met AI: Hoe we schakel.ai zelf maakten | Schakel AI Blog</title>
+  <meta name="title" content="Website bouwen met AI: Hoe we schakel.ai zelf maakten | Schakel AI Blog" />
+  <meta name="description" content="Zonder programmeur onze website gebouwd met AI. Het complete verhaal over vibecoding, tech stack keuzes en wat echt werkt." />
+  <meta name="author" content="Rob van Zutphen" />
+  <meta name="keywords" content="website bouwen met AI, vibecoding, AI-first development" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  
+  <!-- Canonical & Language Alternates -->
+  <link rel="canonical" href="https://www.schakel.ai/blog/website-bouwen-met-ai" />
+  <link rel="alternate" hreflang="nl" href="https://www.schakel.ai/blog/website-bouwen-met-ai" />
+  <link rel="alternate" hreflang="en" href="https://www.schakel.ai/blog/website-bouwen-met-ai?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://www.schakel.ai/blog/website-bouwen-met-ai" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.schakel.ai/blog/website-bouwen-met-ai" />
+  <meta property="og:title" content="Website bouwen met AI: Hoe we schakel.ai zelf maakten" />
+  <meta property="og:description" content="Zonder programmeur onze website gebouwd met AI. Het complete verhaal over vibecoding, tech stack keuzes en wat echt werkt." />
+  <meta property="og:image" content="https://www.schakel.ai/images/blog/website-bouwen-met-ai.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="nl_NL" />
+  <meta property="og:site_name" content="Schakel AI" />
+  <meta property="article:published_time" content="2025-11-23T00:00:00.000Z" />
+  <meta property="article:author" content="Rob van Zutphen" />
+  <meta property="article:section" content="AI Development" />
+  <meta property="article:tag" content="website bouwen met AI" />
+  <meta property="article:tag" content="vibecoding" />
+  <meta property="article:tag" content="AI-first development" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://www.schakel.ai/blog/website-bouwen-met-ai" />
+  <meta name="twitter:title" content="Website bouwen met AI: Hoe we schakel.ai zelf maakten" />
+  <meta name="twitter:description" content="Zonder programmeur onze website gebouwd met AI. Het complete verhaal over vibecoding, tech stack keuzes en wat echt werkt." />
+  <meta name="twitter:image" content="https://www.schakel.ai/images/blog/website-bouwen-met-ai.jpg" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Schema.org Article Structured Data -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Website bouwen met AI: Hoe we schakel.ai zelf maakten",
+  "description": "Zonder programmeur onze website gebouwd met AI. Het complete verhaal over vibecoding, tech stack keuzes en wat echt werkt.",
+  "author": {
+    "@type": "Person",
+    "name": "Rob van Zutphen",
+    "jobTitle": "Mede-oprichter Schakel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Schakel AI B.V.",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schakel.ai/logo.png"
+    }
+  },
+  "datePublished": "2025-11-23T00:00:00.000Z",
+  "dateModified": "2025-11-23T00:00:00.000Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.schakel.ai/blog/website-bouwen-met-ai"
+  },
+  "image": "https://www.schakel.ai/images/blog/website-bouwen-met-ai.jpg",
+  "articleSection": "AI Development",
+  "keywords": "website bouwen met AI, vibecoding, AI-first development",
+  "wordCount": 1898,
+  "inLanguage": "nl-NL"
+}
+  </script>
+  
+  <!-- Schema.org Breadcrumb Structured Data -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.schakel.ai/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.schakel.ai/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Website bouwen met AI: Hoe we schakel.ai zelf maakten",
+      "item": "https://www.schakel.ai/blog/website-bouwen-met-ai"
+    }
+  ]
+}
+  </script>
+  
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { 
+      font-family: Inter, system-ui, sans-serif; 
+      line-height: 1.7; 
+      color: #1a1a1a; 
+      background: #fff;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    header { margin-bottom: 40px; border-bottom: 1px solid #e5e5e5; padding-bottom: 30px; }
+    h1 { font-family: 'DM Sans', sans-serif; font-size: 2.5rem; font-weight: 700; margin-bottom: 16px; line-height: 1.2; }
+    .meta { color: #666; font-size: 0.9rem; margin-bottom: 16px; }
+    .meta span { margin-right: 16px; }
+    .author { display: flex; align-items: center; gap: 12px; margin-top: 20px; }
+    .author-avatar { width: 48px; height: 48px; border-radius: 50%; background: #6EBFAA; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; }
+    .author-info { }
+    .author-name { font-weight: 600; }
+    .author-role { color: #666; font-size: 0.9rem; }
+    .category { display: inline-block; background: rgba(110, 191, 170, 0.1); color: #6EBFAA; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500; margin-bottom: 16px; }
+    article { }
+    article h2 { font-family: 'DM Sans', sans-serif; font-size: 1.75rem; font-weight: 700; margin: 40px 0 16px; }
+    article h3 { font-family: 'DM Sans', sans-serif; font-size: 1.35rem; font-weight: 700; margin: 32px 0 12px; }
+    article p { margin-bottom: 16px; }
+    article ul, article ol { margin: 16px 0; padding-left: 24px; }
+    article li { margin-bottom: 8px; }
+    article strong { font-weight: 600; }
+    article em { font-style: italic; }
+    article a { color: #6EBFAA; text-decoration: none; }
+    article a:hover { text-decoration: underline; }
+    article code { background: #f5f5f5; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+    article pre { background: #f5f5f5; padding: 16px; border-radius: 8px; overflow-x: auto; margin: 16px 0; }
+    article pre code { background: none; padding: 0; }
+    article blockquote { border-left: 4px solid #6EBFAA; padding-left: 16px; margin: 16px 0; color: #666; font-style: italic; }
+    article hr { border: none; border-top: 1px solid #e5e5e5; margin: 32px 0; }
+    footer { margin-top: 60px; padding-top: 30px; border-top: 1px solid #e5e5e5; text-align: center; color: #666; }
+    footer a { color: #6EBFAA; }
+    .js-notice { background: #f0f9f6; border: 1px solid #6EBFAA; padding: 16px; border-radius: 8px; margin-bottom: 30px; text-align: center; }
+    .js-notice a { color: #6EBFAA; font-weight: 500; }
+  </style>
+</head>
+<body>
+  <div class="js-notice">
+    Voor de volledige interactieve ervaring, <a href="https://www.schakel.ai/blog/website-bouwen-met-ai">bekijk dit artikel met JavaScript ingeschakeld</a>.
+  </div>
+  
+  <header>
+    <span class="category">AI Development</span>
+    <h1>Website bouwen met AI: Hoe we schakel.ai zelf maakten</h1>
+    <div class="meta">
+      <span>📅 23 november 2025</span>
+      <span>⏱️ 12 min leestijd</span>
+    </div>
+    <div class="author">
+      <div class="author-avatar">RvZ</div>
+      <div class="author-info">
+        <div class="author-name">Rob van Zutphen</div>
+        <div class="author-role">Mede-oprichter Schakel</div>
+      </div>
+    </div>
+  </header>
+  
+  <article>
+    <p><strong>Kan je zonder programmeur een professionele website bouwen met AI?</strong>
+Ja. Wij deden het. En het werkte verrassend goed.</p>
+<p>We hebben onze website zelf gevibecoded.
+Niet omdat het moest, maar omdat we wilden testen hoe ver je komt als je:</p>
+<ul>
+<li>geen programmeur bent,</li>
+<li>wél snapt hoe systemen werken,</li>
+<li>én AI slim inzet om het zware werk te doen.</li>
+</ul>
+<p>Mijn achtergrond ligt in finance en BI. Dus ik kan prima nadenken in processen, datastructuren, afhankelijkheden en logica.
+Maar dingen als React, Vite, bundlers, CORS (Cross-Origin Resource Sharing: de regels die bepalen welke websites met elkaar mogen praten), UI components… dat was allemaal vrij nieuw voor me.</p>
+<p>Toch kun je tegenwoordig een website bouwen met AI, zolang je:</p>
+<ol>
+<li>weet wat je wil bouwen,</li>
+<li>logisch nadenkt,</li>
+<li>en AI niet dom volgt, maar kritisch gebruikt.</li>
+</ol>
+<p>Dit was trouwens niet onze allereerste AI-first build.
+Vorig jaar bouwden we onze eerste gevibecode website: dat was de échte vuurdoop waar we alles voor het eerst uitvogelden.
+Sindsdien hebben we meerdere webapplicaties gebouwd (een website is natuurlijk een vrij simpele webapplicatie).
+Over die eerste projecten heb ik nooit publiekelijk geschreven.</p>
+<p>Maar de lessen, de struggles, de doorbraken? Die zijn universeel.
+Dus dit verhaal gaat over hoe we schakel.ai bouwden, maar de ervaring die je hier leest? 
+Die komt uit al die projecten samen.</p>
+<p>Hier het eerlijke, volledige verhaal.</p>
+<hr>
+<h2>AI-first bouwen: dit is hoe wij werken</h2>
+<p>Bij <a href="https://schakel.ai">Schakel</a> proberen we alles opnieuw te bekijken.</p>
+<p>Niet omdat we het beter weten, maar omdat dit het juiste moment in de geschiedenis is om processen vanaf nul te herontwerpen.</p>
+<p>Onze basisvragen:</p>
+<p><strong>Hoe zou je dit vandaag bouwen als je helemaal opnieuw mag beginnen?</strong></p>
+<p><strong>Kunnen we dit (deels) door AI laten maken, en zelf de kwaliteit bewaken?</strong></p>
+<p>Je hoeft geen fulltime developer te zijn om met AI een website te bouwen, maar je moet wél snappen wat je aan het doen bent.</p>
+<p>De website was een ideaal testproject:
+klein genoeg om helder te blijven, groot genoeg om alle onderdelen écht tegen te komen.</p>
+<hr>
+<h2>Waarom deze architectuur: future-proof zonder gedoe</h2>
+<p>We hadden deze site in een dag op één platform kunnen zetten,
+maar dat was níet het doel.</p>
+<p>We wilden een setup die:</p>
+<ul>
+<li>modulair is</li>
+<li>schaalbaar is</li>
+<li>AI-first werkt</li>
+<li>netjes te debuggen is</li>
+<li>logisch is voor grotere projecten</li>
+</ul>
+<p>Daarom werken we standaard met twee lagen:</p>
+<p><strong>1. Core Stack: de vaste basis</strong>
+Deze verandert niet snel.</p>
+<p><strong>2. Build Tooling: per project, per vibe</strong>
+Wat nu logisch is, kan over een jaar anders zijn.</p>
+<p>Dat geeft rust en duidelijkheid. Vooral als je snel wilt bouwen.</p>
+<hr>
+<h2>Onze Schakel Core Stack (de stabiele basis onder alles)</h2>
+<p>Deze tools vormen de fundering van onze manier van bouwen:</p>
+<ul>
+<li><a href="https://supabase.com">Supabase</a>: auth, database, storage, edge functions</li>
+<li><a href="https://vercel.com">Vercel</a>: super snelle frontend hosting</li>
+<li><a href="https://railway.app">Railway</a>: Node runtimes &amp; microservices</li>
+<li><a href="https://github.com">GitHub</a>: version control + CI/CD (Continuous Integration/Deployment: automatisch testen en deployen)</li>
+<li><a href="https://replit.com">Replit</a>: vibecoding + AI agents</li>
+<li><a href="https://codex.storage">Codex</a>: AI code reviewer</li>
+<li>LLM&#39;s: <a href="https://openai.com/chatgpt">ChatGPT</a>, <a href="https://claude.ai">Claude</a>, <a href="https://gemini.google.com">Gemini</a>, <a href="https://x.ai">Grok</a>, <a href="https://perplexity.ai">Perplexity</a></li>
+<li><a href="https://schakel.ai">Schakel Development Standards</a>: onze eigen spelregels</li>
+</ul>
+<p>Voor deze website hadden we géén database nodig, dus we bleven bij in-memory opslag + MailerSend.</p>
+<p>De kern:
+Deze stack is getest, schaalbaar, en voelt logisch in de praktijk.</p>
+<hr>
+<h2>Build tooling (voor deze site): gewoon wat nu het lekkerst werkt</h2>
+<p>Voor deze site gebruikten we:</p>
+<ul>
+<li>React + TypeScript</li>
+<li>Vite</li>
+<li>Tailwind</li>
+<li>shadcn/ui</li>
+</ul>
+<p>Niet omdat het &quot;moet&quot;, maar omdat het:</p>
+<ul>
+<li>snel is,</li>
+<li>prettig itereren is,</li>
+<li>en AI goed met deze toolset overweg kan.</li>
+</ul>
+<p>Ik ben niet begonnen met &quot;React is de beste keuze&quot;,
+maar met:
+&quot;Wat is de snelste manier om dit design en deze interacties te bouwen?&quot;</p>
+<p>React + Vite bleek voor nu het meest logisch.</p>
+<hr>
+<h2>Frontend: vooral de animatie (en de tekst!) waren werk</h2>
+<p>Hier moet ik eerlijk zijn:
+de hero-animatie was níet &quot;AI deed dit wel even&quot;.</p>
+<p><strong>We hebben echt veel iteraties gedaan</strong></p>
+<ul>
+<li>tientallen varianten</li>
+<li>heel veel prompts</li>
+<li>Agent 3 die soms compleet andere kanten opging</li>
+<li>dingen die te druk waren</li>
+<li>dingen die te simpel waren</li>
+<li>dingen die gewoon lelijk waren</li>
+</ul>
+<p><strong>Veel sparren met Simon</strong></p>
+<p>We hebben continu afgestemd:</p>
+<ul>
+<li>past dit bij Schakel?</li>
+<li>past dit bij wie wij zijn?</li>
+<li>voelt het modern maar niet schreeuwerig?</li>
+<li>klopt de vibe?</li>
+</ul>
+<p><strong>70% itereren, 30% AI, 100% teamwork</strong></p>
+<p>Replit Agent 3 maakte elke keer de ruwe versie.
+Wij gaven richting, nuance en smaak.</p>
+<p><strong>Maar de tekst… die was echt het meeste werk</strong></p>
+<p>Omdat:</p>
+<ul>
+<li>het moet passen bij onze stijl</li>
+<li>het moet menselijk zijn</li>
+<li>niet marketingachtig</li>
+<li>niet stoffig</li>
+<li>niet te saai</li>
+<li>niet te blij</li>
+<li>en wel persoonlijk</li>
+</ul>
+<p>AI kan je helpen oefenen, maar de inhoud moet van jezelf komen.
+Dat merkten we hier heel sterk.</p>
+<hr>
+<h2>Backend: simpel, duidelijk, en exact wat het moet doen</h2>
+<p>De backend doet één ding:
+het contactformulier verwerken.</p>
+<p>Met:</p>
+<ul>
+<li>Express + TS</li>
+<li>Zod validatie</li>
+<li>Railway hosting</li>
+<li>MailerSend</li>
+</ul>
+<p>Dat is alles.
+En dat is precies genoeg.</p>
+<p><strong>Flow</strong></p>
+<ol>
+<li>formulier → POST</li>
+<li>backend valideert</li>
+<li>MailerSend stuurt mail</li>
+<li>backend antwoordt</li>
+<li>Umami logt</li>
+</ol>
+<p><strong>CORS (vriendelijke uitleg)</strong></p>
+<p>CORS is basically een regel-setje dat bepaalt wie tegen je backend mag praten.</p>
+<p>Onze regels:</p>
+<ul>
+<li>schakel.ai</li>
+<li><a href="http://www.schakel.ai">www.schakel.ai</a></li>
+<li>localhost (tijdens bouwen)</li>
+<li>preview-URL&#39;s van Vercel en Railway</li>
+</ul>
+<p>Custom middleware, geen wildcardgedoe.</p>
+<hr>
+<h2>Deployment: frontend op Vercel, backend op Railway</h2>
+<p>Dit is misschien wel de keuze die het meeste rust geeft.</p>
+<p><strong>Frontend → <a href="https://vercel.com">Vercel</a></strong>
+<strong>Backend → <a href="https://railway.app">Railway</a></strong></p>
+<p>Deze setup is eigenlijk overkill voor een simpele website zoals deze.
+Maar het is precies hoe we willen werken.</p>
+<p>Het is future-proof.
+Het legt de basis voor grotere projecten.
+Het maakt schalen makkelijk wanneer dat nodig is.</p>
+<p>We bouwen niet voor nu, we bouwen voor straks.</p>
+<hr>
+<h2>DNS: klein onderdeel, maar cruciaal</h2>
+<p>DNS staat bij Namecheap.
+Een paar records naar Vercel.
+Dat was het.</p>
+<p>DNS lijkt simpel, totdat het fout staat.
+Dan werkt je hele website niet.</p>
+<hr>
+<h2>Code review met AI, maar eerst: onze Schakel Standards</h2>
+<p>Voordat we het over code review hebben, iets belangrijks:</p>
+<p><strong>We bouwen niet zomaar</strong></p>
+<p>Op basis van eerdere builds hebben we Schakel Development Standards opgesteld.
+Dit zijn onze eigen spelregels voor hoe code eruitziet, hoe componenten worden opgezet, en hoe alles met elkaar praat.</p>
+<p>Tijdens het bouwen blijven we continu scherp op:</p>
+<ul>
+<li>gecentraliseerde code (niet overal hetzelfde herhalen)</li>
+<li>consistente naming</li>
+<li>logische structuur</li>
+<li>herbruikbaarheid</li>
+<li>schaalbaarheid</li>
+</ul>
+<p>AI kan snel bouwen, maar zonder standaarden krijg je rommel.
+Wij zorgen dat alles netjes blijft, van eerste commit tot laatste deploy.</p>
+<p><strong>Dan pas komt de review</strong></p>
+<p>Dit is een workflow die we vaker gaan gebruiken:</p>
+<p><strong>Stap 1: AI (Codex) doet de eerste review</strong></p>
+<p>Codex checkt:</p>
+<ul>
+<li>structuur</li>
+<li>naming</li>
+<li>type fouten</li>
+<li>inconsistenties</li>
+<li>kleine optimalisaties</li>
+<li>afwijkingen van onze standards</li>
+</ul>
+<p>Het haalt de ruis eruit, zodat je niet alles handmatig hoeft na te lopen.</p>
+<p><strong>Stap 2: programmeur doet de final check</strong></p>
+<p>Die kijkt:</p>
+<ul>
+<li>klopt de logica echt?</li>
+<li>is dit herbruikbaar?</li>
+<li>blijft dit stabiel als we uitbreiden?</li>
+<li>klopt het binnen onze architectuur?</li>
+<li>ziet dit eruit zoals wij willen?</li>
+</ul>
+<p>AI maakt het snel.
+Mens maakt het goed.
+Standaards maken het consistent.</p>
+<p>En precies deze combi maakt bouwen écht haalbaar als je geen fulltime developer bent.</p>
+<hr>
+<h2>Analytics: Umami (licht, cookieloos, simpel)</h2>
+<p>We gebruiken <a href="https://umami.is">Umami</a> omdat het precies genoeg data geeft zonder gedoe.</p>
+<p>We meten:</p>
+<ul>
+<li>pageviews</li>
+<li>sectie-views</li>
+<li>taalwissels</li>
+<li>thema-toggles</li>
+<li>navigatie</li>
+<li>form-submits</li>
+</ul>
+<p>Geen cookies.
+Geen banners.
+Geen irritatie.</p>
+<hr>
+<h2>AI tijdens bouwen &amp; schrijven: supercharger, geen vervanging</h2>
+<p>AI heeft geholpen bij:</p>
+<ul>
+<li>eerste drafts</li>
+<li>brainstorms</li>
+<li>debug hints</li>
+<li>code sanity checks</li>
+<li>refactor suggesties</li>
+<li>tekststructuur</li>
+</ul>
+<p>Maar:
+de keuzes, de smaak, de logica en het verhaal waren menselijk.</p>
+<p>AI maakt je tien keer sneller,
+maar alleen als je zelf precies weet wat je wil.</p>
+<hr>
+<h2>Vibecode-notities: wat tegenviel en wat meeviel</h2>
+<p><strong>Agent 3 is bizar!</strong>
+Probeer het zelf, simpelweg bizar. Een aanzienlijk verschil met maanden geleden. De kwaliteit van wat het genereert is echt next level.</p>
+<p><strong>Blijf bij de les, en let op de details</strong>
+Replit&#39;s eerste versie lijkt geweldig, maar the devil is in the details. En dan begint het werk pas echt. Die laatste 20% kost 80% van je tijd.</p>
+<p><strong>Besef altijd dat een LLM met je meepraat</strong>
+Het is nooit kritisch genoeg. Zorg dat je continue kritisch blijft en de LLM challenged op wat hij voorstelt of zegt. Hij zal vrijwel altijd &quot;ja dat klopt&quot; zeggen, ook als het niet klopt.</p>
+<p><strong>Denk goed na over architectuur</strong>
+Zorg dat je goed nadenkt over hoe processen lopen en hoe de flow van de applicatie is. Denk echt goed na over de architectuur voordat je begint. AI helpt je bouwen, maar niet met strategisch denken.</p>
+<p><strong>Spar met meerdere LLM&#39;s</strong>
+Spar met een LLM en spar daarna met een andere LLM. Wees superkritisch. Claude zegt soms iets anders dan ChatGPT. Gebruik dat.</p>
+<p><strong>Keep it simple: less is more</strong>
+Elke extra feature is extra complexity. Elke extra animatie is iets dat kan breken. Begin minimaal, voeg toe wat echt nodig is.</p>
+<p><strong>Let op je budget met Replit</strong>
+Gebruik LLM&#39;s waar je al een vast maandbedrag voor betaalt, en niet alleen via Replit. Kan wel, maar de rekening wordt bepaald aan de hand van gebruik. Kan snel oplopen.</p>
+<p><strong>Heb geduld!</strong>
+Blijf itereren totdat het echt goed is. En probeer je laptop niet uit het raam te gooien. Sommige bugs zijn frustrerend, maar bijna altijd oplosbaar.</p>
+<p><strong>Documenteer je keuzes</strong>
+Schrijf op waarom je iets op een bepaalde manier deed. Over twee maanden weet je het niet meer. Future you zal dankbaar zijn.</p>
+<p><strong>Test in verschillende browsers</strong>
+Wat werkt in Chrome werkt niet altijd in Safari. Wat werkt op desktop werkt niet altijd op mobile. Test vroeg, test vaak.</p>
+<p><strong>Version control is je vriend</strong>
+Commit vaak, met duidelijke messages. Als iets kapot gaat, kun je terug. Git is je parachute.</p>
+<hr>
+<h2>Slot</h2>
+<p>Het eindresultaat is een website die:</p>
+<ul>
+<li>snel is</li>
+<li>modern is</li>
+<li>AI-first is</li>
+<li>technisch netjes in elkaar zit</li>
+<li>en precies past bij wie wij zijn</li>
+</ul>
+<p>En misschien nog het belangrijkste:
+het was leuk om te bouwen.</p>
+<p>Want dát is precies waar Schakel voor staat:
+slimmer bouwen, niet ingewikkelder.</p>
+<hr>
+<p><strong>Wil je ook AI-first bouwen?</strong> 
+<a href="https://schakel.ai">Bekijk onze aanpak</a> of <a href="https://schakel.ai/#contact">neem contact op</a> voor een gesprek over jouw project.</p>
+<hr>
+<h2>Veelgestelde vragen over website bouwen met AI</h2>
+<p><strong>Heb je programmeerervaring nodig om met AI een website te bouwen?</strong>
+Nee, geen programmeerervaring maar wel logisch denkvermogen. Je moet systemen kunnen begrijpen en AI kritisch kunnen gebruiken, niet klakkeloos volgen.</p>
+<p><strong>Welke AI tools zijn het beste voor website development?</strong>
+Wij werkten vooral met Replit Agent 3, ChatGPT, en Claude. Daarnaast gebruikten we Codex voor code reviews. De combinatie van meerdere tools werkt beter dan één tool alleen.</p>
+<p><strong>Hoeveel tijd kost het om een website te bouwen met AI?</strong>
+Dat hangt af van complexiteit. Voor een eenvoudige site: 1 of 2 dagen. Voor onze site met custom animaties en een boodschap die echt goed moest zijn: een klein weekje, waarbij iteratie en verfijning het meeste tijd kostten.</p>
+<p><strong>Is een AI-gebouwde website even goed als een handmatig gecodeerde?</strong>
+Als je AI goed gebruikt, zelf kwaliteit bewaakt en de code laat reviewen: ja. Maar het kan ook heel snel spaghetti worden. Dat heb je zelf in de hand.</p>
+
+  </article>
+  
+  <footer>
+    <p><strong>Schakel AI B.V.</strong></p>
+    <p>AI-oplossingen die direct tijd en geld opleveren</p>
+    <p><a href="https://www.schakel.ai">www.schakel.ai</a> | <a href="mailto:info@schakel.ai">info@schakel.ai</a></p>
+    <p style="margin-top: 20px; font-size: 0.85rem;">© 2025 Schakel AI B.V. | Rotterdam, Nederland</p>
+  </footer>
+</body>
+</html>

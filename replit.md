@@ -4,7 +4,71 @@
 
 Schakel AI is a minimalist Dutch AI consultancy website built with a modern JAMstack architecture. The site communicates the core message "Rust & Rendement" (Peace & Results) through a single-page design featuring a hero section, vision statement, approach timeline, team profiles, and contact form. The project emphasizes performance, accessibility, and clean design inspired by Morningside.com and Apple's minimalist aesthetic.
 
-## Recent Changes (November 28, 2025)
+**IMPORTANT - Deployment Workflow:**
+- **DO NOT use Replit's publish/deploy feature**
+- Push changes to GitHub (DEV branch) → Merge to Main → Auto-deploys to Vercel + Railway
+- User works via Replit Agent, never locally
+
+## Recent Changes (December 8, 2025)
+
+**New Blog Post: "Het einde van de tussenlaag"**
+- Added third blog post about vibecoding vs low-code development
+- Slug: `einde-van-de-tussenlaag`
+- Author: Rob van Zutphen
+- Category: AI Development
+- Reading time: 8 minutes
+- Full NL/EN translations with complete SEO metadata
+- Static HTML pre-rendered for crawlers and LLM agents
+- Updated sitemap.xml with new post URLs and hreflang
+- Updated llms.txt with new post summary for AI crawlers
+
+**Blog Addition Workflow:**
+When adding new blog posts, update these files:
+1. Create `shared/blog-content/<slug>.tsx` (Dutch content)
+2. Create `shared/blog-content/<slug>-en.tsx` (English translation)
+3. Add import + metadata to `shared/blog-data.ts`
+4. Add post data to `scripts/prerender-blog.ts` (hardcoded section)
+5. Add post data to `scripts/prerender-pages.ts` (blogPosts array)
+6. Update `client/public/sitemap.xml` with new URL
+7. Update `client/public/llms.txt` with new post summary
+8. Run: `npx tsx scripts/prerender-blog.ts && npx tsx scripts/prerender-pages.ts`
+
+---
+
+## Previous Changes (December 7, 2025)
+
+**Complete SEO Pre-rendering for Crawlers & LLMs:**
+
+All SPA pages now have static HTML equivalents for crawlers (Google, Bing) and AI agents (ChatGPT, Claude, Perplexity):
+
+- **Blog Posts:** `scripts/prerender-blog.ts` generates `/blog/<slug>/index.html`
+- **Other Pages:** `scripts/prerender-pages.ts` generates `/blog/index.html`, `/tools/index.html`, `/ai-view/index.html`
+- **Full SEO Metadata:** Title, description, keywords, canonical URLs, hreflang tags (NL/EN)
+- **Open Graph & Twitter Cards:** Complete social sharing metadata
+- **Schema.org Structured Data:** Article, Blog, WebPage, TechArticle, Breadcrumb schemas
+- **Readable Content:** Full page content in styled HTML for crawlers and LLMs
+
+**How to regenerate static pages:**
+```bash
+# After adding/updating blog posts:
+npx tsx scripts/prerender-blog.ts
+
+# After changing other pages (tools, ai-view, blog index):
+npx tsx scripts/prerender-pages.ts
+```
+Run these commands before deploying, then commit the generated files.
+
+**Tools Portal:**
+- Added `/tools` page for internal tools access
+- Login button in header (desktop & mobile)
+- Meeting Automation Platform (map.schakel.ai) as first tool
+
+**Logo Width Fix:**
+- Fixed logo width in header to prevent layout shift during theme switching
+
+---
+
+## Previous Changes (November 28, 2025)
 
 **Contact API Security Hardening (Architect Approved):**
 - **Shared Schema:** Created `shared/contact.ts` with Zod validation schema used by both frontend and backend
