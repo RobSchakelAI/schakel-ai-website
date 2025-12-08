@@ -4,7 +4,33 @@
 
 Schakel AI is a minimalist Dutch AI consultancy website built with a modern JAMstack architecture. The site communicates the core message "Rust & Rendement" (Peace & Results) through a single-page design featuring a hero section, vision statement, approach timeline, team profiles, and contact form. The project emphasizes performance, accessibility, and clean design inspired by Morningside.com and Apple's minimalist aesthetic.
 
-## Recent Changes (December 7, 2025)
+## Recent Changes (December 8, 2025)
+
+**New Blog Post: "Het einde van de tussenlaag"**
+- Added third blog post about vibecoding vs low-code development
+- Slug: `einde-van-de-tussenlaag`
+- Author: Rob van Zutphen
+- Category: AI Development
+- Reading time: 8 minutes
+- Full NL/EN translations with complete SEO metadata
+- Static HTML pre-rendered for crawlers and LLM agents
+- Updated sitemap.xml with new post URLs and hreflang
+- Updated llms.txt with new post summary for AI crawlers
+
+**Blog Addition Workflow:**
+When adding new blog posts, update these files:
+1. Create `shared/blog-content/<slug>.tsx` (Dutch content)
+2. Create `shared/blog-content/<slug>-en.tsx` (English translation)
+3. Add import + metadata to `shared/blog-data.ts`
+4. Add post data to `scripts/prerender-blog.ts` (hardcoded section)
+5. Add post data to `scripts/prerender-pages.ts` (blogPosts array)
+6. Update `client/public/sitemap.xml` with new URL
+7. Update `client/public/llms.txt` with new post summary
+8. Run: `npx tsx scripts/prerender-blog.ts && npx tsx scripts/prerender-pages.ts`
+
+---
+
+## Previous Changes (December 7, 2025)
 
 **Complete SEO Pre-rendering for Crawlers & LLMs:**
 
