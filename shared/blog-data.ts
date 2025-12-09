@@ -9,10 +9,10 @@ import { eindeVanDeTussenlaagContentEN } from './blog-content/einde-van-de-tusse
 // Blog post data - add new posts here
 export const blogPosts: BlogPost[] = [
   {
-    slug: 'einde-van-de-tussenlaag',
+    slug: 'niet-meer-bouwen-met-low-code',
     publishDate: '2025-12-08',
     readingTime: 8,
-    ogImage: '/images/blog/einde-van-de-tussenlaag.jpg',
+    ogImage: '/images/blog/niet-meer-bouwen-met-low-code.jpg',
     translations: {
       nl: {
         title: 'Waarom wij niet meer bouwen met low-code (en jij misschien ook niet)',
