@@ -15,7 +15,7 @@ export const blogPosts: BlogPost[] = [
     ogImage: '/images/blog/einde-van-de-tussenlaag.jpg',
     translations: {
       nl: {
-        title: 'Het einde van de tussenlaag: waarom wij de low-code route overslaan',
+        title: 'Waarom wij niet meer bouwen met low-code (en jij misschien ook niet)',
         excerpt: 'Low-code was jarenlang de brug tussen business en IT. Maar in het AI-tijdperk wordt vibecoding de nieuwe standaard. Meer controle, meer flexibiliteit, meer eigenaarschap.',
         content: eindeVanDeTussenlaagContent,
         metaDescription: 'Waarom Schakel AI kiest voor vibecoding in plaats van low-code. AI-assisted development biedt meer controle, flexibiliteit en eigenaarschap over je software.',
@@ -39,7 +39,7 @@ export const blogPosts: BlogPost[] = [
         }
       },
       en: {
-        title: 'The end of the middle layer: why we skip the low-code route',
+        title: 'Why we no longer build with low-code (and maybe you shouldn\'t either)',
         excerpt: 'Low-code was the bridge between business and IT for years. But in the AI era, vibecoding becomes the new standard. More control, more flexibility, more ownership.',
         content: eindeVanDeTussenlaagContentEN,
         metaDescription: 'Why Schakel AI chooses vibecoding over low-code. AI-assisted development offers more control, flexibility, and ownership over your software.',
