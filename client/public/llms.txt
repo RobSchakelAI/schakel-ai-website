@@ -99,7 +99,7 @@ We work with:
 ## Blog & Resources
 
 ### Latest Writing: Niet meer bouwen met low-code
-- URL: https://www.schakel.ai/blog/einde-van-de-tussenlaag
+- URL: https://www.schakel.ai/blog/niet-meer-bouwen-met-low-code
 - Published: December 8, 2025
 - Author: Rob van Zutphen
 - Topic: Why we skip low-code and go all-in on vibecoding (AI-assisted full-code development)
