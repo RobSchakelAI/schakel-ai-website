@@ -126,26 +126,29 @@ export async function registerRoutes(app: Express): Promise<void> {
         errorDetails.stack = error.stack;
       }
       
-      // MailerSend SDK errors often have body, statusCode, response properties
+      // MailerSend SDK errors often have body, statusCode, code properties
       if (error && typeof error === 'object') {
         const apiError = error as Record<string, unknown>;
-        if ('body' in apiError) errorDetails.body = apiError.body;
         if ('statusCode' in apiError) errorDetails.statusCode = apiError.statusCode;
-        if ('response' in apiError) errorDetails.response = apiError.response;
         if ('code' in apiError) errorDetails.code = apiError.code;
-        if ('errors' in apiError) errorDetails.errors = apiError.errors;
         
-        // Try to get nested error message
-        if (apiError.body && typeof apiError.body === 'object') {
+        // Extract body (usually JSON-safe)
+        if ('body' in apiError && apiError.body) {
           const body = apiError.body as Record<string, unknown>;
+          errorDetails.body = body;
           if ('message' in body) errorDetails.apiMessage = body.message;
           if ('errors' in body) errorDetails.apiErrors = body.errors;
         }
+        
+        // Skip 'response' to avoid circular reference issues
       }
       
-      // Log full error object as JSON for Railway
-      console.error("Contact form error:", JSON.stringify(errorDetails, null, 2));
-      console.error("Raw error:", error);
+      // Safe JSON serialization with fallback
+      try {
+        console.error("Contact form error:", JSON.stringify(errorDetails, null, 2));
+      } catch {
+        console.error("Contact form error (serialization failed):", errorDetails);
+      }
       return res.status(500).json({
         success: false,
         error: "Er ging iets mis bij het verzenden. Probeer het later opnieuw.",
