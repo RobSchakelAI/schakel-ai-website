@@ -316,8 +316,8 @@ async function loadBlogPosts(): Promise<BlogPost[]> {
     if (slug === 'einde-van-de-tussenlaag') {
       nlContent = contentMap['eindeVanDeTussenlaagContent'] || '';
       enContent = contentMap['eindeVanDeTussenlaagContentEN'] || '';
-      nlTitle = 'Het einde van de tussenlaag: waarom wij de low-code route overslaan';
-      enTitle = 'The end of the middle layer: why we skip the low-code route';
+      nlTitle = 'Waarom wij niet meer bouwen met low-code (en jij misschien ook niet)';
+      enTitle = 'Why we no longer build with low-code (and maybe you shouldn\'t either)';
       nlExcerpt = 'Low-code was jarenlang de brug tussen business en IT. Maar in het AI-tijdperk wordt vibecoding de nieuwe standaard.';
       enExcerpt = 'Low-code was the bridge between business and IT for years. But in the AI era, vibecoding becomes the new standard.';
       nlMetaDesc = 'Waarom Schakel AI kiest voor vibecoding in plaats van low-code. AI-assisted development biedt meer controle, flexibiliteit en eigenaarschap over je software.';

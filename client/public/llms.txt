@@ -98,7 +98,7 @@ We work with:
 
 ## Blog & Resources
 
-### Latest Writing: Het einde van de tussenlaag
+### Latest Writing: Niet meer bouwen met low-code
 - URL: https://www.schakel.ai/blog/einde-van-de-tussenlaag
 - Published: December 8, 2025
 - Author: Rob van Zutphen
