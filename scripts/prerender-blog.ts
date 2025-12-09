@@ -313,7 +313,7 @@ async function loadBlogPosts(): Promise<BlogPost[]> {
     let nlKeywords: string[] = [];
     let enKeywords: string[] = [];
     
-    if (slug === 'einde-van-de-tussenlaag') {
+    if (slug === 'niet-meer-bouwen-met-low-code') {
       nlContent = contentMap['eindeVanDeTussenlaagContent'] || '';
       enContent = contentMap['eindeVanDeTussenlaagContentEN'] || '';
       nlTitle = 'Waarom wij niet meer bouwen met low-code (en jij misschien ook niet)';
