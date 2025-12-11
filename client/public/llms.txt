@@ -98,7 +98,16 @@ We work with:
 
 ## Blog & Resources
 
-### Latest Writing: Niet meer bouwen met low-code
+### Latest Writing: Waarom structuur belangrijker is dan technologie
+- URL: https://www.schakel.ai/blog/waarom-structuur-belangrijker-is-dan-technologie
+- Published: December 11, 2025
+- Author: Simon Voorbergen
+- Topic: Why over 80% of AI projects fail and how structure, not technology, determines success
+- Key Topics: AI implementation failure, organizational structure, process optimization, improvement cycles, Quick Wins, AI ROI, RAND Corporation research, McKinsey AI research
+- Reading Time: 10 minutes
+- Summary: Analysis of why most AI initiatives fail - not due to technical complexity, but because organizations lack the structure to succeed. Covers the common misconception that tooling solves strategic challenges, why companies get stuck testing tools without implementing, and how leading organizations approach AI differently by focusing on one problem at a time with a clear improvement cycle. Emphasizes "rust, ritme, rendement" (calm, rhythm, results) as the key to successful AI adoption.
+
+### Previous Writing: Niet meer bouwen met low-code
 - URL: https://www.schakel.ai/blog/niet-meer-bouwen-met-low-code
 - Published: December 8, 2025
 - Author: Rob van Zutphen

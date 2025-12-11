@@ -24,6 +24,11 @@ export default function BlogPost() {
   
   const post = params?.slug ? getBlogPostBySlug(params.slug, language) : undefined;
 
+  // Scroll to top when navigating to a new blog post
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [params?.slug]);
+
   // Extract table of contents from rendered DOM after markdown is processed
   useEffect(() => {
     // Wait for markdown to render

@@ -5,9 +5,67 @@ import { meetingAutomationCenterContent } from './blog-content/meeting-automatio
 import { meetingAutomationCenterContentEN } from './blog-content/meeting-automation-center-en';
 import { eindeVanDeTussenlaagContent } from './blog-content/einde-van-de-tussenlaag';
 import { eindeVanDeTussenlaagContentEN } from './blog-content/einde-van-de-tussenlaag-en';
+import { waaromStructuurContent } from './blog-content/waarom-structuur-belangrijker-is-dan-technologie';
+import { waaromStructuurContentEN } from './blog-content/waarom-structuur-belangrijker-is-dan-technologie-en';
 
 // Blog post data - add new posts here
 export const blogPosts: BlogPost[] = [
+  {
+    slug: 'waarom-structuur-belangrijker-is-dan-technologie',
+    publishDate: '2025-12-11',
+    readingTime: 10,
+    ogImage: '/images/blog/waarom-structuur-belangrijker-is-dan-technologie.jpg',
+    translations: {
+      nl: {
+        title: 'Waarom structuur belangrijker is dan technologie',
+        excerpt: 'Meer dan 80% van AI-projecten faalt. Niet door technologie, maar door gebrek aan structuur. Ontdek waarom tooling nooit het probleem is en hoe je wél resultaat behaalt met AI.',
+        content: waaromStructuurContent,
+        metaDescription: 'Meer dan 80% van AI-projecten faalt. Niet door technologie, maar door gebrek aan structuur. Ontdek waarom tooling nooit het probleem is en hoe je wél resultaat behaalt met AI.',
+        keywords: [
+          'AI implementatie',
+          'AI projecten falen',
+          'structuur voor AI',
+          'AI strategie',
+          'procesoptimalisatie',
+          'AI ROI',
+          'Quick Wins AI',
+          'organisatiestructuur',
+          'AI adoptie',
+          'verbetercyclus'
+        ],
+        category: 'AI Strategy',
+        author: {
+          name: 'Simon Voorbergen',
+          role: 'Mede-oprichter Schakel',
+          bio: 'Simon helpt bedrijven hun processen te optimaliseren voor AI-succes. 11 jaar ervaring in business transformatie, gefocust op rust, ritme en rendement.'
+        }
+      },
+      en: {
+        title: 'Why structure matters more than technology',
+        excerpt: 'Over 80% of AI projects fail. Not because of technology, but due to lack of structure. Discover why tooling is never the problem and how to actually achieve results with AI.',
+        content: waaromStructuurContentEN,
+        metaDescription: 'Over 80% of AI projects fail. Not because of technology, but due to lack of structure. Discover why tooling is never the problem and how to actually achieve results with AI.',
+        keywords: [
+          'AI implementation',
+          'AI projects fail',
+          'structure for AI',
+          'AI strategy',
+          'process optimization',
+          'AI ROI',
+          'Quick Wins AI',
+          'organizational structure',
+          'AI adoption',
+          'improvement cycle'
+        ],
+        category: 'AI Strategy',
+        author: {
+          name: 'Simon Voorbergen',
+          role: 'Co-founder Schakel',
+          bio: 'Simon helps companies optimize their processes for AI success. 11 years of business transformation experience, focused on calm, rhythm, and results.'
+        }
+      }
+    }
+  },
   {
     slug: 'niet-meer-bouwen-met-low-code',
     publishDate: '2025-12-08',

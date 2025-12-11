@@ -313,7 +313,26 @@ async function loadBlogPosts(): Promise<BlogPost[]> {
     let nlKeywords: string[] = [];
     let enKeywords: string[] = [];
     
-    if (slug === 'niet-meer-bouwen-met-low-code') {
+    if (slug === 'waarom-structuur-belangrijker-is-dan-technologie') {
+      nlContent = contentMap['waaromStructuurContent'] || '';
+      enContent = contentMap['waaromStructuurContentEN'] || '';
+      nlTitle = 'Waarom structuur belangrijker is dan technologie';
+      enTitle = 'Why structure matters more than technology';
+      nlExcerpt = 'Meer dan 80% van AI-projecten faalt. Niet door technologie, maar door gebrek aan structuur.';
+      enExcerpt = 'Over 80% of AI projects fail. Not because of technology, but due to lack of structure.';
+      nlMetaDesc = 'Meer dan 80% van AI-projecten faalt. Niet door technologie, maar door gebrek aan structuur. Ontdek waarom tooling nooit het probleem is en hoe je wél resultaat behaalt met AI.';
+      enMetaDesc = 'Over 80% of AI projects fail. Not because of technology, but due to lack of structure. Discover why tooling is never the problem and how to actually achieve results with AI.';
+      nlCategory = 'AI Strategy';
+      enCategory = 'AI Strategy';
+      nlAuthorName = 'Simon Voorbergen';
+      nlAuthorRole = 'Mede-oprichter Schakel';
+      nlAuthorBio = 'Simon helpt bedrijven hun processen te optimaliseren voor AI-succes.';
+      enAuthorName = 'Simon Voorbergen';
+      enAuthorRole = 'Co-founder Schakel';
+      enAuthorBio = 'Simon helps companies optimize their processes for AI success.';
+      nlKeywords = ['AI implementatie', 'AI projecten falen', 'structuur voor AI', 'AI strategie', 'procesoptimalisatie'];
+      enKeywords = ['AI implementation', 'AI projects fail', 'structure for AI', 'AI strategy', 'process optimization'];
+    } else if (slug === 'niet-meer-bouwen-met-low-code') {
       nlContent = contentMap['eindeVanDeTussenlaagContent'] || '';
       enContent = contentMap['eindeVanDeTussenlaagContentEN'] || '';
       nlTitle = 'Waarom wij niet meer bouwen met low-code (en jij misschien ook niet)';
