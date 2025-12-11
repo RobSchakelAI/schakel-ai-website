@@ -3,6 +3,7 @@ import { useRoute, Link, useLocation } from 'wouter';
 import { Calendar, Clock, Share2, Home, BookOpen } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkBreaks from 'remark-breaks';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { getBlogPostBySlug } from '@shared/blog-data';
@@ -222,7 +223,7 @@ export default function BlogPost() {
                 data-testid="article-content"
               >
                 <ReactMarkdown 
-                  remarkPlugins={[remarkGfm]}
+                  remarkPlugins={[remarkGfm, remarkBreaks]}
                   rehypePlugins={[rehypeSlug, rehypeAutolinkHeadings]}
                 >
                   {post.content}

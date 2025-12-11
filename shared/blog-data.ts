@@ -13,7 +13,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'waarom-structuur-belangrijker-is-dan-technologie',
     publishDate: '2025-12-11',
-    readingTime: 10,
+    readingTime: 5,
     ogImage: '/images/blog/waarom-structuur-belangrijker-is-dan-technologie.jpg',
     translations: {
       nl: {
@@ -69,7 +69,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'niet-meer-bouwen-met-low-code',
     publishDate: '2025-12-08',
-    readingTime: 8,
+    readingTime: 4,
     ogImage: '/images/blog/niet-meer-bouwen-met-low-code.jpg',
     translations: {
       nl: {
@@ -125,7 +125,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'meeting-automation-center',
     publishDate: '2025-11-30',
-    readingTime: 10,
+    readingTime: 8,
     ogImage: '/images/blog/meeting-automation-center.jpg',
     translations: {
       nl: {
@@ -181,7 +181,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'website-bouwen-met-ai',
     publishDate: '2025-11-23',
-    readingTime: 12,
+    readingTime: 8,
     ogImage: '/images/blog/website-bouwen-met-ai.jpg',
     translations: {
       nl: {
