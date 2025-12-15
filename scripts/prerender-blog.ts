@@ -313,7 +313,26 @@ async function loadBlogPosts(): Promise<BlogPost[]> {
     let nlKeywords: string[] = [];
     let enKeywords: string[] = [];
     
-    if (slug === 'waarom-structuur-belangrijker-is-dan-technologie') {
+    if (slug === 'van-meeting-automation-naar-platform') {
+      nlContent = contentMap['vanMeetingAutomationNaarPlatformContent'] || '';
+      enContent = contentMap['vanMeetingAutomationNaarPlatformContentEN'] || '';
+      nlTitle = 'We bouwden een meeting automation. Het werd een platform.';
+      enTitle = 'We built a meeting automation. It became a platform.';
+      nlExcerpt = 'Wat begon als "laten we meeting follow-up automatiseren" evolueerde naar een MeetingOps-engine.';
+      enExcerpt = 'What started as "let\'s automate meeting follow-up" evolved into a MeetingOps-engine.';
+      nlMetaDesc = 'Van simpele n8n flow naar multi-tenant MeetingOps platform. Hoe onze meeting automation evolueerde en wat we leerden over de toekomst van software.';
+      enMetaDesc = 'From simple n8n flow to multi-tenant MeetingOps platform. How our meeting automation evolved and what we learned about the future of software.';
+      nlCategory = 'AI Development';
+      enCategory = 'AI Development';
+      nlAuthorName = 'Rob van Zutphen';
+      nlAuthorRole = 'Mede-oprichter Schakel';
+      nlAuthorBio = 'Rob helpt bedrijven slimmer werken met AI.';
+      enAuthorName = 'Rob van Zutphen';
+      enAuthorRole = 'Co-founder Schakel';
+      enAuthorBio = 'Rob helps companies work smarter with AI.';
+      nlKeywords = ['meeting automation', 'MeetingOps', 'n8n alternatief', 'multi-tenant platform', 'vibecoding'];
+      enKeywords = ['meeting automation', 'MeetingOps', 'n8n alternative', 'multi-tenant platform', 'vibecoding'];
+    } else if (slug === 'waarom-structuur-belangrijker-is-dan-technologie') {
       nlContent = contentMap['waaromStructuurContent'] || '';
       enContent = contentMap['waaromStructuurContentEN'] || '';
       nlTitle = 'Waarom structuur belangrijker is dan technologie';
