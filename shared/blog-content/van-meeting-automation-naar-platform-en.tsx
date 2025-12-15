@@ -1,5 +1,5 @@
 export const vanMeetingAutomationNaarPlatformContentEN = `
-In an earlier post, I wrote about how we built our Meeting Automation Center. From Fireflies webhook to tasks in Productive, meeting notes in SharePoint, and draft emails in Outlook. The complete story, step-by-step.
+In an [earlier post](/blog/meeting-automation-center), I wrote about how we built our Meeting Automation Center. From Fireflies webhook to tasks in Productive, meeting notes in SharePoint, and draft emails in Outlook. The complete story, step-by-step.
 
 This post isn't about how it works.
 This post is about why it became what it is now.
@@ -35,7 +35,7 @@ And then we realized:
 
 If we have to learn a new system anyway, why would we learn n8n instead of building in our own code?
 
-In another post, I wrote extensively about why we chose vibecoding over low-code: ownership, flexibility, no vendor lock-in. I won't repeat that story here.
+In [another post](/blog/niet-meer-bouwen-met-low-code), I wrote extensively about why we chose vibecoding over low-code: ownership, flexibility, no vendor lock-in. I won't repeat that story here.
 
 The point is: we switched to our own code.
 
@@ -248,7 +248,7 @@ It's now.
 
 Curious how the platform works internally? Read the technical deep-dive about how we built the complete pipeline.
 
-Want to know why we chose vibecoding over low-code? Read why we no longer build with low-code.
+Want to know why we chose vibecoding over low-code? Read [why we no longer build with low-code](/blog/niet-meer-bouwen-met-low-code).
 
 In the next post: why the entire software industry is moving from static applications to autonomous workflows—and what that means for businesses.
 `;
