@@ -7,9 +7,67 @@ import { eindeVanDeTussenlaagContent } from './blog-content/einde-van-de-tussenl
 import { eindeVanDeTussenlaagContentEN } from './blog-content/einde-van-de-tussenlaag-en';
 import { waaromStructuurContent } from './blog-content/waarom-structuur-belangrijker-is-dan-technologie';
 import { waaromStructuurContentEN } from './blog-content/waarom-structuur-belangrijker-is-dan-technologie-en';
+import { vanMeetingAutomationNaarPlatformContent } from './blog-content/van-meeting-automation-naar-platform';
+import { vanMeetingAutomationNaarPlatformContentEN } from './blog-content/van-meeting-automation-naar-platform-en';
 
 // Blog post data - add new posts here
 export const blogPosts: BlogPost[] = [
+  {
+    slug: 'van-meeting-automation-naar-platform',
+    publishDate: '2025-12-15',
+    readingTime: 6,
+    ogImage: '/images/blog/van-meeting-automation-naar-platform.jpg',
+    translations: {
+      nl: {
+        title: 'We bouwden een meeting automation. Het werd een platform.',
+        excerpt: 'Wat begon als "laten we meeting follow-up automatiseren" evolueerde naar een MeetingOps-engine. Van n8n naar multi-tenant platform: wat we leerden over de toekomst van software.',
+        content: vanMeetingAutomationNaarPlatformContent,
+        metaDescription: 'Van simpele n8n flow naar multi-tenant MeetingOps platform. Hoe onze meeting automation evolueerde en wat we leerden over de toekomst van software.',
+        keywords: [
+          'meeting automation',
+          'MeetingOps',
+          'n8n alternatief',
+          'multi-tenant platform',
+          'vibecoding',
+          'SaaS development',
+          'agentic systems',
+          'workflow automation',
+          'platform development',
+          'AI automation'
+        ],
+        category: 'AI Development',
+        author: {
+          name: 'Rob van Zutphen',
+          role: 'Mede-oprichter Schakel',
+          bio: 'Rob helpt bedrijven slimmer werken met AI. Achtergrond in finance en BI, nu gefocust op praktische AI-implementaties die echt rendement opleveren.'
+        }
+      },
+      en: {
+        title: 'We built a meeting automation. It became a platform.',
+        excerpt: 'What started as "let\'s automate meeting follow-up" evolved into a MeetingOps-engine. From n8n to multi-tenant platform: what we learned about the future of software.',
+        content: vanMeetingAutomationNaarPlatformContentEN,
+        metaDescription: 'From simple n8n flow to multi-tenant MeetingOps platform. How our meeting automation evolved and what we learned about the future of software.',
+        keywords: [
+          'meeting automation',
+          'MeetingOps',
+          'n8n alternative',
+          'multi-tenant platform',
+          'vibecoding',
+          'SaaS development',
+          'agentic systems',
+          'workflow automation',
+          'platform development',
+          'AI automation'
+        ],
+        category: 'AI Development',
+        author: {
+          name: 'Rob van Zutphen',
+          role: 'Co-founder Schakel',
+          bio: 'Rob helps companies work smarter with AI. Background in finance and BI, now focused on practical AI implementations that truly deliver results.'
+        }
+      }
+    }
+  },
   {
     slug: 'waarom-structuur-belangrijker-is-dan-technologie',
     publishDate: '2025-12-11',
