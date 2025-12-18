@@ -85,6 +85,7 @@ We work with:
 - URL: https://www.schakel.ai/blog
 - Description: All blog posts and articles about AI implementation
 - Available in: Dutch (default), English (?lang=en)
+- Static HTML for crawlers: https://www.schakel.ai/_seo/blog/{slug}/
 
 ### Tools Portal
 - URL: https://www.schakel.ai/tools
@@ -98,7 +99,17 @@ We work with:
 
 ## Blog & Resources
 
-### Latest Writing: Waarom structuur belangrijker is dan technologie
+### Latest Writing: Waarom AI pas werkt als je het organiseert
+- URL: https://www.schakel.ai/blog/ai-organiseren-voor-resultaat
+- Static HTML: https://www.schakel.ai/_seo/blog/ai-organiseren-voor-resultaat/
+- Published: December 18, 2025
+- Author: Simon Voorbergen
+- Topic: Why AI only works when you organize it properly - the difference between AI as a project vs AI as part of operations
+- Key Topics: AI strategy, AI implementation, organizational change, AI frameworks, AI operations, structure for AI, AI adoption, rust en rendement, AI consultancy, process optimization
+- Reading Time: 4 minutes
+- Summary: Analysis of why AI fails not due to intent but due to lack of organizational structure. Companies that succeed with AI have a consistent way of working - choosing where to start, connecting AI to concrete processes, working in clear sequence, proving value before scaling, and securing what works. Emphasizes that AI is operations, not innovation, and requires reliability, predictability, and embedded ownership.
+
+### Previous Writing: Waarom structuur belangrijker is dan technologie
 - URL: https://www.schakel.ai/blog/waarom-structuur-belangrijker-is-dan-technologie
 - Published: December 11, 2025
 - Author: Simon Voorbergen

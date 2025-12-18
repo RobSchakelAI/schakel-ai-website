@@ -280,7 +280,10 @@ async function main() {
     console.error('\n⚠️  Some posts have missing data. Please check blog-data.ts and content files.\n');
   }
   
-  const outputDir = path.join(__dirname, '..', 'client', 'public', 'blog');
+  // Output to _seo directory to avoid conflicting with SPA routes
+  // This ensures Vercel serves the React SPA for /blog/* routes
+  // while static HTML remains available at /_seo/blog/* for crawlers that need it
+  const outputDir = path.join(__dirname, '..', 'client', 'public', '_seo', 'blog');
   
   if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });
@@ -305,12 +308,12 @@ async function main() {
       if (lang === 'nl') {
         const filePath = path.join(postDir, 'index.html');
         fs.writeFileSync(filePath, html, 'utf-8');
-        console.log(`✅ Generated: /blog/${post.slug}/index.html (${lang})`);
+        console.log(`✅ Generated: /_seo/blog/${post.slug}/index.html (${lang})`);
       }
       
       const langFilePath = path.join(postDir, `${lang}.html`);
       fs.writeFileSync(langFilePath, html, 'utf-8');
-      console.log(`✅ Generated: /blog/${post.slug}/${lang}.html`);
+      console.log(`✅ Generated: /_seo/blog/${post.slug}/${lang}.html`);
     }
   }
   
