@@ -9,9 +9,67 @@ import { waaromStructuurContent } from './blog-content/waarom-structuur-belangri
 import { waaromStructuurContentEN } from './blog-content/waarom-structuur-belangrijker-is-dan-technologie-en';
 import { vanMeetingAutomationNaarPlatformContent } from './blog-content/van-meeting-automation-naar-platform';
 import { vanMeetingAutomationNaarPlatformContentEN } from './blog-content/van-meeting-automation-naar-platform-en';
+import { aiOrganiserenVoorResultaatContent } from './blog-content/ai-organiseren-voor-resultaat';
+import { aiOrganiserenVoorResultaatContentEN } from './blog-content/ai-organiseren-voor-resultaat-en';
 
 // Blog post data - add new posts here
 export const blogPosts: BlogPost[] = [
+  {
+    slug: 'ai-organiseren-voor-resultaat',
+    publishDate: '2025-12-18',
+    readingTime: 4,
+    ogImage: '/images/blog/ai-organiseren-voor-resultaat.jpg',
+    translations: {
+      nl: {
+        title: 'Waarom AI pas werkt als je het organiseert',
+        excerpt: 'AI belooft snelheid en efficiëntie, maar zonder structuur levert het vooral onrust. Het verschil zit niet in betere tools, maar in organisaties die AI inbedden in hun operatie.',
+        content: aiOrganiserenVoorResultaatContent,
+        metaDescription: 'AI belooft snelheid en efficiëntie, maar zonder structuur levert het vooral onrust. Ontdek waarom het verschil zit in organisaties die AI inbedden in hun operatie.',
+        keywords: [
+          'AI strategie',
+          'AI implementatie',
+          'organisatieverandering',
+          'AI frameworks',
+          'AI operatie',
+          'structuur voor AI',
+          'AI adoptie',
+          'rust en rendement',
+          'AI consultancy',
+          'procesoptimalisatie'
+        ],
+        category: 'AI Strategy',
+        author: {
+          name: 'Simon Voorbergen',
+          role: 'Mede-oprichter Schakel',
+          bio: 'Simon helpt bedrijven hun processen te optimaliseren voor AI-succes. 11 jaar ervaring in business transformatie, gefocust op rust, ritme en rendement.'
+        }
+      },
+      en: {
+        title: 'Why AI only works when you organize it',
+        excerpt: 'AI promises speed and efficiency, but without structure it mainly delivers chaos. The difference isn\'t in better tools, but in organizations that embed AI into their operations.',
+        content: aiOrganiserenVoorResultaatContentEN,
+        metaDescription: 'AI promises speed and efficiency, but without structure it mainly delivers chaos. Discover why the difference lies in organizations that embed AI into their operations.',
+        keywords: [
+          'AI strategy',
+          'AI implementation',
+          'organizational change',
+          'AI frameworks',
+          'AI operations',
+          'structure for AI',
+          'AI adoption',
+          'peace and results',
+          'AI consultancy',
+          'process optimization'
+        ],
+        category: 'AI Strategy',
+        author: {
+          name: 'Simon Voorbergen',
+          role: 'Co-founder Schakel',
+          bio: 'Simon helps companies optimize their processes for AI success. 11 years of business transformation experience, focused on calm, rhythm, and results.'
+        }
+      }
+    }
+  },
   {
     slug: 'van-meeting-automation-naar-platform',
     publishDate: '2025-12-15',
