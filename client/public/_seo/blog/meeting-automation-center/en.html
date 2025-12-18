@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary Meta Tags -->
+  <title>From Transcription to Automatic Workflow: How We Solved Meetings | Schakel AI Blog</title>
+  <meta name="title" content="From Transcription to Automatic Workflow: How We Solved Meetings | Schakel AI Blog" />
+  <meta name="description" content="How we built a Meeting Automation Center that automatically converts transcriptions into meeting notes, SharePoint uploads, Outlook emails, and tasks in Productive.io." />
+  <meta name="author" content="Rob van Zutphen" />
+  <meta name="keywords" content="meeting automation, AI meeting notes, Fireflies.ai, Claude AI, workflow automation, SharePoint integration, Productive.io, transcription to tasks, meeting notes automation, AI workflow" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  
+  <!-- Canonical & Language Alternates -->
+  <link rel="canonical" href="https://www.schakel.ai/blog/meeting-automation-center?lang=en" />
+  <link rel="alternate" hreflang="nl" href="https://www.schakel.ai/blog/meeting-automation-center" />
+  <link rel="alternate" hreflang="en" href="https://www.schakel.ai/blog/meeting-automation-center?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://www.schakel.ai/blog/meeting-automation-center" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.schakel.ai/blog/meeting-automation-center?lang=en" />
+  <meta property="og:title" content="From Transcription to Automatic Workflow: How We Solved Meetings" />
+  <meta property="og:description" content="How we built a Meeting Automation Center that automatically converts transcriptions into meeting notes, SharePoint uploads, Outlook emails, and tasks in Productive.io." />
+  <meta property="og:image" content="https://www.schakel.ai/images/blog/meeting-automation-center.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Schakel AI" />
+  <meta property="article:published_time" content="2025-11-30T00:00:00.000Z" />
+  <meta property="article:author" content="Rob van Zutphen" />
+  <meta property="article:section" content="AI Automation" />
+  <meta property="article:tag" content="meeting automation" />
+  <meta property="article:tag" content="AI meeting notes" />
+  <meta property="article:tag" content="Fireflies.ai" />
+  <meta property="article:tag" content="Claude AI" />
+  <meta property="article:tag" content="workflow automation" />
+  <meta property="article:tag" content="SharePoint integration" />
+  <meta property="article:tag" content="Productive.io" />
+  <meta property="article:tag" content="transcription to tasks" />
+  <meta property="article:tag" content="meeting notes automation" />
+  <meta property="article:tag" content="AI workflow" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://www.schakel.ai/blog/meeting-automation-center?lang=en" />
+  <meta name="twitter:title" content="From Transcription to Automatic Workflow: How We Solved Meetings" />
+  <meta name="twitter:description" content="How we built a Meeting Automation Center that automatically converts transcriptions into meeting notes, SharePoint uploads, Outlook emails, and tasks in Productive.io." />
+  <meta name="twitter:image" content="https://www.schakel.ai/images/blog/meeting-automation-center.jpg" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Schema.org Article Structured Data -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "From Transcription to Automatic Workflow: How We Solved Meetings",
+  "description": "How we built a Meeting Automation Center that automatically converts transcriptions into meeting notes, SharePoint uploads, Outlook emails, and tasks in Productive.io.",
+  "author": {
+    "@type": "Person",
+    "name": "Rob van Zutphen",
+    "jobTitle": "Co-founder Schakel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Schakel AI B.V.",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schakel.ai/logo.png"
+    }
+  },
+  "datePublished": "2025-11-30T00:00:00.000Z",
+  "dateModified": "2025-11-30T00:00:00.000Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.schakel.ai/blog/meeting-automation-center"
+  },
+  "image": "https://www.schakel.ai/images/blog/meeting-automation-center.jpg",
+  "articleSection": "AI Automation",
+  "keywords": "meeting automation, AI meeting notes, Fireflies.ai, Claude AI, workflow automation, SharePoint integration, Productive.io, transcription to tasks, meeting notes automation, AI workflow",
+  "wordCount": 1922,
+  "inLanguage": "en-US"
+}
+  </script>
+  
+  <!-- Schema.org Breadcrumb Structured Data -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.schakel.ai/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.schakel.ai/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "From Transcription to Automatic Workflow: How We Solved Meetings",
+      "item": "https://www.schakel.ai/blog/meeting-automation-center"
+    }
+  ]
+}
+  </script>
+  
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { 
+      font-family: Inter, system-ui, sans-serif; 
+      line-height: 1.7; 
+      color: #1a1a1a; 
+      background: #fff;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    header { margin-bottom: 40px; border-bottom: 1px solid #e5e5e5; padding-bottom: 30px; }
+    h1 { font-family: 'DM Sans', sans-serif; font-size: 2.5rem; font-weight: 700; margin-bottom: 16px; line-height: 1.2; }
+    .meta { color: #666; font-size: 0.9rem; margin-bottom: 16px; }
+    .meta span { margin-right: 16px; }
+    .author { display: flex; align-items: center; gap: 12px; margin-top: 20px; }
+    .author-avatar { width: 48px; height: 48px; border-radius: 50%; background: #6EBFAA; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; }
+    .author-info { }
+    .author-name { font-weight: 600; }
+    .author-role { color: #666; font-size: 0.9rem; }
+    .category { display: inline-block; background: rgba(110, 191, 170, 0.1); color: #6EBFAA; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500; margin-bottom: 16px; }
+    article { }
+    article h2 { font-family: 'DM Sans', sans-serif; font-size: 1.75rem; font-weight: 700; margin: 40px 0 16px; }
+    article h3 { font-family: 'DM Sans', sans-serif; font-size: 1.35rem; font-weight: 700; margin: 32px 0 12px; }
+    article p { margin-bottom: 16px; }
+    article ul, article ol { margin: 16px 0; padding-left: 24px; }
+    article li { margin-bottom: 8px; }
+    article strong { font-weight: 600; }
+    article em { font-style: italic; }
+    article a { color: #6EBFAA; text-decoration: none; }
+    article a:hover { text-decoration: underline; }
+    article code { background: #f5f5f5; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+    article pre { background: #f5f5f5; padding: 16px; border-radius: 8px; overflow-x: auto; margin: 16px 0; }
+    article pre code { background: none; padding: 0; }
+    article blockquote { border-left: 4px solid #6EBFAA; padding-left: 16px; margin: 16px 0; color: #666; font-style: italic; }
+    article hr { border: none; border-top: 1px solid #e5e5e5; margin: 32px 0; }
+    footer { margin-top: 60px; padding-top: 30px; border-top: 1px solid #e5e5e5; text-align: center; color: #666; }
+    footer a { color: #6EBFAA; }
+    .js-notice { background: #f0f9f6; border: 1px solid #6EBFAA; padding: 16px; border-radius: 8px; margin-bottom: 30px; text-align: center; }
+    .js-notice a { color: #6EBFAA; font-weight: 500; }
+  </style>
+</head>
+<body>
+  <div class="js-notice">
+    For the full interactive experience, <a href="https://www.schakel.ai/blog/meeting-automation-center">view this article with JavaScript enabled</a>.
+  </div>
+  
+  <header>
+    <span class="category">AI Automation</span>
+    <h1>From Transcription to Automatic Workflow: How We Solved Meetings</h1>
+    <div class="meta">
+      <span>📅 November 30, 2025</span>
+      <span>⏱️ 8 min read</span>
+    </div>
+    <div class="author">
+      <div class="author-avatar">RvZ</div>
+      <div class="author-info">
+        <div class="author-name">Rob van Zutphen</div>
+        <div class="author-role">Co-founder Schakel</div>
+      </div>
+    </div>
+  </header>
+  
+  <article>
+    <p><strong>You know the feeling.</strong> You&#39;ve had a meeting packed with important points. It was recorded. Teams Premium or Otter or Fireflies automatically creates a transcript and summary. Perfect! That was quite different just 2 years ago!</p>
+<p>But then... nothing. Three days later you&#39;re wondering: where are those meeting notes? Who&#39;s putting the action items in Monday/Asana/Productive? And why is that summary still sitting in Fireflies, instead of SharePoint where everyone can find it?</p>
+<p>This kind of wasted time happens in teams all over the world. Tools transcribe just fine nowadays, and even summarize, but the administrative work around it? That always gets stuck. So we solved it. With a system that handles everything automatically. From the moment a meeting ends to the moment action items are in your project management tool. Without anyone having to think about it.</p>
+<p>This is the story of our Meeting Automation Center.</p>
+<hr>
+<h2>The Problem: Repetitive Manual Work After the Automatic Part</h2>
+<p>There are two of us, so this might not seem like a big problem. But we have a philosophy: we try to automate every repetitive process with AI. Why? So we have the time and peace of mind to focus on the real value.</p>
+<p>The situation was this: we used Fireflies.ai for automatic transcriptions and summaries. Great. But after that, there was still work: that summary had to go into our own format, had to go into SharePoint, had to be sent as an email, and the action items had to go into Productive.io. So despite not having to write meeting notes anymore, it remained an annoying and time-consuming task. The work we simply don&#39;t want to do.</p>
+<p>So we asked ourselves: how can we build an automation that solves this for us?</p>
+<hr>
+<h2>The Solution: A Central Orchestrator</h2>
+<p>We decided to build an application that automates everything. No more five different tools, but one system that handles it all. Here&#39;s how it works.</p>
+<h3>Step 1: The Meeting Gets Automatically &quot;Retrieved&quot;</h3>
+<p>Fireflies.ai joins every meeting we have. Afterwards, it automatically sends a webhook to our app with the message: &quot;Hey, you have a new meeting!&quot;</p>
+<p>This event contains the meeting ID, which we need to retrieve the full transcript. We only get the transcript, not Fireflies&#39; own summary, because that&#39;s too generic and we want Claude to generate it in exactly the format and structure we want.</p>
+<h3>Step 2: Intelligent Owner Detection</h3>
+<p>The system now knows there was a meeting, but not who the owner is. Was Simon the organizer or Rob?</p>
+<p>We&#39;ve configured which email addresses and names belong to each team member. The system looks at the meeting&#39;s participant list and matches it with our team configuration. This way, it immediately knows who the owner is and thus responsible for the follow-up.</p>
+<h3>Step 3: Claude Creates Notes in Our Exact Preference</h3>
+<p>We send the transcript to Claude with a very specific prompt that we created ourselves. That prompt says exactly: &quot;Create meeting notes with this structure, focus on these matters, in this tone, with this attention to detail.&quot;</p>
+<p>This isn&#39;t about &quot;let Claude summarize&quot;, but about using Claude as our personal note-taker who knows exactly what we find important. Consistent and always in our style.</p>
+<h3>Step 4: Automatic Categorization</h3>
+<p>We also have Claude analyze the transcript and indicate what type of meeting it was: a client meeting? An internal team discussion?</p>
+<p>Why is that useful? Because this way we know where the notes should go in SharePoint. Client meetings here, internal meetings there.</p>
+<p>We can also manually override this, and we can set how confident the AI needs to be before the system does an auto-categorization. Not confident enough? Then the system asks us.</p>
+<h3>Steps 5-10: The Full Pipeline</h3>
+<p>From here, things move quickly:</p>
+<p><strong>Creating professional documents:</strong> Two versions are generated. A Markdown version for internal use for potential future (yet to be built) automations, where all important information is presented neatly without fuss. The second is an HTML version fully formatted in our house style with logo and colors. This makes the document not only functional but also visually attractive for external recipients.</p>
+<p>This isn&#39;t an external tool: our own application builds this HTML template based on the branding settings we&#39;ve made dynamically configurable. Not necessary for now, but we&#39;re not just building for now, also for later. And later we might want to onboard other companies into this tool.</p>
+<p><strong>Upload to SharePoint:</strong> After the documents are generated, they&#39;re automatically uploaded to the correct SharePoint folder. Our system determines based on the categorization (for example, client meeting, internal discussion) exactly where the file ends up. This ensures all documents are in the right place, so we can always quickly find what we need.</p>
+<p><strong>Draft email in Outlook:</strong> While we&#39;re evaluating after a meeting and getting a fresh coffee, a draft email is already being prepared for us in Outlook. The meeting notes are added as an HTML attachment, neatly formatted and ready to be sent. We just need to click &quot;Send&quot; and we can continue with our work. No hassle with writing a summary or formatting the text.</p>
+<p><strong>Action items → Tasks:</strong> This is where we kick it up another gear. All action items that emerge from the notes are automatically converted to tasks in Productive.io, our project management tool. The system knows who is responsible for which task, based on the content of the notes. And yes, the deadlines, if discussed, are also automatically set. The only thing we have to do is execute the tasks (unless AI can do that for us too 😉).</p>
+<p><strong>Notifications via Teams:</strong> As soon as the notes are ready, we receive a notification in Teams. We&#39;ve turned this off for ourselves, because it was a bit overkill for just the two of us, but this could be valuable in the future.</p>
+<p>The result? From meeting to sent notes and scheduled tasks, without anyone having to think about it. Everything happens in the background, so we can focus on the important things.</p>
+<hr>
+<h2>An Important Ingredient: Two-Layer Prompting</h2>
+<p>When we send the transcript to Claude, we use two prompts that work together:</p>
+<p><strong>System Prompt (fixed):</strong> This is a fixed instruction that tells Claude: &quot;You are a meeting analyst. Always extract this metadata in JSON format: title, category, confidence score. Then follows the summary.&quot; This ensures the output is always predictable and structured—regardless of which meeting we&#39;re processing.</p>
+<p><strong>User Prompt (with configurable instructions):</strong> This contains the meeting context (transcript, participants, available categories) AND your personal instructions for the summary. You adjust those instructions in the settings: &quot;Formal or informal?&quot;, &quot;Which parts are important?&quot;, &quot;Extra attention to X?&quot;. We&#39;ve prepared our application this way immediately for reuse by other companies with different criteria.</p>
+<p>Both prompts are sent together to Claude via the Anthropic API. The system prompt guarantees the structure and metadata extraction, the custom instructions determine the content and style of the summary. This gives you the best of both worlds: consistent output, but fully customizable.</p>
+<hr>
+<h2>Approval Workflows: Neither Fully Auto, Nor Fully Manual</h2>
+<p>A common problem with automation: if you do everything on autopilot, you risk mistakes. If you have to manually approve everything, it&#39;s not really automation anymore.</p>
+<p>We have a solution for this: optional approval workflows.</p>
+<p>You can set: automatically create tasks, OR require someone to first review and possibly edit the action items before they land as official tasks in Productive.io. This offers the perfect balance: the speed of automation, but maintaining control.</p>
+<hr>
+<h2>What We&#39;ll Really Notice</h2>
+<p>Okay, enough about how it works. What&#39;s the real benefit?</p>
+<p><strong>Time savings:</strong> What used to be repetitive manual work (transforming notes, writing emails, saving documents, creating tasks), you now do in two clicks. And actually: zero clicks if you set it to full-auto.</p>
+<p><strong>Consistency:</strong> Every meeting note follows the same standard. No more inconsistent summaries, no action items that get overlooked.</p>
+<p><strong>No Information Loss:</strong> Action items no longer disappear into notes and slowly get forgotten. They&#39;re immediately in Productive.io, and everyone sees them. Deadlines are in there, responsibilities are clear.</p>
+<p><strong>Professional Presentation:</strong> The HTML emails with our logo and brand colors always look great. Especially to clients, that comes across as professional.</p>
+<p><strong>One application where we can monitor everything:</strong> Finally, we have our own custom application where we can monitor the entire process, adjust things if needed, and view meetings. Not a place we&#39;ll visit often, but when processes are automated, we believe it&#39;s a hard requirement to have an intuitive and user-friendly app to monitor things.</p>
+<hr>
+<h2>How It Works Technically (for the nerds)</h2>
+<p>If you want to see under the hood:</p>
+<p><strong>Frontend:</strong> React 18 with TypeScript, built with Vite. We use TanStack Query for smart server-state management and Shadcn/UI for visual components. This provides a fast, responsive interface.</p>
+<p><strong>Backend:</strong> Express.js with TypeScript and Drizzle ORM. This keeps our backend clean and modular.</p>
+<p><strong>Database:</strong> PostgreSQL via Supabase. With Supabase Storage, we can also store logos and other assets.</p>
+<p><strong>Deployment:</strong> Frontend on Vercel, Backend on Railway. This separation gives us flexibility.</p>
+<p><strong>Integrations:</strong></p>
+<ul>
+<li>Fireflies.ai (GraphQL API + Webhook) for transcriptions</li>
+<li>Anthropic Claude via their REST API for AI processing (not Fireflies&#39; own AI)</li>
+<li>Microsoft Graph API for SharePoint, Outlook, and Teams</li>
+<li>Productive.io REST API for task management</li>
+</ul>
+<p>It&#39;s built like an orchestra: many different parts, but one conductor (our backend) that ensures everything comes together at the right moment.</p>
+<hr>
+<h2>Lessons Learned: What We Learned Along the Way</h2>
+<h3>1. Speaker Identification Needs a Fallback</h3>
+<p>Fireflies identifies speakers in the transcript, but doesn&#39;t always deliver a name—sometimes only a numeric speaker ID. So we built fallback logic: when Fireflies can&#39;t match a name, we use the speaker ID that Fireflies does provide to generate &quot;Speaker 1&quot;, &quot;Speaker 2&quot;. Is there no identification at all? Then it says &quot;Unknown&quot;. Not perfect, but transparent. We always see who said what, even if the name isn&#39;t known.</p>
+<h3>2. Categorization Needs a Confidence Score</h3>
+<p>AI is good, but not always certain. Categorizing a meeting as &quot;Client Meeting&quot; without being sure? Risky. So we built in AI confidence scores. Below a certain threshold, the system asks us instead of deciding itself.</p>
+<h3>3. Approval Workflows Are Essential</h3>
+<p>In theory: automation does everything. In practice: sometimes you want to check before tasks go to your project management. So we built in optional approval workflows for tasks. You choose whether to go full-auto or review first.</p>
+<hr>
+<h2>The Real Win</h2>
+<p>The real win of our Meeting Automation Center? It&#39;s not our application itself. It&#39;s that we don&#39;t have to do anything anymore. We&#39;ve had our meeting, and while we&#39;re drinking coffee, the notes are in SharePoint, the draft email is ready in Outlook, and the tasks have been added to Productive.io.</p>
+<p>That&#39;s magical.</p>
+<hr>
+<h2>Next Step?</h2>
+<p>The Meeting Automation Center is what we&#39;ve built now. But what we&#39;ve really built is a pattern: a system that captures events, uses AI for analysis, and then controls multiple external systems. All without human intervention.</p>
+<p>That pattern works for much more than meetings. Think about: automatically categorizing and booking incoming invoices. Scoring lead forms and routing them to the right salesperson. Analyzing and prioritizing support tickets. Screening contracts for risks. You name it.</p>
+<p>Anything is possible. As long as we think it through smartly.</p>
+<hr>
+<p><strong>Curious how this would work for your team?</strong> Or do you have other repetitive processes that are crying out for automation?</p>
+<p><a href="https://schakel.ai/#contact">Get in touch</a> and we&#39;ll help you further.</p>
+
+  </article>
+  
+  <footer>
+    <p><strong>Schakel AI B.V.</strong></p>
+    <p>AI-oplossingen die direct tijd en geld opleveren</p>
+    <p><a href="https://www.schakel.ai">www.schakel.ai</a> | <a href="mailto:info@schakel.ai">info@schakel.ai</a></p>
+    <p style="margin-top: 20px; font-size: 0.85rem;">© 2025 Schakel AI B.V. | Rotterdam, Nederland</p>
+  </footer>
+</body>
+</html>

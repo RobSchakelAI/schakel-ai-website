@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary Meta Tags -->
+  <title>We built a meeting automation. It became a platform. | Schakel AI Blog</title>
+  <meta name="title" content="We built a meeting automation. It became a platform. | Schakel AI Blog" />
+  <meta name="description" content="From simple n8n flow to multi-tenant MeetingOps platform. How our meeting automation evolved and what we learned about the future of software." />
+  <meta name="author" content="Rob van Zutphen" />
+  <meta name="keywords" content="meeting automation, MeetingOps, n8n alternative, multi-tenant platform, vibecoding, SaaS development, agentic systems, workflow automation, platform development, AI automation" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  
+  <!-- Canonical & Language Alternates -->
+  <link rel="canonical" href="https://www.schakel.ai/blog/van-meeting-automation-naar-platform?lang=en" />
+  <link rel="alternate" hreflang="nl" href="https://www.schakel.ai/blog/van-meeting-automation-naar-platform" />
+  <link rel="alternate" hreflang="en" href="https://www.schakel.ai/blog/van-meeting-automation-naar-platform?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://www.schakel.ai/blog/van-meeting-automation-naar-platform" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.schakel.ai/blog/van-meeting-automation-naar-platform?lang=en" />
+  <meta property="og:title" content="We built a meeting automation. It became a platform." />
+  <meta property="og:description" content="From simple n8n flow to multi-tenant MeetingOps platform. How our meeting automation evolved and what we learned about the future of software." />
+  <meta property="og:image" content="https://www.schakel.ai/images/blog/van-meeting-automation-naar-platform.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Schakel AI" />
+  <meta property="article:published_time" content="2025-12-15T00:00:00.000Z" />
+  <meta property="article:author" content="Rob van Zutphen" />
+  <meta property="article:section" content="AI Development" />
+  <meta property="article:tag" content="meeting automation" />
+  <meta property="article:tag" content="MeetingOps" />
+  <meta property="article:tag" content="n8n alternative" />
+  <meta property="article:tag" content="multi-tenant platform" />
+  <meta property="article:tag" content="vibecoding" />
+  <meta property="article:tag" content="SaaS development" />
+  <meta property="article:tag" content="agentic systems" />
+  <meta property="article:tag" content="workflow automation" />
+  <meta property="article:tag" content="platform development" />
+  <meta property="article:tag" content="AI automation" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://www.schakel.ai/blog/van-meeting-automation-naar-platform?lang=en" />
+  <meta name="twitter:title" content="We built a meeting automation. It became a platform." />
+  <meta name="twitter:description" content="From simple n8n flow to multi-tenant MeetingOps platform. How our meeting automation evolved and what we learned about the future of software." />
+  <meta name="twitter:image" content="https://www.schakel.ai/images/blog/van-meeting-automation-naar-platform.jpg" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Schema.org Article Structured Data -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "We built a meeting automation. It became a platform.",
+  "description": "From simple n8n flow to multi-tenant MeetingOps platform. How our meeting automation evolved and what we learned about the future of software.",
+  "author": {
+    "@type": "Person",
+    "name": "Rob van Zutphen",
+    "jobTitle": "Co-founder Schakel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Schakel AI B.V.",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schakel.ai/logo.png"
+    }
+  },
+  "datePublished": "2025-12-15T00:00:00.000Z",
+  "dateModified": "2025-12-15T00:00:00.000Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.schakel.ai/blog/van-meeting-automation-naar-platform"
+  },
+  "image": "https://www.schakel.ai/images/blog/van-meeting-automation-naar-platform.jpg",
+  "articleSection": "AI Development",
+  "keywords": "meeting automation, MeetingOps, n8n alternative, multi-tenant platform, vibecoding, SaaS development, agentic systems, workflow automation, platform development, AI automation",
+  "wordCount": 1421,
+  "inLanguage": "en-US"
+}
+  </script>
+  
+  <!-- Schema.org Breadcrumb Structured Data -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.schakel.ai/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.schakel.ai/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "We built a meeting automation. It became a platform.",
+      "item": "https://www.schakel.ai/blog/van-meeting-automation-naar-platform"
+    }
+  ]
+}
+  </script>
+  
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { 
+      font-family: Inter, system-ui, sans-serif; 
+      line-height: 1.7; 
+      color: #1a1a1a; 
+      background: #fff;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    header { margin-bottom: 40px; border-bottom: 1px solid #e5e5e5; padding-bottom: 30px; }
+    h1 { font-family: 'DM Sans', sans-serif; font-size: 2.5rem; font-weight: 700; margin-bottom: 16px; line-height: 1.2; }
+    .meta { color: #666; font-size: 0.9rem; margin-bottom: 16px; }
+    .meta span { margin-right: 16px; }
+    .author { display: flex; align-items: center; gap: 12px; margin-top: 20px; }
+    .author-avatar { width: 48px; height: 48px; border-radius: 50%; background: #6EBFAA; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; }
+    .author-info { }
+    .author-name { font-weight: 600; }
+    .author-role { color: #666; font-size: 0.9rem; }
+    .category { display: inline-block; background: rgba(110, 191, 170, 0.1); color: #6EBFAA; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500; margin-bottom: 16px; }
+    article { }
+    article h2 { font-family: 'DM Sans', sans-serif; font-size: 1.75rem; font-weight: 700; margin: 40px 0 16px; }
+    article h3 { font-family: 'DM Sans', sans-serif; font-size: 1.35rem; font-weight: 700; margin: 32px 0 12px; }
+    article p { margin-bottom: 16px; }
+    article ul, article ol { margin: 16px 0; padding-left: 24px; }
+    article li { margin-bottom: 8px; }
+    article strong { font-weight: 600; }
+    article em { font-style: italic; }
+    article a { color: #6EBFAA; text-decoration: none; }
+    article a:hover { text-decoration: underline; }
+    article code { background: #f5f5f5; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+    article pre { background: #f5f5f5; padding: 16px; border-radius: 8px; overflow-x: auto; margin: 16px 0; }
+    article pre code { background: none; padding: 0; }
+    article blockquote { border-left: 4px solid #6EBFAA; padding-left: 16px; margin: 16px 0; color: #666; font-style: italic; }
+    article hr { border: none; border-top: 1px solid #e5e5e5; margin: 32px 0; }
+    footer { margin-top: 60px; padding-top: 30px; border-top: 1px solid #e5e5e5; text-align: center; color: #666; }
+    footer a { color: #6EBFAA; }
+    .js-notice { background: #f0f9f6; border: 1px solid #6EBFAA; padding: 16px; border-radius: 8px; margin-bottom: 30px; text-align: center; }
+    .js-notice a { color: #6EBFAA; font-weight: 500; }
+  </style>
+</head>
+<body>
+  <div class="js-notice">
+    For the full interactive experience, <a href="https://www.schakel.ai/blog/van-meeting-automation-naar-platform">view this article with JavaScript enabled</a>.
+  </div>
+  
+  <header>
+    <span class="category">AI Development</span>
+    <h1>We built a meeting automation. It became a platform.</h1>
+    <div class="meta">
+      <span>📅 December 15, 2025</span>
+      <span>⏱️ 6 min read</span>
+    </div>
+    <div class="author">
+      <div class="author-avatar">RvZ</div>
+      <div class="author-info">
+        <div class="author-name">Rob van Zutphen</div>
+        <div class="author-role">Co-founder Schakel</div>
+      </div>
+    </div>
+  </header>
+  
+  <article>
+    <p>In an <a href="/blog/meeting-automation-center">earlier post</a>, I wrote about how we built our Meeting Automation Center. From Fireflies webhook to tasks in Productive, meeting notes in SharePoint, and draft emails in Outlook. The complete story, step-by-step.</p>
+<p>This post isn&#39;t about how it works.
+This post is about why it became what it is now.</p>
+<p>Because what started as &quot;let&#39;s automate meeting follow-up&quot; evolved into something much bigger. And that evolution—from simple n8n flow to multi-tenant platform—taught us more about the future of software than we could have imagined beforehand.</p>
+<hr>
+<h2>From n8n to &quot;wait, we can do this better&quot;</h2>
+<p>We started in n8n.
+Just to test whether meeting automation was even realistic.</p>
+<p>The answer: yes, but limited.</p>
+<p>We could fetch the transcript, call Claude, write data. It worked. But we kept running into the same frustrations:</p>
+<p><strong>No control over the user experience</strong>
+We wanted a UI where you can see what&#39;s happening. Where you can check results before they&#39;re written. Where you can adjust settings without rebuilding a flow.</p>
+<p>n8n doesn&#39;t offer that. You have a flow-builder, not an application.</p>
+<p><strong>You always have to go back to the backend</strong>
+n8n has decent debugging—you can see what goes wrong. But you always have to go back to the n8n interface for that. Not ideal if you want users to have their own insights, or if you have a team that doesn&#39;t want to dive into flows.</p>
+<p><strong>No configuration layer for end users</strong>
+Every change means opening the flow, adjusting nodes, saving. No settings screen, no role-based access, no tenant-specific settings. It remains a tool for the builder, not for the user.</p>
+<p><strong>And n8n is low-code, but not &quot;no-code&quot;</strong>
+You have to learn how n8n works. How nodes work, how expressions work, how to catch errors. It&#39;s quite technical. You have to invest time to use it properly.</p>
+<p>And then we realized:</p>
+<p>If we have to learn a new system anyway, why would we learn n8n instead of building in our own code?</p>
+<p>In <a href="/blog/niet-meer-bouwen-met-low-code">another post</a>, I wrote extensively about why we chose vibecoding over low-code: ownership, flexibility, no vendor lock-in. I won&#39;t repeat that story here.</p>
+<p>The point is: we switched to our own code.</p>
+<hr>
+<h2>The moment it became bigger</h2>
+<p>And then we had a discussion.</p>
+<p>We were setting up the database. PostgreSQL via Supabase.</p>
+<p>The practical question: do we build this single-tenant or multi-tenant?</p>
+<p>Single-tenant = simpler, faster to build.
+Multi-tenant = more work, but scalable.</p>
+<p>We had no clients. It was for ourselves.
+So why multi-tenant?</p>
+<p>And then I said: &quot;Wait. If we want to expand this in 6 months, don&#39;t we have to rebuild everything?&quot;</p>
+<p>Data separation with Row Level Security.
+Role-based access control.
+Configurable settings per organization.
+Encrypted settings.</p>
+<p>With vibecoding, it was suddenly realistic to do this right from the start.</p>
+<p>Not because we already had clients.
+But because we knew: this could become bigger. And then we want to be ready for it.</p>
+<p>That was the moment when this platform went from &quot;automation for ourselves&quot; to &quot;system we&#39;re building with broader applications.&quot;</p>
+<hr>
+<h2>What happened during building</h2>
+<p>And then the system started getting properties we hadn&#39;t thought of beforehand.</p>
+<p>Not because we made the scope bigger.
+But because each step revealed new possibilities:</p>
+<p>&quot;We need to see which meetings have been processed&quot;
+→ Dashboard with statistics</p>
+<p>&quot;We need to debug errors&quot;
+→ Log viewer with error tracking</p>
+<p>&quot;We need to set how summaries look&quot;
+→ Template editor with live preview</p>
+<p>&quot;We need to determine which meetings are processed or not&quot;
+→ Meeting categorization with confidence scores</p>
+<p>&quot;We need to see what&#39;s happening in the pipeline&quot;
+→ Pipeline visualization</p>
+<p>Each feature added a layer:</p>
+<p>• Multi-tenant architecture (with proper data isolation)
+• Front-end configuration (no code changes for settings)
+• Dashboard for insights
+• Log viewer for troubleshooting
+• Pipeline visualization to see what&#39;s running
+• Meeting overview with history
+• Role-based permissions (superadmin, admin, member)</p>
+<p>And then we realized: this is no longer an automation.</p>
+<hr>
+<h2>MeetingOps-engine: the category between automation and SaaS</h2>
+<p>The platform no longer fits in one box.</p>
+<p><strong>It&#39;s an automation...</strong>
+...because it runs autonomously. Webhook comes in → process → write. Without human input.</p>
+<p><strong>But it&#39;s more than an automation...</strong>
+...because regular automations don&#39;t have:</p>
+<p>• Dashboard where you get insights
+• UI where you adjust configurations
+• Log viewer where you troubleshoot
+• Pipeline visualization where you see what&#39;s happening
+• Multi-tenant architecture with RLS
+• Role-based access control</p>
+<p><strong>But it&#39;s also not a classic SaaS...</strong>
+...because you don&#39;t work in it daily. It&#39;s not a workspace where you perform tasks.</p>
+<p>The UI is not a place where you do work.
+It&#39;s an operations center where you have oversight.</p>
+<p>A cockpit for your meeting workflows.
+A control panel for automation.
+An auditor that shows what happened.</p>
+<p>We call this a <strong>MeetingOps-engine</strong>:</p>
+<p>A system that executes the complete operation after a meeting (autonomously), and provides the control and insight layer you expect from mature software (transparent).</p>
+<p>It works in the background.
+But you always have full transparency and control when you want it.</p>
+<hr>
+<h2>The &quot;getting out of hand&quot; we&#39;re grateful for</h2>
+<p>Honestly: yes, the platform became bigger than we initially planned.</p>
+<p>We started with &quot;fetch transcript and summarize.&quot;</p>
+<p>Now we have a complete system with multi-tenant architecture, dashboards, log viewers, pipeline visualization, configurable templates, meeting categorization, and integrations with 4 systems (with 5 more planned).</p>
+<p>But here&#39;s the thing:</p>
+<p>Precisely this &quot;getting out of hand&quot; made it valuable.</p>
+<p>Because during building we discovered:</p>
+<p>• What&#39;s really needed for reliable automation (not just the happy path)
+• How to make software scalable without over-engineering
+• Where the limits of automation lie and where human control is needed
+• How to build something that grows with an organization instead of staying static</p>
+<p>And above all: how software is fundamentally changing.</p>
+<hr>
+<h2>Our platform as a journey of discovery</h2>
+<p>Because during building we realized something bigger.</p>
+<p>Software is changing.</p>
+<p>No longer applications you work in, but systems that do work for you.
+No longer static tools, but adaptive workflows.
+No longer features, but capabilities you can combine.</p>
+<p>Our Meeting Automation Platform became the vehicle to understand this shift:</p>
+<p>From automation → to application → to platform → to MeetingOps-engine → and soon: to an agentic system.</p>
+<p>Not in theory.
+But in practice, with real meetings, real data, real errors, and real solutions.</p>
+<hr>
+<h2>Where the system stands now</h2>
+<p>We use the platform daily. Every client meeting, every internal session goes through it.</p>
+<p>It works stably.
+It saves us hours weekly.
+And it keeps getting better.</p>
+<p>But the most important thing is this:</p>
+<p>This is not an end product.
+This is a platform that grows with us.</p>
+<p>The foundation is laid:</p>
+<p>✅ Multi-tenant with proper data separation
+✅ Configurable without changing code
+✅ Modularly built
+✅ Fully transparent
+✅ Reliable with error handling</p>
+<p>And that foundation makes it perfect for the next step.</p>
+<hr>
+<h2>The bridge to the future</h2>
+<p>In upcoming posts, we&#39;ll share what we see happening:</p>
+<p><strong>Post 2: The future of software - from tools to autonomous workflows</strong>
+Why software is shifting from applications to autonomous systems. How &quot;capabilities&quot; become the building blocks of future software. And why this makes software radically personal.</p>
+<p><strong>Post 3: How we&#39;re preparing our Meeting Automation Platform for an agentic future</strong>
+How we&#39;re rebuilding the system from fixed pipeline to capability-based architecture. What that concretely means. And what steps we&#39;re taking toward a fully agentic system that can adapt itself.</p>
+<p>This is not theory.
+This is what we&#39;re building.</p>
+<p>Our Meeting Automation Platform is our laboratory to discover the future of software.</p>
+<hr>
+<h2>Closing thought</h2>
+<p>It started as &quot;can we automate meeting follow-up?&quot;</p>
+<p>It became a MeetingOps-engine with multi-tenant architecture, dashboards, configuration layers, and integrations.</p>
+<p>And now it&#39;s becoming our vehicle to discover what software looks like in a world where AI doesn&#39;t just assist, but takes work off your hands.</p>
+<p>We don&#39;t know everything.
+But we&#39;re building it. We&#39;re using it. We&#39;re learning from it.</p>
+<p>And we see every day in practice:</p>
+<p>Software that thinks along, grows along, and takes work off your hands is not the future.</p>
+<p>It&#39;s now.</p>
+<hr>
+<p>Curious how the platform works internally? Read the technical deep-dive about how we built the complete pipeline.</p>
+<p>Want to know why we chose vibecoding over low-code? Read <a href="/blog/niet-meer-bouwen-met-low-code">why we no longer build with low-code</a>.</p>
+<p>In the next post: why the entire software industry is moving from static applications to autonomous workflows—and what that means for businesses.</p>
+
+  </article>
+  
+  <footer>
+    <p><strong>Schakel AI B.V.</strong></p>
+    <p>AI-oplossingen die direct tijd en geld opleveren</p>
+    <p><a href="https://www.schakel.ai">www.schakel.ai</a> | <a href="mailto:info@schakel.ai">info@schakel.ai</a></p>
+    <p style="margin-top: 20px; font-size: 0.85rem;">© 2025 Schakel AI B.V. | Rotterdam, Nederland</p>
+  </footer>
+</body>
+</html>
