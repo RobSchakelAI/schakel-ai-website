@@ -3,6 +3,8 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 
+// Dynamic import of blog data - this ensures we always use the latest data
+// and eliminates the need for hardcoded mappings
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -252,200 +254,31 @@ function generateHTML(post: BlogPost, lang: Language): string {
 </html>`;
 }
 
-async function loadBlogPosts(): Promise<BlogPost[]> {
-  const blogDataPath = path.join(__dirname, '..', 'shared', 'blog-data.ts');
-  const blogDataContent = fs.readFileSync(blogDataPath, 'utf-8');
-  
-  const contentDir = path.join(__dirname, '..', 'shared', 'blog-content');
-  const contentFiles = fs.readdirSync(contentDir);
-  
-  const contentMap: Record<string, string> = {};
-  
-  for (const file of contentFiles) {
-    if (file.endsWith('.tsx')) {
-      const filePath = path.join(contentDir, file);
-      const content = fs.readFileSync(filePath, 'utf-8');
-      
-      const match = content.match(/export const (\w+) = `([\s\S]*?)`;/);
-      if (match) {
-        contentMap[match[1]] = match[2];
-      }
-    }
-  }
-  
-  const posts: BlogPost[] = [];
-  
-  const slugMatches = blogDataContent.matchAll(/slug:\s*['"]([^'"]+)['"]/g);
-  const publishDateMatches = blogDataContent.matchAll(/publishDate:\s*['"]([^'"]+)['"]/g);
-  const readingTimeMatches = blogDataContent.matchAll(/readingTime:\s*(\d+)/g);
-  const ogImageMatches = blogDataContent.matchAll(/ogImage:\s*['"]([^'"]+)['"]/g);
-  
-  const slugs = [...slugMatches].map(m => m[1]);
-  const publishDates = [...publishDateMatches].map(m => m[1]);
-  const readingTimes = [...readingTimeMatches].map(m => parseInt(m[1]));
-  const ogImages = [...ogImageMatches].map(m => m[1]);
-  
-  const nlTitleMatches = blogDataContent.matchAll(/nl:\s*\{[^}]*title:\s*['"]([^'"]+)['"]/gs);
-  const nlExcerptMatches = blogDataContent.matchAll(/nl:\s*\{[^}]*excerpt:\s*['"]([^'"]+)['"]/gs);
-  const nlMetaDescMatches = blogDataContent.matchAll(/nl:\s*\{[^}]*metaDescription:\s*['"]([^'"]+)['"]/gs);
-  
-  const nlBlocks = blogDataContent.split(/\n\s*\{[\s\n]*slug:/g).slice(1);
-  
-  for (let i = 0; i < slugs.length; i++) {
-    const slug = slugs[i];
-    
-    let nlContent = '';
-    let enContent = '';
-    let nlTitle = '';
-    let enTitle = '';
-    let nlExcerpt = '';
-    let enExcerpt = '';
-    let nlMetaDesc = '';
-    let enMetaDesc = '';
-    let nlCategory = '';
-    let enCategory = '';
-    let nlAuthorName = '';
-    let nlAuthorRole = '';
-    let nlAuthorBio = '';
-    let enAuthorName = '';
-    let enAuthorRole = '';
-    let enAuthorBio = '';
-    let nlKeywords: string[] = [];
-    let enKeywords: string[] = [];
-    
-    if (slug === 'van-meeting-automation-naar-platform') {
-      nlContent = contentMap['vanMeetingAutomationNaarPlatformContent'] || '';
-      enContent = contentMap['vanMeetingAutomationNaarPlatformContentEN'] || '';
-      nlTitle = 'We bouwden een meeting automation. Het werd een platform.';
-      enTitle = 'We built a meeting automation. It became a platform.';
-      nlExcerpt = 'Wat begon als "laten we meeting follow-up automatiseren" evolueerde naar een MeetingOps-engine.';
-      enExcerpt = 'What started as "let\'s automate meeting follow-up" evolved into a MeetingOps-engine.';
-      nlMetaDesc = 'Van simpele n8n flow naar multi-tenant MeetingOps platform. Hoe onze meeting automation evolueerde en wat we leerden over de toekomst van software.';
-      enMetaDesc = 'From simple n8n flow to multi-tenant MeetingOps platform. How our meeting automation evolved and what we learned about the future of software.';
-      nlCategory = 'AI Development';
-      enCategory = 'AI Development';
-      nlAuthorName = 'Rob van Zutphen';
-      nlAuthorRole = 'Mede-oprichter Schakel';
-      nlAuthorBio = 'Rob helpt bedrijven slimmer werken met AI.';
-      enAuthorName = 'Rob van Zutphen';
-      enAuthorRole = 'Co-founder Schakel';
-      enAuthorBio = 'Rob helps companies work smarter with AI.';
-      nlKeywords = ['meeting automation', 'MeetingOps', 'n8n alternatief', 'multi-tenant platform', 'vibecoding'];
-      enKeywords = ['meeting automation', 'MeetingOps', 'n8n alternative', 'multi-tenant platform', 'vibecoding'];
-    } else if (slug === 'waarom-structuur-belangrijker-is-dan-technologie') {
-      nlContent = contentMap['waaromStructuurContent'] || '';
-      enContent = contentMap['waaromStructuurContentEN'] || '';
-      nlTitle = 'Waarom structuur belangrijker is dan technologie';
-      enTitle = 'Why structure matters more than technology';
-      nlExcerpt = 'Meer dan 80% van AI-projecten faalt. Niet door technologie, maar door gebrek aan structuur.';
-      enExcerpt = 'Over 80% of AI projects fail. Not because of technology, but due to lack of structure.';
-      nlMetaDesc = 'Meer dan 80% van AI-projecten faalt. Niet door technologie, maar door gebrek aan structuur. Ontdek waarom tooling nooit het probleem is en hoe je wél resultaat behaalt met AI.';
-      enMetaDesc = 'Over 80% of AI projects fail. Not because of technology, but due to lack of structure. Discover why tooling is never the problem and how to actually achieve results with AI.';
-      nlCategory = 'AI Strategy';
-      enCategory = 'AI Strategy';
-      nlAuthorName = 'Simon Voorbergen';
-      nlAuthorRole = 'Mede-oprichter Schakel';
-      nlAuthorBio = 'Simon helpt bedrijven hun processen te optimaliseren voor AI-succes.';
-      enAuthorName = 'Simon Voorbergen';
-      enAuthorRole = 'Co-founder Schakel';
-      enAuthorBio = 'Simon helps companies optimize their processes for AI success.';
-      nlKeywords = ['AI implementatie', 'AI projecten falen', 'structuur voor AI', 'AI strategie', 'procesoptimalisatie'];
-      enKeywords = ['AI implementation', 'AI projects fail', 'structure for AI', 'AI strategy', 'process optimization'];
-    } else if (slug === 'niet-meer-bouwen-met-low-code') {
-      nlContent = contentMap['eindeVanDeTussenlaagContent'] || '';
-      enContent = contentMap['eindeVanDeTussenlaagContentEN'] || '';
-      nlTitle = 'Waarom wij niet meer bouwen met low-code (en jij misschien ook niet)';
-      enTitle = 'Why we no longer build with low-code (and maybe you shouldn\'t either)';
-      nlExcerpt = 'Low-code was jarenlang de brug tussen business en IT. Maar in het AI-tijdperk wordt vibecoding de nieuwe standaard.';
-      enExcerpt = 'Low-code was the bridge between business and IT for years. But in the AI era, vibecoding becomes the new standard.';
-      nlMetaDesc = 'Waarom Schakel AI kiest voor vibecoding in plaats van low-code. AI-assisted development biedt meer controle, flexibiliteit en eigenaarschap over je software.';
-      enMetaDesc = 'Why Schakel AI chooses vibecoding over low-code. AI-assisted development offers more control, flexibility, and ownership over your software.';
-      nlCategory = 'AI Development';
-      enCategory = 'AI Development';
-      nlAuthorName = 'Rob van Zutphen';
-      nlAuthorRole = 'Mede-oprichter Schakel';
-      nlAuthorBio = 'Rob helpt bedrijven slimmer werken met AI.';
-      enAuthorName = 'Rob van Zutphen';
-      enAuthorRole = 'Co-founder Schakel';
-      enAuthorBio = 'Rob helps companies work smarter with AI.';
-      nlKeywords = ['vibecoding', 'low-code vs vibecoding', 'AI-assisted development', 'Replit', 'software eigenaarschap'];
-      enKeywords = ['vibecoding', 'low-code vs vibecoding', 'AI-assisted development', 'Replit', 'software ownership'];
-    } else if (slug === 'meeting-automation-center') {
-      nlContent = contentMap['meetingAutomationCenterContent'] || '';
-      enContent = contentMap['meetingAutomationCenterContentEN'] || '';
-      nlTitle = 'Van Transcriptie naar Automatische Workflow: Hoe Wij Meetings Opgelost Hebben';
-      enTitle = 'From Transcription to Automatic Workflow: How We Solved Meetings';
-      nlExcerpt = 'Tools transcriberen prima, maar het administratieve werk blijft hangen. Wij bouwden een systeem dat alles automatisch regelt.';
-      enExcerpt = 'Tools transcribe just fine, but the administrative work gets stuck. We built a system that handles everything automatically.';
-      nlMetaDesc = 'Hoe wij een Meeting Automation Center bouwden dat transcripties automatisch omzet naar notulen, SharePoint uploads, Outlook mails en taken in Productive.io.';
-      enMetaDesc = 'How we built a Meeting Automation Center that automatically converts transcriptions into meeting notes, SharePoint uploads, Outlook emails, and tasks in Productive.io.';
-      nlCategory = 'AI Automation';
-      enCategory = 'AI Automation';
-      nlAuthorName = 'Rob van Zutphen';
-      nlAuthorRole = 'Mede-oprichter Schakel';
-      nlAuthorBio = 'Rob helpt bedrijven slimmer werken met AI.';
-      enAuthorName = 'Rob van Zutphen';
-      enAuthorRole = 'Co-founder Schakel';
-      enAuthorBio = 'Rob helps companies work smarter with AI.';
-      nlKeywords = ['meeting automatisering', 'AI notulen', 'workflow automatisering'];
-      enKeywords = ['meeting automation', 'AI meeting notes', 'workflow automation'];
-    } else if (slug === 'website-bouwen-met-ai') {
-      nlContent = contentMap['websiteBouwenMetAIContent'] || '';
-      enContent = contentMap['websiteBouwenMetAIContentEN'] || '';
-      nlTitle = 'Website bouwen met AI: Hoe we schakel.ai zelf maakten';
-      enTitle = 'Building a Website with AI: How we made schakel.ai';
-      nlExcerpt = 'Zonder programmeur onze website gebouwd met AI. Het complete verhaal over vibecoding.';
-      enExcerpt = 'Built our website with AI without a programmer. The complete story about vibecoding.';
-      nlMetaDesc = 'Zonder programmeur onze website gebouwd met AI. Het complete verhaal over vibecoding, tech stack keuzes en wat echt werkt.';
-      enMetaDesc = 'Built our website with AI without a programmer. The complete story about vibecoding, tech stack choices, and what actually works.';
-      nlCategory = 'AI Development';
-      enCategory = 'AI Development';
-      nlAuthorName = 'Rob van Zutphen';
-      nlAuthorRole = 'Mede-oprichter Schakel';
-      nlAuthorBio = 'Rob helpt bedrijven slimmer werken met AI.';
-      enAuthorName = 'Rob van Zutphen';
-      enAuthorRole = 'Co-founder Schakel';
-      enAuthorBio = 'Rob helps companies work smarter with AI.';
-      nlKeywords = ['website bouwen met AI', 'vibecoding', 'AI-first development'];
-      enKeywords = ['building website with AI', 'vibecoding', 'AI-first development'];
-    }
-    
-    posts.push({
-      slug,
-      publishDate: publishDates[i] || '2025-01-01',
-      readingTime: readingTimes[i] || 10,
-      ogImage: ogImages[i],
-      translations: {
-        nl: {
-          title: nlTitle,
-          excerpt: nlExcerpt,
-          content: nlContent,
-          metaDescription: nlMetaDesc,
-          keywords: nlKeywords,
-          category: nlCategory,
-          author: { name: nlAuthorName, role: nlAuthorRole, bio: nlAuthorBio }
-        },
-        en: {
-          title: enTitle,
-          excerpt: enExcerpt,
-          content: enContent,
-          metaDescription: enMetaDesc,
-          keywords: enKeywords,
-          category: enCategory,
-          author: { name: enAuthorName, role: enAuthorRole, bio: enAuthorBio }
-        }
-      }
-    });
-  }
-  
-  return posts;
-}
-
 async function main() {
   console.log('🚀 Starting blog pre-rendering...\n');
   
-  const posts = await loadBlogPosts();
+  // Dynamically import blogPosts from shared/blog-data.ts
+  // This eliminates the need for any hardcoded mappings!
+  const blogDataModule = await import('../shared/blog-data.js');
+  const posts: BlogPost[] = blogDataModule.blogPosts;
+  
   console.log(`📚 Found ${posts.length} blog posts\n`);
+  
+  // Validate posts before generating
+  let hasErrors = false;
+  for (const post of posts) {
+    for (const lang of languages) {
+      const translation = post.translations[lang];
+      if (!translation.title || !translation.content) {
+        console.error(`❌ ERROR: Post "${post.slug}" (${lang}) is missing title or content!`);
+        hasErrors = true;
+      }
+    }
+  }
+  
+  if (hasErrors) {
+    console.error('\n⚠️  Some posts have missing data. Please check blog-data.ts and content files.\n');
+  }
   
   const outputDir = path.join(__dirname, '..', 'client', 'public', 'blog');
   
@@ -454,6 +287,12 @@ async function main() {
   }
   
   for (const post of posts) {
+    // Skip posts with missing content
+    if (!post.translations.nl.content && !post.translations.en.content) {
+      console.warn(`⚠️  Skipping ${post.slug} - no content found`);
+      continue;
+    }
+    
     for (const lang of languages) {
       const postDir = path.join(outputDir, post.slug);
       
@@ -477,6 +316,8 @@ async function main() {
   
   console.log('\n🎉 Blog pre-rendering complete!');
   console.log(`📁 Output directory: ${outputDir}`);
+  console.log('\n💡 Note: This script now dynamically imports all posts from shared/blog-data.ts');
+  console.log('   No hardcoded mappings needed - just add new posts to blog-data.ts!');
 }
 
 main().catch(console.error);
