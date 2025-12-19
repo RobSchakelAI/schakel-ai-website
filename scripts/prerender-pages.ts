@@ -511,10 +511,13 @@ function generateAIViewHTML(lang: Language): string {
 async function main() {
   console.log('🚀 Starting page pre-rendering...\n');
   
-  const publicDir = path.join(__dirname, '..', 'client', 'public');
+  // Output to _seo directory to avoid conflicting with SPA routes
+  // This ensures Vercel serves the React SPA for all routes
+  // while static HTML remains available at /_seo/* for crawlers
+  const seoDir = path.join(__dirname, '..', 'client', 'public', '_seo');
   
   // Generate Blog Index pages
-  const blogDir = path.join(publicDir, 'blog');
+  const blogDir = path.join(seoDir, 'blog');
   if (!fs.existsSync(blogDir)) {
     fs.mkdirSync(blogDir, { recursive: true });
   }
@@ -523,14 +526,14 @@ async function main() {
     const html = generateBlogIndexHTML(lang);
     if (lang === 'nl') {
       fs.writeFileSync(path.join(blogDir, 'index.html'), html, 'utf-8');
-      console.log('✅ Generated: /blog/index.html (nl)');
+      console.log('✅ Generated: /_seo/blog/index.html (nl)');
     }
     fs.writeFileSync(path.join(blogDir, `${lang}.html`), html, 'utf-8');
-    console.log(`✅ Generated: /blog/${lang}.html`);
+    console.log(`✅ Generated: /_seo/blog/${lang}.html`);
   }
   
   // Generate Tools pages
-  const toolsDir = path.join(publicDir, 'tools');
+  const toolsDir = path.join(seoDir, 'tools');
   if (!fs.existsSync(toolsDir)) {
     fs.mkdirSync(toolsDir, { recursive: true });
   }
@@ -539,14 +542,14 @@ async function main() {
     const html = generateToolsHTML(lang);
     if (lang === 'nl') {
       fs.writeFileSync(path.join(toolsDir, 'index.html'), html, 'utf-8');
-      console.log('✅ Generated: /tools/index.html (nl)');
+      console.log('✅ Generated: /_seo/tools/index.html (nl)');
     }
     fs.writeFileSync(path.join(toolsDir, `${lang}.html`), html, 'utf-8');
-    console.log(`✅ Generated: /tools/${lang}.html`);
+    console.log(`✅ Generated: /_seo/tools/${lang}.html`);
   }
   
   // Generate AI View pages
-  const aiViewDir = path.join(publicDir, 'ai-view');
+  const aiViewDir = path.join(seoDir, 'ai-view');
   if (!fs.existsSync(aiViewDir)) {
     fs.mkdirSync(aiViewDir, { recursive: true });
   }
@@ -555,13 +558,14 @@ async function main() {
     const html = generateAIViewHTML(lang);
     if (lang === 'nl') {
       fs.writeFileSync(path.join(aiViewDir, 'index.html'), html, 'utf-8');
-      console.log('✅ Generated: /ai-view/index.html (nl)');
+      console.log('✅ Generated: /_seo/ai-view/index.html (nl)');
     }
     fs.writeFileSync(path.join(aiViewDir, `${lang}.html`), html, 'utf-8');
-    console.log(`✅ Generated: /ai-view/${lang}.html`);
+    console.log(`✅ Generated: /_seo/ai-view/${lang}.html`);
   }
   
   console.log('\n🎉 Page pre-rendering complete!');
+  console.log('📁 All static SEO pages now in /_seo/ directory');
 }
 
 main().catch(console.error);
