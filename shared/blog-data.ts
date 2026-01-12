@@ -11,9 +11,67 @@ import { vanMeetingAutomationNaarPlatformContent } from './blog-content/van-meet
 import { vanMeetingAutomationNaarPlatformContentEN } from './blog-content/van-meeting-automation-naar-platform-en';
 import { aiOrganiserenVoorResultaatContent } from './blog-content/ai-organiseren-voor-resultaat';
 import { aiOrganiserenVoorResultaatContentEN } from './blog-content/ai-organiseren-voor-resultaat-en';
+import { toekomstVanSoftwareContent } from './blog-content/toekomst-van-software';
+import { toekomstVanSoftwareContentEN } from './blog-content/toekomst-van-software-en';
 
 // Blog post data - add new posts here
 export const blogPosts: BlogPost[] = [
+  {
+    slug: 'toekomst-van-software',
+    publishDate: '2025-12-19',
+    readingTime: 5,
+    ogImage: '/images/blog/toekomst-van-software.jpg',
+    translations: {
+      nl: {
+        title: 'De toekomst van software: van tools naar autonome workflows',
+        excerpt: 'Wat gebeurt er met software wanneer het niet langer ondersteunt, maar daadwerkelijk werk uitvoert? Van SaaS naar capabilities, van configuratie naar lerende systemen.',
+        content: toekomstVanSoftwareContent,
+        metaDescription: 'Software verschuift van tools naar autonome workflows. Ontdek hoe capabilities, feedbackloops en lerende systemen de toekomst van software bepalen.',
+        keywords: [
+          'autonome workflows',
+          'capabilities',
+          'lerende systemen',
+          'workflow automation',
+          'SaaS toekomst',
+          'agentic systems',
+          'AI automation',
+          'software architectuur',
+          'feedbackloops',
+          'MeetingOps'
+        ],
+        category: 'AI Development',
+        author: {
+          name: 'Rob van Zutphen',
+          role: 'Mede-oprichter Schakel',
+          bio: 'Rob helpt bedrijven slimmer werken met AI. Achtergrond in finance en BI, nu gefocust op praktische AI-implementaties die echt rendement opleveren.'
+        }
+      },
+      en: {
+        title: 'The future of software: from tools to autonomous workflows',
+        excerpt: 'What happens to software when it no longer just supports, but actually performs work? From SaaS to capabilities, from configuration to learning systems.',
+        content: toekomstVanSoftwareContentEN,
+        metaDescription: 'Software is shifting from tools to autonomous workflows. Discover how capabilities, feedback loops, and learning systems shape the future of software.',
+        keywords: [
+          'autonomous workflows',
+          'capabilities',
+          'learning systems',
+          'workflow automation',
+          'SaaS future',
+          'agentic systems',
+          'AI automation',
+          'software architecture',
+          'feedback loops',
+          'MeetingOps'
+        ],
+        category: 'AI Development',
+        author: {
+          name: 'Rob van Zutphen',
+          role: 'Co-founder Schakel',
+          bio: 'Rob helps companies work smarter with AI. Background in finance and BI, now focused on practical AI implementations that truly deliver results.'
+        }
+      }
+    }
+  },
   {
     slug: 'ai-organiseren-voor-resultaat',
     publishDate: '2025-12-18',

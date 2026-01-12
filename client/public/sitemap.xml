@@ -16,12 +16,23 @@
   <!-- Blog Index -->
   <url>
     <loc>https://www.schakel.ai/blog</loc>
-    <lastmod>2025-12-18</lastmod>
+    <lastmod>2025-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="nl" href="https://www.schakel.ai/blog" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.schakel.ai/blog?lang=en" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.schakel.ai/blog" />
+  </url>
+
+  <!-- Blog Post: De toekomst van software -->
+  <url>
+    <loc>https://www.schakel.ai/blog/toekomst-van-software</loc>
+    <lastmod>2025-12-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.schakel.ai/blog/toekomst-van-software" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schakel.ai/blog/toekomst-van-software?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.schakel.ai/blog/toekomst-van-software" />
   </url>
 
   <!-- Blog Post: AI organiseren voor resultaat -->

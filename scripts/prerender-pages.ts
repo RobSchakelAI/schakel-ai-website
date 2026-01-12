@@ -21,6 +21,15 @@ interface BlogPostData {
 const blogPosts: Record<Language, BlogPostData[]> = {
   nl: [
     {
+      slug: 'toekomst-van-software',
+      title: 'De toekomst van software: van tools naar autonome workflows',
+      excerpt: 'Wat gebeurt er met software wanneer het niet langer ondersteunt, maar daadwerkelijk werk uitvoert?',
+      publishDate: '2025-12-19',
+      readingTime: 5,
+      category: 'AI Development',
+      authorName: 'Rob van Zutphen'
+    },
+    {
       slug: 'einde-van-de-tussenlaag',
       title: 'Het einde van de tussenlaag: waarom wij de low-code route overslaan',
       excerpt: 'Low-code was jarenlang de brug tussen business en IT. Maar in het AI-tijdperk wordt vibecoding de nieuwe standaard.',
@@ -49,6 +58,15 @@ const blogPosts: Record<Language, BlogPostData[]> = {
     }
   ],
   en: [
+    {
+      slug: 'toekomst-van-software',
+      title: 'The future of software: from tools to autonomous workflows',
+      excerpt: 'What happens to software when it no longer just supports, but actually performs work?',
+      publishDate: '2025-12-19',
+      readingTime: 5,
+      category: 'AI Development',
+      authorName: 'Rob van Zutphen'
+    },
     {
       slug: 'einde-van-de-tussenlaag',
       title: 'The end of the middle layer: why we skip the low-code route',

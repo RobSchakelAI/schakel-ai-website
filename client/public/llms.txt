@@ -99,7 +99,17 @@ We work with:
 
 ## Blog & Resources
 
-### Latest Writing: Waarom AI pas werkt als je het organiseert
+### Latest Writing: De toekomst van software: van tools naar autonome workflows
+- URL: https://www.schakel.ai/blog/toekomst-van-software
+- Static HTML: https://www.schakel.ai/_seo/blog/toekomst-van-software/
+- Published: December 19, 2025
+- Author: Rob van Zutphen
+- Topic: The fundamental shift from SaaS tools to autonomous workflow systems
+- Key Topics: autonomous workflows, capabilities, learning systems, workflow automation, SaaS future, agentic systems, AI automation, software architecture, feedback loops, MeetingOps
+- Reading Time: 5 minutes
+- Summary: Analysis of the fundamental shift in how software relates to work. Covers why the current SaaS model is hitting its limits, the emergence of workflow-native software with capabilities instead of features, and the transition from configurable workflows to learning systems that can evaluate their own output and suggest improvements. Emphasizes that context is design (not magic), autonomy means reliable execution within clear boundaries, and the shift from "which tools do we need" to "which work should happen autonomously."
+
+### Previous Writing: Waarom AI pas werkt als je het organiseert
 - URL: https://www.schakel.ai/blog/ai-organiseren-voor-resultaat
 - Static HTML: https://www.schakel.ai/_seo/blog/ai-organiseren-voor-resultaat/
 - Published: December 18, 2025
