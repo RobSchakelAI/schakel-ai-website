@@ -21,6 +21,15 @@ interface BlogPostData {
 const blogPosts: Record<Language, BlogPostData[]> = {
   nl: [
     {
+      slug: 'zenuwstelsel-van-ons-bedrijf',
+      title: 'Het zenuwstelsel van ons bedrijf',
+      excerpt: 'Wij kijken anders naar automatiseren met AI. Niet als iets magisch, maar als een fundamentele manier om werk opnieuw te organiseren.',
+      publishDate: '2025-12-20',
+      readingTime: 5,
+      category: 'AI Strategy',
+      authorName: 'Simon Voorbergen'
+    },
+    {
       slug: 'toekomst-van-software',
       title: 'De toekomst van software: van tools naar autonome workflows',
       excerpt: 'Wat gebeurt er met software wanneer het niet langer ondersteunt, maar daadwerkelijk werk uitvoert?',
@@ -58,6 +67,15 @@ const blogPosts: Record<Language, BlogPostData[]> = {
     }
   ],
   en: [
+    {
+      slug: 'zenuwstelsel-van-ons-bedrijf',
+      title: 'The nervous system of our company',
+      excerpt: 'We view AI automation differently. Not as something magical, but as a fundamental way to reorganize work.',
+      publishDate: '2025-12-20',
+      readingTime: 5,
+      category: 'AI Strategy',
+      authorName: 'Simon Voorbergen'
+    },
     {
       slug: 'toekomst-van-software',
       title: 'The future of software: from tools to autonomous workflows',

@@ -13,9 +13,67 @@ import { aiOrganiserenVoorResultaatContent } from './blog-content/ai-organiseren
 import { aiOrganiserenVoorResultaatContentEN } from './blog-content/ai-organiseren-voor-resultaat-en';
 import { toekomstVanSoftwareContent } from './blog-content/toekomst-van-software';
 import { toekomstVanSoftwareContentEN } from './blog-content/toekomst-van-software-en';
+import { zenuwstelselVanOnsBedrijfContent } from './blog-content/zenuwstelsel-van-ons-bedrijf';
+import { zenuwstelselVanOnsBedrijfContentEN } from './blog-content/zenuwstelsel-van-ons-bedrijf-en';
 
 // Blog post data - add new posts here
 export const blogPosts: BlogPost[] = [
+  {
+    slug: 'zenuwstelsel-van-ons-bedrijf',
+    publishDate: '2025-12-20',
+    readingTime: 5,
+    ogImage: '/images/blog/zenuwstelsel-van-ons-bedrijf.jpg',
+    translations: {
+      nl: {
+        title: 'Het zenuwstelsel van ons bedrijf',
+        excerpt: 'Wij kijken anders naar automatiseren met AI. Niet als iets magisch, maar als een fundamentele manier om werk opnieuw te organiseren. Drie lagen, één systeem.',
+        content: zenuwstelselVanOnsBedrijfContent,
+        metaDescription: 'Hoe wij bij Schakel AI naar automatiseren kijken: drie lagen van processen automatiseren, verrijken en potentieel benutten. Plus waarom we MAP bouwden.',
+        keywords: [
+          'AI automatisering',
+          'Meeting Automation Platform',
+          'MAP',
+          'operationeel zenuwstelsel',
+          'AI strategie',
+          'proces automatisering',
+          'agentic AI',
+          'AI implementatie',
+          'Schakel AI',
+          'autonome systemen'
+        ],
+        category: 'AI Strategy',
+        author: {
+          name: 'Simon Voorbergen',
+          role: 'Mede-oprichter Schakel',
+          bio: 'Simon helpt bedrijven slimmer werken met AI. Achtergrond in procesoptimalisatie en transformatie, nu gefocust op praktische AI-implementaties die rust en rendement opleveren.'
+        }
+      },
+      en: {
+        title: 'The nervous system of our company',
+        excerpt: 'We view AI automation differently. Not as something magical, but as a fundamental way to reorganize work. Three layers, one system.',
+        content: zenuwstelselVanOnsBedrijfContentEN,
+        metaDescription: 'How we at Schakel AI view automation: three layers of automating, enriching, and unlocking potential. Plus why we built MAP.',
+        keywords: [
+          'AI automation',
+          'Meeting Automation Platform',
+          'MAP',
+          'operational nervous system',
+          'AI strategy',
+          'process automation',
+          'agentic AI',
+          'AI implementation',
+          'Schakel AI',
+          'autonomous systems'
+        ],
+        category: 'AI Strategy',
+        author: {
+          name: 'Simon Voorbergen',
+          role: 'Co-founder Schakel',
+          bio: 'Simon helps companies work smarter with AI. Background in process optimization and transformation, now focused on practical AI implementations that deliver calm and results.'
+        }
+      }
+    }
+  },
   {
     slug: 'toekomst-van-software',
     publishDate: '2025-12-19',

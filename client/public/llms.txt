@@ -99,7 +99,17 @@ We work with:
 
 ## Blog & Resources
 
-### Latest Writing: De toekomst van software: van tools naar autonome workflows
+### Latest Writing: Het zenuwstelsel van ons bedrijf
+- URL: https://www.schakel.ai/blog/zenuwstelsel-van-ons-bedrijf
+- Static HTML: https://www.schakel.ai/_seo/blog/zenuwstelsel-van-ons-bedrijf/
+- Published: December 20, 2025
+- Author: Simon Voorbergen
+- Topic: How Schakel AI views AI automation - three layers of automating, enriching, and unlocking potential
+- Key Topics: AI automation, Meeting Automation Platform, MAP, operational nervous system, AI strategy, process automation, agentic AI, AI implementation, autonomous systems
+- Reading Time: 5 minutes
+- Summary: Explains Schakel AI's three-layer approach to AI automation: (1) automate processes to stop wasting time, (2) enrich processes to enable new capabilities, (3) unlock full business potential by organizing smarter. Covers why AI projects fail (starting too big, talking instead of building, lack of ownership, missing control) and what works (start with one process, build within 30 days, measure results). Introduces MAP as the "operational nervous system" - not a meeting tool but proof of how autonomous, controllable AI systems take over processes without losing grip. Emphasizes the shift from capturing to steering with management data.
+
+### Previous Writing: De toekomst van software: van tools naar autonome workflows
 - URL: https://www.schakel.ai/blog/toekomst-van-software
 - Static HTML: https://www.schakel.ai/_seo/blog/toekomst-van-software/
 - Published: December 19, 2025

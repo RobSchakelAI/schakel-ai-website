@@ -16,12 +16,23 @@
   <!-- Blog Index -->
   <url>
     <loc>https://www.schakel.ai/blog</loc>
-    <lastmod>2025-12-19</lastmod>
+    <lastmod>2025-12-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="nl" href="https://www.schakel.ai/blog" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.schakel.ai/blog?lang=en" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.schakel.ai/blog" />
+  </url>
+
+  <!-- Blog Post: Het zenuwstelsel van ons bedrijf -->
+  <url>
+    <loc>https://www.schakel.ai/blog/zenuwstelsel-van-ons-bedrijf</loc>
+    <lastmod>2025-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.schakel.ai/blog/zenuwstelsel-van-ons-bedrijf" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schakel.ai/blog/zenuwstelsel-van-ons-bedrijf?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.schakel.ai/blog/zenuwstelsel-van-ons-bedrijf" />
   </url>
 
   <!-- Blog Post: De toekomst van software -->
