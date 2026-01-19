@@ -15,9 +15,67 @@ import { toekomstVanSoftwareContent } from './blog-content/toekomst-van-software
 import { toekomstVanSoftwareContentEN } from './blog-content/toekomst-van-software-en';
 import { zenuwstelselVanOnsBedrijfContent } from './blog-content/zenuwstelsel-van-ons-bedrijf';
 import { zenuwstelselVanOnsBedrijfContentEN } from './blog-content/zenuwstelsel-van-ons-bedrijf-en';
+import { mapVoorbereidenAgenticToekomstContent } from './blog-content/map-voorbereiden-agentic-toekomst';
+import { mapVoorbereidenAgenticToekomstContentEN } from './blog-content/map-voorbereiden-agentic-toekomst-en';
 
 // Blog post data - add new posts here
 export const blogPosts: BlogPost[] = [
+  {
+    slug: 'map-voorbereiden-agentic-toekomst',
+    publishDate: '2025-12-21',
+    readingTime: 6,
+    ogImage: '/images/blog/map-voorbereiden-agentic-toekomst.jpg',
+    translations: {
+      nl: {
+        title: 'Hoe we ons Meeting Platform voorbereiden op een agentic toekomst',
+        excerpt: 'Van vaste pipeline naar losse capabilities, van uitvoering naar feedbackloops. Hoe we MAP nu al bouwen voor een toekomst waarin agents het werk overnemen.',
+        content: mapVoorbereidenAgenticToekomstContent,
+        metaDescription: 'Hoe we ons Meeting Automation Platform voorbereiden op een agentic toekomst: van vaste flows naar capabilities, feedbackloops en gecontroleerde autonomie.',
+        keywords: [
+          'agentic systems',
+          'Meeting Automation Platform',
+          'MAP',
+          'capabilities',
+          'feedbackloops',
+          'autonome software',
+          'AI agents',
+          'workflow automation',
+          'zelflerende systemen',
+          'AI architectuur'
+        ],
+        category: 'AI Development',
+        author: {
+          name: 'Rob van Zutphen',
+          role: 'Mede-oprichter Schakel',
+          bio: 'Rob helpt bedrijven slimmer werken met AI. Achtergrond in finance en BI, nu gefocust op praktische AI-implementaties die echt rendement opleveren.'
+        }
+      },
+      en: {
+        title: 'How we prepare our Meeting Platform for an agentic future',
+        excerpt: 'From fixed pipeline to standalone capabilities, from execution to feedback loops. How we build MAP today for a future where agents take over the work.',
+        content: mapVoorbereidenAgenticToekomstContentEN,
+        metaDescription: 'How we prepare our Meeting Automation Platform for an agentic future: from fixed flows to capabilities, feedback loops, and controlled autonomy.',
+        keywords: [
+          'agentic systems',
+          'Meeting Automation Platform',
+          'MAP',
+          'capabilities',
+          'feedback loops',
+          'autonomous software',
+          'AI agents',
+          'workflow automation',
+          'self-learning systems',
+          'AI architecture'
+        ],
+        category: 'AI Development',
+        author: {
+          name: 'Rob van Zutphen',
+          role: 'Co-founder Schakel',
+          bio: 'Rob helps companies work smarter with AI. Background in finance and BI, now focused on practical AI implementations that truly deliver results.'
+        }
+      }
+    }
+  },
   {
     slug: 'zenuwstelsel-van-ons-bedrijf',
     publishDate: '2025-12-20',
