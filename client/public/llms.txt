@@ -99,7 +99,17 @@ We work with:
 
 ## Blog & Resources
 
-### Latest Writing: Het zenuwstelsel van ons bedrijf
+### Latest Writing: AI Coding Tools Begrijpen: De Drie Lagen van Moderne Development
+- URL: https://www.schakel.ai/blog/ai-coding-tools-begrijpen
+- Static HTML: https://www.schakel.ai/_seo/blog/ai-coding-tools-begrijpen/
+- Published: January 26, 2026
+- Author: Rob van Zutphen
+- Topic: Understanding the three layers of AI coding tools and how to combine them cost-effectively
+- Key Topics: AI coding tools, vibecoding, OpenCode, Claude Code, Replit, Cursor, AI development, coding agents, IDE comparison, Claude Opus, terminal agents
+- Reading Time: 10 minutes
+- Summary: Comprehensive explanation of the three layers of modern AI-assisted development: (1) IDE/Environment - where you code (local vs cloud), (2) AI Coding Agent - the software that gives AI models tools to work with code (terminal-based vs IDE-integrated), (3) AI Model - the actual intelligence (Claude, GPT, etc.). Explains the crucial difference between IDEs, agents, and models that many developers confuse. Includes a practical hack: combining Replit (cloud IDE) with OpenCode (open source terminal agent) and Claude Opus 4.5 (via personal subscription) to save 800-900 euros per month compared to using Replit Agent 3. Covers why agents deliver 90% of the value, the trade-offs between different setups, and who each setup is best suited for.
+
+### Previous Writing: Het zenuwstelsel van ons bedrijf
 - URL: https://www.schakel.ai/blog/zenuwstelsel-van-ons-bedrijf
 - Static HTML: https://www.schakel.ai/_seo/blog/zenuwstelsel-van-ons-bedrijf/
 - Published: December 20, 2025
