@@ -16,12 +16,34 @@
   <!-- Blog Index -->
   <url>
     <loc>https://www.schakel.ai/blog</loc>
-    <lastmod>2025-12-20</lastmod>
+    <lastmod>2026-01-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="nl" href="https://www.schakel.ai/blog" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.schakel.ai/blog?lang=en" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.schakel.ai/blog" />
+  </url>
+
+  <!-- Blog Post: AI Coding Tools Begrijpen -->
+  <url>
+    <loc>https://www.schakel.ai/blog/ai-coding-tools-begrijpen</loc>
+    <lastmod>2026-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.schakel.ai/blog/ai-coding-tools-begrijpen" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schakel.ai/blog/ai-coding-tools-begrijpen?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.schakel.ai/blog/ai-coding-tools-begrijpen" />
+  </url>
+
+  <!-- Blog Post: MAP voorbereiden op agentic toekomst -->
+  <url>
+    <loc>https://www.schakel.ai/blog/map-voorbereiden-agentic-toekomst</loc>
+    <lastmod>2025-12-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.schakel.ai/blog/map-voorbereiden-agentic-toekomst" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schakel.ai/blog/map-voorbereiden-agentic-toekomst?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.schakel.ai/blog/map-voorbereiden-agentic-toekomst" />
   </url>
 
   <!-- Blog Post: Het zenuwstelsel van ons bedrijf -->

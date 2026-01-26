@@ -17,9 +17,67 @@ import { zenuwstelselVanOnsBedrijfContent } from './blog-content/zenuwstelsel-va
 import { zenuwstelselVanOnsBedrijfContentEN } from './blog-content/zenuwstelsel-van-ons-bedrijf-en';
 import { mapVoorbereidenAgenticToekomstContent } from './blog-content/map-voorbereiden-agentic-toekomst';
 import { mapVoorbereidenAgenticToekomstContentEN } from './blog-content/map-voorbereiden-agentic-toekomst-en';
+import { aiCodingToolsBegrijpenContent } from './blog-content/ai-coding-tools-begrijpen';
+import { aiCodingToolsBegrijpenContentEN } from './blog-content/ai-coding-tools-begrijpen-en';
 
 // Blog post data - add new posts here
 export const blogPosts: BlogPost[] = [
+  {
+    slug: 'ai-coding-tools-begrijpen',
+    publishDate: '2026-01-26',
+    readingTime: 10,
+    ogImage: '/images/blog/ai-coding-tools-begrijpen.jpg',
+    translations: {
+      nl: {
+        title: 'AI Coding Tools Begrijpen: De Drie Lagen van Moderne Development',
+        excerpt: 'Cursor, Replit, Claude Code, OpenCode... Wat zijn dit allemaal? En hoe verhouden ze zich tot elkaar? Laat me het uitleggen aan de hand van drie lagen, plus een hack om 800-900 euro per maand te besparen.',
+        content: aiCodingToolsBegrijpenContent,
+        metaDescription: 'Begrijp de drie lagen van AI coding: IDE, Agent en Model. Plus een praktische setup met OpenCode en Replit die 800-900 euro per maand bespaart.',
+        keywords: [
+          'AI coding tools',
+          'vibecoding',
+          'OpenCode',
+          'Claude Code',
+          'Replit',
+          'Cursor',
+          'AI development',
+          'coding agents',
+          'IDE vergelijking',
+          'Claude Opus'
+        ],
+        category: 'AI Development',
+        author: {
+          name: 'Rob van Zutphen',
+          role: 'Mede-oprichter Schakel',
+          bio: 'Rob helpt bedrijven slimmer werken met AI. Achtergrond in finance en BI, nu gefocust op praktische AI-implementaties die echt rendement opleveren.'
+        }
+      },
+      en: {
+        title: 'Understanding AI Coding Tools: The Three Layers of Modern Development',
+        excerpt: 'Cursor, Replit, Claude Code, OpenCode... What are all these? And how do they relate to each other? Let me explain using three layers, plus a hack to save 800-900 euros per month.',
+        content: aiCodingToolsBegrijpenContentEN,
+        metaDescription: 'Understand the three layers of AI coding: IDE, Agent and Model. Plus a practical setup with OpenCode and Replit that saves 800-900 euros per month.',
+        keywords: [
+          'AI coding tools',
+          'vibecoding',
+          'OpenCode',
+          'Claude Code',
+          'Replit',
+          'Cursor',
+          'AI development',
+          'coding agents',
+          'IDE comparison',
+          'Claude Opus'
+        ],
+        category: 'AI Development',
+        author: {
+          name: 'Rob van Zutphen',
+          role: 'Co-founder Schakel',
+          bio: 'Rob helps companies work smarter with AI. Background in finance and BI, now focused on practical AI implementations that truly deliver results.'
+        }
+      }
+    }
+  },
   {
     slug: 'map-voorbereiden-agentic-toekomst',
     publishDate: '2025-12-21',

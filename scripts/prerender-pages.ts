@@ -18,103 +18,6 @@ interface BlogPostData {
   authorName: string;
 }
 
-const blogPosts: Record<Language, BlogPostData[]> = {
-  nl: [
-    {
-      slug: 'zenuwstelsel-van-ons-bedrijf',
-      title: 'Het zenuwstelsel van ons bedrijf',
-      excerpt: 'Wij kijken anders naar automatiseren met AI. Niet als iets magisch, maar als een fundamentele manier om werk opnieuw te organiseren.',
-      publishDate: '2025-12-20',
-      readingTime: 5,
-      category: 'AI Strategy',
-      authorName: 'Simon Voorbergen'
-    },
-    {
-      slug: 'toekomst-van-software',
-      title: 'De toekomst van software: van tools naar autonome workflows',
-      excerpt: 'Wat gebeurt er met software wanneer het niet langer ondersteunt, maar daadwerkelijk werk uitvoert?',
-      publishDate: '2025-12-19',
-      readingTime: 5,
-      category: 'AI Development',
-      authorName: 'Rob van Zutphen'
-    },
-    {
-      slug: 'einde-van-de-tussenlaag',
-      title: 'Het einde van de tussenlaag: waarom wij de low-code route overslaan',
-      excerpt: 'Low-code was jarenlang de brug tussen business en IT. Maar in het AI-tijdperk wordt vibecoding de nieuwe standaard.',
-      publishDate: '2025-12-08',
-      readingTime: 8,
-      category: 'AI Development',
-      authorName: 'Rob van Zutphen'
-    },
-    {
-      slug: 'meeting-automation-center',
-      title: 'Van Transcriptie naar Automatische Workflow: Hoe Wij Meetings Opgelost Hebben',
-      excerpt: 'Tools transcriberen prima, maar het administratieve werk blijft hangen. Wij bouwden een systeem dat alles automatisch regelt.',
-      publishDate: '2025-11-30',
-      readingTime: 10,
-      category: 'AI Automation',
-      authorName: 'Rob van Zutphen'
-    },
-    {
-      slug: 'website-bouwen-met-ai',
-      title: 'Website bouwen met AI: Hoe we schakel.ai zelf maakten',
-      excerpt: 'Zonder programmeur onze website gebouwd met AI. Het complete verhaal over vibecoding.',
-      publishDate: '2025-11-23',
-      readingTime: 12,
-      category: 'AI Development',
-      authorName: 'Rob van Zutphen'
-    }
-  ],
-  en: [
-    {
-      slug: 'zenuwstelsel-van-ons-bedrijf',
-      title: 'The nervous system of our company',
-      excerpt: 'We view AI automation differently. Not as something magical, but as a fundamental way to reorganize work.',
-      publishDate: '2025-12-20',
-      readingTime: 5,
-      category: 'AI Strategy',
-      authorName: 'Simon Voorbergen'
-    },
-    {
-      slug: 'toekomst-van-software',
-      title: 'The future of software: from tools to autonomous workflows',
-      excerpt: 'What happens to software when it no longer just supports, but actually performs work?',
-      publishDate: '2025-12-19',
-      readingTime: 5,
-      category: 'AI Development',
-      authorName: 'Rob van Zutphen'
-    },
-    {
-      slug: 'einde-van-de-tussenlaag',
-      title: 'The end of the middle layer: why we skip the low-code route',
-      excerpt: 'Low-code was the bridge between business and IT for years. But in the AI era, vibecoding becomes the new standard.',
-      publishDate: '2025-12-08',
-      readingTime: 8,
-      category: 'AI Development',
-      authorName: 'Rob van Zutphen'
-    },
-    {
-      slug: 'meeting-automation-center',
-      title: 'From Transcription to Automatic Workflow: How We Solved Meetings',
-      excerpt: 'Tools transcribe just fine, but the administrative work gets stuck. We built a system that handles everything automatically.',
-      publishDate: '2025-11-30',
-      readingTime: 10,
-      category: 'AI Automation',
-      authorName: 'Rob van Zutphen'
-    },
-    {
-      slug: 'website-bouwen-met-ai',
-      title: 'Building a Website with AI: How we made schakel.ai',
-      excerpt: 'Built our website with AI without a programmer. The complete story about vibecoding.',
-      publishDate: '2025-11-23',
-      readingTime: 12,
-      category: 'AI Development',
-      authorName: 'Rob van Zutphen'
-    }
-  ]
-};
-
 const translations = {
   nl: {
     blog: {
@@ -196,9 +99,8 @@ function getBaseStyles(): string {
   `;
 }
 
-function generateBlogIndexHTML(lang: Language): string {
+function generateBlogIndexHTML(lang: Language, posts: BlogPostData[]): string {
   const t = translations[lang];
-  const posts = blogPosts[lang];
   const canonicalUrl = lang === 'nl' 
     ? 'https://www.schakel.ai/blog'
     : 'https://www.schakel.ai/blog?lang=en';
@@ -547,6 +449,39 @@ function generateAIViewHTML(lang: Language): string {
 async function main() {
   console.log('🚀 Starting page pre-rendering...\n');
   
+  // Dynamically import blog data from the single source of truth
+  console.log('📥 Loading blog data from shared/blog-data.ts...');
+  const blogDataModule = await import('../shared/blog-data.js');
+  const { blogPosts: rawBlogPosts } = blogDataModule;
+  
+  // Transform blog posts into the format needed for pre-rendering
+  const blogPostsForPrerender: Record<Language, BlogPostData[]> = {
+    nl: rawBlogPosts.map((post: any) => ({
+      slug: post.slug,
+      title: post.translations.nl.title,
+      excerpt: post.translations.nl.excerpt,
+      publishDate: post.publishDate,
+      readingTime: post.readingTime,
+      category: post.translations.nl.category || 'AI',
+      authorName: post.translations.nl.author.name
+    })).sort((a: BlogPostData, b: BlogPostData) => 
+      new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime()
+    ),
+    en: rawBlogPosts.map((post: any) => ({
+      slug: post.slug,
+      title: post.translations.en.title,
+      excerpt: post.translations.en.excerpt,
+      publishDate: post.publishDate,
+      readingTime: post.readingTime,
+      category: post.translations.en.category || 'AI',
+      authorName: post.translations.en.author.name
+    })).sort((a: BlogPostData, b: BlogPostData) => 
+      new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime()
+    )
+  };
+  
+  console.log(`✅ Loaded ${rawBlogPosts.length} blog posts\n`);
+  
   // Output to _seo directory to avoid conflicting with SPA routes
   // This ensures Vercel serves the React SPA for all routes
   // while static HTML remains available at /_seo/* for crawlers
@@ -559,7 +494,7 @@ async function main() {
   }
   
   for (const lang of languages) {
-    const html = generateBlogIndexHTML(lang);
+    const html = generateBlogIndexHTML(lang, blogPostsForPrerender[lang]);
     if (lang === 'nl') {
       fs.writeFileSync(path.join(blogDir, 'index.html'), html, 'utf-8');
       console.log('✅ Generated: /_seo/blog/index.html (nl)');
