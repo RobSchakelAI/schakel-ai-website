@@ -36,9 +36,14 @@ interface BlogPost {
 const DIST_DIR = path.join(__dirname, '..', 'dist', 'public');
 
 function extractAssetTags(indexHtml: string): { scripts: string; styles: string; analytics: string } {
-  const scriptMatches = indexHtml.match(/<script type="module" crossorigin src="\/assets\/[^"]+"><\/script>/g) || [];
-  const styleMatches = indexHtml.match(/<link rel="stylesheet" crossorigin href="\/assets\/[^"]+">/g) || [];
-  const analyticsMatch = indexHtml.match(/<script defer src="https:\/\/cloud\.umami\.is\/[^"]*"[^>]*><\/script>/g) || [];
+  // Hardened regexes: match script/link tags more robustly with flexible attribute ordering
+  const scriptMatches = indexHtml.match(/<script(?:\s+[a-z-]+=(?:"[^"]*"|'[^']*'|\S+))*?\s+type="module"\s+[^>]*src="\/assets\/[^"]*"[^>]*><\/script>/gi) || 
+                        indexHtml.match(/<script(?:\s+[a-z-]+=(?:"[^"]*"|'[^']*'|\S+))*?\s+src="\/assets\/[^"]*"[^>]*type="module"[^>]*><\/script>/gi) || [];
+  
+  const styleMatches = indexHtml.match(/<link(?:\s+[a-z-]+=(?:"[^"]*"|'[^']*'|\S+))*?\s+rel="stylesheet"\s+[^>]*href="\/assets\/[^"]*"[^>]*>/gi) || 
+                       indexHtml.match(/<link(?:\s+[a-z-]+=(?:"[^"]*"|'[^']*'|\S+))*?\s+href="\/assets\/[^"]*"[^>]*rel="stylesheet"[^>]*>/gi) || [];
+  
+  const analyticsMatch = indexHtml.match(/<script(?:\s+[a-z-]+=(?:"[^"]*"|'[^']*'|\S+))*?\s+src="https:\/\/cloud\.umami\.is\/[^"]*"[^>]*(?:async|defer)?[^>]*><\/script>/gi) || [];
 
   return {
     scripts: scriptMatches.join('\n  '),
