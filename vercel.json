@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npx vite build",
+  "buildCommand": "npx tsx scripts/prerender-blog.ts && npx tsx scripts/prerender-pages.ts && npx vite build && npx tsx scripts/generate-seo-pages.ts",
   "outputDirectory": "dist/public",
   "framework": "vite",
   "installCommand": "npm install --include=dev",
