@@ -99,7 +99,17 @@ We work with:
 
 ## Blog & Resources
 
-### Latest Writing: AI Coding Tools Begrijpen: De Drie Lagen van Moderne Development
+### Latest Writing: Van Replit naar VS Code: Waarom je Development Omgeving Mee Moet Groeien
+- URL: https://www.schakel.ai/blog/van-replit-naar-vscode
+- Static HTML: https://www.schakel.ai/_seo/blog/van-replit-naar-vscode/
+- Published: February 15, 2026
+- Author: Rob van Zutphen
+- Topic: How our development environment evolved from Replit to VS Code with Claude Code, and why tools need to grow with your projects
+- Key Topics: Replit, VS Code, Claude Code, development environment, vibecoding, IDE comparison, Cursor, GitHub Codespaces, AI development, knowledge management
+- Reading Time: 9 minutes
+- Summary: Practical story of how Schakel AI's development environment evolved through four stages: from Replit Agent (€1,000/month) to Replit + OpenCode (€180/month) to Claude Code in Replit, and finally to a local VS Code setup with Claude Code. The core driver wasn't cost but isolated knowledge - every Replit project is a sandbox, and with multiple projects running simultaneously, shared knowledge (integrations, standards, learnings) couldn't flow between them. Replit's one-private-repo-per-project limit was the dealbreaker. The solution: Claude Code's --add-dir feature linking a central knowledge repository to every project locally. Covers VS Code vs Cursor decision (pragmatic: start free, upgrade if needed), the three modes of Claude Code (CLI for automation, VS Code extension for building, Desktop App for planning), the broader Claude ecosystem (Chat, Code, Cowork), and GitHub Codespaces as mobile escape hatch. Key lesson: your tools must grow with your projects - being a fan of a tool should never prevent you from switching when it no longer fits.
+
+### Previous Writing: AI Coding Tools Begrijpen: De Drie Lagen van Moderne Development
 - URL: https://www.schakel.ai/blog/ai-coding-tools-begrijpen
 - Static HTML: https://www.schakel.ai/_seo/blog/ai-coding-tools-begrijpen/
 - Published: January 26, 2026

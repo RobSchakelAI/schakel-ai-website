@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Primary Meta Tags -->
+  <title>Van Replit naar VS Code: Waarom je Development Omgeving Mee Moet Groeien | Schakel AI Blog</title>
+  <meta name="title" content="Van Replit naar VS Code: Waarom je Development Omgeving Mee Moet Groeien | Schakel AI Blog" />
+  <meta name="description" content="Van Replit naar VS Code met Claude Code: waarom we switchten, hoe we €800/maand besparen, en waarom je tools moeten meegroeien met je projecten." />
+  <meta name="author" content="Rob van Zutphen" />
+  <meta name="keywords" content="Replit, VS Code, Claude Code, development omgeving, vibecoding, IDE vergelijking, Cursor, GitHub Codespaces, AI development, knowledge management" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  
+  <!-- Canonical & Language Alternates -->
+  <link rel="canonical" href="https://www.schakel.ai/blog/van-replit-naar-vscode" />
+  <link rel="alternate" hreflang="nl" href="https://www.schakel.ai/blog/van-replit-naar-vscode" />
+  <link rel="alternate" hreflang="en" href="https://www.schakel.ai/blog/van-replit-naar-vscode?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://www.schakel.ai/blog/van-replit-naar-vscode" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.schakel.ai/blog/van-replit-naar-vscode" />
+  <meta property="og:title" content="Van Replit naar VS Code: Waarom je Development Omgeving Mee Moet Groeien" />
+  <meta property="og:description" content="Van Replit naar VS Code met Claude Code: waarom we switchten, hoe we €800/maand besparen, en waarom je tools moeten meegroeien met je projecten." />
+  <meta property="og:image" content="https://www.schakel.ai/images/blog/van-replit-naar-vscode.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="nl_NL" />
+  <meta property="og:site_name" content="Schakel AI" />
+  <meta property="article:published_time" content="2026-02-15T00:00:00.000Z" />
+  <meta property="article:author" content="Rob van Zutphen" />
+  <meta property="article:section" content="AI Development" />
+  <meta property="article:tag" content="Replit" />
+  <meta property="article:tag" content="VS Code" />
+  <meta property="article:tag" content="Claude Code" />
+  <meta property="article:tag" content="development omgeving" />
+  <meta property="article:tag" content="vibecoding" />
+  <meta property="article:tag" content="IDE vergelijking" />
+  <meta property="article:tag" content="Cursor" />
+  <meta property="article:tag" content="GitHub Codespaces" />
+  <meta property="article:tag" content="AI development" />
+  <meta property="article:tag" content="knowledge management" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://www.schakel.ai/blog/van-replit-naar-vscode" />
+  <meta name="twitter:title" content="Van Replit naar VS Code: Waarom je Development Omgeving Mee Moet Groeien" />
+  <meta name="twitter:description" content="Van Replit naar VS Code met Claude Code: waarom we switchten, hoe we €800/maand besparen, en waarom je tools moeten meegroeien met je projecten." />
+  <meta name="twitter:image" content="https://www.schakel.ai/images/blog/van-replit-naar-vscode.jpg" />
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Schema.org Article Structured Data -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Van Replit naar VS Code: Waarom je Development Omgeving Mee Moet Groeien",
+  "description": "Van Replit naar VS Code met Claude Code: waarom we switchten, hoe we €800/maand besparen, en waarom je tools moeten meegroeien met je projecten.",
+  "author": {
+    "@type": "Person",
+    "name": "Rob van Zutphen",
+    "jobTitle": "Mede-oprichter Schakel"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Schakel AI B.V.",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.schakel.ai/logo.png"
+    }
+  },
+  "datePublished": "2026-02-15T00:00:00.000Z",
+  "dateModified": "2026-02-15T00:00:00.000Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.schakel.ai/blog/van-replit-naar-vscode"
+  },
+  "image": "https://www.schakel.ai/images/blog/van-replit-naar-vscode.jpg",
+  "articleSection": "AI Development",
+  "keywords": "Replit, VS Code, Claude Code, development omgeving, vibecoding, IDE vergelijking, Cursor, GitHub Codespaces, AI development, knowledge management",
+  "wordCount": 2089,
+  "inLanguage": "nl-NL"
+}
+  </script>
+  
+  <!-- Schema.org Breadcrumb Structured Data -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.schakel.ai/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://www.schakel.ai/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Van Replit naar VS Code: Waarom je Development Omgeving Mee Moet Groeien",
+      "item": "https://www.schakel.ai/blog/van-replit-naar-vscode"
+    }
+  ]
+}
+  </script>
+  
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { 
+      font-family: Inter, system-ui, sans-serif; 
+      line-height: 1.7; 
+      color: #1a1a1a; 
+      background: #fff;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    header { margin-bottom: 40px; border-bottom: 1px solid #e5e5e5; padding-bottom: 30px; }
+    h1 { font-family: 'DM Sans', sans-serif; font-size: 2.5rem; font-weight: 700; margin-bottom: 16px; line-height: 1.2; }
+    .meta { color: #666; font-size: 0.9rem; margin-bottom: 16px; }
+    .meta span { margin-right: 16px; }
+    .author { display: flex; align-items: center; gap: 12px; margin-top: 20px; }
+    .author-avatar { width: 48px; height: 48px; border-radius: 50%; background: #6EBFAA; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600; }
+    .author-info { }
+    .author-name { font-weight: 600; }
+    .author-role { color: #666; font-size: 0.9rem; }
+    .category { display: inline-block; background: rgba(110, 191, 170, 0.1); color: #6EBFAA; padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 500; margin-bottom: 16px; }
+    article { }
+    article h2 { font-family: 'DM Sans', sans-serif; font-size: 1.75rem; font-weight: 700; margin: 40px 0 16px; }
+    article h3 { font-family: 'DM Sans', sans-serif; font-size: 1.35rem; font-weight: 700; margin: 32px 0 12px; }
+    article p { margin-bottom: 16px; }
+    article ul, article ol { margin: 16px 0; padding-left: 24px; }
+    article li { margin-bottom: 8px; }
+    article strong { font-weight: 600; }
+    article em { font-style: italic; }
+    article a { color: #6EBFAA; text-decoration: none; }
+    article a:hover { text-decoration: underline; }
+    article code { background: #f5f5f5; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+    article pre { background: #f5f5f5; padding: 16px; border-radius: 8px; overflow-x: auto; margin: 16px 0; }
+    article pre code { background: none; padding: 0; }
+    article blockquote { border-left: 4px solid #6EBFAA; padding-left: 16px; margin: 16px 0; color: #666; font-style: italic; }
+    article hr { border: none; border-top: 1px solid #e5e5e5; margin: 32px 0; }
+    footer { margin-top: 60px; padding-top: 30px; border-top: 1px solid #e5e5e5; text-align: center; color: #666; }
+    footer a { color: #6EBFAA; }
+    .js-notice { background: #f0f9f6; border: 1px solid #6EBFAA; padding: 16px; border-radius: 8px; margin-bottom: 30px; text-align: center; }
+    .js-notice a { color: #6EBFAA; font-weight: 500; }
+  </style>
+</head>
+<body>
+  <div class="js-notice">
+    Voor de volledige interactieve ervaring, <a href="https://www.schakel.ai/blog/van-replit-naar-vscode">bekijk dit artikel met JavaScript ingeschakeld</a>.
+  </div>
+  
+  <header>
+    <span class="category">AI Development</span>
+    <h1>Van Replit naar VS Code: Waarom je Development Omgeving Mee Moet Groeien</h1>
+    <div class="meta">
+      <span>📅 15 februari 2026</span>
+      <span>⏱️ 9 min leestijd</span>
+    </div>
+    <div class="author">
+      <div class="author-avatar">RvZ</div>
+      <div class="author-info">
+        <div class="author-name">Rob van Zutphen</div>
+        <div class="author-role">Mede-oprichter Schakel</div>
+      </div>
+    </div>
+  </header>
+  
+  <article>
+    <p>Je tools werken. Tot ze het niet meer doen.</p>
+<p>Niet omdat ze kapot zijn. Niet omdat ze slecht zijn. Maar omdat je behoeften veranderen naarmate je projecten groeien en complexer worden.</p>
+<p>Dit is het verhaal van hoe onze development omgeving evolueerde, van Replit naar een lokale VS Code setup met Claude Code. Niet omdat Replit slecht is (integendeel), maar omdat we tegen een fundamentele beperking aanliepen die ons dwong om te veranderen.</p>
+<hr>
+<h2>Waar het begon</h2>
+<p>In een eerdere post over <a href="/blog/website-bouwen-met-ai">hoe we schakel.ai bouwden</a> schreef ik uitgebreid over Replit. Over hoe je zonder programmeur een professionele website kunt bouwen. Over Agent 3 die &quot;simpelweg bizar&quot; is. Dat is het nog steeds.</p>
+<p>En in <a href="/blog/ai-coding-tools-begrijpen">AI Coding Tools Begrijpen</a> legde ik het drielagen-framework uit: je IDE (waar je werkt), je AI Agent (wie het werk doet), en je Model (het brein erachter). Die drie lagen bepalen samen hoe effectief je bouwt.</p>
+<p>En waar we de 2e laag al hebben gewisseld, zijn we nu ook de eerste laag, je IDE, aan het wisselen. Ook deze keuze is niet statisch. Die verschuift. En wanneer dat gebeurt, verandert er een hoop.</p>
+<hr>
+<h2>De reis in stappen</h2>
+<p>Laat me even de tijdlijn schetsen, want het was geen plotselinge switch. Het was een geleidelijke evolutie, gedreven door praktische problemen.</p>
+<p><strong>Stap 1: Replit + Replit Agent</strong>
+Hier begon het allemaal. Replit is fantastisch voor vibecoding. Alles in de cloud, geen setup, direct bouwen. Agent 3 maakt de ruwe versie, jij geeft richting en smaak. Precies zoals ik eerder schreef.</p>
+<p>Maar: de kosten liepen op. Rond de €1.000 per maand aan API-gebruik. Voor een startup die net begint, is dat fors.</p>
+<p><strong>Stap 2: Replit + OpenCode + eigen Claude abonnement</strong>
+We ontdekten dat je een open-source tool genaamd OpenCode in Replit kon draaien, met je eigen Claude Max abonnement. Zelfde kwaliteit, maar dan voor €180 per maand in plaats van €1.000. Een besparing van ruim €800 per maand.</p>
+<p><strong>Stap 3: Anthropic trekt de stekker eruit</strong>
+En toen kwam de verrassing: Anthropic blokkeerde het gebruik van hun consumer-abonnement via third-party tools. OpenCode werkte van de ene op de andere dag niet meer. Maar in plaats van terug naar af te gaan, stapten we over op Claude Code, Anthropic&#39;s eigen agentic coding tool die wél werkt met je Max abonnement.</p>
+<p><strong>Stap 4: Claude Code in Replit</strong>
+Claude Code draait prima in Replit&#39;s terminal. De voordelen van instant deployment, live preview en werken op je mobiele telefoon. Probleem opgelost, zou je denken. Maar er was nog iets.</p>
+<hr>
+<h2>De echte reden: geïsoleerde kennis</h2>
+<p>En hier zit het eigenlijke verhaal, want het gaat niet over tools of kosten.</p>
+<p>Naarmate we meer projecten tegelijk gingen draaien, onze LinkedIn Content Automation, het Meeting Automation Platform, drie verschillende klantprojecten en onze website, merkten we iets frustrerends.</p>
+<p><strong>Elk Replit-project is een geïsoleerde sandbox.</strong></p>
+<p>Dat betekent: de Pipedrive-integratie die we voor een klantproject hadden uitgedacht? Die kennis bestaat niet in het LinkedIn-project. De Supabase auth-flow die we al drie keer hadden opgezet? Elke keer opnieuw uitleggen. Onze eigen Schakel Development Standards? Per project handmatig kopiëren.</p>
+<p>Je zou denken: maak een gedeeld GitHub repository met al die kennis en koppel dat aan elk project. Maar Replit heeft een harde beperking: <strong>één privé GitHub repo per project</strong>. En die plek is al bezet door het project zelf.</p>
+<p>De enige optie was om ons knowledge repo publiek te maken (nee), of het handmatig in elk project te kopiëren en synchroon te houden (nee, nee, nee).</p>
+<p>Dat schaalt simpelweg niet, en voor een agency die steeds meer projecten tegelijk runt is dat een dealbreaker.</p>
+<hr>
+<h2>De oplossing: lokaal werken met centraal geheugen</h2>
+<p>Claude Code heeft een feature die alles veranderde: <code>--add-dir</code>.</p>
+<pre><code>claude --add-dir ~/schakel-knowledge
+</code></pre>
+<p>Eén commando dat een extra directory koppelt aan je Claude Code sessie. Ongeacht welk project je open hebt, Claude kan altijd bij je gedeelde kennis.</p>
+<p>Dat betekent: één centraal knowledge repo op je laptop, met daarin:</p>
+<ul>
+<li><strong>Skills</strong>: Hoe we Pipedrive, MailerSend, LLM&#39;s, etc integreren, hoe onze Supabase auth werkt, RLS set up</li>
+<li><strong>Frameworks</strong>: Het Schakel Framework, onze client discovery methode</li>
+<li><strong>Templates</strong>: Hoe een CLAUDE.md eruitziet, hoe we architectuur documenteren</li>
+<li><strong>Learnings</strong>: Veelgemaakte fouten, tech stack beslissingen, wat wel en niet werkt</li>
+</ul>
+<p>Elk project verwijst naar dezelfde bron. Geen duplicatie, geen sync-problemen. Alles in Git. En het wordt met elk project slimmer, want elke les die we leren voegen we één keer toe en is overal beschikbaar.</p>
+<p><strong>Maar dat werkt alleen lokaal.</strong> Niet in Replit&#39;s cloud. Niet in een browser-IDE. Alleen als je een eigen filesystem hebt waar je mappen kunt delen.</p>
+<p>En daar begon de zoektocht naar de juiste lokale setup.</p>
+<hr>
+<h2>VS Code vs Cursor: de keuze</h2>
+<p>Even eerlijk: Cursor ziet er aantrekkelijk uit. Het is gebouwd op VS Code, maar dan met AI-features erin gebakken. Tab completions die meerdere regels voorspellen, background agents, codebase indexing, Cursor Rules.</p>
+<p>Maar als je goed kijkt naar wat je écht nodig hebt:</p>
+<p><strong>Cursor&#39;s sterke punten</strong> (€20-200/maand):</p>
+<ul>
+<li>Slimme multi-line autocomplete</li>
+<li>Eigen AI agent met Plan Mode</li>
+<li>Codebase indexing en @Docs</li>
+<li>Multi-model switching</li>
+</ul>
+<p><strong>Wat ik daadwerkelijk gebruik:</strong></p>
+<ul>
+<li>Claude Code als mijn primaire agent (niet Cursor&#39;s agent)</li>
+<li>Claude Code&#39;s eigen codebase-begrip (niet Cursor&#39;s indexing)</li>
+<li><code>--add-dir</code> voor mijn knowledge repo (Cursor ondersteunt dit niet)</li>
+</ul>
+<p>Dus betaal ik €20-200 per maand voor... tab completions? Die zijn fijn, maar niet essentieel. Zeker niet als je net je maandelijkse kosten van €1.000 naar €180 hebt teruggebracht.</p>
+<p><strong>De beslissing:</strong> start met VS Code (gratis), en upgrade naar Cursor alleen als ik die autocomplete écht ga missen na een maand. Pragmatisch, niet dogmatisch.</p>
+<hr>
+<h2>Claude Code: CLI, Extension, of Desktop App?</h2>
+<p>Dit is waar het voor veel mensen verwarrend wordt. Claude Code is namelijk niet één ding, maar beschikbaar op meerdere plekken, elk met een eigen karakter.</p>
+<p><strong>Claude Code CLI (in je terminal)</strong>
+Je opent een terminal, navigeert naar je project, typt <code>claude</code>. Puur tekst, geen visuele franje, maar wel de volledige feature set: <code>--add-dir</code> voor je knowledge repo, scripting, automation en tab completion. Voor power users is dit waar het echte werk gebeurt.</p>
+<p><strong>Claude Code Extension (in VS Code)</strong>
+Een sidebar panel naast je code. Je ziet je bestanden links, de chat rechts, en diffs direct in je editor. Je kunt screenshots erin plakken, files @-mentionen en terminal output refereren. Het deelt conversation history met de CLI, dus je kunt naadloos wisselen. In de praktijk wordt dit je dagelijkse werkplek: code en AI naast elkaar.</p>
+<p><strong>Claude Code in de Desktop App (Code tab)</strong>
+De Claude Desktop app heeft naast Chat en Cowork ook een Code tab. Je selecteert een project folder via een visuele file picker, en je kunt meerdere sessies parallel draaien via Git worktrees.</p>
+<p>Klinkt ideaal, maar de ervaringen zijn gemengd. Developers noemen het &quot;clunky&quot; en &quot;lacking&quot; vergeleken met de IDE-experience. Geen ingebouwde file browser, geen code naast de chat. Het is beter geschikt voor architectuur en planning dan voor daadwerkelijk bouwen. Zelf ervaar ik voornamelijk een chat-sessie met te veel dingen op de achtergrond ipv de rijke ervaring in een IDE.</p>
+<p><strong>De consensus die ik overal terugzie:</strong></p>
+<ul>
+<li>IDE extension = waar je <strong>bouwt</strong></li>
+<li>CLI = waar je <strong>automatiseert</strong></li>
+<li>Desktop App Code tab = waar je <strong>plant</strong></li>
+</ul>
+<p>Voor mijn dagelijkse workflow: VS Code met de Claude Code extension als primaire werkplek, CLI in de integrated terminal voor <code>--add-dir</code> en automation.</p>
+<hr>
+<h2>Even terzijde: Claude is niet één tool</h2>
+<p>Dit verbaast mensen vaak. Als ik zeg &quot;Bij Schakel werken we met Claude&quot;, denken ze aan de chatbot. Maar Claude is inmiddels een heel ecosysteem:</p>
+<p><strong>Claude Chat</strong> is voor sparren, brainstormen en kennis opdoen. De &quot;even snel iets vragen&quot; modus. Hier plannen we, denken we na, en schrijven we (zoals deze blog).</p>
+<p><strong>Claude Code</strong> is voor bouwen. In je IDE, in je terminal, of in de desktop app. Dit is de agentic tool die je codebase begrijpt en er daadwerkelijk in werkt.</p>
+<p><strong>Claude Cowork</strong> is voor alles buiten code. Excel-bestanden maken, PowerPoints bouwen, documenten organiseren. Claude krijgt toegang tot je filesystem en dóét het werk, in plaats van alleen adviseren.</p>
+<p>Drie tools, elk met een eigen kracht, en samen vormen ze een workflow die veel breder is dan &quot;een AI chatbot&quot;.</p>
+<hr>
+<h2>De mobile escape hatch: GitHub Codespaces</h2>
+<p>Eén ding dat ik mis van Replit: de mogelijkheid om overal te werken. Laptop, tablet, telefoon, het maakte niet uit. Lokaal werken met VS Code betekent in principe: alleen op je desktop/laptop.</p>
+<p>De oplossing: <strong>GitHub Codespaces</strong>. Wat veel mensen niet weten is dat Codespaces letterlijk VS Code is, maar dan in de cloud. Gemaakt door Microsoft, net als VS Code zelf. Zelfde interface, zelfde extensions, zelfde keybindings. Zelfs de Claude Code extension werkt erin. Je kunt er privé repo&#39;s in clonen en werken alsof je lokaal zit. Kosten: €0,18 per uur voor een basisinstantie, en GitHub geeft gratis maandelijkse uren.</p>
+<p>Het is niet perfect: je moet je knowledge repo apart clonen in elke Codespace, en het is net iets trager dan lokaal. Maar als escape hatch voor een laat-avond idee of een snelle fix onderweg is het meer dan goed genoeg.</p>
+<hr>
+<h2>Wat dit oplevert</h2>
+<p>Het eindresultaat is een setup die er zo uitziet:</p>
+<p><strong>Dagelijks werk:</strong> VS Code + Claude Code lokaal</p>
+<ul>
+<li>Extension in de sidebar voor bouwen</li>
+<li>CLI in de terminal met <code>--add-dir ~/schakel-knowledge</code></li>
+<li>Eén centraal knowledge repo dat elk project voedt</li>
+</ul>
+<p><strong>Onderweg:</strong> GitHub Codespaces</p>
+<ul>
+<li>Browser-based VS Code</li>
+<li>Voor snelle fixes en late-night ideeën</li>
+</ul>
+<p><strong>Buiten code:</strong> Claude Chat + Cowork</p>
+<ul>
+<li>Chat voor sparren en brainstormen</li>
+<li>Cowork voor Excel, PowerPoint, en documenten</li>
+</ul>
+<p><strong>Kosten:</strong> €180/maand (Claude Max)</p>
+<ul>
+<li>Versus €1.000/maand met Replit Agent</li>
+<li>Besparing: ~€800/maand, ~€10.000/jaar</li>
+</ul>
+<hr>
+<h2>Wat ik hiervan leer</h2>
+<p>De grootste les is niet technisch, maar eerder een mindset:</p>
+<p><strong>Je tools moeten meegroeien met je projecten.</strong></p>
+<p>Replit was perfect toen we één website bouwden. Het is nog steeds fantastisch voor losse projecten. Maar zodra je meerdere projecten tegelijk runt, en kennis tussen die projecten wilt delen, loop je tegen de architecturale grenzen van een cloud-sandbox.</p>
+<p>Dat is geen kritiek op Replit, het is een observatie over hoe je behoeften verschuiven naarmate je groeit.</p>
+<p>En dat geldt niet alleen voor IDE&#39;s. Het geldt voor elk stuk tooling. De tool die je vandaag fantastisch vindt, kan morgen je bottleneck zijn. Niet omdat de tool slechter wordt, maar omdat jij verandert.</p>
+<p>De kunst is om dat moment te herkennen en dan te durven switchen, zonder sentimentaliteit.</p>
+<hr>
+<h2>Vibecode-notities</h2>
+<p>Wat ik meeneem naar de volgende fase:</p>
+<p><strong>Wees eerlijk over wat je verliest</strong>
+Lokaal werken met VS Code betekent dat je Vercel, Railway en GitHub vanaf het begin moet inrichten voordat je iets live kunt laten zien. In Replit klik je op Deploy en het staat online. Dat verschil is reëel, en vooral voor beginners of snelle pilot-projecten is die drempel niet te onderschatten. Ik sluit niet uit dat ik voor een snelle pilot of proof-of-concept nog steeds in Replit zou beginnen, simpelweg omdat je binnen een uur iets werkends kunt laten zien aan een klant. De overhead van een volledige deployment pipeline is het op dat moment nog niet waard. Maar zodra een pilot serieus wordt en je het naar productie wilt brengen, migreer je naar je eigen stack. Dat is geen verspilling, dat is bewust faseren.</p>
+<p><strong>Documenteer je keuzes</strong>
+Niet alleen wát je bouwt, maar waaróm je bepaalde keuzes maakt. Over drie maanden weet je het niet meer. Je knowledge repo is je geheugen.</p>
+<p><strong>Begin met gratis, upgrade als het moet</strong>
+VS Code in plaats van Cursor. Codespaces in plaats van een dedicated cloud IDE. Bespaar waar je kunt, investeer waar het telt.</p>
+<p><strong>Eén bron van waarheid</strong>
+Het centraal knowledge repo is misschien wel de belangrijkste beslissing. Elke les één keer vastleggen, overal beschikbaar. Dat is hoe je als kleine agency kunt bouwen alsof je een groot team hebt.</p>
+<p><strong>Tools zijn middelen, geen identiteit</strong>
+Ik was fan van Replit. Dat ben ik nog steeds. Maar fan zijn van een tool mag nooit de reden zijn om er aan vast te houden als het niet meer past.</p>
+<hr>
+<p>Dit verhaal is nog niet af. De lokale setup draait nog maar net. Ik verwacht nieuwe lessen, nieuwe frustraties, en waarschijnlijk weer een verschuiving over een paar maanden.</p>
+<p>Maar dat is precies het punt: je development omgeving is geen eindbestemming. Het is een reis. En de beste setup is de setup die past bij waar je nú bent, niet waar je vorig jaar was.</p>
+<p>Wil je sparren over je eigen development setup of AI-workflow? <a href="https://schakel.ai/#contact">Neem contact op</a>.</p>
+
+  </article>
+  
+  <footer>
+    <p><strong>Schakel AI B.V.</strong></p>
+    <p>AI-oplossingen die direct tijd en geld opleveren</p>
+    <p><a href="https://www.schakel.ai">www.schakel.ai</a> | <a href="mailto:info@schakel.ai">info@schakel.ai</a></p>
+    <p style="margin-top: 20px; font-size: 0.85rem;">© 2026 Schakel AI B.V. | Rotterdam, Nederland</p>
+  </footer>
+</body>
+</html>

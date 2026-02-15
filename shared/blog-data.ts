@@ -17,11 +17,69 @@ import { zenuwstelselVanOnsBedrijfContent } from './blog-content/zenuwstelsel-va
 import { zenuwstelselVanOnsBedrijfContentEN } from './blog-content/zenuwstelsel-van-ons-bedrijf-en';
 import { mapVoorbereidenAgenticToekomstContent } from './blog-content/map-voorbereiden-agentic-toekomst';
 import { mapVoorbereidenAgenticToekomstContentEN } from './blog-content/map-voorbereiden-agentic-toekomst-en';
+import { vanReplitNaarVscodeContent } from './blog-content/van-replit-naar-vscode';
+import { vanReplitNaarVscodeContentEN } from './blog-content/van-replit-naar-vscode-en';
 import { aiCodingToolsBegrijpenContent } from './blog-content/ai-coding-tools-begrijpen';
 import { aiCodingToolsBegrijpenContentEN } from './blog-content/ai-coding-tools-begrijpen-en';
 
 // Blog post data - add new posts here
 export const blogPosts: BlogPost[] = [
+  {
+    slug: 'van-replit-naar-vscode',
+    publishDate: '2026-02-15',
+    readingTime: 9,
+    ogImage: '/images/blog/van-replit-naar-vscode.jpg',
+    translations: {
+      nl: {
+        title: 'Van Replit naar VS Code: Waarom je Development Omgeving Mee Moet Groeien',
+        excerpt: 'Onze development omgeving evolueerde van Replit naar VS Code met Claude Code. Niet omdat Replit slecht is, maar omdat we tegen een fundamentele beperking aanliepen: geïsoleerde kennis tussen projecten.',
+        content: vanReplitNaarVscodeContent,
+        metaDescription: 'Van Replit naar VS Code met Claude Code: waarom we switchten, hoe we €800/maand besparen, en waarom je tools moeten meegroeien met je projecten.',
+        keywords: [
+          'Replit',
+          'VS Code',
+          'Claude Code',
+          'development omgeving',
+          'vibecoding',
+          'IDE vergelijking',
+          'Cursor',
+          'GitHub Codespaces',
+          'AI development',
+          'knowledge management'
+        ],
+        category: 'AI Development',
+        author: {
+          name: 'Rob van Zutphen',
+          role: 'Mede-oprichter Schakel',
+          bio: 'Rob helpt bedrijven slimmer werken met AI. Achtergrond in finance en BI, nu gefocust op praktische AI-implementaties die echt rendement opleveren.'
+        }
+      },
+      en: {
+        title: 'From Replit to VS Code: Why Your Development Environment Needs to Grow With You',
+        excerpt: 'Our development environment evolved from Replit to VS Code with Claude Code. Not because Replit is bad, but because we hit a fundamental limitation: isolated knowledge between projects.',
+        content: vanReplitNaarVscodeContentEN,
+        metaDescription: 'From Replit to VS Code with Claude Code: why we switched, how we save €800/month, and why your tools need to grow with your projects.',
+        keywords: [
+          'Replit',
+          'VS Code',
+          'Claude Code',
+          'development environment',
+          'vibecoding',
+          'IDE comparison',
+          'Cursor',
+          'GitHub Codespaces',
+          'AI development',
+          'knowledge management'
+        ],
+        category: 'AI Development',
+        author: {
+          name: 'Rob van Zutphen',
+          role: 'Co-founder Schakel',
+          bio: 'Rob helps companies work smarter with AI. Background in finance and BI, now focused on practical AI implementations that truly deliver results.'
+        }
+      }
+    }
+  },
   {
     slug: 'ai-coding-tools-begrijpen',
     publishDate: '2026-01-26',

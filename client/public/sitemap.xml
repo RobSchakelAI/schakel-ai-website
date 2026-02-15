@@ -16,12 +16,23 @@
   <!-- Blog Index -->
   <url>
     <loc>https://www.schakel.ai/blog</loc>
-    <lastmod>2026-01-26</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="nl" href="https://www.schakel.ai/blog" />
     <xhtml:link rel="alternate" hreflang="en" href="https://www.schakel.ai/blog?lang=en" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.schakel.ai/blog" />
+  </url>
+
+  <!-- Blog Post: Van Replit naar VS Code -->
+  <url>
+    <loc>https://www.schakel.ai/blog/van-replit-naar-vscode</loc>
+    <lastmod>2026-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.schakel.ai/blog/van-replit-naar-vscode" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.schakel.ai/blog/van-replit-naar-vscode?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.schakel.ai/blog/van-replit-naar-vscode" />
   </url>
 
   <!-- Blog Post: AI Coding Tools Begrijpen -->
